@@ -1,0 +1,254 @@
+.nav-container {
+  width: 100%;
+  position: fixed;
+  padding: 1.5rem 4rem;
+  background-color: var(--dark-grey);
+  transition: all 1s ease-in-out;
+}
+
+.nav-container-scrolled {
+  padding: 1.5rem 4rem;
+  transition: all 1s ease-out;
+}
+
+.navigation {
+  position: relative;
+  width: 100%;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  transition: all 0.7s ease-out;
+  height: 50px;
+}
+
+.nav-top-scrolled {
+  margin-bottom: 0.7rem;
+  transition: all 0.7s ease-in;
+  height: 20px;
+}
+
+.languages-container {
+  width: 15rem;
+}
+
+.languages {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language,
+.link {
+  text-decoration: none;
+  color: var(--cream-white);
+  font-family: "owners-bold", sans-serif;
+}
+
+.language {
+  opacity: 0.3;
+}
+
+.active {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  transition: all 0.7s ease-in-out;
+}
+
+.logo-scrolled {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.logo-link-container {
+  width: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.logo-link-scrolled {
+  width: 40px;
+  opacity: 1;
+}
+
+.logo-links {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-search {
+  width: 15rem;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search-button {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  color: var(--cream-white);
+  border: none;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+.search-input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  background-color: transparent;
+  border-bottom: solid 3px rgba(0, 0, 0, 0.346);
+  color: var(--cream-white);
+  font-family: "owners-regular", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+}
+
+.nav-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.7s ease-in-out;
+}
+
+.links-scrolled {
+  transition: all 0.5s ease-in-out;
+  width: 95%;
+}
+
+.link-container {
+  height: 40px;
+  width: 10%;
+  background-color: rgba(0, 0, 0, 0.152);
+  position: relative;
+}
+
+.link-container:before {
+  content: "";
+  background: linear-gradient(
+    90deg,
+    var(--trans-pink),
+    var(--cream-white),
+    var(--trans-blue),
+    var(--trans-pink),
+    var(--cream-white),
+    var(--trans-blue),
+    var(--trans-pink),
+    var(--cream-white),
+    var(--trans-blue)
+  );
+  position: absolute;
+  top: 100%;
+  background-size: 1000%;
+  z-index: 0;
+  width: 100%;
+  height: 1px;
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.link-container:active {
+  color: rgba(0, 0, 0, 0.152);
+}
+
+.link-container:active:after {
+  background: transparent;
+}
+
+.link-container:hover:before {
+  opacity: 1;
+}
+
+.link-container:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.152);
+  left: 0;
+  top: 0;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Your styles for max-width 768px here */
+}
+
+@media (max-width: 375px) {
+  /* Your styles for max-width 768px here */
+}
+
+@media (max-width: 425px) {
+  /* Your styles for max-width 768px here */
+}
+
+@media (max-width: 768px) {
+  /* Your styles for max-width 768px here */
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1920px) {
+  .language {
+    font-size: 0.7rem;
+  }
+
+  .link {
+    font-size: 0.7rem;
+  }
+}

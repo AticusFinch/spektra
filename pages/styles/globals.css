@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "owners-regular";
+  src: url("../../public/fonts/ownerstrialwide-regular-bf64361ef587a10-webfont.woff2")
+      format("woff2"),
+    url("../../public/fonts/ownerstrialwide-regular-bf64361ef587a10-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "owners-bold";
+  src: url("../../public/fonts/ownerstrialwide-bold-bf64361ef5bf162-webfont.woff2")
+      format("woff2"),
+    url("../../public/fonts/ownerstrialwide-bold-bf64361ef5bf162-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "owners-black";
+  src: url("../../public/fonts/ownerstrialwide-black-bf64361ef56b4a9-webfont.woff2")
+      format("woff2"),
+    url("../../public/fonts/ownerstrialwide-black-bf64361ef56b4a9-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --trans-pink: #f153ad;
+  --trans-blue: #30bde6;
+  --dark-grey: #191919;
+  --cream-white: #efeff0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "owners-regular", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
