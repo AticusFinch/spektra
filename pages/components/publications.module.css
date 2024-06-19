@@ -293,7 +293,7 @@
   .publication-content {
     position: absolute;
     height: 35%;
-    top: 70%;
+    top: 65%;
     display: block;
     padding: 1rem;
     transform: translate(0);
@@ -336,12 +336,12 @@
   }
 
   .next {
-    right: -5;
+    right: -3px; /* adjust as needed */
     font-size: 1.5rem;
   }
 
   .prev {
-    right: -5;
+    left: -3px; /* adjust as needed */
     font-size: 1.5rem;
   }
 }
