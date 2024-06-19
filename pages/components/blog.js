@@ -86,135 +86,139 @@ const Blog = () => {
 
   return (
     <Container>
-      <div className={styles["blog-head-container"]}>
-        <h1 className={styles["blog-head"]}>Blog</h1>
-        <button className={styles["all-blogs"]}>
-          {locale === "sr" ? "svi blogovi" : "all blogs"}
-        </button>
-      </div>
-      <div>
-        <Slider {...settings}>
-          <div className={styles["blog-container"]}>
-            <div
-              className={styles.blog}
-              style={{
-                backgroundImage: `url(/images/blog1.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                objectFit: "cover",
-              }}
-            >
-              <div className={styles["blog-content-container"]}>
-                <div className={styles["blog-content"]}>
-                  <p className={styles["blog-content-head"]}>
-                    Lorem ipsum dolor sit amen
-                  </p>
-                  <span className={styles.author}>Marija Jovanovic</span>
+      <div className={styles.flex}>
+        <div>
+          <div className={styles["blog-head-container"]}>
+            <h1 className={styles["blog-head"]}>Blog</h1>
+            <button className={styles["all-blogs"]}>
+              {locale === "sr" ? "svi blogovi" : "all blogs"}
+            </button>
+          </div>
+          <div>
+            <Slider {...settings}>
+              <div className={styles["blog-container"]}>
+                <div
+                  className={styles.blog}
+                  style={{
+                    backgroundImage: `url(/images/blog1.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    objectFit: "cover",
+                  }}
+                >
+                  <div className={styles["blog-content-container"]}>
+                    <div className={styles["blog-content"]}>
+                      <p className={styles["blog-content-head"]}>
+                        Lorem ipsum dolor sit amen
+                      </p>
+                      <span className={styles.author}>Marija Jovanovic</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles["blog-container"]}>
-            <div
-              className={styles.blog}
-              style={{
-                backgroundImage: `url(/images/blog2.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                objectFit: "cover",
-              }}
-            >
-              <div className={styles["blog-content-container"]}>
-                <div className={styles["blog-content"]}>
-                  <p className={styles["blog-content-head"]}>
-                    Sed gravida non elit ac vulputate
-                  </p>
-                  <span className={styles.author}>Jovan Ulicevic</span>
+              <div className={styles["blog-container"]}>
+                <div
+                  className={styles.blog}
+                  style={{
+                    backgroundImage: `url(/images/blog2.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    objectFit: "cover",
+                  }}
+                >
+                  <div className={styles["blog-content-container"]}>
+                    <div className={styles["blog-content"]}>
+                      <p className={styles["blog-content-head"]}>
+                        Sed gravida non elit ac vulputate
+                      </p>
+                      <span className={styles.author}>Jovan Ulicevic</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles["blog-container"]}>
-            <div
-              className={styles.blog}
-              style={{
-                backgroundImage: `url(/images/blog3.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                objectFit: "cover",
-              }}
-            >
-              <div className={styles["blog-content-container"]}>
-                <div className={styles["blog-content"]}>
-                  <p className={styles["blog-content-head"]}>
-                    Nunc at feugiat eros
-                  </p>
-                  <span className={styles.author}>Iskra Djurovic</span>
+              <div className={styles["blog-container"]}>
+                <div
+                  className={styles.blog}
+                  style={{
+                    backgroundImage: `url(/images/blog3.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    objectFit: "cover",
+                  }}
+                >
+                  <div className={styles["blog-content-container"]}>
+                    <div className={styles["blog-content"]}>
+                      <p className={styles["blog-content-head"]}>
+                        Nunc at feugiat eros
+                      </p>
+                      <span className={styles.author}>Iskra Djurovic</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles["blog-container"]}>
-            <div
-              className={styles.blog}
-              style={{
-                backgroundImage: `url(/images/blog4.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                objectFit: "cover",
-              }}
-            >
-              <div className={styles["blog-content-container"]}>
-                <div className={styles["blog-content"]}>
-                  <p className={styles["blog-content-head"]}>
-                    Etiam tellus urna, venenatis non tincidunt vel
-                  </p>
-                  <span className={styles.author}>Aleksa Radonjic</span>
+              <div className={styles["blog-container"]}>
+                <div
+                  className={styles.blog}
+                  style={{
+                    backgroundImage: `url(/images/blog4.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    objectFit: "cover",
+                  }}
+                >
+                  <div className={styles["blog-content-container"]}>
+                    <div className={styles["blog-content"]}>
+                      <p className={styles["blog-content-head"]}>
+                        Etiam tellus urna, venenatis non tincidunt vel
+                      </p>
+                      <span className={styles.author}>Aleksa Radonjic</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles["blog-container"]}>
-            <div
-              className={styles.blog}
-              style={{
-                backgroundImage: `url(/images/blog5.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                objectFit: "cover",
-              }}
-            >
-              <div className={styles["blog-content-container"]}>
-                <div className={styles["blog-content"]}>
-                  <p className={styles["blog-content-head"]}>
-                    Maecenas purus ante, iaculis ut dolor eleifend
-                  </p>
-                  <span className={styles.author}>Teodor Stojanovic</span>
+              <div className={styles["blog-container"]}>
+                <div
+                  className={styles.blog}
+                  style={{
+                    backgroundImage: `url(/images/blog5.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    objectFit: "cover",
+                  }}
+                >
+                  <div className={styles["blog-content-container"]}>
+                    <div className={styles["blog-content"]}>
+                      <p className={styles["blog-content-head"]}>
+                        Maecenas purus ante, iaculis ut dolor eleifend
+                      </p>
+                      <span className={styles.author}>Teodor Stojanovic</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles["blog-container"]}>
-            <div
-              className={styles.blog}
-              style={{
-                backgroundImage: `url(/images/blog6.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                objectFit: "cover",
-              }}
-            >
-              <div className={styles["blog-content-container"]}>
-                <div className={styles["blog-content"]}>
-                  <p className={styles["blog-content-head"]}>
-                    Vestibulum faucibus, libero eget ullamcorper
-                  </p>
-                  <span className={styles.author}>Ida Markovic</span>
+              <div className={styles["blog-container"]}>
+                <div
+                  className={styles.blog}
+                  style={{
+                    backgroundImage: `url(/images/blog6.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    objectFit: "cover",
+                  }}
+                >
+                  <div className={styles["blog-content-container"]}>
+                    <div className={styles["blog-content"]}>
+                      <p className={styles["blog-content-head"]}>
+                        Vestibulum faucibus, libero eget ullamcorper
+                      </p>
+                      <span className={styles.author}>Ida Markovic</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Slider>
           </div>
-        </Slider>
+        </div>
       </div>
     </Container>
   );
