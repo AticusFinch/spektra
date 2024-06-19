@@ -1,0 +1,123 @@
+.footer-container {
+  background-color: var(--dark-grey);
+  padding: 6rem 4rem 2rem 4rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.footer-top-left,
+.footer-top-center,
+.footer-top-right {
+  width: 30%;
+}
+
+.footer-top-address {
+  color: var(--cream-white);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.footer-top-address-street {
+  font-family: "owners-black", sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.signature {
+  color: var(--cream-white);
+  font-size: 0.6rem;
+  margin-top: 2rem;
+}
+
+.footer-top-center {
+  text-align: center;
+}
+
+.footer-top-center-head,
+.footer-top-right-head {
+  color: var(--cream-white);
+  font-family: "owners-bold", sans-serif;
+  font-size: 1.4rem;
+}
+
+.footer-top-center-social {
+  margin-top: 1.5rem;
+}
+
+.footer-top-center-icon {
+  color: var(--dark-grey);
+  background-color: var(--cream-white);
+  padding: 0.5rem 0.5rem;
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.footer-top-right {
+  text-align: end;
+}
+
+.footer-top-right-contact-info {
+  color: var(--cream-white);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.footer-top-right-contact-info-working-time {
+  margin-bottom: 1.5rem;
+}
+
+.footer-top-search {
+  width: 15rem;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search-button {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  color: var(--cream-white);
+  border: none;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+.search-input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  background-color: transparent;
+  border-bottom: solid 3px rgba(0, 0, 0, 0.346);
+  color: var(--cream-white);
+  font-family: "owners-regular", sans-serif;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+}
+
+.footer-bottom {
+  margin-top: 8rem;
+}
+
+.footer-bottom-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--cream-white);
+}
+
+.footer-bottom-link {
+  font-size: 0.9rem;
+  color: var(--cream-white);
+  text-decoration: none;
+}

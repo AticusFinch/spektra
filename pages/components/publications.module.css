@@ -1,0 +1,268 @@
+.publications-head-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.publications-head {
+  text-transform: uppercase;
+  font-family: "owners-black", sans-serif;
+  font-size: 7rem;
+  background: -webkit-linear-gradient(
+    40deg,
+    var(--trans-pink),
+    var(--trans-pink),
+    var(--trans-blue),
+    var(--trans-blue)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 50%;
+}
+
+.all-publications {
+  width: 180px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.278);
+  color: var(--cream-white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "owners-bold", sans-serif;
+  font-size: 0.8rem;
+  position: relative;
+}
+
+.all-publications:before {
+  content: "";
+  background: linear-gradient(
+    90deg,
+    var(--trans-pink),
+    var(--cream-white),
+    var(--trans-blue),
+    var(--trans-pink),
+    var(--cream-white),
+    var(--trans-blue),
+    var(--trans-pink),
+    var(--cream-white),
+    var(--trans-blue)
+  );
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-size: 1000%;
+  z-index: 0;
+  width: 100%;
+  height: 1px;
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.all-publications:active {
+  color: rgba(0, 0, 0, 0.152);
+}
+
+.all-publications:active:after {
+  background: transparent;
+}
+
+.all-publications:hover:before {
+  opacity: 1;
+}
+
+.all-publications:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.152);
+  left: 0;
+  top: 0;
+}
+
+.publication-container {
+  padding: 0 0.7rem;
+}
+
+.publication {
+  width: 100%;
+  height: 600px;
+  margin-bottom: 2rem;
+}
+
+.publication-img-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.publication-content {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+  transform: translateX(-100%);
+  background: -webkit-linear-gradient(
+    0deg,
+    var(--trans-pink),
+    var(--trans-blue),
+    var(--trans-pink),
+    var(--trans-blue),
+    var(--trans-pink),
+    var(--trans-blue),
+    var(--trans-pink)
+  );
+  animation: glowing 40s linear infinite;
+  background-size: 1000%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.publication:hover .publication-content {
+  transform: translateX(0); /* Change this line */
+}
+
+.publication-head {
+  font-family: "owners-bold", sans-serif;
+  font-size: 2.5rem;
+  color: var(--dark-grey);
+  z-index: 1;
+}
+
+.author {
+  display: inline-block;
+  color: var(--dark-grey);
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.publication-download-btn {
+  width: 180px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.278);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "owners-bold", sans-serif;
+  font-size: 1rem;
+  position: relative;
+  color: var(--dark-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publication-download-icon {
+  font-size: 1.2rem;
+  margin-right: 0.3rem;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  color: var(--cream-white);
+}
+
+.next {
+  right: -25px;
+}
+
+.prev {
+  left: -25px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1920px) {
+  .publications-head-container {
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+  }
+
+  .publications-head {
+    font-size: 4rem;
+    width: 40%;
+  }
+
+  .all-publications {
+    width: 160px;
+  }
+
+  .publication {
+    height: 400px;
+  }
+
+  .publication-content {
+    padding: 1rem;
+  }
+
+  .publication-head {
+    font-size: 1.7rem;
+  }
+
+  .author {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .publication-download-btn {
+    width: 100px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .publication-download-icon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1280px) {
+  .publications-head {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 820px) {
+}
+
+@media (max-width: 485px) {
+}
+
+@media (max-width: 425px) {
+}

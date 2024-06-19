@@ -41,6 +41,13 @@
   margin: 0;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -50,4 +57,14 @@ body {
 
 ul {
   list-style: none;
+}
+
+.slick-dots li button:before {
+  color: var(--cream-white) !important; /* Replace with your color */
+  font-size: 0.3rem !important;
+}
+
+/* Change the color of the active dot */
+.slick-dots li.slick-active button:before {
+  color: var(--trans-pink) !important; /* Replace with your active color */
 }
