@@ -19,7 +19,7 @@
   );
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: white;
   width: 30%;
 }
 
@@ -255,7 +255,7 @@
 
   .news-head {
     font-size: 3rem;
-    width: 70%;
+    width: 90%;
     margin-bottom: 1rem;
   }
 
