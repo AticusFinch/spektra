@@ -1,14 +1,10 @@
 .container {
-  padding: 3rem 4rem 0rem 4rem;
-  height: 75vh;
+  padding: 3rem 4rem;
+  height: 100vh;
   background-color: var(--dark-grey);
 }
 
 @media (max-width: 1920px) {
-  .container {
-    padding: 3rem 4rem 0rem 4rem;
-    height: 90vh;
-  }
 }
 
 @media (max-width: 1440px) {
@@ -25,8 +21,8 @@
 
 @media (max-width: 485px) {
   .container {
-    padding: 3rem 1rem 0rem 1rem;
-    height: 90vh;
+    padding: 3rem 1rem;
+    height: 100vh;
     background-color: var(--dark-grey);
   }
 }
