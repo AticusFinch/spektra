@@ -299,12 +299,12 @@
 
   .next {
     right: -5;
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .prev {
     right: -5;
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 }
 

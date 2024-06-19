@@ -292,7 +292,7 @@
 
   .publication-content {
     position: absolute;
-    height: 30%;
+    height: 35%;
     top: 70%;
     display: block;
     padding: 1rem;
@@ -337,12 +337,12 @@
 
   .next {
     right: -5;
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .prev {
     right: -5;
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 }
 
