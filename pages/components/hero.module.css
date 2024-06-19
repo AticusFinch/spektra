@@ -161,6 +161,8 @@
   .index {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    width: 100%;
+    -webkit-text-fill-color: var(--cream-white);
   }
 
   .home-container {

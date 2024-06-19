@@ -262,6 +262,12 @@
 }
 
 @media (max-width: 485px) {
+  .publications-head {
+    width: 100%;
+    background-color: var(--cream-white);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 425px) {

@@ -241,8 +241,9 @@
 
   .blog-head {
     font-size: 3rem;
-    width: 60%;
+    width: 100%;
     margin-bottom: 1rem;
+    -webkit-text-fill-color: var(--cream-white);
   }
 
   .all-blogs {
