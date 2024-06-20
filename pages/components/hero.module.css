@@ -163,10 +163,6 @@
     margin-bottom: 1rem;
     width: 100%;
     -webkit-text-fill-color: var(--cream-white);
-    background: linear-gradient(40deg, var(--trans-blue), var(--trans-pink));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
   .home-container {
