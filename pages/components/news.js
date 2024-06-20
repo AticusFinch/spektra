@@ -17,7 +17,6 @@ import news3 from "../../public/images/news3.jpg";
 import news4 from "../../public/images/news4.jpg";
 import news5 from "../../public/images/news5.jpg";
 import news6 from "../../public/images/news6.jpg";
-import Navigation from "../utils/navigation";
 
 const NextArrow = ({ onClick }) => (
   <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>

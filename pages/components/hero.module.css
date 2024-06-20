@@ -154,11 +154,19 @@
 }
 
 @media (max-width: 485px) {
+  .home {
+    height: 40vh;
+  }
+
   .index {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     width: 100%;
     -webkit-text-fill-color: var(--cream-white);
+    background: linear-gradient(40deg, var(--trans-blue), var(--trans-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .home-container {
@@ -172,6 +180,7 @@
   }
 
   .quote-container {
+    display: none;
     height: 170px;
   }
 
