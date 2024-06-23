@@ -106,11 +106,6 @@
     align-items: center;
     padding: 4rem 4rem;
   }
-
-  .donate-text {
-    -webkit-text-fill-color: var(--trans-pink);
-    text-decoration: none;
-  }
 }
 
 @media (max-width: 1024px) {
