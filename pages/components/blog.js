@@ -100,7 +100,7 @@ const Blog = () => {
                 <div
                   className={styles.blog}
                   style={{
-                    backgroundImage: `url(/images/blog1.jpg)`,
+                    backgroundImage: `url(/images/blog6.jpg)`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     objectFit: "cover",
