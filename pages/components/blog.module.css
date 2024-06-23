@@ -249,7 +249,7 @@
 
   .all-blogs {
     width: 130px;
-    height: 25px;
+    padding: 0 0.5rem;
     background-color: rgba(0, 0, 0, 0.278);
     border: solid 2px var(--trans-pink);
     font-size: 0.9rem;
@@ -340,7 +340,6 @@
 
   .all-blogs {
     width: 100px;
-    height: 20px;
     font-size: 0.6rem;
   }
 }

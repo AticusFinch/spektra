@@ -281,7 +281,7 @@
 
   .all-publications {
     width: 130px;
-    height: 25px;
+    padding: 0 0.5rem;
     background-color: rgba(0, 0, 0, 0.278);
     border: solid 2px var(--trans-pink);
     font-size: 0.9rem;
@@ -362,7 +362,6 @@
   .all-publications {
     width: 100px;
     background-color: rgba(0, 0, 0, 0.278);
-
     font-size: 0.7rem;
     font-family: "owners-regular", sans-serif;
   }
@@ -381,19 +380,22 @@
   }
 
   .publication-head {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .author {
     font-size: 0.6rem;
+    margin-top: 0.2rem;
   }
 
   .publication-download-btn {
     font-size: 0.6rem;
+    border: solid 2px var(--trans-pink);
+    padding: 0.2rem 0.3rem;
   }
 
   .publication-download-icon {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
   .next {
@@ -417,9 +419,12 @@
     font-size: 0.7rem;
   }
 
+  .author {
+    font-size: 0.5rem;
+  }
+
   .all-publications {
     width: 100px;
-    height: 20px;
     font-size: 0.6rem;
   }
 
