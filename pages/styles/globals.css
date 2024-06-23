@@ -61,7 +61,7 @@ ul {
 
 .slick-dots li button:before {
   color: var(--cream-white) !important; /* Replace with your color */
-  font-size: 0.3rem !important;
+  font-size: 0.2rem !important;
 }
 
 /* Change the color of the active dot */
