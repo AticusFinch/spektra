@@ -62,10 +62,6 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.all-publications:active:after {
-  background: transparent;
-}
-
 .all-publications:hover:before {
   opacity: 1;
 }
@@ -76,7 +72,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: transparent;
+  background: var(--dark-grey);
   left: 0;
   top: 0;
 }

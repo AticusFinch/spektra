@@ -63,7 +63,7 @@
 }
 
 .all-news:active:after {
-  background: transparent;
+  background: var(--dark-grey);
 }
 
 .all-news:hover:before {
