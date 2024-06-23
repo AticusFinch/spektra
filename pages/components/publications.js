@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import Slider from "react-slick";
 
@@ -64,6 +65,13 @@ const Publications = () => {
         },
       },
       {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 700,
         settings: {
           slidesToShow: 2,
@@ -96,15 +104,15 @@ const Publications = () => {
           <Slider {...settings}>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi1.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    objectFit: "cover",
-                  }}
-                >
+                <div className={styles["publication-img-container"]}>
+                  <Image
+                    src="/images/publi1.png"
+                    alt="Publication"
+                    width={512}
+                    height={800}
+                    layout="responsive"
+                    className={styles["publication-img"]}
+                  />
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -124,15 +132,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi2.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    objectFit: "cover",
-                  }}
-                >
+                <div className={styles["publication-img-container"]}>
+                  <Image
+                    src="/images/publi2.png"
+                    alt="Publication"
+                    width={512}
+                    height={800}
+                    layout="responsive"
+                    className={styles["publication-img"]}
+                  />
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -152,15 +160,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi3.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    objectFit: "cover",
-                  }}
-                >
+                <div className={styles["publication-img-container"]}>
+                  <Image
+                    src="/images/publi3.png"
+                    alt="Publication"
+                    width={512}
+                    height={800}
+                    layout="responsive"
+                    className={styles["publication-img"]}
+                  />
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -180,15 +188,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi4.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    objectFit: "cover",
-                  }}
-                >
+                <div className={styles["publication-img-container"]}>
+                  <Image
+                    src="/images/publi4.png"
+                    alt="Publication"
+                    width={512}
+                    height={800}
+                    layout="responsive"
+                    className={styles["publication-img"]}
+                  />
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -208,15 +216,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi5.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    objectFit: "cover",
-                  }}
-                >
+                <div className={styles["publication-img-container"]}>
+                  <Image
+                    src="/images/publi5.png"
+                    alt="Publication"
+                    width={512}
+                    height={800}
+                    layout="responsive"
+                    className={styles["publication-img"]}
+                  />
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -236,15 +244,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi6.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    objectFit: "cover",
-                  }}
-                >
+                <div className={styles["publication-img-container"]}>
+                  <Image
+                    src="/images/publi6.png"
+                    alt="Publication"
+                    width={512}
+                    height={800}
+                    layout="responsive"
+                    className={styles["publication-img"]}
+                  />
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>

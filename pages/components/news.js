@@ -89,6 +89,11 @@ const News = () => {
     ],
   };
 
+  const currentDate = new Date();
+  const formattedDate = `${currentDate.getDate()}/${
+    currentDate.getMonth() + 1
+  }/${currentDate.getFullYear()}`;
+
   return (
     <Container>
       <div>
@@ -116,6 +121,7 @@ const News = () => {
                     <p className={styles["slide-head"]}>
                       Lorem ipsum dolor sit amen
                     </p>
+                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>
@@ -134,6 +140,7 @@ const News = () => {
                     <p className={styles["slide-head"]}>
                       Sed gravida non elit ac vulputate
                     </p>
+                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>
@@ -150,6 +157,7 @@ const News = () => {
                   </div>
                   <div className={styles["slide-content"]}>
                     <p className={styles["slide-head"]}>Nunc at feugiat eros</p>
+                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>
@@ -168,42 +176,7 @@ const News = () => {
                     <p className={styles["slide-head"]}>
                       Etiam tellus urna, venenatis non tincidunt vel
                     </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["slide-container"]}>
-              <div className={styles.slide}>
-                <div className={styles["slide-content-container"]}>
-                  <div className={styles["slide-img-container"]}>
-                    <Image
-                      src={news5}
-                      alt="News thumbnail"
-                      className={styles["news-img"]}
-                    />
-                  </div>
-                  <div className={styles["slide-content"]}>
-                    <p className={styles["slide-head"]}>
-                      Maecenas purus ante, iaculis ut dolor eleifend
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["slide-container"]}>
-              <div className={styles.slide}>
-                <div className={styles["slide-content-container"]}>
-                  <div className={styles["slide-img-container"]}>
-                    <Image
-                      src={news6}
-                      alt="News thumbnail"
-                      className={styles["news-img"]}
-                    />
-                  </div>
-                  <div className={styles["slide-content"]}>
-                    <p className={styles["slide-head"]}>
-                      Vestibulum faucibus, libero eget ullamcorper
-                    </p>
+                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>

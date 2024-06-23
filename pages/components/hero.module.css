@@ -137,12 +137,18 @@
 }
 
 @media (max-width: 820px) {
+  .home {
+    height: 40vh;
+    background: url(/images/contour.svg);
+  }
+
   .index {
     font-size: 4rem;
     margin-bottom: 2rem;
+    -webkit-text-fill-color: var(--cream-white);
   }
   .quote-container {
-    width: 90%;
+    display: none;
   }
 
   .quote {
@@ -157,11 +163,6 @@
 }
 
 @media (max-width: 485px) {
-  .home {
-    height: 40vh;
-    background: url(/images/contour.svg);
-  }
-
   .index {
     font-size: 2rem;
     margin-bottom: 1rem;
