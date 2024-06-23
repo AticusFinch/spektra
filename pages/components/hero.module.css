@@ -139,7 +139,6 @@
 @media (max-width: 820px) {
   .home {
     height: 40vh;
-    background: url(/images/contour.svg);
   }
 
   .index {

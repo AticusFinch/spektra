@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 4rem 4rem 8rem 4rem;
+  padding: 4rem;
 }
 
 .counter {
@@ -62,4 +62,57 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   will-change: transform;
+}
+
+@media (max-width: 1920px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 820px) {
+  .counter-number-blue,
+  .counter-number-pink,
+  .counter-number-white {
+    font-size: 2.5rem;
+    height: 30px;
+  }
+
+  .counter-text {
+    font-size: 0.9rem;
+    color: var(--cream-white);
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .counter {
+    width: 50px;
+  }
+
+  .counter-container {
+    padding: 4rem 3rem;
+  }
+
+  .donate-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 4rem;
+  }
+}
+
+@media (max-width: 485px) {
+  .counter-container {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
 }
