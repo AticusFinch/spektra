@@ -204,6 +204,7 @@
 
   .logo {
     margin-right: 0;
+    max-width: 150px;
   }
 
   .quote-icon-left,
