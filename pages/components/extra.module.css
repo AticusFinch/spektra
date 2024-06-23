@@ -113,6 +113,13 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .counter-text {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+}
+
 @media (max-width: 485px) {
   .counter-container {
     display: none;
