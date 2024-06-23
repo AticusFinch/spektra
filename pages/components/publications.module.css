@@ -313,7 +313,7 @@
     background: var(--dark-grey);
     animation: none;
     transition: none;
-    border-top: solid 5px var(--trans-pink);
+    border: solid 2px var(--trans-pink);
     display: flex;
     justify-content: space-between;
     align-items: start;

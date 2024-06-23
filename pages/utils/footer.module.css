@@ -121,3 +121,156 @@
   color: var(--cream-white);
   text-decoration: none;
 }
+
+@media (max-width: 1920px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 820px) {
+  .footer-container {
+    background-color: var(--dark-grey);
+    padding: 4rem 3rem 2rem 3rem;
+  }
+
+  .footer-top {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-top-address {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .signature {
+    margin-top: 1.5rem;
+  }
+
+  .footer-top-center {
+    text-align: center;
+  }
+
+  .footer-top-center-head,
+  .footer-top-right-head {
+    font-size: 1rem;
+  }
+
+  .footer-top-center-social {
+    margin-top: 1rem;
+  }
+
+  .footer-top-center-icon {
+    padding: 0.4rem 0.4rem;
+    margin: 0 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-top-right-contact-info {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .footer-top-search {
+    width: 10rem;
+    height: 15px;
+  }
+
+  .search-button {
+    padding: 0 0.4rem;
+  }
+
+  .search-input {
+    padding: 0 0.7rem;
+  }
+
+  .footer-bottom {
+    margin-top: 6rem;
+  }
+
+  .footer-bottom-link {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 485px) {
+  .footer-container {
+    background-color: var(--dark-grey);
+    padding: 4rem 0.5rem 4rem 1.5rem;
+    position: relative;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .footer-top-left,
+  .footer-top-center,
+  .footer-top-right {
+    width: 100%;
+    text-align: start;
+  }
+
+  .footer-top-center {
+    margin: 2rem 0;
+  }
+
+  .footer-top-address {
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+  }
+
+  .signature {
+    position: absolute;
+    top: 80%;
+  }
+
+  .footer-top-center-head,
+  .footer-top-right-head {
+    font-size: 0.9rem;
+  }
+
+  .footer-top-center-social {
+    margin-top: 0.5rem;
+  }
+
+  .footer-top-center-icon {
+    padding: 0.4rem 0.4rem;
+    margin: 0 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-top-right-contact-info {
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-top-search {
+    height: 15px;
+  }
+
+  .search-button {
+    padding: 0 0.3rem;
+  }
+
+  .search-input {
+    font-size: 0.6rem;
+  }
+
+  .footer-bottom {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+}

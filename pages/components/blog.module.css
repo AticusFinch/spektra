@@ -322,12 +322,12 @@
   }
 
   .next {
-    right: -3px; /* adjust as needed */
+    right: -10px; /* adjust as needed */
     font-size: 1.5rem;
   }
 
   .prev {
-    left: -3px; /* adjust as needed */
+    left: -10px; /* adjust as needed */
     font-size: 1.5rem;
   }
 }
