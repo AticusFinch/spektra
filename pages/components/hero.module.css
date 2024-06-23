@@ -4,6 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url(/images/testph.png);
+  background-size: "cover";
+  background-position: "center";
 }
 
 .index {
@@ -156,6 +159,45 @@
 @media (max-width: 485px) {
   .home {
     height: 40vh;
+    background: conic-gradient(
+        from 0deg at calc(500% / 6) calc(100% / 3),
+        #30bde6 0 120deg,
+        #0000 0
+      ),
+      conic-gradient(
+        from -120deg at calc(100% / 6) calc(100% / 3),
+        #efeff0 0 120deg,
+        #0000 0
+      ),
+      conic-gradient(
+        from 120deg at calc(100% / 3) calc(500% / 6),
+        #f153ad 0 120deg,
+        #0000 0
+      ),
+      conic-gradient(
+        from 120deg at calc(200% / 3) calc(500% / 6),
+        #f153ad 0 120deg,
+        #0000 0
+      ),
+      conic-gradient(
+        from -180deg at calc(100% / 3) 50%,
+        #efeff0 60deg,
+        #f153ad 0 120deg,
+        #0000 0
+      ),
+      conic-gradient(
+        from 60deg at calc(200% / 3) 50%,
+        #f153ad 60deg,
+        #30bde6 0 120deg,
+        #0000 0
+      ),
+      conic-gradient(
+        from -60deg at 50% calc(100% / 3),
+        #f153ad 120deg,
+        #efeff0 0 240deg,
+        #30bde6 0
+      );
+    background-size: 111px 64px;
   }
 
   .index {
@@ -166,7 +208,7 @@
   }
 
   .home-container {
-    padding-top: 1rem;
+    display: none;
   }
 
   .quote-icon-left,

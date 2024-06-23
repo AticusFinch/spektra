@@ -7,14 +7,7 @@ const Hero = () => {
   const { locale } = router;
 
   return (
-    <div
-      className={styles.home}
-      style={{
-        backgroundImage: `url(/images/testph.png)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className={styles.home}>
       <div className={styles["home-container"]}>
         <p className={styles.index}>
           {locale === "sr" ? "Asocijacija Spektra" : "Association Spectra"}
