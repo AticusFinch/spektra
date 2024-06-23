@@ -16,10 +16,10 @@
   font-size: 4rem;
   background: -webkit-linear-gradient(
     40deg,
-    var(--trans-pink),
-    var(--trans-pink),
     var(--trans-blue),
-    var(--trans-blue)
+    var(--trans-blue),
+    var(--trans-pink),
+    var(--trans-pink)
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -149,7 +149,6 @@
   .index {
     margin: 0;
     font-size: 2.5rem;
-    -webkit-text-fill-color: var(--cream-white);
     text-align: left;
   }
 
