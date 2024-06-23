@@ -199,7 +199,6 @@
   .index {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    -webkit-text-fill-color: var(--cream-white);
     text-align: center;
   }
 
