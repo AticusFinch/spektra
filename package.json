@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.10.6",
+    "axios": "^1.7.2",
     "framer-motion": "^11.2.6",
+    "graphql": "^16.9.0",
+    "html-react-parser": "^5.1.10",
     "hyphenation.en-us": "^0.2.1",
     "next": "14.2.3",
     "react": "^18",

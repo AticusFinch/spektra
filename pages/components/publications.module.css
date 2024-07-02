@@ -106,7 +106,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 1.5rem;
-  transform: translateX(-100%);
+  transform: translateX(-101%);
   background: -webkit-linear-gradient(
     0deg,
     var(--trans-pink),
@@ -275,7 +275,7 @@
     width: 130px;
     padding: 0 0.5rem;
     background-color: var(--dark-grey);
-    border: solid 2px var(--trans-pink);
+    border: solid 1px var(--trans-pink);
     font-size: 0.9rem;
     font-family: "owners-regular", sans-serif;
   }
@@ -305,7 +305,7 @@
     background: var(--dark-grey);
     animation: none;
     transition: none;
-    border: solid 2px var(--trans-pink);
+    border: solid 1px var(--trans-pink);
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -382,7 +382,7 @@
 
   .publication-download-btn {
     font-size: 0.5rem;
-    border: solid 2px var(--trans-pink);
+    border: solid 1px var(--trans-pink);
     padding: 0.2rem 0.3rem;
   }
 

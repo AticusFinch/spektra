@@ -24,7 +24,9 @@ const Footer = () => {
               ULICA SLOBODE 4
             </p>
             <p className={styles["footer-top-address-city"]}>
-              PODGORICA, CRNA GORA
+              {locale === "sr"
+                ? "PODGORICA, CRNA GORA"
+                : "PODGORICA, MONTENEGRO"}
             </p>
           </div>
           <div className={styles["footer-top-search"]}>
@@ -42,10 +44,12 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles["footer-top-center"]}>
-          <span className={styles["footer-top-center-head"]}>ZAPRATI NAS</span>
+          <span className={styles["footer-top-center-head"]}>
+            {locale === "sr" ? "ZAPRATI NAS" : "FOLLOW US"}
+          </span>
           <div className={styles["footer-top-center-social"]}>
             <a
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/asocijacija.spektra"
               target="_blank"
               rel="noreferrer"
               className={styles["footer-top-center-icon"]}
@@ -53,7 +57,7 @@ const Footer = () => {
               <FaFacebookF />
             </a>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/asocijacija.spektra/"
               target="_blank"
               rel="noreferrer"
               className={styles["footer-top-center-icon"]}
@@ -61,7 +65,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.tiktok.com/@asocijacijaspektra"
               target="_blank"
               rel="noreferrer"
               className={styles["footer-top-center-icon"]}
@@ -69,7 +73,7 @@ const Footer = () => {
               <FaTiktok />
             </a>
             <a
-              href="https://www.twitter.com"
+              href="https://twitter.com/nvospektra?lang=en"
               target="_blank"
               rel="noreferrer"
               className={styles["footer-top-center-icon"]}
@@ -77,7 +81,7 @@ const Footer = () => {
               <FaXTwitter />
             </a>
             <a
-              href="https://www.twitter.com"
+              href="https://www.youtube.com/c/AsocijacijaSpektra"
               target="_blank"
               rel="noreferrer"
               className={styles["footer-top-center-icon"]}
@@ -90,10 +94,10 @@ const Footer = () => {
           <span className={styles["footer-top-right-head"]}>KONTAKT</span>
           <div className={styles["footer-top-right-contact-info"]}>
             <p className={styles["footer-top-right-contact-info-phone"]}>
-              067 135 205
+              +382 67 135 205
             </p>
             <p className={styles["footer-top-right-contact-info-working-time"]}>
-              09h-16h{" "}
+              {locale === "sr" ? "09h - 16h" : "09am - 04pm"}
             </p>
             <p className={styles["footer-top-right-contact-info-email"]}>
               asocijacija.spektra@gmail.com

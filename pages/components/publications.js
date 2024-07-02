@@ -25,7 +25,7 @@ const PrevArrow = ({ onClick }) => (
   </div>
 );
 
-const Publications = () => {
+const Publications = ({ publications }) => {
   const router = useRouter();
   const { locale } = router;
 
@@ -104,15 +104,15 @@ const Publications = () => {
           <Slider {...settings}>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div className={styles["publication-img-container"]}>
-                  <Image
-                    src="/images/publi1.png"
-                    alt="Publication"
-                    width={512}
-                    height={800}
-                    layout="responsive"
-                    className={styles["publication-img"]}
-                  />
+                <div
+                  className={styles["publication-img-container"]}
+                  style={{
+                    backgroundImage: `url(/images/publi1.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -132,15 +132,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div className={styles["publication-img-container"]}>
-                  <Image
-                    src="/images/publi2.png"
-                    alt="Publication"
-                    width={512}
-                    height={800}
-                    layout="responsive"
-                    className={styles["publication-img"]}
-                  />
+                <div
+                  className={styles["publication-img-container"]}
+                  style={{
+                    backgroundImage: `url(/images/publi2.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -160,15 +160,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div className={styles["publication-img-container"]}>
-                  <Image
-                    src="/images/publi3.png"
-                    alt="Publication"
-                    width={512}
-                    height={800}
-                    layout="responsive"
-                    className={styles["publication-img"]}
-                  />
+                <div
+                  className={styles["publication-img-container"]}
+                  style={{
+                    backgroundImage: `url(/images/publi3.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -188,15 +188,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div className={styles["publication-img-container"]}>
-                  <Image
-                    src="/images/publi4.png"
-                    alt="Publication"
-                    width={512}
-                    height={800}
-                    layout="responsive"
-                    className={styles["publication-img"]}
-                  />
+                <div
+                  className={styles["publication-img-container"]}
+                  style={{
+                    backgroundImage: `url(/images/publi4.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -216,15 +216,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div className={styles["publication-img-container"]}>
-                  <Image
-                    src="/images/publi5.png"
-                    alt="Publication"
-                    width={512}
-                    height={800}
-                    layout="responsive"
-                    className={styles["publication-img"]}
-                  />
+                <div
+                  className={styles["publication-img-container"]}
+                  style={{
+                    backgroundImage: `url(/images/publi5.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>
@@ -244,15 +244,15 @@ const Publications = () => {
             </div>
             <div className={styles["publication-container"]}>
               <div className={styles.publication}>
-                <div className={styles["publication-img-container"]}>
-                  <Image
-                    src="/images/publi6.png"
-                    alt="Publication"
-                    width={512}
-                    height={800}
-                    layout="responsive"
-                    className={styles["publication-img"]}
-                  />
+                <div
+                  className={styles["publication-img-container"]}
+                  style={{
+                    backgroundImage: `url(/images/publi6.png)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "top",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
                   <div className={styles["publication-content"]}>
                     <div className={styles["publication-head-container"]}>
                       <p className={styles["publication-head"]}>

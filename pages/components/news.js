@@ -181,6 +181,44 @@ const News = () => {
                 </div>
               </div>
             </div>
+            <div className={styles["slide-container"]}>
+              <div className={styles.slide}>
+                <div className={styles["slide-content-container"]}>
+                  <div className={styles["slide-img-container"]}>
+                    <Image
+                      src={news5}
+                      alt="News thumbnail"
+                      className={styles["news-img"]}
+                    />
+                  </div>
+                  <div className={styles["slide-content"]}>
+                    <p className={styles["slide-head"]}>
+                      Etiam tellus urna, venenatis non tincidunt vel
+                    </p>
+                    <span className={styles.date}>{formattedDate}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles["slide-container"]}>
+              <div className={styles.slide}>
+                <div className={styles["slide-content-container"]}>
+                  <div className={styles["slide-img-container"]}>
+                    <Image
+                      src={news6}
+                      alt="News thumbnail"
+                      className={styles["news-img"]}
+                    />
+                  </div>
+                  <div className={styles["slide-content"]}>
+                    <p className={styles["slide-head"]}>
+                      Etiam tellus urna, venenatis non tincidunt vel
+                    </p>
+                    <span className={styles.date}>{formattedDate}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Slider>
         </div>
       </div>

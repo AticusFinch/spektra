@@ -78,11 +78,6 @@ const Navigation = () => {
     <>
       <div className={styles["mobile-nav"]}>
         <div className={styles["mobile-head-container"]}>
-          <button onClick={toggleMenu} className={styles["menu-button"]}>
-            <motion.div animate={animation} transition={{ duration: 0.5 }}>
-              {isMenuVisible ? <IoMdClose /> : <RxHamburgerMenu />}
-            </motion.div>
-          </button>
           <Link href="/" className={styles["logo-mobile-container"]}>
             <Image
               src={logo}
@@ -90,6 +85,11 @@ const Navigation = () => {
               className={styles["logo-mobile"]}
             />
           </Link>
+          <button onClick={toggleMenu} className={styles["menu-button"]}>
+            <motion.div animate={animation} transition={{ duration: 0.5 }}>
+              {isMenuVisible ? <IoMdClose /> : <RxHamburgerMenu />}
+            </motion.div>
+          </button>
         </div>
 
         <AnimatePresence>
@@ -129,7 +129,10 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li className={styles["hamburger-link-container"]}>
-                  <Link href="/" className={styles["hamburger-link"]}>
+                  <Link
+                    href="/publications"
+                    className={styles["hamburger-link"]}
+                  >
                     {locale === "sr" ? "PUBLIKACIJE" : "PUBLICATIONS"}
                   </Link>
                 </li>
@@ -254,7 +257,7 @@ const Navigation = () => {
                 </Link>
               </li>
               <li className={styles["link-container"]}>
-                <Link href="/" className={styles.link}>
+                <Link href="/publications" className={styles.link}>
                   {locale === "sr" ? "PUBLIKACIJE" : "PUBLICATIONS"}
                 </Link>
               </li>

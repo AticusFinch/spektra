@@ -5,6 +5,9 @@ const nextConfig = {
     defaultLocale: "sr",
     localeDetection: false,
   },
+  images: {
+    domains: ["localhost"],
+  },
 };
 
 export default nextConfig;

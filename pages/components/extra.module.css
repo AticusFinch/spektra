@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 4rem;
+  padding: 8rem;
 }
 
 .counter {
@@ -65,6 +65,20 @@
 }
 
 @media (max-width: 1920px) {
+  .counter-container {
+    padding: 4rem 4rem 6rem 4rem;
+  }
+
+  .counter-number-blue,
+  .counter-number-pink,
+  .counter-number-white {
+    font-size: 3.5rem;
+  }
+
+  .counter-text {
+    font-size: 1rem;
+    margin-top: 1.3rem;
+  }
 }
 
 @media (max-width: 1440px) {
