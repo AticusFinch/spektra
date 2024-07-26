@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  animation: fadeInBackground 2s ease-in-out;
+  animation: fadeInBackground 0.5s ease-in-out;
   will-change: animation;
 }
 
