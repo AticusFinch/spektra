@@ -67,7 +67,7 @@ const Post = ({ post, latestPosts }) => {
             {latestPosts.map((post) => (
               <div key={post.id} className={styles.more}>
                 <Link
-                  href={`/blog/${post.databaseId}`}
+                  href={`/news/${post.databaseId}`}
                   className={styles["more-post"]}
                 >
                   <div className={styles["more-image-container"]}>
