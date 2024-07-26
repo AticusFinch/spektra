@@ -212,7 +212,6 @@ export async function getServerSideProps({ locale }) {
     props: {
       posts,
     },
-    revalidate: 60,
   };
 }
 
