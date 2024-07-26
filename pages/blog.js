@@ -172,7 +172,7 @@ const Blog = (props) => {
   );
 };
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const GET_POSTS = gql`
     query GetPosts($language: LanguageCodeFilterEnum!) {
       posts(where: { language: $language }, last: 1500) {
@@ -213,7 +213,7 @@ export async function getStaticProps({ locale }) {
       props: {
         posts,
       },
-      revalidate: 60, // Revalidate at most once every 60 seconds
+      revalidate: 60,
     };
   } catch (error) {
     console.error("Error fetching posts:", error);
@@ -221,7 +221,7 @@ export async function getStaticProps({ locale }) {
       props: {
         posts: [],
       },
-      revalidate: 60, // Revalidate at most once every 60 seconds
+      revalidate: 60,
     };
   }
 }
