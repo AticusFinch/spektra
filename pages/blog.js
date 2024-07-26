@@ -202,28 +202,18 @@ export async function getServerSideProps({ locale }) {
     }
   `;
 
-  try {
-    const response = await client.query({
-      query: GET_POSTS,
-      variables: { language: locale.toUpperCase() },
-    });
-    const posts = response.data.posts.nodes;
+  const response = await client.query({
+    query: GET_POSTS,
+    variables: { language: locale.toUpperCase() },
+  });
+  const posts = response.data.posts.nodes;
 
-    return {
-      props: {
-        posts,
-      },
-      revalidate: 60,
-    };
-  } catch (error) {
-    console.error("Error fetching posts:", error);
-    return {
-      props: {
-        posts: [],
-      },
-      revalidate: 60,
-    };
-  }
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  };
 }
 
 export default Blog;

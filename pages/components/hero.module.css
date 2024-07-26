@@ -4,6 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   animation: fadeInBackground 2s ease-in-out;
+  will-change: animation;
 }
 
 .home-container {
