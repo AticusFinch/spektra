@@ -35,10 +35,20 @@
   --cream-white: #efeff0;
 }
 
+::selection {
+  background: var(--trans-blue);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  background-color: var(--dark-grey);
+  color: var(--cream-white);
+  font-family: "owners-regular", sans-serif;
 }
 
 .no-scroll {

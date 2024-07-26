@@ -20,7 +20,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: 25%;
+  display: inline-block;
 }
 
 .all-blogs {
@@ -197,7 +197,6 @@
 @media (max-width: 1920px) {
   .blog-head {
     font-size: 4rem;
-    width: 25%;
   }
 
   .blog-head-container {
@@ -236,7 +235,6 @@
   }
 
   .blog-head {
-    -webkit-text-fill-color: var(--cream-white);
     font-size: 2.5rem;
     margin-bottom: 0 !important;
     padding: 0;
@@ -247,7 +245,7 @@
     width: 130px;
     padding: 0 0.5rem;
     background-color: var(--dark-grey);
-    border: solid 2px var(--trans-pink);
+    border: solid 1px var(--trans-pink);
     font-size: 0.9rem;
     font-family: "owners-regular", sans-serif;
   }

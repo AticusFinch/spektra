@@ -1,6 +1,9 @@
 .footer-container {
   background-color: var(--dark-grey);
   padding: 6rem 4rem 2rem 4rem;
+  -webkit-box-shadow: -1px -10px 12px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px -10px 12px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px -10px 12px -5px rgba(0, 0, 0, 0.75);
 }
 
 .footer-top {

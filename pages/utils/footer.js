@@ -115,15 +115,15 @@ const Footer = () => {
             {locale === "sr" ? "PROGRAMI" : "PROGRAMS"}
           </Link>
           <GoDotFill className={styles.dot} />
-          <Link href="/publications" className={styles["footer-bottom-link"]}>
+          <Link href="/news" className={styles["footer-bottom-link"]}>
             {locale === "sr" ? "VIJESTI" : "NEWS"}
           </Link>
           <GoDotFill className={styles.dot} />
-          <Link href="/contact" className={styles["footer-bottom-link"]}>
+          <Link href="/blog" className={styles["footer-bottom-link"]}>
             {locale === "sr" ? "BLOG" : "BLOG"}
           </Link>
           <GoDotFill className={styles.dot} />
-          <Link href="/contact" className={styles["footer-bottom-link"]}>
+          <Link href="/publications" className={styles["footer-bottom-link"]}>
             {locale === "sr" ? "PUBLIKACIJE" : "PUBLICATIONS"}
           </Link>
           <GoDotFill className={styles.dot} />

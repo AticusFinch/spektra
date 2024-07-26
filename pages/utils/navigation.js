@@ -85,6 +85,38 @@ const Navigation = () => {
               className={styles["logo-mobile"]}
             />
           </Link>
+
+          <div className={styles["languages-container"]}>
+            <ul className={styles.languages}>
+              <li className={styles["language-container"]}>
+                <Link
+                  href="/"
+                  locale="sr"
+                  className={
+                    router.locale === "sr"
+                      ? `${styles.language} ${styles.active}`
+                      : styles.language
+                  }
+                >
+                  MNE
+                </Link>
+              </li>
+              <li className={styles["language-container"]}>
+                <Link
+                  href="/"
+                  locale="en"
+                  className={
+                    router.locale === "en"
+                      ? `${styles.language} ${styles.active}`
+                      : styles.language
+                  }
+                >
+                  ENG
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           <button onClick={toggleMenu} className={styles["menu-button"]}>
             <motion.div animate={animation} transition={{ duration: 0.5 }}>
               {isMenuVisible ? <IoMdClose /> : <RxHamburgerMenu />}
@@ -119,12 +151,12 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li className={styles["hamburger-link-container"]}>
-                  <Link href="/" className={styles["hamburger-link"]}>
+                  <Link href="/news" className={styles["hamburger-link"]}>
                     {locale === "sr" ? "VIJESTI" : "NEWS"}
                   </Link>
                 </li>
                 <li className={styles["hamburger-link-container"]}>
-                  <Link href="/" className={styles["hamburger-link"]}>
+                  <Link href="/blog" className={styles["hamburger-link"]}>
                     {locale === "sr" ? "BLOG" : "BLOG"}
                   </Link>
                 </li>
@@ -247,12 +279,12 @@ const Navigation = () => {
                 </Link>
               </li>
               <li className={styles["link-container"]}>
-                <Link href="/" className={styles.link}>
+                <Link href="/news" className={styles.link}>
                   {locale === "sr" ? "VIJESTI" : "NEWS"}
                 </Link>
               </li>
               <li className={styles["link-container"]}>
-                <Link href="/" className={styles.link}>
+                <Link href="/blog" className={styles.link}>
                   {locale === "sr" ? "BLOG" : "BLOG"}
                 </Link>
               </li>

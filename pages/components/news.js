@@ -121,7 +121,6 @@ const News = () => {
                     <p className={styles["slide-head"]}>
                       Lorem ipsum dolor sit amen
                     </p>
-                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>
@@ -140,7 +139,6 @@ const News = () => {
                     <p className={styles["slide-head"]}>
                       Sed gravida non elit ac vulputate
                     </p>
-                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>
@@ -157,7 +155,6 @@ const News = () => {
                   </div>
                   <div className={styles["slide-content"]}>
                     <p className={styles["slide-head"]}>Nunc at feugiat eros</p>
-                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>
@@ -176,7 +173,6 @@ const News = () => {
                     <p className={styles["slide-head"]}>
                       Etiam tellus urna, venenatis non tincidunt vel
                     </p>
-                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>
@@ -195,7 +191,6 @@ const News = () => {
                     <p className={styles["slide-head"]}>
                       Etiam tellus urna, venenatis non tincidunt vel
                     </p>
-                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>
@@ -214,7 +209,6 @@ const News = () => {
                     <p className={styles["slide-head"]}>
                       Etiam tellus urna, venenatis non tincidunt vel
                     </p>
-                    <span className={styles.date}>{formattedDate}</span>
                   </div>
                 </div>
               </div>

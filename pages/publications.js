@@ -15,6 +15,7 @@ import {
   AiOutlineRight,
 } from "react-icons/ai";
 import { HiMagnifyingGlass } from "react-icons/hi2";
+import { FaPen } from "react-icons/fa";
 
 import styles from "./publications.module.css";
 
@@ -30,6 +31,8 @@ const Publications = (props) => {
   const { locale } = router;
 
   const pageTitle = locale === "sr" ? "Publikacije" : "Publications";
+  const websiteTitle =
+    locale === "sr" ? "Asocijacija Spektra" : "Association Spectra";
 
   function handleButtonClick(url) {
     window.open(url, "_blank");
@@ -44,13 +47,11 @@ const Publications = (props) => {
   const displayedPublications = filteredPublications.slice(start, end);
 
   useEffect(() => {
-    // Calculate total pages based on filtered publications
     const newTotalPages = Math.ceil(
       filteredPublications.length / PUBLICATIONS_PER_PAGE
     );
     setTotalPages(newTotalPages);
 
-    // Reset to the first page if the current page is out of range
     if (currentPage > newTotalPages) {
       setCurrentPage(1);
     }
@@ -65,14 +66,15 @@ const Publications = (props) => {
   };
 
   const pageVariants = {
-    initial: { opacity: 0, x: "-100vw" }, // Start from the left
-    in: { opacity: 1, x: 0 }, // Move to center
-    out: { opacity: 0, x: "100vw" }, // Exit to the right
+    initial: { opacity: 0 },
+    in: { opacity: 1 },
+    out: { opacity: 0 },
   };
+
   return (
     <>
       <Head>
-        <title>{`${pageTitle} | Asocijacija Spektra`}</title>
+        <title>{`${pageTitle} | ${websiteTitle}`}</title>
       </Head>
       <Navigation />
       <Container>
@@ -104,7 +106,7 @@ const Publications = (props) => {
             animate="in"
             exit="out"
             variants={pageVariants}
-            transition={{ type: "tween", ease: "anticipate", duration: 0.5 }}
+            transition={{ type: "tween", ease: "anticipate", duration: 0.3 }}
             className={`${styles["publications-container"]} ${
               displayedPublications.length === 0 ? styles.empty : ""
             }`}
@@ -128,8 +130,14 @@ const Publications = (props) => {
                   </div>
                   <div className={styles.content}>
                     <div>
-                      <h3 className={styles.title}>{publication.title}</h3>
+                      <h3 className={styles.title}>
+                        {publication.title.split(" ").slice(0, 6).join(" ") +
+                          (publication.title.split(" ").length > 6
+                            ? "..."
+                            : "")}
+                      </h3>
                       <p className={styles.author}>
+                        <FaPen className={styles["meta-icon"]} />
                         {publication.publications.publicationAuthor}
                       </p>
                     </div>
@@ -191,7 +199,7 @@ const Publications = (props) => {
 };
 
 export async function getServerSideProps() {
-  const GET_POSTS = gql`
+  const GET_PUBLICATIONS = gql`
     query GetPublications {
       publications(first: 1000) {
         nodes {
@@ -219,7 +227,7 @@ export async function getServerSideProps() {
     }
   `;
 
-  const response = await client.query({ query: GET_POSTS });
+  const response = await client.query({ query: GET_PUBLICATIONS });
   const publications = response.data.publications.nodes;
 
   return {

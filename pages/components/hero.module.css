@@ -1,12 +1,19 @@
 .home {
   height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fadeInBackground 2s ease-in-out;
+}
+
+.home-container {
+  height: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background: url(/images/testph.png);
-  background-size: "cover";
-  background-position: "center";
+  background-color: #191919ba;
 }
 
 .index {
@@ -24,7 +31,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 5rem;
 }
 
 .quote-container {
@@ -32,45 +38,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
-  margin: 0 auto;
-  height: 300px;
-}
-
-.quote-icon-left,
-.quote-icon-right {
-  font-size: 9rem;
-  font-family: "owners-black", sans-serif;
-  height: 70px;
-}
-
-.quote-icon-left {
-  align-self: flex-end;
-}
-
-.quote-icon-right {
-  align-self: flex-start;
 }
 
 .quote {
-  text-align: justify;
-  hyphens: auto;
-  font-family: "owners-regular", sans-serif;
-  font-size: 3rem;
-  margin: 0 1.5rem;
-  line-height: 3.5rem;
+  max-width: 100% !important;
+  margin: 0 2rem;
+}
+
+.quote-mark {
+  height: 60px !important;
+}
+
+.quote-mark:first-of-type {
+  align-self: flex-end;
+}
+
+.quote-mark:last-of-type {
+  align-self: flex-start;
 }
 
 .logo {
   display: none;
 }
 
-@media (max-width: 320px) {
-  /* Your styles for max-width 768px here */
-}
-
-@media (max-width: 375px) {
-  /* Your styles for max-width 768px here */
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1920px) {
@@ -79,18 +76,14 @@
     margin-bottom: 2rem;
   }
 
-  .quote-container {
-    height: 200px;
-  }
-
-  .quote-icon-left,
-  .quote-icon-right {
-    font-size: 7rem;
-  }
-
   .quote {
-    font-size: 1.8rem;
-    line-height: 2.5rem;
+    max-width: 40% !important;
+    margin: 0 1rem;
+  }
+
+  .quote-mark {
+    height: 40px !important;
+    width: auto !important;
   }
 }
 
@@ -103,17 +96,6 @@
   .home-container {
     padding-top: 5rem;
   }
-
-  .quote-container {
-    width: 60%;
-    height: 200px;
-  }
-
-  .quote-icon-left,
-  .quote-icon-right {
-    font-size: 5rem;
-    height: 50px;
-  }
 }
 
 @media (max-width: 1280px) {
@@ -125,19 +107,9 @@
   .quote {
     font-size: 1.6rem;
   }
-
-  .quote-icon-left,
-  .quote-icon-right {
-    font-size: 4rem;
-    height: 40px;
-  }
 }
 
 @media (max-width: 1024px) {
-  .quote-container {
-    width: 70%;
-    height: 170px;
-  }
 }
 
 @media (max-width: 820px) {
@@ -148,43 +120,26 @@
 
   .index {
     margin: 0;
-    font-size: 2.5rem;
-    text-align: left;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
 
   .logo {
     display: block;
-    max-width: 200px;
+    max-width: 170px;
     height: auto;
-    margin-right: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .quote {
-    text-align: left;
-    hyphens: auto;
-    margin: 0;
-    font-size: 1.2em;
-    line-height: 1.2rem;
+    max-width: 70% !important;
+    margin: 0 0.8rem;
   }
 
-  .home-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .quote-container {
-    width: auto;
-    height: auto;
-  }
-
-  .mobile-hero {
-    width: 60%;
-  }
-
-  .quote-icon-left,
-  .quote-icon-right {
-    display: none;
+  .quote-mark {
+    display: inline-block;
+    height: 40px !important;
   }
 }
 
@@ -198,29 +153,23 @@
 
   .index {
     font-size: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     text-align: center;
   }
 
   .logo {
     margin-right: 0;
-    max-width: 150px;
-  }
-
-  .quote-icon-left,
-  .quote-icon-right {
-    display: none;
+    max-width: 120px;
+    margin-bottom: 2rem;
   }
 
   .quote {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    text-align: center;
+    margin: 0 0.5rem;
   }
 
-  .mobile-hero {
-    width: 100%;
-    margin-top: 1rem;
+  .quote-mark {
+    display: inline-block;
+    height: 20px !important;
   }
 }
 
@@ -230,12 +179,18 @@
   }
 
   .logo {
-    max-width: 150px;
+    max-width: 100px;
   }
 
   .quote {
-    font-size: 1rem;
-    line-height: 1.1rem;
-    margin: 0;
+    width: 90vw !important;
   }
+}
+
+@media (max-width: 320px) {
+  /* Your styles for max-width 768px here */
+}
+
+@media (max-width: 375px) {
+  /* Your styles for max-width 768px here */
 }
