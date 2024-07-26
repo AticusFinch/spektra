@@ -213,7 +213,6 @@ export async function getServerSideProps(context) {
     props: {
       posts,
     },
-    revalidate: 60,
   };
 }
 
