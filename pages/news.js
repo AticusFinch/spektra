@@ -169,8 +169,7 @@ const News = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const { locale } = context;
+export async function getStaticProps({ locale }) {
   const GET_NEWS = gql`
     query GetVijesti($language: LanguageCodeFilterEnum!) {
       vijesti(where: { language: $language }, last: 1500) {
@@ -196,17 +195,27 @@ export async function getServerSideProps(context) {
     }
   `;
 
-  const response = await client.query({
-    query: GET_NEWS,
-    variables: { language: locale.toUpperCase() },
-  });
-  const news = response.data.vijesti.nodes;
+  try {
+    const response = await client.query({
+      query: GET_NEWS,
+      variables: { language: locale.toUpperCase() },
+    });
+    const news = response.data.vijesti.nodes;
 
-  return {
-    props: {
-      news,
-    },
-  };
+    return {
+      props: {
+        news,
+      },
+      revalidate: 30, // Revalidate at most once every 30 seconds
+    };
+  } catch (error) {
+    console.error("Error fetching news:", error);
+    return {
+      props: {
+        news: [],
+      },
+      revalidate: 30, // Revalidate at most once every 30 seconds
+    };
+  }
 }
-
 export default News;

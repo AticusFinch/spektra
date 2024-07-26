@@ -198,7 +198,7 @@ const Publications = (props) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const GET_PUBLICATIONS = gql`
     query GetPublications {
       publications(first: 1000) {
@@ -227,14 +227,25 @@ export async function getServerSideProps() {
     }
   `;
 
-  const response = await client.query({ query: GET_PUBLICATIONS });
-  const publications = response.data.publications.nodes;
+  try {
+    const response = await client.query({ query: GET_PUBLICATIONS });
+    const publications = response.data.publications.nodes;
 
-  return {
-    props: {
-      publications,
-    },
-  };
+    return {
+      props: {
+        publications,
+      },
+      revalidate: 30, // Revalidate at most once every 30 seconds
+    };
+  } catch (error) {
+    console.error("Error fetching publications:", error);
+    return {
+      props: {
+        publications: [],
+      },
+      revalidate: 30, // Revalidate at most once every 30 seconds
+    };
+  }
 }
 
 export default Publications;

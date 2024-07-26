@@ -172,7 +172,7 @@ const Blog = (props) => {
   );
 };
 
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   const GET_POSTS = gql`
     query GetPosts($language: LanguageCodeFilterEnum!) {
       posts(where: { language: $language }, last: 1500) {
@@ -202,17 +202,28 @@ export async function getServerSideProps({ locale }) {
     }
   `;
 
-  const response = await client.query({
-    query: GET_POSTS,
-    variables: { language: locale.toUpperCase() },
-  });
-  const posts = response.data.posts.nodes;
+  try {
+    const response = await client.query({
+      query: GET_POSTS,
+      variables: { language: locale.toUpperCase() },
+    });
+    const posts = response.data.posts.nodes;
 
-  return {
-    props: {
-      posts,
-    },
-  };
+    return {
+      props: {
+        posts,
+      },
+      revalidate: 30,
+    };
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return {
+      props: {
+        posts: [],
+      },
+      revalidate: 30,
+    };
+  }
 }
 
 export default Blog;
