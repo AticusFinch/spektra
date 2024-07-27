@@ -84,13 +84,14 @@
 }
 
 .more-head {
-  font-family: "Myriad Pro Regular", sans-serif;
+  font-family: "Myriad Pro Semibold", sans-serif;
   letter-spacing: 1px;
-  text-transform: uppercase;
   font-size: 1.5rem;
   margin-bottom: 0 !important;
   color: var(--dark-grey);
   display: inline-block;
+  padding-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .more-container {
@@ -109,7 +110,7 @@
 }
 
 .more:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .more-image {
@@ -128,7 +129,7 @@
   width: 100%;
   height: 2.5rem;
   color: var(--dark-grey);
-  border-top: solid 5px var(--trans-pink);
+  border-top: solid 2px var(--trans-pink);
 }
 
 .post-author {
@@ -137,7 +138,7 @@
   padding-top: 0.4rem;
   letter-spacing: 1px;
   color: var(--dark-grey);
-  border-top: solid 2px var(--dark-grey);
+  border-top: solid 2px var(--trans-pink);
 }
 
 .meta-icon {
@@ -254,6 +255,10 @@
     margin-bottom: 1.5rem;
   }
 
+  .post-text p:last-of-type {
+    margin-bottom: 0;
+  }
+
   .post-text a {
     color: var(--trans-pink);
   }
@@ -272,10 +277,6 @@
 
   .more-title {
     font-size: 1rem;
-    font-family: "Myriad Pro Regular", sans-serif;
-    text-decoration: none;
-    padding-top: 0.4rem;
-    height: inherit;
   }
 }
 
@@ -363,6 +364,10 @@
 }
 
 @media (max-width: 485px) {
+  .more-content {
+    height: 2.1rem;
+  }
+
   .post-head {
     font-size: 3.5rem;
   }
@@ -376,8 +381,7 @@
   }
 
   .post-text {
-    margin: 2rem 0 1rem 0;
-    margin-bottom: 1.5rem;
+    margin: 2rem 0 2rem 0;
     font-size: 1.2rem;
   }
 
@@ -400,7 +404,7 @@
   }
 
   .more-image-container {
-    height: 5rem;
+    height: 7rem;
   }
 
   .post-author {
@@ -412,7 +416,11 @@
   }
 
   .more-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .read-more-section {
+    margin-bottom: 2rem;
   }
 }
 
@@ -446,24 +454,14 @@
   }
 
   .more-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .more-image-container {
-    height: 5rem;
+    gap: 10px;
   }
 
   .post-author {
     font-size: 1rem;
   }
 
-  .meta-icon {
-    font-size: 0.7rem;
-  }
-
   .more-title {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }

@@ -49,6 +49,13 @@
   src: url("../../public/fonts/myriad/MYRIADPRO-SEMIBOLD.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Myriad Pro Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../public/fonts/myriad/MyriadPro-Light.woff") format("woff");
+}
+
 :root {
   --trans-pink: #f153ad;
   --trans-blue: #30bde6;
