@@ -14,13 +14,11 @@ const Post = ({ post, latestPosts }) => {
   const router = useRouter();
   const { locale } = router;
 
-  const dateObj = new Date(post.date);
+  const dateObj = post && post.date ? new Date(post.date) : null;
 
-  const day = dateObj.getDate();
-  const month = dateObj.getMonth() + 1;
-  const year = dateObj.getFullYear();
-
-  const formattedDate = `${day}/${month}/${year}`;
+  const formattedDate = dateObj
+    ? `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`
+    : "Unknown Date";
 
   return (
     <div>
