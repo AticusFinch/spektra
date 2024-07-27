@@ -127,7 +127,10 @@ const Blog = (props) => {
                     <div className={styles.content}>
                       <span className={styles["post-meta"]}>
                         <FaPen className={styles["meta-icon"]} />
-                        {post.posts.postAuthor}
+                        {post.posts.postAuthor ||
+                          (locale === "sr"
+                            ? "Nepoznat Autor"
+                            : "Unknown Author")}
                       </span>
                       <div>
                         <h3 className={styles.title} lang="en">
