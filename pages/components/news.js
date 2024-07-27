@@ -10,6 +10,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
 
+import { gql } from "@apollo/client";
+import client from "../apollo-client";
+
 import styles from "./news.module.css";
 import news1 from "../../public/images/news1.jpg";
 import news2 from "../../public/images/news2.jpg";
@@ -107,6 +110,17 @@ const News = () => {
         </div>
         <div>
           <Slider {...settings}>
+            {news.map((article) => (
+              <div key={article.id} className={styles.newsItem}>
+                <Image
+                  src={article.featuredImage.node.sourceUrl}
+                  alt={article.title}
+                  width={500}
+                  height={300}
+                />
+                <h3>{article.title}</h3>
+              </div>
+            ))}
             <div className={styles["slide-container"]}>
               <div className={styles.slide}>
                 <div className={styles["slide-content-container"]}>
@@ -219,5 +233,36 @@ const News = () => {
     </Container>
   );
 };
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query GetLatestNews {
+        vijesti(first: 6) {
+          nodes {
+            id
+            title
+            featuredImage {
+              node {
+                sourceUrl
+                mediaDetails {
+                  height
+                  width
+                }
+                altText
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      news: data.vijesti.nodes,
+    },
+  };
+}
 
 export default News;
