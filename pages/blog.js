@@ -105,13 +105,19 @@ const Blog = (props) => {
                     className={styles["post-link"]}
                   >
                     <div className={styles["post-image-container"]}>
-                      <Image
-                        src={post.featuredImage.node.sourceUrl}
-                        width={post.featuredImage.node.mediaDetails.width}
-                        height={post.featuredImage.node.mediaDetails.height}
-                        alt={post.featuredImage.node.altText || "Post image"}
-                        className={styles["post-image"]}
-                      />
+                      {post.featuredImage && post.featuredImage.node ? (
+                        <Image
+                          src={post.featuredImage.node.sourceUrl}
+                          width={post.featuredImage.node.mediaDetails.width}
+                          height={post.featuredImage.node.mediaDetails.height}
+                          alt={post.featuredImage.node.altText || "Post image"}
+                          className={styles["post-image"]}
+                        />
+                      ) : (
+                        <div className={styles["no-image"]}>
+                          No Image Available
+                        </div>
+                      )}
                     </div>
                     <div className={styles.content}>
                       <span className={styles["post-meta"]}>
