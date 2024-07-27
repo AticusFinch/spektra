@@ -105,7 +105,9 @@ const Blog = ({ blogs }) => {
                   <div
                     className={styles.blog}
                     style={{
-                      backgroundImage: `url(${post.featuredImage.node.sourceUrl})`,
+                      backgroundImage: `url(${
+                        post.featuredImage?.node?.sourceUrl || ""
+                      })`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       objectFit: "cover",
@@ -117,7 +119,7 @@ const Blog = ({ blogs }) => {
                           {post.title}
                         </p>
                         <span className={styles.author}>
-                          {post.posts.postAuthor}
+                          {post.posts?.postAuthor || "Unknown Author"}
                         </span>
                       </div>
                     </div>
