@@ -227,25 +227,14 @@ export async function getStaticProps() {
     }
   `;
 
-  try {
-    const response = await client.query({ query: GET_PUBLICATIONS });
-    const publications = response.data.publications.nodes;
+  const response = await client.query({ query: GET_PUBLICATIONS });
+  const publications = response.data.publications.nodes;
 
-    return {
-      props: {
-        publications,
-      },
-      revalidate: 30, // Revalidate at most once every 30 seconds
-    };
-  } catch (error) {
-    console.error("Error fetching publications:", error);
-    return {
-      props: {
-        publications: [],
-      },
-      revalidate: 30, // Revalidate at most once every 30 seconds
-    };
-  }
+  return {
+    props: {
+      publications,
+    },
+  };
 }
 
 export default Publications;

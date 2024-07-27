@@ -195,27 +195,16 @@ export async function getStaticProps({ locale }) {
     }
   `;
 
-  try {
-    const response = await client.query({
-      query: GET_NEWS,
-      variables: { language: locale.toUpperCase() },
-    });
-    const news = response.data.vijesti.nodes;
+  const response = await client.query({
+    query: GET_NEWS,
+    variables: { language: locale.toUpperCase() },
+  });
+  const news = response.data.vijesti.nodes;
 
-    return {
-      props: {
-        news,
-      },
-      revalidate: 30, // Revalidate at most once every 30 seconds
-    };
-  } catch (error) {
-    console.error("Error fetching news:", error);
-    return {
-      props: {
-        news: [],
-      },
-      revalidate: 30, // Revalidate at most once every 30 seconds
-    };
-  }
+  return {
+    props: {
+      news,
+    },
+  };
 }
 export default News;
