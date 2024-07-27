@@ -33,7 +33,7 @@ const PrevArrow = ({ onClick }) => (
   </div>
 );
 
-const News = () => {
+const News = ({ news }) => {
   const router = useRouter();
   const { locale } = router;
 
@@ -111,17 +111,25 @@ const News = () => {
         <div>
           <Slider {...settings}>
             {news.map((article) => (
-              <div key={article.id} className={styles.newsItem}>
-                <Image
-                  src={article.featuredImage.node.sourceUrl}
-                  alt={article.title}
-                  width={500}
-                  height={300}
-                />
-                <h3>{article.title}</h3>
+              <div key={article.id} className={styles["sldie-container"]}>
+                <div className={styles.slide}>
+                  <div className={styles["slide-content-container"]}>
+                    <div className={styles["slide-img-container"]}>
+                      <Image
+                        src={article.featuredImage.node.sourceUrl}
+                        alt={article.title}
+                        width={article.featuredImage.node.mediaDetails.width}
+                        height={article.featuredImage.node.altText}
+                      />
+                    </div>
+                    <div className={styles["slide-content"]}>
+                      <p className={styles["slide-head"]}>{article.title}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
-            <div className={styles["slide-container"]}>
+            {/* <div className={styles["slide-container"]}>
               <div className={styles.slide}>
                 <div className={styles["slide-content-container"]}>
                   <div className={styles["slide-img-container"]}>
@@ -226,7 +234,7 @@ const News = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </Slider>
         </div>
       </div>
