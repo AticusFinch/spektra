@@ -7,6 +7,7 @@ import Publications from "./components/publications";
 import Extra from "./components/extra";
 import Footer from "./utils/footer";
 import Head from "next/head";
+import Link from "next/link";
 
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
