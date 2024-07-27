@@ -15,6 +15,7 @@ import styles from "./news.module.css";
 
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { HiMagnifyingGlass } from "react-icons/hi2";
+import { FaRegSadCry } from "react-icons/fa";
 
 const POSTS_PER_PAGE = 13;
 
@@ -128,8 +129,9 @@ const News = (props) => {
             ) : (
               <div className={styles["no-news"]}>
                 {locale === "sr"
-                  ? "Nema Članaka Pod Traženim Izrazom :("
-                  : "No Posts Under Searched Term :("}
+                  ? "Nema Novosti Pod Traženim Izrazom. "
+                  : "No News Under Searched Term. "}
+                <FaRegSadCry />
               </div>
             )}
           </motion.div>

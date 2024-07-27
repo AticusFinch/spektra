@@ -56,7 +56,11 @@ const Post = ({ post, latestPosts }) => {
           />
           <span className={styles["post-author"]}>
             <FaPen className={styles["meta-icon"]} />
-            {post.posts.postAuthor}
+            {post.posts.postAuthor
+              ? post.posts.postAuthor
+              : locale === "sr"
+              ? "Nepoznat Autor"
+              : "Unknown Author"}
           </span>
         </div>
 

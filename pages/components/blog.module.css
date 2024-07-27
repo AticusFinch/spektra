@@ -34,6 +34,10 @@
   font-family: "owners-bold", sans-serif;
   font-size: 0.8rem;
   position: relative;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .all-blogs:before {
@@ -180,6 +184,11 @@
   margin-top: 0.5rem;
   display: inline-block;
   font-size: 0.9rem;
+}
+
+.empty {
+  text-align: center;
+  opacity: 0.4;
 }
 
 @keyframes glowing {

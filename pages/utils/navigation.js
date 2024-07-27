@@ -86,37 +86,6 @@ const Navigation = () => {
             />
           </Link>
 
-          <div className={styles["languages-container"]}>
-            <ul className={styles.languages}>
-              <li className={styles["language-container"]}>
-                <Link
-                  href="/"
-                  locale="sr"
-                  className={
-                    router.locale === "sr"
-                      ? `${styles.language} ${styles.active}`
-                      : styles.language
-                  }
-                >
-                  MNE
-                </Link>
-              </li>
-              <li className={styles["language-container"]}>
-                <Link
-                  href="/"
-                  locale="en"
-                  className={
-                    router.locale === "en"
-                      ? `${styles.language} ${styles.active}`
-                      : styles.language
-                  }
-                >
-                  ENG
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           <button onClick={toggleMenu} className={styles["menu-button"]}>
             <motion.div animate={animation} transition={{ duration: 0.5 }}>
               {isMenuVisible ? <IoMdClose /> : <RxHamburgerMenu />}
@@ -183,6 +152,36 @@ const Navigation = () => {
                     {locale === "sr" ? "DONIRAJ" : "DONATE"}
                   </Link>
                 </li>
+                <div className={styles["languages-container"]}>
+                  <ul className={styles.languages}>
+                    <li className={styles["language-container"]}>
+                      <Link
+                        href="/"
+                        locale="sr"
+                        className={
+                          router.locale === "sr"
+                            ? `${styles.language} ${styles.active}`
+                            : styles.language
+                        }
+                      >
+                        MNE
+                      </Link>
+                    </li>
+                    <li className={styles["language-container"]}>
+                      <Link
+                        href="/"
+                        locale="en"
+                        className={
+                          router.locale === "en"
+                            ? `${styles.language} ${styles.active}`
+                            : styles.language
+                        }
+                      >
+                        ENG
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </motion.ul>
             </motion.div>
           )}

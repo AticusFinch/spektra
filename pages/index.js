@@ -7,7 +7,6 @@ import Publications from "./components/publications";
 import Extra from "./components/extra";
 import Footer from "./utils/footer";
 import Head from "next/head";
-import Link from "next/link";
 
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
@@ -71,17 +70,7 @@ export async function getStaticProps({ locale }) {
     variables: { language: locale.toUpperCase() },
   });
 
-  const blogs = response.data.posts.nodes.map((post) => ({
-    title: post.title,
-    featuredImage: post.featuredImage?.node
-      ? {
-          mediaDetails: post.featuredImage.node.mediaDetails,
-          sourceUrl: post.featuredImage.node.sourceUrl,
-        }
-      : null,
-    postAuthor: post.posts ? post.posts.postAuthor : null,
-    databaseId: post.databaseId,
-  }));
+  const blogs = response.data.posts.nodes;
 
   // Return the data as props
   return {

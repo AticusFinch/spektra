@@ -16,6 +16,8 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { FaPen } from "react-icons/fa";
 import Link from "next/link";
 
+import { FaRegSadCry } from "react-icons/fa";
+
 const POSTS_PER_PAGE = 13;
 
 const Blog = (props) => {
@@ -114,9 +116,12 @@ const Blog = (props) => {
                           className={styles["post-image"]}
                         />
                       ) : (
-                        <div className={styles["no-image"]}>
-                          No Image Available
-                        </div>
+                        <p className={styles["no-image"]}>
+                          {locale === "sr"
+                            ? "Fotografija nije dostupna. "
+                            : "Photo not available. "}
+                          <FaRegSadCry />
+                        </p>
                       )}
                     </div>
                     <div className={styles.content}>
@@ -137,8 +142,9 @@ const Blog = (props) => {
             ) : (
               <div className={styles["no-posts"]}>
                 {locale === "sr"
-                  ? "Nema Članaka Pod Traženim Izrazom :("
-                  : "No Posts Under Searched Term :("}
+                  ? "Nema Članaka Pod Traženim Izrazom. "
+                  : "No Posts Under Searched Term. "}
+                <FaRegSadCry />
               </div>
             )}
           </motion.div>

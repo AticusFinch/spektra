@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
+import { FaRegSadCry } from "react-icons/fa";
 
 import styles from "./news.module.css";
 
@@ -99,46 +100,56 @@ const News = ({ news }) => {
           </Link>
         </div>
         <div>
-          <Slider {...settings}>
-            {news.map((post) => (
-              <div key={post.id} className={styles["slide-container"]}>
-                <Link href={`/news/${post.id}`} className={styles.link}>
-                  <div className={styles.slide}>
-                    <div className={styles["slide-content-container"]}>
-                      {" "}
-                      <div className={styles["slide-img-container"]}>
-                        {post._embedded &&
-                          post._embedded["wp:featuredmedia"] && (
-                            <Image
-                              src={
-                                post._embedded["wp:featuredmedia"][0].source_url
-                              }
-                              alt={
-                                post._embedded["wp:featuredmedia"][0].alt_text
-                              }
-                              width={
-                                post._embedded["wp:featuredmedia"][0]
-                                  .media_details.width
-                              }
-                              height={
-                                post._embedded["wp:featuredmedia"][0]
-                                  .media_details.height
-                              }
-                              className={styles["news-img"]}
-                            />
-                          )}
-                      </div>
-                      <div className={styles["slide-content"]}>
-                        <p className={styles["slide-head"]}>
-                          {post.title.rendered}
-                        </p>
+          {news.length > 0 ? (
+            <Slider {...settings}>
+              {news.map((post) => (
+                <div key={post.id} className={styles["slide-container"]}>
+                  <Link href={`/news/${post.id}`} className={styles.link}>
+                    <div className={styles.slide}>
+                      <div className={styles["slide-content-container"]}>
+                        {" "}
+                        <div className={styles["slide-img-container"]}>
+                          {post._embedded &&
+                            post._embedded["wp:featuredmedia"] && (
+                              <Image
+                                src={
+                                  post._embedded["wp:featuredmedia"][0]
+                                    .source_url
+                                }
+                                alt={
+                                  post._embedded["wp:featuredmedia"][0].alt_text
+                                }
+                                width={
+                                  post._embedded["wp:featuredmedia"][0]
+                                    .media_details.width
+                                }
+                                height={
+                                  post._embedded["wp:featuredmedia"][0]
+                                    .media_details.height
+                                }
+                                className={styles["news-img"]}
+                              />
+                            )}
+                        </div>
+                        <div className={styles["slide-content"]}>
+                          <p className={styles["slide-head"]}>
+                            {post.title.rendered}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </Slider>
+                  </Link>
+                </div>
+              ))}
+            </Slider>
+          ) : (
+            <p className={styles.empty}>
+              {locale === "sr"
+                ? "Trenutno nema novih vijesti. "
+                : "Currently there's no news to display. "}
+              <FaRegSadCry />
+            </p>
+          )}
         </div>
       </div>
     </Container>

@@ -28,6 +28,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Myriad Pro Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../public/fonts/myriad/MYRIADPRO-REGULAR.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Myriad Pro Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../public/fonts/myriad/MYRIADPRO-BOLD.woff") format("woff");
+}
+
 :root {
   --trans-pink: #f153ad;
   --trans-blue: #30bde6;
@@ -48,7 +62,6 @@
 body {
   background-color: var(--dark-grey);
   color: var(--cream-white);
-  font-family: "owners-regular", sans-serif;
 }
 
 .no-scroll {
@@ -62,7 +75,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: "owners-regular", sans-serif;
+  font-family: "Myriad Pro Regular", sans-serif;
 }
 
 ul {
