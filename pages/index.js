@@ -70,7 +70,17 @@ export async function getStaticProps({ locale }) {
     variables: { language: locale.toUpperCase() },
   });
 
-  const blogs = response.data.posts.nodes;
+  const blogs = response.data.posts.nodes.map((post) => ({
+    title: post.title,
+    featuredImage: post.featuredImage?.node
+      ? {
+          mediaDetails: post.featuredImage.node.mediaDetails,
+          sourceUrl: post.featuredImage.node.sourceUrl,
+        }
+      : null,
+    postAuthor: post.posts ? post.posts.postAuthor : null,
+    databaseId: post.databaseId,
+  }));
 
   // Return the data as props
   return {
