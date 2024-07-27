@@ -76,7 +76,7 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       news,
-      blogs,
+      blogs: blogs || [], // Ensure blogs is an array
     },
   };
 }

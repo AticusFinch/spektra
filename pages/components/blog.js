@@ -28,6 +28,10 @@ const Blog = ({ blogs }) => {
   const router = useRouter();
   const { locale } = router;
 
+  if (!blogs || !Array.isArray(blogs)) {
+    return <div>No blogs available</div>;
+  }
+
   const settings = {
     dots: true,
     infinite: true,

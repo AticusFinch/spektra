@@ -28,6 +28,10 @@ const News = ({ news }) => {
   const router = useRouter();
   const { locale } = router;
 
+  if (!news || !Array.isArray(news)) {
+    return <div>No posts available</div>;
+  }
+
   const settings = {
     dots: true,
     infinite: true,
