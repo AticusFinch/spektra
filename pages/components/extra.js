@@ -116,18 +116,20 @@ const Extra = () => {
         <div
           className={styles["donate-container"]}
           style={{
-            backgroundImage: `url(/images/testph.png)`,
+            backgroundImage: `url(/images/hero/4.png)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <motion.a
-            href="/"
-            className={styles["donate-text"]}
-            whileHover={{ scale: 1.2 }}
-          >
-            {locale === "sr" ? "doniraj" : "donate"}
-          </motion.a>
+          <div className={styles["donate-overlay"]}>
+            <motion.a
+              href="/"
+              className={styles["donate-text"]}
+              whileHover={{ scale: 1.2 }}
+            >
+              {locale === "sr" ? "doniraj" : "donate"}
+            </motion.a>
+          </div>
         </div>
       </div>
     </div>

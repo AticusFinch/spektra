@@ -39,13 +39,6 @@
   margin-top: 2rem;
 }
 
-.donate-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8rem 4rem;
-}
-
 .donate-text {
   font-family: "owners-black", sans-serif;
   font-size: 4rem;
@@ -62,6 +55,16 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   will-change: transform;
+}
+
+.donate-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #191919ba;
+  padding: 8rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 1920px) {

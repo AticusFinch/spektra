@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Slider from "react-slick";
-
+import Link from "next/link";
 import Container from "../utils/container";
 
 import "slick-carousel/slick/slick.css";
@@ -10,16 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
 
-import { gql } from "@apollo/client";
-import client from "../apollo-client";
-
 import styles from "./news.module.css";
-import news1 from "../../public/images/news1.jpg";
-import news2 from "../../public/images/news2.jpg";
-import news3 from "../../public/images/news3.jpg";
-import news4 from "../../public/images/news4.jpg";
-import news5 from "../../public/images/news5.jpg";
-import news6 from "../../public/images/news6.jpg";
 
 const NextArrow = ({ onClick }) => (
   <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
@@ -92,11 +83,6 @@ const News = ({ news }) => {
     ],
   };
 
-  const currentDate = new Date();
-  const formattedDate = `${currentDate.getDate()}/${
-    currentDate.getMonth() + 1
-  }/${currentDate.getFullYear()}`;
-
   return (
     <Container>
       <div>
@@ -104,173 +90,55 @@ const News = ({ news }) => {
           <p className={styles["news-head"]}>
             {locale === "sr" ? "Vijesti" : "News"}
           </p>
-          <button className={styles["all-news"]}>
+          <Link href={"/news"} className={styles["all-news"]}>
             {locale === "sr" ? "sve vijesti" : "all news"}
-          </button>
+          </Link>
         </div>
         <div>
           <Slider {...settings}>
-            {news.map((article) => (
-              <div key={article.id} className={styles["sldie-container"]}>
-                <div className={styles.slide}>
-                  <div className={styles["slide-content-container"]}>
-                    <div className={styles["slide-img-container"]}>
-                      <Image
-                        src={article.featuredImage.node.sourceUrl}
-                        alt={article.title}
-                        width={article.featuredImage.node.mediaDetails.width}
-                        height={article.featuredImage.node.altText}
-                      />
-                    </div>
-                    <div className={styles["slide-content"]}>
-                      <p className={styles["slide-head"]}>{article.title}</p>
+            {news.map((post) => (
+              <div key={post.id} className={styles["slide-container"]}>
+                <Link href={`/news/${post.id}`} className={styles.link}>
+                  <div className={styles.slide}>
+                    <div className={styles["slide-content-container"]}>
+                      {" "}
+                      <div className={styles["slide-img-container"]}>
+                        {post._embedded &&
+                          post._embedded["wp:featuredmedia"] && (
+                            <Image
+                              src={
+                                post._embedded["wp:featuredmedia"][0].source_url
+                              }
+                              alt={
+                                post._embedded["wp:featuredmedia"][0].alt_text
+                              }
+                              width={
+                                post._embedded["wp:featuredmedia"][0]
+                                  .media_details.width
+                              }
+                              height={
+                                post._embedded["wp:featuredmedia"][0]
+                                  .media_details.height
+                              }
+                              className={styles["news-img"]}
+                            />
+                          )}
+                      </div>
+                      <div className={styles["slide-content"]}>
+                        <p className={styles["slide-head"]}>
+                          {post.title.rendered}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
-            {/* <div className={styles["slide-container"]}>
-              <div className={styles.slide}>
-                <div className={styles["slide-content-container"]}>
-                  <div className={styles["slide-img-container"]}>
-                    <Image
-                      src={news1}
-                      alt="News thumbnail"
-                      className={styles["news-img"]}
-                    />
-                  </div>
-                  <div className={styles["slide-content"]}>
-                    <p className={styles["slide-head"]}>
-                      Lorem ipsum dolor sit amen
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["slide-container"]}>
-              <div className={styles.slide}>
-                <div className={styles["slide-content-container"]}>
-                  <div className={styles["slide-img-container"]}>
-                    <Image
-                      src={news2}
-                      alt="News thumbnail"
-                      className={styles["news-img"]}
-                    />
-                  </div>
-                  <div className={styles["slide-content"]}>
-                    <p className={styles["slide-head"]}>
-                      Sed gravida non elit ac vulputate
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["slide-container"]}>
-              <div className={styles.slide}>
-                <div className={styles["slide-content-container"]}>
-                  <div className={styles["slide-img-container"]}>
-                    <Image
-                      src={news3}
-                      alt="News thumbnail"
-                      className={styles["news-img"]}
-                    />
-                  </div>
-                  <div className={styles["slide-content"]}>
-                    <p className={styles["slide-head"]}>Nunc at feugiat eros</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["slide-container"]}>
-              <div className={styles.slide}>
-                <div className={styles["slide-content-container"]}>
-                  <div className={styles["slide-img-container"]}>
-                    <Image
-                      src={news4}
-                      alt="News thumbnail"
-                      className={styles["news-img"]}
-                    />
-                  </div>
-                  <div className={styles["slide-content"]}>
-                    <p className={styles["slide-head"]}>
-                      Etiam tellus urna, venenatis non tincidunt vel
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["slide-container"]}>
-              <div className={styles.slide}>
-                <div className={styles["slide-content-container"]}>
-                  <div className={styles["slide-img-container"]}>
-                    <Image
-                      src={news5}
-                      alt="News thumbnail"
-                      className={styles["news-img"]}
-                    />
-                  </div>
-                  <div className={styles["slide-content"]}>
-                    <p className={styles["slide-head"]}>
-                      Etiam tellus urna, venenatis non tincidunt vel
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["slide-container"]}>
-              <div className={styles.slide}>
-                <div className={styles["slide-content-container"]}>
-                  <div className={styles["slide-img-container"]}>
-                    <Image
-                      src={news6}
-                      alt="News thumbnail"
-                      className={styles["news-img"]}
-                    />
-                  </div>
-                  <div className={styles["slide-content"]}>
-                    <p className={styles["slide-head"]}>
-                      Etiam tellus urna, venenatis non tincidunt vel
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </Slider>
         </div>
       </div>
     </Container>
   );
 };
-
-export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query GetLatestNews {
-        vijesti(first: 6) {
-          nodes {
-            id
-            title
-            featuredImage {
-              node {
-                sourceUrl
-                mediaDetails {
-                  height
-                  width
-                }
-                altText
-              }
-            }
-          }
-        }
-      }
-    `,
-  });
-
-  return {
-    props: {
-      news: data.vijesti.nodes,
-    },
-  };
-}
 
 export default News;
