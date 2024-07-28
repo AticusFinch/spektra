@@ -127,7 +127,6 @@
 .more-content {
   text-decoration: none;
   width: 100%;
-  height: 2.5rem;
   color: var(--dark-grey);
   border-top: solid 2px var(--trans-pink);
 }
@@ -152,6 +151,13 @@
   text-decoration: none;
   padding-top: 0.4rem;
   height: inherit;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 @media (max-width: 1920px) {
@@ -364,10 +370,6 @@
 }
 
 @media (max-width: 485px) {
-  .more-content {
-    height: 2.1rem;
-  }
-
   .post-head {
     font-size: 3.5rem;
   }

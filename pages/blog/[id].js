@@ -83,10 +83,7 @@ const Post = ({ post, latestPosts }) => {
                     />
                   </div>
                   <div className={styles["more-content"]}>
-                    <h3 className={styles["more-title"]}>
-                      {post.title.split(" ").slice(0, 7).join(" ") +
-                        (post.title.split(" ").length > 7 ? "..." : "")}
-                    </h3>
+                    <h3 className={styles["more-title"]}>{post.title}</h3>
                   </div>
                 </Link>
               </div>

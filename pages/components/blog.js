@@ -103,35 +103,37 @@ const Blog = ({ blogs }) => {
             {blogs.length > 0 ? (
               <Slider {...settings}>
                 {blogs.map((post) => (
-                  <div
-                    key={post.databaseId}
-                    className={styles["blog-container"]}
-                  >
-                    <div
-                      className={styles.blog}
-                      style={{
-                        backgroundImage: `url(${
-                          post.featuredImage?.node?.sourceUrl || ""
-                        })`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        objectFit: "cover",
-                      }}
+                  <div key={post.id} className={styles["blog-container"]}>
+                    <Link
+                      href={`/blog/${post.databaseId}`}
+                      className={styles.link}
                     >
-                      <div className={styles["blog-content-container"]}>
-                        <div className={styles["blog-content"]}>
-                          <p className={styles["blog-content-head"]}>
-                            {post.title}
-                          </p>
-                          <span className={styles.author}>
-                            {post.posts?.postAuthor ||
-                              (locale === "sr"
-                                ? "Nepoznat Autor"
-                                : "Unknown Author")}
-                          </span>
+                      <div
+                        className={styles.blog}
+                        style={{
+                          backgroundImage: `url(${
+                            post.featuredImage?.node?.sourceUrl || ""
+                          })`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          objectFit: "cover",
+                        }}
+                      >
+                        <div className={styles["blog-content-container"]}>
+                          <div className={styles["blog-content"]}>
+                            <p className={styles["blog-content-head"]}>
+                              {post.title}
+                            </p>
+                            <span className={styles.author}>
+                              {post.posts?.postAuthor ||
+                                (locale === "sr"
+                                  ? "Nepoznat Autor"
+                                  : "Unknown Author")}
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </Slider>

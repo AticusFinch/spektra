@@ -119,8 +119,7 @@ const News = (props) => {
                     </div>
                     <div className={styles.content}>
                       <h3 className={styles.title} lang="en">
-                        {post.title.split(" ").slice(0, 6).join(" ") +
-                          (post.title.split(" ").length > 6 ? "..." : "")}
+                        {post.title}
                       </h3>
                     </div>
                   </Link>

@@ -104,37 +104,26 @@ const News = ({ news }) => {
             <Slider {...settings}>
               {news.map((post) => (
                 <div key={post.id} className={styles["slide-container"]}>
-                  <Link href={`/news/${post.id}`} className={styles.link}>
+                  <Link
+                    href={`/news/${post.databaseId}`}
+                    className={styles.link}
+                  >
                     <div className={styles.slide}>
                       <div className={styles["slide-content-container"]}>
                         {" "}
                         <div className={styles["slide-img-container"]}>
-                          {post._embedded &&
-                            post._embedded["wp:featuredmedia"] && (
-                              <Image
-                                src={
-                                  post._embedded["wp:featuredmedia"][0]
-                                    .source_url
-                                }
-                                alt={
-                                  post._embedded["wp:featuredmedia"][0].alt_text
-                                }
-                                width={
-                                  post._embedded["wp:featuredmedia"][0]
-                                    .media_details.width
-                                }
-                                height={
-                                  post._embedded["wp:featuredmedia"][0]
-                                    .media_details.height
-                                }
-                                className={styles["news-img"]}
-                              />
-                            )}
+                          <Image
+                            src={post.featuredImage.node.sourceUrl}
+                            alt={
+                              post.featuredImage.node.altText || "Post Image"
+                            }
+                            width={post.featuredImage.node.mediaDetails.width}
+                            height={post.featuredImage.node.mediaDetails.height}
+                            className={styles["news-img"]}
+                          />
                         </div>
                         <div className={styles["slide-content"]}>
-                          <p className={styles["slide-head"]}>
-                            {post.title.rendered}
-                          </p>
+                          <p className={styles["slide-head"]}>{post.title}</p>
                         </div>
                       </div>
                     </div>

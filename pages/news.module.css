@@ -108,6 +108,13 @@
   text-decoration: none;
   font-size: 1.3rem;
   margin-top: 0.4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .post:first-of-type {
@@ -353,11 +360,16 @@
   }
 
   .title {
-    font-family: "Myriad Pro Bold", sans-serif;
     color: var(--cream-white);
     text-decoration: none;
     font-size: 1.3rem;
-    margin-top: 0.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
   }
 
   .post-link {
@@ -408,7 +420,7 @@
 }
 
 @media (max-width: 485px) {
-  .blog {
+  .news {
     width: 100%;
   }
 

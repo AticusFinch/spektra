@@ -37,10 +37,27 @@ const Home = ({ news, blogs }) => {
 
 export async function getStaticProps({ locale }) {
   // Fetch the latest 6 posts from the WordPress REST API
-  const newsRes = await fetch(
-    "https://lightgreen-emu-646217.hostingersite.com/wp-json/wp/v2/news?per_page=6&_embed"
-  );
-  const news = await newsRes.json();
+  const GET_LATEST_NEWS = gql`
+    query GetLatestVijesti($language: LanguageCodeFilterEnum!) {
+      vijesti(where: { language: $language }, first: 6) {
+        nodes {
+          databaseId
+          title
+          slug
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
 
   const GET_LATEST_POSTS = gql`
     query GetLatestPosts($language: LanguageCodeFilterEnum!) {
@@ -60,22 +77,30 @@ export async function getStaticProps({ locale }) {
             postAuthor
           }
           databaseId
+          slug
         }
       }
     }
   `;
 
-  const response = await client.query({
+  const responseBlog = await client.query({
     query: GET_LATEST_POSTS,
     variables: { language: locale.toUpperCase() },
   });
 
-  const blogs = response.data.posts.nodes;
+  const blogs = responseBlog.data.posts.nodes;
+
+  const responseNews = await client.query({
+    query: GET_LATEST_NEWS,
+    variables: { language: locale.toUpperCase() },
+  });
+
+  const news = responseNews.data.vijesti.nodes;
 
   // Return the data as props
   return {
     props: {
-      news,
+      news: news || [],
       blogs: blogs || [], // Ensure blogs is an array
     },
   };

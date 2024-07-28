@@ -121,7 +121,7 @@
   outline: none;
   padding: 0 1rem;
   background-color: transparent;
-  border-bottom: solid 3px rgba(0, 0, 0, 0.346);
+  border-bottom: solid 2px rgba(0, 0, 0, 0.346);
   color: var(--cream-white);
   font-family: "owners-regular", sans-serif;
   letter-spacing: 1px;

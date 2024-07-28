@@ -100,7 +100,7 @@ const Blog = (props) => {
           >
             {displayedPosts.length > 0 ? (
               displayedPosts.map((post, databaseId) => (
-                <div key={databaseId} className={styles.post}>
+                <div key={post.id} className={styles.post}>
                   <Link
                     href={`/blog/${post.databaseId}`}
                     className={styles["post-link"]}
@@ -133,8 +133,7 @@ const Blog = (props) => {
                       </span>
                       <div>
                         <h3 className={styles.title} lang="en">
-                          {post.title.split(" ").slice(0, 6).join(" ") +
-                            (post.title.split(" ").length > 6 ? "..." : "")}
+                          {post.title}
                         </h3>
                       </div>
                     </div>
@@ -193,6 +192,7 @@ export async function getStaticProps({ locale }) {
         nodes {
           databaseId
           title
+          slug
           language {
             code
             locale
