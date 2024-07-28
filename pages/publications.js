@@ -131,14 +131,21 @@ const Publications = (props) => {
                   <div className={styles.content}>
                     <div>
                       <h3 className={styles.title}>
-                        {publication.title.split(" ").slice(0, 6).join(" ") +
-                          (publication.title.split(" ").length > 6
+                        {publication.title.split(" ").slice(0, 4).join(" ") +
+                          (publication.title.split(" ").length > 4
                             ? "..."
                             : "")}
                       </h3>
                       <p className={styles.author}>
                         <FaPen className={styles["meta-icon"]} />
-                        {publication.publications.publicationAuthor}
+                        {publication.publications.publicationAuthor
+                          .split(" ")
+                          .slice(0, 2)
+                          .join(" ") +
+                          (publication.publications.publicationAuthor.split(" ")
+                            .length > 2
+                            ? "..."
+                            : "")}
                       </p>
                     </div>
                     <button
