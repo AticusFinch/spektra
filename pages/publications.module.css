@@ -335,6 +335,7 @@
 @media (max-width: 485px) {
   .publications {
     padding-top: 5rem;
+    width: 100%;
   }
 
   .headline {
