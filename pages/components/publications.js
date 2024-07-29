@@ -89,6 +89,10 @@ const Publications = ({ publications }) => {
     ],
   };
 
+  function handleButtonClick(url) {
+    window.open(url, "_blank");
+  }
+
   return (
     <Container>
       <div>
@@ -102,218 +106,55 @@ const Publications = ({ publications }) => {
         </div>
         <div>
           <Slider {...settings}>
-            <div className={styles["publication-container"]}>
-              <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi1.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "top",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <div className={styles["publication-content"]}>
-                    <div className={styles["publication-head-container"]}>
-                      <p className={styles["publication-head"]}>
-                        Lorem ipsum dolor sit amen
-                      </p>
-                      <span className={styles.author}>Teodor Stojanovic</span>
+            {Array.isArray(publications) &&
+              publications.map((post) => (
+                <div key={post.id} className={styles["publication-container"]}>
+                  <div className={styles.publication}>
+                    <div
+                      className={styles["publication-img-container"]}
+                      style={{
+                        backgroundImage: `url(${
+                          post.featuredImage?.node?.sourceUrl || ""
+                        })`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        objectFit: "cover",
+                      }}
+                    >
+                      <div className={styles["publication-content"]}>
+                        <div className={styles["publication-head-container"]}>
+                          <p className={styles["publication-head"]}>
+                            {post.title}
+                          </p>
+                          <span className={styles.author}>
+                            {post.publications.publicationAuthor}
+                          </span>
+                        </div>
+                        <button
+                          onClick={() =>
+                            handleButtonClick(
+                              post.publications?.file?.node?.link || "#"
+                            )
+                          }
+                          className={styles["publication-download-btn"]}
+                        >
+                          <span className={styles["download-text"]}>
+                            {locale === "sr" ? "preuzmi" : "download"}
+                          </span>
+                          <AiOutlineDownload
+                            className={styles["publication-download-icon"]}
+                          />
+                        </button>
+                      </div>
                     </div>
-                    <button className={styles["publication-download-btn"]}>
-                      <AiOutlineDownload
-                        className={styles["publication-download-icon"]}
-                      />{" "}
-                      {locale === "sr" ? "preuzmi" : "download"}
-                    </button>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className={styles["publication-container"]}>
-              <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi2.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "top",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <div className={styles["publication-content"]}>
-                    <div className={styles["publication-head-container"]}>
-                      <p className={styles["publication-head"]}>
-                        Sed gravida non elit ac vulputate
-                      </p>
-                      <span className={styles.author}>Teodor Stojanovic</span>
-                    </div>
-                    <button className={styles["publication-download-btn"]}>
-                      <AiOutlineDownload
-                        className={styles["publication-download-icon"]}
-                      />{" "}
-                      {locale === "sr" ? "preuzmi" : "download"}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["publication-container"]}>
-              <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi3.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "top",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <div className={styles["publication-content"]}>
-                    <div className={styles["publication-head-container"]}>
-                      <p className={styles["publication-head"]}>
-                        Nunc at feugiat eros
-                      </p>
-                      <span className={styles.author}>Teodor Stojanovic</span>
-                    </div>
-                    <button className={styles["publication-download-btn"]}>
-                      <AiOutlineDownload
-                        className={styles["publication-download-icon"]}
-                      />{" "}
-                      {locale === "sr" ? "preuzmi" : "download"}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["publication-container"]}>
-              <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi4.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "top",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <div className={styles["publication-content"]}>
-                    <div className={styles["publication-head-container"]}>
-                      <p className={styles["publication-head"]}>
-                        Etiam tellus urna, venenatis non tincidunt vel
-                      </p>
-                      <span className={styles.author}>Teodor Stojanovic</span>
-                    </div>
-                    <button className={styles["publication-download-btn"]}>
-                      <AiOutlineDownload
-                        className={styles["publication-download-icon"]}
-                      />{" "}
-                      {locale === "sr" ? "preuzmi" : "download"}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["publication-container"]}>
-              <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi5.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "top",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <div className={styles["publication-content"]}>
-                    <div className={styles["publication-head-container"]}>
-                      <p className={styles["publication-head"]}>
-                        Maecenas purus ante, iaculis ut dolor eleifend
-                      </p>
-                      <span className={styles.author}>Teodor Stojanovic</span>
-                    </div>
-                    <button className={styles["publication-download-btn"]}>
-                      <AiOutlineDownload
-                        className={styles["publication-download-icon"]}
-                      />{" "}
-                      {locale === "sr" ? "preuzmi" : "download"}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles["publication-container"]}>
-              <div className={styles.publication}>
-                <div
-                  className={styles["publication-img-container"]}
-                  style={{
-                    backgroundImage: `url(/images/publi6.png)`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "top",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
-                  <div className={styles["publication-content"]}>
-                    <div className={styles["publication-head-container"]}>
-                      <p className={styles["publication-head"]}>
-                        Vestibulum faucibus, libero eget ullamcorper
-                      </p>
-                      <span className={styles.author}>Teodor Stojanovic</span>
-                    </div>
-                    <button className={styles["publication-download-btn"]}>
-                      <AiOutlineDownload
-                        className={styles["publication-download-icon"]}
-                      />{" "}
-                      {locale === "sr" ? "preuzmi" : "download"}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+              ))}
           </Slider>
         </div>
       </div>
     </Container>
   );
 };
-
-export async function getServerSideProps() {
-  const GET_PUBLICATIONS = gql`
-    query GetPublications {
-      publications(last: 7) {
-        nodes {
-          title
-          featuredImage {
-            node {
-              altText
-              mediaDetails {
-                width
-                height
-              }
-              sourceUrl
-            }
-          }
-          publications {
-            file {
-              node {
-                link
-              }
-            }
-            publicationAuthor
-          }
-        }
-      }
-    }
-  `;
-
-  const response = await client.query({ query: GET_PUBLICATIONS });
-  const publications = response.data.publications.nodes;
-
-  return {
-    props: {
-      publications,
-    },
-  };
-}
 
 export default Publications;

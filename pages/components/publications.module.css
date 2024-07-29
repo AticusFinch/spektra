@@ -131,7 +131,7 @@
 }
 
 .publication-head {
-  font-family: "owners-bold", sans-serif;
+  font-family: "Myriad Pro Bold", sans-serif;
   font-size: 2.5rem;
   color: var(--dark-grey);
   z-index: 1;
@@ -145,24 +145,37 @@
 }
 
 .publication-download-btn {
-  width: 180px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.278);
+  width: 100%;
+  background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
-  font-family: "owners-bold", sans-serif;
+  font-family: "Myriad Pro Bold", sans-serif;
   font-size: 1rem;
   position: relative;
   color: var(--dark-grey);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .publication-download-icon {
-  font-size: 1.2rem;
-  margin-right: 0.3rem;
+  font-size: 3rem;
+  transition: transform 0.5s ease-in-out;
+  height: 35px;
+}
+
+.download-text {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-right: -0.3rem; /* Adjust as needed */
+  font-size: 1.3rem;
+}
+
+.publication-download-btn:hover .download-text {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .arrow {

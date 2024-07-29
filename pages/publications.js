@@ -78,7 +78,7 @@ const Publications = (props) => {
       </Head>
       <Navigation />
       <Container>
-        <div className={styles.publications}>
+        {/* <div className={styles.publications}>
           <div className={styles.headline}>
             <h1 className={styles["publications-head"]}>
               {locale === "sr" ? "Publikacije" : "Publications"}
@@ -115,18 +115,22 @@ const Publications = (props) => {
               displayedPublications.map((publication, index) => (
                 <div key={index} className={styles.publication}>
                   <div className={styles["publication-image-container"]}>
-                    <Image
-                      src={publication.featuredImage.node.sourceUrl}
-                      width={publication.featuredImage.node.mediaDetails.width}
-                      height={
-                        publication.featuredImage.node.mediaDetails.height
-                      }
-                      alt={
-                        publication.featuredImage.node.altText ||
-                        "Publication image"
-                      }
-                      className={styles["publication-image"]}
-                    />
+                    {publication.featuredImage?.node && (
+                      <Image
+                        src={publication.featuredImage.node.sourceUrl}
+                        width={
+                          publication.featuredImage.node.mediaDetails.width
+                        }
+                        height={
+                          publication.featuredImage.node.mediaDetails.height
+                        }
+                        alt={
+                          publication.featuredImage.node.altText ||
+                          "Publication image"
+                        }
+                        className={styles["publication-image"]}
+                      />
+                    )}
                   </div>
                   <div className={styles.content}>
                     <div>
@@ -186,19 +190,23 @@ const Publications = (props) => {
               </button>
             </div>
           )}
-        </div>
+        </div> */}
       </Container>
       <Footer />
     </>
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const GET_PUBLICATIONS = gql`
-    query GetPublications {
-      publications(first: 1000) {
+    query GetPublications($language: LanguageCodeFilterEnum!) {
+      publications(where: { language: $language }, first: 1000) {
         nodes {
           title
+          language {
+            code
+            locale
+          }
           featuredImage {
             node {
               altText
@@ -222,7 +230,11 @@ export async function getStaticProps() {
     }
   `;
 
-  const response = await client.query({ query: GET_PUBLICATIONS });
+  const response = await client.query({
+    query: GET_PUBLICATIONS,
+    variables: { language: locale.toUpperCase() },
+  });
+
   const publications = response.data.publications.nodes;
 
   return {

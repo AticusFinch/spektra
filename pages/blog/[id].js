@@ -14,6 +14,10 @@ const Post = ({ post, latestPosts }) => {
   const router = useRouter();
   const { locale } = router;
 
+  if (!post) {
+    return <div>Post not found</div>;
+  }
+
   const dateObj = post && post.date ? new Date(post.date) : null;
 
   const formattedDate = dateObj

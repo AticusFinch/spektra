@@ -13,6 +13,10 @@ const Post = ({ post, latestPosts }) => {
   const router = useRouter();
   const { locale } = router;
 
+  if (!post) {
+    return <div>Post not found</div>;
+  }
+
   const dateObj = post && post.date ? new Date(post.date) : null;
 
   const formattedDate = dateObj
@@ -20,6 +24,13 @@ const Post = ({ post, latestPosts }) => {
     : "Unknown Date";
 
   const pageTitle = locale === "sr" ? "Vijesti" : "News";
+
+  const filteredPosts = latestPosts
+    ? latestPosts.filter(
+        (latestPost) =>
+          latestPost && post && latestPost.databaseId !== post.databaseId
+      )
+    : [];
 
   return (
     <div>
@@ -62,7 +73,7 @@ const Post = ({ post, latestPosts }) => {
             {locale === "sr" ? "Pročitaj još:" : "Read More:"}
           </h2>
           <div className={styles["more-container"]}>
-            {latestPosts.map((post) => (
+            {filteredPosts.map((post) => (
               <div key={post.id} className={styles.more}>
                 <Link
                   href={`/news/${post.databaseId}`}
@@ -90,23 +101,6 @@ const Post = ({ post, latestPosts }) => {
     </div>
   );
 };
-
-function sanitizeData(data) {
-  if (data === undefined) {
-    return null;
-  }
-  if (Array.isArray(data)) {
-    return data.map(sanitizeData);
-  }
-  if (typeof data === "object" && data !== null) {
-    const sanitized = {};
-    for (const [key, value] of Object.entries(data)) {
-      sanitized[key] = sanitizeData(value);
-    }
-    return sanitized;
-  }
-  return data;
-}
 
 export async function getServerSideProps({ params, query, locale }) {
   const language = query.lang || "sr";
@@ -174,7 +168,7 @@ export async function getServerSideProps({ params, query, locale }) {
 
   const { data: latestPostsData } = await client.query({
     query: GET_LATEST_NEWS,
-    variables: { notIn: notIn, language: locale.toUpperCase() }, // Assuming 'locale' contains the current language
+    variables: { notIn: notIn, language: locale.toUpperCase() },
   });
 
   return {
