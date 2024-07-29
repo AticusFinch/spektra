@@ -1,17 +1,17 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 import Slider from "react-slick";
 import Link from "next/link";
-
 import Container from "../utils/container";
-
-import styles from "./publications.module.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
-import { AiOutlineDownload } from "react-icons/ai";
+import { FaRegSadCry } from "react-icons/fa";
+
+import styles from "./news.module.css";
 
 const NextArrow = ({ onClick }) => (
   <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
@@ -29,12 +29,19 @@ const Publications = ({ publications }) => {
   const router = useRouter();
   const { locale } = router;
 
+  if (!publications || !Array.isArray(publications)) {
+    return <div>No posts available</div>;
+  }
+
+  // Debugging: Log the publications data
+  console.log("Publications data:", publications);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     autoplay: true,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -42,7 +49,7 @@ const Publications = ({ publications }) => {
       {
         breakpoint: 1920,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
@@ -65,13 +72,6 @@ const Publications = ({ publications }) => {
         },
       },
       {
-        breakpoint: 850,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
         breakpoint: 700,
         settings: {
           slidesToShow: 2,
@@ -81,78 +81,19 @@ const Publications = ({ publications }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
+          autoplay: true,
+          speed: 1000,
         },
       },
     ],
   };
 
-  function handleButtonClick(url) {
-    window.open(url, "_blank");
-  }
-
   return (
     <Container>
-      <div>
-        <div className={styles["publications-head-container"]}>
-          <h1 className={styles["publications-head"]}>
-            {locale === "sr" ? "Publikacije" : "Publications"}
-          </h1>
-          <Link className={styles["all-publications"]} href="/publications">
-            {locale === "sr" ? "sve publikacije" : "all publications"}
-          </Link>
-        </div>
-        <div>
-          <Slider {...settings}>
-            {Array.isArray(publications) &&
-              publications.map((post) => (
-                <div key={post.id} className={styles["publication-container"]}>
-                  <div className={styles.publication}>
-                    <div
-                      className={styles["publication-img-container"]}
-                      style={{
-                        backgroundImage: `url(${
-                          post.featuredImage?.node?.sourceUrl || ""
-                        })`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        objectFit: "cover",
-                      }}
-                    >
-                      <div className={styles["publication-content"]}>
-                        <div className={styles["publication-head-container"]}>
-                          <p className={styles["publication-head"]}>
-                            {post.title}
-                          </p>
-                          <span className={styles.author}>
-                            {post.publications.publicationAuthor}
-                          </span>
-                        </div>
-                        <button
-                          onClick={() =>
-                            handleButtonClick(
-                              post.publications?.file?.node?.link || "#"
-                            )
-                          }
-                          className={styles["publication-download-btn"]}
-                        >
-                          <span className={styles["download-text"]}>
-                            {locale === "sr" ? "preuzmi" : "download"}
-                          </span>
-                          <AiOutlineDownload
-                            className={styles["publication-download-icon"]}
-                          />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </Slider>
-        </div>
-      </div>
+      <div></div>
     </Container>
   );
 };

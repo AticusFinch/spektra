@@ -11,7 +11,7 @@ import Head from "next/head";
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
 
-const Home = ({ news, blogs, publications }) => {
+const Home = ({ news, blogs }) => {
   const router = useRouter();
   const { locale } = router;
 
@@ -28,14 +28,16 @@ const Home = ({ news, blogs, publications }) => {
       <Hero />
       <News news={news} />
       <Blog blogs={blogs} />
-      <Publications publications={publications} />
+      <Publications />
       <Extra />
       <Footer />
     </div>
   );
 };
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps(context) {
+  const { locale } = context;
+
   const GET_LATEST_NEWS = gql`
     query GetLatestVijesti($language: LanguageCodeFilterEnum!) {
       vijesti(where: { language: $language }, first: 6) {
@@ -82,38 +84,6 @@ export async function getStaticProps({ locale }) {
     }
   `;
 
-  const GET_LATEST_PUBLICATIONS = gql`
-    query GetPublications($language: LanguageCodeFilterEnum!) {
-      publications(where: { language: $language }, first: 6) {
-        nodes {
-          title
-          language {
-            code
-            locale
-          }
-          featuredImage {
-            node {
-              altText
-              mediaDetails {
-                width
-                height
-              }
-              sourceUrl
-            }
-          }
-          publications {
-            file {
-              node {
-                link
-              }
-            }
-            publicationAuthor
-          }
-        }
-      }
-    }
-  `;
-
   const responseBlog = await client.query({
     query: GET_LATEST_POSTS,
     variables: { language: locale.toUpperCase() },
@@ -127,20 +97,11 @@ export async function getStaticProps({ locale }) {
   });
 
   const news = responseNews.data.vijesti.nodes;
-
-  const responsePublications = await client.query({
-    query: GET_LATEST_PUBLICATIONS,
-    variables: { language: locale.toUpperCase() },
-  });
-
-  const publications = responsePublications.data.publications.nodes;
-
   // Return the data as props
   return {
     props: {
-      news: news || [],
-      blogs: blogs || [],
-      publications: publications || [],
+      blogs,
+      news,
     },
   };
 }
