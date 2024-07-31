@@ -81,7 +81,7 @@ const Blog = ({ blogs }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
+          arrows: false,
           autoplay: true,
           speed: 1000,
         },

@@ -84,7 +84,7 @@ const Publications = ({ publications }) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          arrows: true,
+          arrows: false,
           autoplay: true,
           speed: 1000,
         },
@@ -94,7 +94,7 @@ const Publications = ({ publications }) => {
 
   return (
     <Container>
-      <div>
+      <div className={styles.publications}>
         <div className={styles["publications-head-container"]}>
           <p className={styles["publications-head"]}>
             {locale === "sr" ? "Publikacije" : "Publications"}
