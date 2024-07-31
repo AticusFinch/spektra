@@ -453,12 +453,12 @@
   }
 
   .next {
-    right: -10px; /* adjust as needed */
+    right: -10px;
     font-size: 1.5rem;
   }
 
   .prev {
-    left: -10px; /* adjust as needed */
+    left: -10px;
     font-size: 1.5rem;
   }
 }
@@ -489,5 +489,11 @@
   .publication-content {
     max-height: 35%;
     top: 65%;
+  }
+}
+
+@media (max-width: 460px) {
+  .all-publications {
+    width: 80px;
   }
 }
