@@ -112,6 +112,7 @@
   flex-direction: column;
   color: var(--cream-white);
   letter-spacing: 2px;
+  border-bottom: solid 1px var(--trans-pink);
 }
 
 .title {

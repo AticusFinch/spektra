@@ -68,10 +68,6 @@
 }
 
 @media (max-width: 1920px) {
-  .counter-container {
-    padding: 4rem 4rem 6rem 4rem;
-  }
-
   .counter-number-blue,
   .counter-number-pink,
   .counter-number-white {
@@ -81,6 +77,10 @@
   .counter-text {
     font-size: 1rem;
     margin-top: 1.3rem;
+  }
+
+  .donate-overlay {
+    padding: 8rem 4rem;
   }
 }
 
@@ -113,15 +113,10 @@
     width: 50px;
   }
 
-  .counter-container {
-    padding: 4rem 3rem;
-  }
-
   .donate-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 4rem;
   }
   .counter-container {
     display: none;

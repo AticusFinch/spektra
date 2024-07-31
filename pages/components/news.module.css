@@ -284,10 +284,11 @@
 
   .all-news {
     width: 130px;
+    height: 25px;
     padding: 0 0.5rem;
     background-color: var(--dark-grey);
-    border: solid 1px var(--trans-pink);
-    font-size: 0.9rem;
+    border-bottom: solid 1px var(--trans-pink);
+    font-size: 0.8rem;
     font-family: "owners-regular", sans-serif;
   }
 
@@ -318,9 +319,11 @@
   }
 
   .slide-content {
-    height: 100px;
-    padding: 0.5rem;
-    border: solid 1px var(--trans-pink);
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    padding: 0 0.5rem;
+    border-bottom: solid 1px var(--trans-pink);
   }
 
   .slide-head {
@@ -352,6 +355,7 @@
 
   .all-news {
     width: 100px;
+    height: 20px;
     font-size: 0.7rem;
   }
 
@@ -382,7 +386,7 @@
   }
 
   .slide-head {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .next {

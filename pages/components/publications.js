@@ -10,8 +10,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
 import { FaRegSadCry } from "react-icons/fa";
+import { GrDownload } from "react-icons/gr";
 
-import styles from "./news.module.css";
+import { FaPen } from "react-icons/fa";
+import { CiRead } from "react-icons/ci";
+
+import styles from "./publications.module.css";
 
 const NextArrow = ({ onClick }) => (
   <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
@@ -33,15 +37,12 @@ const Publications = ({ publications }) => {
     return <div>No posts available</div>;
   }
 
-  // Debugging: Log the publications data
-  console.log("Publications data:", publications);
-
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     autoplay: true,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -49,14 +50,14 @@ const Publications = ({ publications }) => {
       {
         breakpoint: 1920,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1440,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -65,7 +66,7 @@ const Publications = ({ publications }) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -81,7 +82,7 @@ const Publications = ({ publications }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           arrows: true,
           autoplay: true,
@@ -93,7 +94,78 @@ const Publications = ({ publications }) => {
 
   return (
     <Container>
-      <div></div>
+      <div>
+        <div className={styles["publications-head-container"]}>
+          <p className={styles["publications-head"]}>
+            {locale === "sr" ? "Publikacije" : "Publications"}
+          </p>
+          <Link href={"/publications"} className={styles["all-publications"]}>
+            {locale === "sr" ? "sve publikacije" : "all publications"}
+          </Link>
+        </div>
+        <div>
+          {publications.length > 0 ? (
+            <Slider {...settings}>
+              {publications.map((post) => (
+                <div
+                  key={post.databaseId}
+                  className={styles["publication-container"]}
+                >
+                  <div className={styles["publication-img-container"]}>
+                    <Image
+                      src={post.featuredImage.node.sourceUrl}
+                      alt={post.featuredImage.node.altText || "Post Image"}
+                      width={post.featuredImage.node.mediaDetails.width}
+                      height={post.featuredImage.node.mediaDetails.height}
+                      className={styles["publication-img"]}
+                    ></Image>
+
+                    <div className={styles["publication-content"]}>
+                      <div>
+                        <p className={styles["publication-head"]}>
+                          {post.title}
+                        </p>
+                        <span className={styles["author"]}>
+                          <FaPen className={styles["meta-icon"]} />
+                          {post.publications.publicationAuthor}
+                        </span>
+                      </div>
+                      <div className={styles.download}>
+                        <Link
+                          href={`/publications/${post.databaseId}`}
+                          className={styles["read-more"]}
+                        >
+                          <CiRead />
+                        </Link>
+                        <button
+                          onClick={(e) => {
+                            if (post.publications.file.node.link) {
+                              window.open(
+                                post.publications.file.node.link,
+                                "_blank"
+                              );
+                            }
+                          }}
+                          className={styles["download-button"]}
+                        >
+                          <GrDownload />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          ) : (
+            <p className={styles.empty}>
+              {locale === "sr"
+                ? "Trenutno nema novih vijesti. "
+                : "Currently there's no news to display. "}
+              <FaRegSadCry />
+            </p>
+          )}
+        </div>
+      </div>
     </Container>
   );
 };

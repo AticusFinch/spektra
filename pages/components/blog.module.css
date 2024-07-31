@@ -256,10 +256,11 @@
 
   .all-blogs {
     width: 130px;
+    height: 25px;
     padding: 0 0.5rem;
     background-color: var(--dark-grey);
-    border: solid 1px var(--trans-pink);
-    font-size: 0.9rem;
+    border-bottom: solid 1px var(--trans-pink);
+    font-size: 0.8rem;
     font-family: "owners-regular", sans-serif;
   }
 
@@ -305,6 +306,7 @@
 
   .all-blogs {
     width: 100px;
+    height: 20px;
     font-size: 0.7rem;
   }
 

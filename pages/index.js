@@ -11,7 +11,7 @@ import Head from "next/head";
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
 
-const Home = ({ news, blogs }) => {
+const Home = ({ news, blogs, publications }) => {
   const router = useRouter();
   const { locale } = router;
 
@@ -28,7 +28,7 @@ const Home = ({ news, blogs }) => {
       <Hero />
       <News news={news} />
       <Blog blogs={blogs} />
-      <Publications />
+      <Publications publications={publications} />
       <Extra />
       <Footer />
     </div>
@@ -84,26 +84,71 @@ export async function getStaticProps(context) {
     }
   `;
 
-  const responseBlog = await client.query({
-    query: GET_LATEST_POSTS,
-    variables: { language: locale.toUpperCase() },
-  });
+  const GET_LATEST_PUBLICATIONS = gql`
+    query GetPublications($language: LanguageCodeFilterEnum!) {
+      publikacije(where: { language: $language }, first: 6) {
+        nodes {
+          title
+          databaseId
+          featuredImage {
+            node {
+              altText
+              mediaDetails {
+                width
+                height
+              }
+              sourceUrl
+            }
+          }
+          publications {
+            file {
+              node {
+                link
+              }
+            }
+            publicationAuthor
+          }
+        }
+      }
+    }
+  `;
 
-  const blogs = responseBlog.data.posts.nodes;
+  try {
+    const responseBlog = await client.query({
+      query: GET_LATEST_POSTS,
+      variables: { language: locale.toUpperCase() },
+    });
+    const blogs = responseBlog?.data?.posts?.nodes ?? [];
 
-  const responseNews = await client.query({
-    query: GET_LATEST_NEWS,
-    variables: { language: locale.toUpperCase() },
-  });
+    const responseNews = await client.query({
+      query: GET_LATEST_NEWS,
+      variables: { language: locale.toUpperCase() },
+    });
+    const news = responseNews?.data?.vijesti?.nodes ?? [];
 
-  const news = responseNews.data.vijesti.nodes;
-  // Return the data as props
-  return {
-    props: {
-      blogs,
-      news,
-    },
-  };
+    const responsePublications = await client.query({
+      query: GET_LATEST_PUBLICATIONS,
+      variables: { language: locale.toUpperCase() },
+    });
+    const publications = responsePublications?.data?.publikacije?.nodes ?? [];
+
+    return {
+      props: {
+        blogs,
+        news,
+        publications,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {
+      props: {
+        blogs: [],
+        news: [],
+        publications: [],
+      },
+    };
+  }
 }
 
 export default Home;
