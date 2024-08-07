@@ -268,9 +268,57 @@ const Navigation = () => {
               }`}
             >
               <li className={styles["link-container"]}>
-                <Link href="/" className={styles.link}>
+                <Link href="/about" className={styles.link}>
                   {locale === "sr" ? "O NAMA" : "ABOUT"}
                 </Link>
+                <ul className={styles["dropdown"]}>
+                  <li>
+                    <Link href="/about/work">
+                      {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about/mission">
+                      {locale === "sr"
+                        ? "Koja je naša misija?"
+                        : "What is our mission?"}
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link href="/about/vision">
+                      {locale === "sr"
+                        ? "Koja je naša vizija?"
+                        : "What is our vision?"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about/values">
+                      {locale === "sr"
+                        ? "Koje su naše vrijednosti?"
+                        : "What are our values?"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about/our-team">
+                      {locale === "sr"
+                        ? "Ko čini naš tim?"
+                        : "Who is part of our team?"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about/support">
+                      {locale === "sr"
+                        ? "Ko podržava naš rad?"
+                        : "Who supports our work?"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about/reports">
+                      {locale === "sr" ? "Naši izvještaji" : "Our reports"}
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className={styles["link-container"]}>
                 <Link href="/" className={styles.link}>
