@@ -222,6 +222,7 @@
 
   .intro {
     font-size: 1.1rem;
+    text-align: left;
   }
 
   .card-head {
@@ -337,7 +338,6 @@
 
   .card-text {
     padding: 0;
-    text-align: left;
   }
 }
 
