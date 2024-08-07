@@ -110,7 +110,7 @@ const Navigation = () => {
                 variants={menuVariants}
               >
                 <li className={styles["hamburger-link-container"]}>
-                  <Link href="/" className={styles["hamburger-link"]}>
+                  <Link href="/about" className={styles["hamburger-link"]}>
                     {locale === "sr" ? "O NAMA" : "ABOUT"}
                   </Link>
                 </li>
