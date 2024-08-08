@@ -36,6 +36,16 @@ const About = () => {
           </div>
           <div className={styles["about-content"]}>
             <p className={styles.intro}>
+              Quisque at efficitur massa, ac aliquam est. Suspendisse sodales
+              sollicitudin maximus. Nunc ut augue ac libero efficitur facilisis
+              ac in nunc. Vestibulum lacus urna, volutpat ut ante id, sodales
+              placerat urna. Fusce gravida, ante quis tempus venenatis, elit
+              diam luctus purus, sed bibendum nisi magna non lectus. Nunc
+              lacinia luctus turpis, a fringilla metus. Suspendisse a tempor
+              nibh. Maecenas eu eros vel augue feugiat feugiat at sit amet odio.
+              Aenean feugiat dapibus luctus.
+            </p>
+            <p className={styles.intro}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               aliquam tortor ligula, quis luctus nunc eleifend id. In hac
               habitasse platea dictumst. Aliquam iaculis lectus a leo varius,
@@ -46,14 +56,7 @@ const About = () => {
               dignissim sapien. Donec ultrices, nisi et ultricies molestie,
               augue turpis aliquam lorem, sit amet varius elit arcu id elit.
               Maecenas viverra lacinia dictum. Vestibulum sagittis sed eros
-              vitae vehicula. Quisque at efficitur massa, ac aliquam est.
-              Suspendisse sodales sollicitudin maximus. Nunc ut augue ac libero
-              efficitur facilisis ac in nunc. Vestibulum lacus urna, volutpat ut
-              ante id, sodales placerat urna. Fusce gravida, ante quis tempus
-              venenatis, elit diam luctus purus, sed bibendum nisi magna non
-              lectus. Nunc lacinia luctus turpis, a fringilla metus. Suspendisse
-              a tempor nibh. Maecenas eu eros vel augue feugiat feugiat at sit
-              amet odio. Aenean feugiat dapibus luctus.
+              vitae vehicula.
             </p>
             <div className={styles["grid-cards-container"]}>
               <Link href="/our-work" className={styles["grid-card"]}>

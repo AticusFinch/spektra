@@ -204,7 +204,7 @@
   top: 0;
 }
 
-.dropdown {
+.dropdown-container {
   position: absolute;
   top: 100%;
   left: 0;
@@ -224,7 +224,7 @@
   flex-direction: column;
 }
 
-.dropdown:before {
+.dropdown-container:before {
   content: "";
   background: linear-gradient(
     90deg,
@@ -247,6 +247,16 @@
   transition: opacity 0.5s ease-in-out;
 }
 
+.dropdown {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+}
+
 .dropdown li {
   opacity: 0;
   width: 100%;
@@ -259,15 +269,13 @@
 
 .dropdown li a {
   font-size: 1rem;
-  padding: 10px 15px;
   display: none;
-  color: #ffffff2d;
+  color: #ffffff7f;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
 }
 
 .dropdown li a:hover {
-  background-color: var(--dark-grey);
   color: var(--cream-white);
 }
 
@@ -275,7 +283,7 @@
   display: block;
 }
 
-.link-container:hover .dropdown {
+.link-container:hover .dropdown-container {
   opacity: 1;
   height: calc(35px * 8);
 }
@@ -357,17 +365,12 @@
   }
 
   .dropdown li a {
-    font-size: 0.8rem;
-    padding: 10px 15px;
-    display: none;
-    color: #ffffff2d;
-    text-decoration: none;
-    transition: all 0.5s ease-in-out;
+    font-size: 0.7rem;
   }
 
-  .link-container:hover .dropdown {
+  .link-container:hover .dropdown-container {
     opacity: 1;
-    height: calc(32px * 8);
+    height: calc(26px * 8);
   }
 }
 
@@ -378,16 +381,6 @@
 
   .dropdown li a {
     font-size: 0.7rem;
-    padding: 8px 15px;
-    display: none;
-    color: #ffffff2d;
-    text-decoration: none;
-    transition: all 0.5s ease-in-out;
-  }
-
-  .link-container:hover .dropdown {
-    opacity: 1;
-    height: calc(30px * 8);
   }
 }
 
@@ -399,11 +392,19 @@
   .link {
     font-size: 0.5rem;
   }
+
+  .dropdown-container {
+    width: 120%;
+  }
 }
 
 @media (max-width: 1024px) {
   .nav-container {
     padding: 1rem 2rem;
+  }
+
+  .dropdown-container {
+    width: 140%;
   }
 }
 
@@ -464,7 +465,7 @@
     text-decoration: none;
   }
 
-  .dropdown {
+  .dropdown-container {
     display: none;
   }
 }
