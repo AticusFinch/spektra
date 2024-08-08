@@ -115,7 +115,7 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li className={styles["hamburger-link-container"]}>
-                  <Link href="/" className={styles["hamburger-link"]}>
+                  <Link href="/programs" className={styles["hamburger-link"]}>
                     {locale === "sr" ? "PROGRAMI" : "PROGRAMS"}
                   </Link>
                 </li>
