@@ -100,7 +100,7 @@ const Blog = (props) => {
           >
             {displayedPosts.length > 0 ? (
               displayedPosts.map((post, databaseId) => (
-                <div key={post.id} className={styles.post}>
+                <div key={databaseId} className={styles.post}>
                   <Link
                     href={`/blog/${post.databaseId}`}
                     className={styles["post-link"]}
@@ -124,6 +124,15 @@ const Blog = (props) => {
                       )}
                     </div>
                     <div className={styles.content}>
+                      <div className={post.text}>
+                        <h3 className={styles.title} lang="en">
+                          {post.title}
+                        </h3>
+                        <p
+                          className={styles.excerpt}
+                          dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                        ></p>
+                      </div>
                       <span className={styles["post-meta"]}>
                         <FaPen className={styles["meta-icon"]} />
                         {post.posts.postAuthor ||
@@ -131,11 +140,6 @@ const Blog = (props) => {
                             ? "Nepoznat Autor"
                             : "Unknown Author")}
                       </span>
-                      <div>
-                        <h3 className={styles.title} lang="en">
-                          {post.title}
-                        </h3>
-                      </div>
                     </div>
                   </Link>
                 </div>
@@ -192,6 +196,7 @@ export async function getStaticProps({ locale }) {
         nodes {
           databaseId
           title
+          excerpt
           slug
           language {
             code
