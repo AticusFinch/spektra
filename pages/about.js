@@ -13,6 +13,7 @@ import { IoSunnyOutline, IoNewspaperOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";
 import { AiOutlineTeam } from "react-icons/ai";
 import { HiOutlineSupport } from "react-icons/hi";
+import { IoEnterOutline } from "react-icons/io5";
 
 const About = () => {
   const router = useRouter();
@@ -79,6 +80,12 @@ const About = () => {
                     quis arcu non vestibulum.{" "}
                   </p>
                 </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
+                </div>
               </Link>
               <Link href="/about_pages/mission" className={styles["grid-card"]}>
                 <div className={styles.icons}>
@@ -101,6 +108,12 @@ const About = () => {
                     in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
                     quis arcu non vestibulum.{" "}
                   </p>
+                </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
                 </div>
               </Link>
               <Link href="/about_pages/vision" className={styles["grid-card"]}>
@@ -125,6 +138,12 @@ const About = () => {
                     quis arcu non vestibulum.{" "}
                   </p>
                 </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
+                </div>
               </Link>
               <Link href="/about_pages/values" className={styles["grid-card"]}>
                 <div className={styles.icons}>
@@ -147,6 +166,12 @@ const About = () => {
                     in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
                     quis arcu non vestibulum.{" "}
                   </p>
+                </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
                 </div>
               </Link>
               <Link href="/about_pages/team" className={styles["grid-card"]}>
@@ -171,6 +196,12 @@ const About = () => {
                     quis arcu non vestibulum.{" "}
                   </p>
                 </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
+                </div>
               </Link>
               <Link href="/about_pages/support" className={styles["grid-card"]}>
                 <div className={styles.icons}>
@@ -194,6 +225,12 @@ const About = () => {
                     quis arcu non vestibulum.{" "}
                   </p>
                 </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
+                </div>
               </Link>
               <Link href="/about_pages/reports" className={styles["grid-card"]}>
                 <div className={styles.icons}>
@@ -214,6 +251,12 @@ const About = () => {
                     in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
                     quis arcu non vestibulum.{" "}
                   </p>
+                </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
                 </div>
               </Link>
             </div>

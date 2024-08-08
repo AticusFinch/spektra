@@ -105,6 +105,10 @@
   outline: none !important;
 }
 
+.read-more-container {
+  display: none;
+}
+
 @media (max-width: 1920px) {
   .about {
     padding-top: 10rem;
@@ -238,7 +242,7 @@
   }
 
   .grid-card:hover .icon {
-    color: var(--trans-blue);
+    color: var(--trans-pink);
   }
 
   .grid-card:hover {
@@ -270,7 +274,7 @@
   .icon {
     font-size: 3rem;
     transition: all 0.5s ease-in-out;
-    color: var(--trans-blue);
+    color: var(--trans-pink);
   }
 
   .card-text {
@@ -304,6 +308,21 @@
 
   .grid-card:nth-child(odd) .card-text {
     padding-left: 0;
+  }
+
+  .read-more-container {
+    display: block;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    color: var(--trans-blue);
+  }
+
+  .read-more {
+    font-size: 1rem;
+    margin-left: 0.3rem;
   }
 }
 

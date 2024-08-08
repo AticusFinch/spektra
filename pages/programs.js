@@ -90,6 +90,12 @@ const Programs = () => {
                     </p>
                   </div>
                 </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
+                </div>
               </Link>
               <Link href="/programs_pages/" className={styles["grid-card"]}>
                 <div className={styles["card-overlay"]}>
@@ -124,6 +130,12 @@ const Programs = () => {
                     </p>
                   </div>
                 </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
+                </div>
               </Link>
               <Link href="/programs_pages/" className={styles["grid-card"]}>
                 <div className={styles["card-overlay"]}>
@@ -157,6 +169,12 @@ const Programs = () => {
                       quis arcu non vestibulum.{" "}
                     </p>
                   </div>
+                </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
                 </div>
               </Link>
             </div>
