@@ -59,7 +59,7 @@ const About = () => {
               vitae vehicula.
             </p>
             <div className={styles["grid-cards-container"]}>
-              <Link href="/our-work" className={styles["grid-card"]}>
+              <Link href="/about_pages/work" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <PiSuitcaseSimple className={styles.icon} />
                 </div>
@@ -80,7 +80,7 @@ const About = () => {
                   </p>
                 </div>
               </Link>
-              <Link href="/our-mission" className={styles["grid-card"]}>
+              <Link href="/about_pages/mission" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <IoSunnyOutline className={styles.icon} />
                 </div>
@@ -103,7 +103,7 @@ const About = () => {
                   </p>
                 </div>
               </Link>
-              <Link href="/our-vision" className={styles["grid-card"]}>
+              <Link href="/about_pages/vision" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <PiShootingStar className={styles.icon} />
                 </div>
@@ -126,7 +126,7 @@ const About = () => {
                   </p>
                 </div>
               </Link>
-              <Link href="/our-values" className={styles["grid-card"]}>
+              <Link href="/about_pages/values" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <GoHeart className={styles.icon} />
                 </div>
@@ -149,7 +149,7 @@ const About = () => {
                   </p>
                 </div>
               </Link>
-              <Link href="/our-team" className={styles["grid-card"]}>
+              <Link href="/about_pages/team" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <AiOutlineTeam className={styles.icon} />
                 </div>
@@ -172,7 +172,7 @@ const About = () => {
                   </p>
                 </div>
               </Link>
-              <Link href="/our-support" className={styles["grid-card"]}>
+              <Link href="/about_pages/support" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <HiOutlineSupport className={styles.icon} />
                 </div>
@@ -195,7 +195,7 @@ const About = () => {
                   </p>
                 </div>
               </Link>
-              <Link href="/our-reports" className={styles["grid-card"]}>
+              <Link href="/about_pages/reports" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <IoNewspaperOutline className={styles.icon} />
                 </div>

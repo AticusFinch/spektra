@@ -64,7 +64,8 @@
 }
 
 ::selection {
-  background: var(--trans-blue);
+  background: var(--trans-pink);
+  color: var(--dark-grey);
 }
 
 * {
