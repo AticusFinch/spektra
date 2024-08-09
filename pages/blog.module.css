@@ -166,8 +166,12 @@
   font-family: "Myriad Pro Light", sans-serif;
   padding: 0 0.5rem;
   border-left: solid 1px var(--trans-pink);
-  border-right: solid 1px var(--trans-pink);
+
   color: var(--cream-white);
+}
+
+.category:last-of-type {
+  border-right: solid 1px var(--trans-pink);
 }
 
 .date {
@@ -282,11 +286,11 @@
   }
 
   .post-meta {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
   .meta-icon {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
   }
 
   .category {
@@ -302,12 +306,12 @@
   }
 
   .post:first-of-type .post-meta {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .post:first-of-type .meta-icon {
     margin-right: 0.5rem;
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
 
   .empty {
@@ -618,6 +622,7 @@
 
   .content {
     padding: 0.5rem 0.7rem;
+    width: 100%;
   }
 
   .title {
@@ -669,6 +674,9 @@
   .category {
     padding: 0 0.2rem;
   }
+  .post-footer .category {
+    display: none;
+  }
 }
 
 @media (max-width: 425px) {
@@ -679,10 +687,6 @@
 
   .post {
     height: 9rem;
-  }
-
-  .content {
-    width: 230%;
   }
 
   .title {
