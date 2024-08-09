@@ -93,11 +93,11 @@
 }
 
 .content {
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 1.5rem;
   height: 100%;
-  width: 100%;
+  width: 150%;
   letter-spacing: 1px;
-  background-color: #1c1c1c;
+  background-color: #212121;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -130,7 +130,7 @@
 .excerpt {
   margin-top: 1rem;
   font-family: "Myriad Pro Light", sans-serif;
-  color: var(--cream-white);
+  color: #efeff0aa;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   line-clamp: 4;
@@ -141,13 +141,37 @@
 }
 
 .post-meta {
+  font-size: 0.9rem;
   font-family: "Myriad Pro Light", sans-serif;
   color: var(--cream-white);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .meta-icon {
   margin-right: 0.4rem;
-  font-size: 0.7rem;
+  font-size: 1rem;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  color: var(--cream-white);
+}
+
+.category {
+  font-family: "Myriad Pro Light", sans-serif;
+  padding: 0 0.5rem;
+  border-left: solid 1px var(--trans-pink);
+  border-right: solid 1px var(--trans-pink);
+  color: var(--cream-white);
+}
+
+.date {
+  margin-bottom: 0.4rem;
 }
 
 .post:first-of-type {
@@ -162,6 +186,7 @@
 .post:first-of-type .content {
   height: 45%;
   padding: 1.7rem 2rem;
+  width: 100%;
 }
 
 .post:first-of-type .title {
@@ -169,12 +194,12 @@
 }
 
 .post:first-of-type .post-meta {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .post:first-of-type .meta-icon {
   margin-right: 0.4rem;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 .post:first-of-type .excerpt {
@@ -230,7 +255,7 @@
 
   .blog {
     padding-top: 10rem;
-    width: 90%;
+    width: 95%;
   }
 
   .blog-container {
@@ -262,6 +287,14 @@
 
   .meta-icon {
     font-size: 0.5rem;
+  }
+
+  .category {
+    font-size: 0.7rem;
+  }
+
+  .content {
+    width: 190%;
   }
 
   .post:first-of-type .title {
@@ -315,22 +348,29 @@
   }
 
   .post {
-    height: 13rem;
+    height: 12rem;
   }
 
   .post:first-of-type {
-    grid-column: span 2;
     grid-row: span 2;
-    height: calc(13rem * 2 + 20px);
+    height: calc(12rem * 2 + 20px);
   }
 
   .post-image-container {
-    height: 55%;
+    height: 100%;
+  }
+
+  .title {
+    font-size: 1.1rem;
   }
 
   .content {
-    padding: 0.8rem 1.5rem;
-    height: 45%;
+    padding: 1rem 1.2rem;
+    height: 100%;
+  }
+
+  .excerpt {
+    font-size: 0.8rem;
   }
 
   .post:first-of-type .content {
@@ -338,28 +378,38 @@
   }
 
   .post:first-of-type .title {
-    font-size: 1.9em;
-    margin-top: 0.4rem;
+    font-size: 1.6em;
   }
 
   .post:first-of-type .post-meta {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .post:first-of-type .meta-icon {
     margin-right: 0.5rem;
-    font-size: 0.7rem;
+    font-size: 0.5rem;
+  }
+
+  .post:first-of-type .post-image-container {
+    height: 45%;
+  }
+
+  .post:first-of-type .content {
+    height: 55%;
   }
 }
 
 @media (max-width: 1280px) {
+  .blog {
+    padding-top: 10rem;
+  }
+
   .post:first-of-type .title {
-    font-size: 1.8em;
-    margin-top: 0.4rem;
+    font-size: 1.5em;
   }
 
   .post:first-of-type .post-meta {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .title {
@@ -369,13 +419,38 @@
 }
 
 @media (max-width: 1024px) {
+  .post {
+    height: 10rem;
+  }
+
+  .blog-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .post:first-of-type {
+    grid-row: span 2;
+    height: calc(10rem * 2 + 20px);
+  }
+
   .title {
     font-size: 0.9rem;
-    margin-top: 0.1rem;
   }
 
   .content {
-    padding: 0.5rem 0.9rem;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .excerpt {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .post-meta {
+    font-size: 0.7rem;
+  }
+
+  .meta-icon {
+    font-size: 0.7rem;
   }
 
   .post:first-of-type .content {
@@ -383,12 +458,15 @@
   }
 
   .post:first-of-type .title {
-    font-size: 1.7em;
-    margin-top: 0.4rem;
+    font-size: 1.2em;
   }
 
   .post:first-of-type .post-meta {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .post:first-of-type .meta-icon {
+    font-size: 0.8rem;
   }
 }
 
@@ -421,11 +499,11 @@
   }
 
   .blog-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .post {
-    height: 15rem;
+    height: 12rem;
   }
 
   .post:hover {
@@ -433,12 +511,12 @@
   }
 
   .post-image-container {
-    height: 55%;
+    height: 100%;
   }
 
   .content {
     padding: 1rem 1rem;
-    height: 45%;
+    height: 100%;
   }
 
   .title {
@@ -454,7 +532,11 @@
   }
 
   .post-meta {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
+  }
+
+  .category {
+    font-size: 0.6rem;
   }
 
   .meta-icon {
@@ -463,31 +545,33 @@
   }
 
   .post:first-of-type {
-    grid-column: span 2;
-    grid-row: span 2;
     height: 25rem;
   }
 
   .post:first-of-type .post-image-container {
-    height: 60%;
+    height: 50%;
   }
 
   .post:first-of-type .content {
-    height: 40%;
+    height: 50%;
     padding: 1rem 1.5rem;
   }
 
   .post:first-of-type .title {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     margin-top: 0.3rem;
   }
 
   .post:first-of-type .post-meta {
-    font-size: 1.1em;
+    font-size: 0.8em;
   }
 
   .post:first-of-type .meta-icon {
     margin-right: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .excerpt {
     font-size: 0.8rem;
   }
 
@@ -534,19 +618,13 @@
 
   .content {
     padding: 0.5rem 0.7rem;
-    height: 50%;
-  }
-
-  .post-image-container {
-    height: 50%;
   }
 
   .title {
     font-family: "Myriad Pro Bold", sans-serif;
     color: var(--cream-white);
     text-decoration: none;
-    font-size: 0.9rem;
-    margin-top: 0.2rem;
+    font-size: 1rem;
   }
 
   .post-meta {
@@ -554,12 +632,10 @@
   }
 
   .meta-icon {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 
   .post:first-of-type {
-    grid-column: span 2;
-    grid-row: span 2;
     height: 20rem;
   }
 
@@ -568,16 +644,30 @@
   }
 
   .post:first-of-type .title {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
 
   .post:first-of-type .post-meta {
-    font-size: 1em;
+    font-size: 0.7em;
   }
 
   .post:first-of-type .meta-icon {
     margin-right: 0.4rem;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .excerpt {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .post:first-of-type .excerpt {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .category {
+    padding: 0 0.2rem;
   }
 }
 
@@ -587,17 +677,16 @@
     padding-bottom: 1rem;
   }
 
-  .title {
-    font-size: 0.8rem;
-    margin-top: 0.2rem;
+  .post {
+    height: 9rem;
   }
 
   .content {
-    height: 53%;
+    width: 230%;
   }
 
-  .post-image-container {
-    height: 47%;
+  .title {
+    font-size: 0.8rem;
   }
 
   .post-meta {
@@ -605,14 +694,6 @@
   }
 
   .meta-icon {
-    font-size: 0.4rem;
-  }
-
-  .post:first-of-type .title {
-    font-size: 1.6rem;
-  }
-
-  .post:first-of-type .post-meta {
-    font-size: 0.9em;
+    font-size: 0.6rem;
   }
 }

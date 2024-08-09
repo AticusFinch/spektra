@@ -12,10 +12,17 @@ import { motion } from "framer-motion";
 import styles from "./blog.module.css";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { FaPen } from "react-icons/fa";
+import { FaRegCircleUser } from "react-icons/fa6";
+import { FiClock } from "react-icons/fi";
+
 import Link from "next/link";
 
 import { FaRegSadCry } from "react-icons/fa";
+
+const formatDate = (dateString) => {
+  const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+  return new Intl.DateTimeFormat("en-GB", options).format(new Date(dateString));
+};
 
 const POSTS_PER_PAGE = 13;
 
@@ -125,21 +132,42 @@ const Blog = (props) => {
                     </div>
                     <div className={styles.content}>
                       <div className={post.text}>
+                        <span
+                          className={`${styles["post-meta"]} ${styles.date}`}
+                        >
+                          <FiClock className={styles["meta-icon"]} />
+                          {formatDate(post.date)}
+                        </span>
                         <h3 className={styles.title} lang="en">
                           {post.title}
                         </h3>
                         <p
                           className={styles.excerpt}
-                          dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                          dangerouslySetInnerHTML={{
+                            __html: post.content,
+                          }}
                         ></p>
                       </div>
-                      <span className={styles["post-meta"]}>
-                        <FaPen className={styles["meta-icon"]} />
-                        {post.posts.postAuthor ||
-                          (locale === "sr"
-                            ? "Nepoznat Autor"
-                            : "Unknown Author")}
-                      </span>
+                      <div className={styles["post-footer"]}>
+                        <span className={styles["post-meta"]}>
+                          <FaRegCircleUser className={styles["meta-icon"]} />
+                          {post.posts.postAuthor ||
+                            (locale === "sr"
+                              ? "Nepoznat Autor"
+                              : "Unknown Author")}{" "}
+                        </span>
+
+                        <div class name={styles.categories}>
+                          {post.categories.nodes.map((category) => (
+                            <span
+                              key={category.name}
+                              className={styles.category}
+                            >
+                              {category.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 </div>
@@ -196,7 +224,7 @@ export async function getStaticProps({ locale }) {
         nodes {
           databaseId
           title
-          excerpt
+          content
           slug
           language {
             code
@@ -213,6 +241,11 @@ export async function getStaticProps({ locale }) {
             }
           }
           date
+          categories {
+            nodes {
+              name
+            }
+          }
           posts {
             postAuthor
           }
@@ -225,7 +258,8 @@ export async function getStaticProps({ locale }) {
     query: GET_POSTS,
     variables: { language: locale.toUpperCase() },
   });
-  const posts = response.data.posts.nodes;
+
+  const posts = response.data?.posts?.nodes || [];
 
   return {
     props: {
