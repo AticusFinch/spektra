@@ -16,6 +16,8 @@ import styles from "./news.module.css";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { FaRegSadCry } from "react-icons/fa";
+import { FiClock } from "react-icons/fi";
+import { FaRegCircleUser } from "react-icons/fa6";
 
 const POSTS_PER_PAGE = 13;
 
@@ -118,9 +120,29 @@ const News = (props) => {
                       />
                     </div>
                     <div className={styles.content}>
-                      <h3 className={styles.title} lang="en">
-                        {post.title}
-                      </h3>
+                      <div>
+                        <h3 className={styles.title} lang="en">
+                          {post.title}
+                        </h3>
+                        <p
+                          className={styles.excerpt}
+                          dangerouslySetInnerHTML={{
+                            __html: post.content,
+                          }}
+                        ></p>
+                      </div>
+                      <div className={styles["post-footer"]}>
+                        <div class name={styles.categories}>
+                          {post.categories.nodes.map((category) => (
+                            <span
+                              key={category.name}
+                              className={styles.category}
+                            >
+                              {category.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 </div>
@@ -177,6 +199,12 @@ export async function getStaticProps({ locale }) {
         nodes {
           databaseId
           title
+          content
+          categories {
+            nodes {
+              name
+            }
+          }
           language {
             code
             locale
@@ -200,7 +228,8 @@ export async function getStaticProps({ locale }) {
     query: GET_NEWS,
     variables: { language: locale.toUpperCase() },
   });
-  const news = response.data.vijesti.nodes;
+
+  const news = response.data?.vijesti?.nodes || [];
 
   return {
     props: {

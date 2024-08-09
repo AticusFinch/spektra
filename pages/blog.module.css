@@ -5,7 +5,7 @@
 }
 
 .headline {
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -180,7 +180,7 @@
 
 .post:first-of-type {
   grid-row: span 2;
-  height: calc(17rem * 2 + 20px);
+  height: calc(17rem * 2 + 25px);
 }
 
 .post:first-of-type .post-image-container {
@@ -553,16 +553,16 @@
   }
 
   .post:first-of-type .post-image-container {
-    height: 50%;
+    height: 45%;
   }
 
   .post:first-of-type .content {
-    height: 50%;
+    height: 55%;
     padding: 1rem 1.5rem;
   }
 
   .post:first-of-type .title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin-top: 0.3rem;
   }
 
