@@ -21,6 +21,11 @@ import { FaRegCircleUser } from "react-icons/fa6";
 
 const POSTS_PER_PAGE = 13;
 
+const formatDate = (dateString) => {
+  const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+  return new Intl.DateTimeFormat("en-GB", options).format(new Date(dateString));
+};
+
 const News = (props) => {
   const { news } = props;
   const [currentPage, setCurrentPage] = useState(1);
@@ -120,10 +125,14 @@ const News = (props) => {
                       />
                     </div>
                     <div className={styles.content}>
-                      <div>
-                        <h3 className={styles.title} lang="en">
-                          {post.title}
-                        </h3>
+                      <div className={styles["post-text"]}>
+                        <span
+                          className={`${styles["post-meta"]} ${styles.date}`}
+                        >
+                          <FiClock className={styles["meta-icon"]} />
+                          {formatDate(post.date)}
+                        </span>
+                        <h3 className={styles.title}>{post.title}</h3>
                         <p
                           className={styles.excerpt}
                           dangerouslySetInnerHTML={{
@@ -199,6 +208,7 @@ export async function getStaticProps({ locale }) {
         nodes {
           databaseId
           title
+          date
           content
           categories {
             nodes {

@@ -43,7 +43,7 @@
 
 .grid-card {
   position: relative; /* Ensure the container is positioned relative */
-  height: 18rem; /* Set a fixed height for the container */
+  height: 25rem; /* Set a fixed height for the container */
   overflow: hidden; /* Hide any overflow */
   text-decoration: none;
   color: var(--cream-white);
@@ -88,7 +88,7 @@
 
 .card-head {
   font-family: "Myriad Pro Bold", sans-serif;
-  font-size: 1.3rem;
+  font-size: 2rem;
   display: inline-block;
   transition: all 0.5s ease-in-out;
   padding-bottom: 0.5rem;
@@ -103,6 +103,8 @@
   text-overflow: ellipsis;
   white-space: normal;
   transition: all 0.5s ease-in-out;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
 .grid-card:hover .card-head,
@@ -184,10 +186,15 @@
 
   .grid-card {
     margin-top: 2.5rem;
+    height: 18rem;
   }
 
   .card-head {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
   }
 }
 
@@ -212,6 +219,14 @@
 
   .programs-head {
     font-size: 3.5rem;
+  }
+
+  .card-head {
+    font-size: 1.4rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
   }
 }
 

@@ -482,7 +482,7 @@
     will-change: transform;
     transform-origin: top;
     margin-top: 2rem;
-    margin-left: 2.5rem;
+    margin-left: 2rem;
   }
 
   .hamburger-link-container {
@@ -499,10 +499,36 @@
   .dropdown-container {
     display: none;
   }
+
+  .hamburger-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-link {
+    font-size: 0.8rem;
+  }
+  .hamburger-menu {
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+  }
 }
 
 @media (max-width: 425px) {
+  .hamburger-link-container {
+    height: 3rem;
+  }
+
   .hamburger-link {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
