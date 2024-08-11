@@ -111,7 +111,7 @@ const Footer = () => {
             {locale === "sr" ? "O NAMA" : "ABOUT"}
           </Link>
           <GoDotFill className={styles.dot} />
-          <Link href="/projects" className={styles["footer-bottom-link"]}>
+          <Link href="/programs" className={styles["footer-bottom-link"]}>
             {locale === "sr" ? "PROGRAMI" : "PROGRAMS"}
           </Link>
           <GoDotFill className={styles.dot} />
@@ -127,7 +127,7 @@ const Footer = () => {
             {locale === "sr" ? "PUBLIKACIJE" : "PUBLICATIONS"}
           </Link>
           <GoDotFill className={styles.dot} />
-          <Link href="/contact" className={styles["footer-bottom-link"]}>
+          <Link href="/rights" className={styles["footer-bottom-link"]}>
             {locale === "sr" ? "ZNAJ SVOJA PRAVA" : "KNOW YOUR RIGHTS"}
           </Link>
           <GoDotFill className={styles.dot} />

@@ -91,10 +91,10 @@ const Programs = () => {
                   </div>
                 </div>
                 <div className={styles["read-more-container"]}>
-                  <IoEnterOutline />
                   <span className={styles["read-more"]}>
                     {locale === "sr" ? "saznaj više" : "read more"}
                   </span>
+                  <IoEnterOutline />
                 </div>
               </Link>
               <Link href="/programs_pages/" className={styles["grid-card"]}>
@@ -131,10 +131,10 @@ const Programs = () => {
                   </div>
                 </div>
                 <div className={styles["read-more-container"]}>
-                  <IoEnterOutline />
                   <span className={styles["read-more"]}>
                     {locale === "sr" ? "saznaj više" : "read more"}
                   </span>
+                  <IoEnterOutline />
                 </div>
               </Link>
               <Link href="/programs_pages/" className={styles["grid-card"]}>
@@ -171,10 +171,10 @@ const Programs = () => {
                   </div>
                 </div>
                 <div className={styles["read-more-container"]}>
-                  <IoEnterOutline />
                   <span className={styles["read-more"]}>
                     {locale === "sr" ? "saznaj više" : "read more"}
                   </span>
+                  <IoEnterOutline />
                 </div>
               </Link>
             </div>

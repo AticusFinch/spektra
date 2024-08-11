@@ -138,7 +138,7 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li className={styles["hamburger-link-container"]}>
-                  <Link href="/" className={styles["hamburger-link"]}>
+                  <Link href="/rights" className={styles["hamburger-link"]}>
                     {locale === "sr" ? "ZNAJ SVOJA PRAVA" : "KNOW YOUR RIGHTS"}
                   </Link>
                 </li>
@@ -368,7 +368,7 @@ const Navigation = () => {
                 </Link>
               </li>
               <li className={styles["link-container"]}>
-                <Link href="/" className={styles.link}>
+                <Link href="/rights" className={styles.link}>
                   {locale === "sr" ? "ZNAJ SVOJA PRAVA" : "KNOW YOUR RIGHTS"}
                 </Link>
               </li>
