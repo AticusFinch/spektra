@@ -16,16 +16,32 @@ import styles from "./publications.module.css";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { FaRegSadCry } from "react-icons/fa";
-import { FaPen } from "react-icons/fa";
 import { RiDownload2Line } from "react-icons/ri";
+import { CgEreader } from "react-icons/cg";
+import { PiPencilSimpleLineBold } from "react-icons/pi";
 
-const POSTS_PER_PAGE = 10;
+const POSTS_PER_PAGE = 24;
 
 const Publications = (props) => {
   const { publications } = props;
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 820);
+    };
+
+    handleResize(); // Check initial screen size
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const router = useRouter();
   const { locale } = router;
@@ -110,10 +126,7 @@ const Publications = (props) => {
             {displayedPublications.length > 0 ? (
               displayedPublications.map((post, databaseId) => (
                 <div key={databaseId} className={styles.publication}>
-                  <Link
-                    href={`/publications/${post.databaseId}`}
-                    className={styles["post-link"]}
-                  >
+                  <div className={styles["post-link"]}>
                     <div className={styles["publication-image-container"]}>
                       <Image
                         src={post.featuredImage.node.sourceUrl}
@@ -125,27 +138,76 @@ const Publications = (props) => {
                     </div>
                     <div className={styles.content}>
                       <div>
+                        <h3 className={styles.title}>{post.title}</h3>
                         <span className={styles["author"]}>
-                          <FaPen className={styles["meta-icon"]} />
+                          <PiPencilSimpleLineBold
+                            className={styles["meta-icon"]}
+                          />
                           {post.publications.publicationAuthor}
                         </span>
-                        <h3 className={styles.title}>{post.title}</h3>
                       </div>
-                      <button
-                        onClick={(e) => {
-                          if (post.publications.file.node.link) {
-                            window.open(
-                              post.publications.file.node.link,
-                              "_blank"
-                            );
+                      <div className={styles.more}>
+                        <motion.button
+                          onClick={(e) => {
+                            if (post.publications.file.node.link) {
+                              window.open(
+                                post.publications.file.node.link,
+                                "_blank"
+                              );
+                            }
+                          }}
+                          whileHover={
+                            !isSmallScreen
+                              ? {
+                                  y: ["0%", "-15%", "0%", "-10%", "0%"],
+                                }
+                              : {}
                           }
-                        }}
-                        className={styles["download-button"]}
-                      >
-                        <RiDownload2Line className={styles["download-icon"]} />
-                      </button>
+                          transition={
+                            !isSmallScreen
+                              ? {
+                                  duration: 2,
+                                  repeat: Infinity,
+                                  repeatType: "loop",
+                                }
+                              : {}
+                          }
+                          className={`${styles["download-button"]} ${
+                            isSmallScreen ? "no-animation" : ""
+                          }`}
+                        >
+                          <RiDownload2Line
+                            className={styles["download-icon"]}
+                          />
+                        </motion.button>
+                        <Link
+                          href={`/publications/${post.databaseId}`}
+                          className={styles["download-icon"]}
+                        >
+                          <motion.div
+                            whileHover={
+                              !isSmallScreen
+                                ? {
+                                    y: ["0%", "-15%", "0%", "-10%", "0%"],
+                                  }
+                                : {}
+                            }
+                            transition={
+                              !isSmallScreen
+                                ? {
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    repeatType: "loop",
+                                  }
+                                : {}
+                            }
+                          >
+                            <CgEreader />
+                          </motion.div>
+                        </Link>
+                      </div>
                     </div>
-                  </Link>
+                  </div>
                 </div>
               ))
             ) : (
