@@ -132,6 +132,15 @@
     margin-top: 0rem;
   }
 
+  .button:hover {
+    background-position: initial;
+    moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  .button:active,
   .button:focus {
     background-position: 100% 0;
     moz-transition: all 0.4s ease-in-out;
