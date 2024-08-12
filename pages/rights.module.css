@@ -129,7 +129,15 @@
 @media (max-width: 820px) {
   .rights-head {
     font-size: 4rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
+  }
+
+  .button:focus {
+    background-position: 100% 0;
+    moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
 }
 
@@ -139,7 +147,6 @@
   }
   .rights-head {
     font-size: 3.5rem;
-    margin-top: 3rem;
   }
 
   .info {

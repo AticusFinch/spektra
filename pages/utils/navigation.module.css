@@ -464,6 +464,9 @@
     height: auto;
     background-color: var(--dark-grey);
     z-index: 10;
+    -webkit-box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
   }
 
   .menu-button {
@@ -512,6 +515,15 @@
   .hamburger-menu {
     margin-top: 1.5rem;
     margin-left: 2rem;
+  }
+
+  .logo-mobile {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-button {
+    font-size: 1.3rem;
   }
 }
 

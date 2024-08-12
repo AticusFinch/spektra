@@ -41,11 +41,12 @@ const Rights = () => {
                 }}
                 className={styles.button}
               >
-                preuzmi dokument
+                {locale === "sr" ? "PREUZMI DOKUMENT" : "DOWNLOAD DOCUMENT"}
               </button>
               <p className={styles.contact}>
-                Ukoliko ti je neophodna pomoć ili podrška pri pristupanju
-                sopstvenim pravima kontaktiraj nas putem e-maila:
+                {locale === "sr"
+                  ? "Ukoliko ti je neophodna pomoć ili podrška pri pristupanju sopstvenim pravima kontaktiraj nas putem e-maila:"
+                  : "If you need help or support in accessing your rights, contact us via email:"}
                 <span className={styles.email}>
                   info@asocijacijaspektra.org
                 </span>
