@@ -30,7 +30,7 @@ const Navigation = () => {
       height: [0, "100vh"],
       transition: {
         type: "keyframes",
-        duration: 0.5,
+        duration: 1,
         ease: "easeOut",
       },
     },

@@ -469,6 +469,12 @@
     box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
   }
 
+  .hamburger-menu-container {
+    -webkit-box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+  }
+
   .menu-button {
     background: transparent;
     border: none;
