@@ -143,7 +143,7 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li className={styles["hamburger-link-container"]}>
-                  <Link href="/" className={styles["hamburger-link"]}>
+                  <Link href="/report" className={styles["hamburger-link"]}>
                     {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
                   </Link>
                 </li>
@@ -373,7 +373,7 @@ const Navigation = () => {
                 </Link>
               </li>
               <li className={styles["link-container"]}>
-                <Link href="/" className={styles.link}>
+                <Link href="/report" className={styles.link}>
                   {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
                 </Link>
               </li>

@@ -87,6 +87,18 @@ body {
   color: var(--cream-white);
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--cream-white);
+}
+
 .no-scroll {
   overflow: hidden;
   height: 100vh;
