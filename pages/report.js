@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navigation from "./utils/navigation";
 import Container from "./utils/container";
 import Footer from "./utils/footer";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 import styles from "./report.module.css";
@@ -51,8 +52,17 @@ const Report = () => {
     }
   };
 
+  const websiteTitle =
+    locale === "sr" ? "Asocijacija Spektra" : "Association Spectra";
   return (
     <div>
+      <Head>
+        <title>
+          {`${websiteTitle} | ${
+            locale === "sr" ? "Prijavi nasilje" : "Report violence"
+          }`}
+        </title>
+      </Head>
       <Navigation />
       <Container>
         <div className={styles.report}>
