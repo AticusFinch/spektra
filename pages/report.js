@@ -54,6 +54,7 @@ const Report = () => {
 
   const websiteTitle =
     locale === "sr" ? "Asocijacija Spektra" : "Association Spectra";
+
   return (
     <div>
       <Head>

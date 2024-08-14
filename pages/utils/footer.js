@@ -135,7 +135,7 @@ const Footer = () => {
             {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
           </Link>
           <GoDotFill className={styles.dot} />
-          <Link href="/contact" className={styles["footer-bottom-link"]}>
+          <Link href="/donate" className={styles["footer-bottom-link"]}>
             {locale === "sr" ? "DONIRAJ" : "DONATE"}
           </Link>
         </div>
