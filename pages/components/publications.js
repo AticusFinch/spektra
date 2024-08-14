@@ -13,7 +13,7 @@ import { FaRegSadCry } from "react-icons/fa";
 import { GrDownload } from "react-icons/gr";
 
 import { FaPen } from "react-icons/fa";
-import { CiRead } from "react-icons/ci";
+import { CgEreader } from "react-icons/cg";
 
 import styles from "./publications.module.css";
 
@@ -131,12 +131,6 @@ const Publications = ({ publications }) => {
                         </span>
                       </div>
                       <div className={styles.download}>
-                        <Link
-                          href={`/publications/${post.databaseId}`}
-                          className={styles["read-more"]}
-                        >
-                          <CiRead />
-                        </Link>
                         <button
                           onClick={(e) => {
                             if (post.publications.file.node.link) {
@@ -150,6 +144,12 @@ const Publications = ({ publications }) => {
                         >
                           <GrDownload />
                         </button>
+                        <Link
+                          href={`/publications/${post.databaseId}`}
+                          className={styles["read-more"]}
+                        >
+                          <CgEreader />
+                        </Link>
                       </div>
                     </div>
                   </div>

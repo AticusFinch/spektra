@@ -30,15 +30,17 @@ const Donate = () => {
       <div className={styles.donate}>
         <div className={styles.overlay}>
           {" "}
-          <h1 className={styles["donate-head"]}>
-            {locale === "sr"
-              ? "Pridruži nam se u kreiranju sistema u kom svako ima ravnopravno mjesto"
-              : "Join us in creating a system where everyone is in a place of equality"}
-            <FaHeart className={styles.icon} />
-          </h1>
-          <button onClick={handleDonate} className={styles.button}>
-            Donate Now
-          </button>
+          <div className={styles.content}>
+            <h1 className={styles["donate-head"]}>
+              {locale === "sr"
+                ? "Pridruži nam se u kreiranju sistema u kom svako ima ravnopravno mjesto"
+                : "Join us in creating a system where everyone is in a place of equality"}
+              <FaHeart className={styles.icon} />
+            </h1>
+            <button onClick={handleDonate} className={styles.button}>
+              {locale === "sr" ? "Doniraj" : "Donate"}
+            </button>
+          </div>
         </div>
       </div>
       <Footer />
