@@ -40,10 +40,6 @@
   margin-bottom: 1rem;
 }
 
-.icon {
-  font-size: 1.4rem;
-}
-
 .button {
   background-image: linear-gradient(
     to right,
@@ -106,19 +102,11 @@
     font-size: 2.4rem;
   }
 
-  .icon {
-    height: 30px;
-  }
-
   .button {
     padding: 0.7rem 1.3rem;
     font-size: 1rem;
     margin-top: 1.5rem;
     width: 7.5rem;
-  }
-
-  .icon {
-    font-size: 1.3rem;
   }
 }
 
@@ -135,10 +123,6 @@
   .content {
     align-items: flex-start;
     width: 75%;
-  }
-
-  .icon {
-    height: 30px;
   }
 
   .button {
@@ -183,10 +167,6 @@
 
   .donate-text {
     font-size: 1rem;
-  }
-
-  .icon {
-    height: 25px;
   }
 
   .button {
