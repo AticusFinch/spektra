@@ -127,7 +127,7 @@
   animation: glowing 20s linear infinite;
   letter-spacing: 1px;
   padding: 0.8rem;
-  transition: ease-in-out 0.3s all;
+  transition: ease-in-out 0.5s all;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;

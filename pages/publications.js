@@ -124,8 +124,8 @@ const Publications = (props) => {
             }`}
           >
             {displayedPublications.length > 0 ? (
-              displayedPublications.map((post, databaseId) => (
-                <div key={databaseId} className={styles.publication}>
+              displayedPublications.map((post, id) => (
+                <div key={id} className={styles.publication}>
                   <div className={styles["post-link"]}>
                     <div className={styles["publication-image-container"]}>
                       <Image
@@ -181,7 +181,7 @@ const Publications = (props) => {
                           />
                         </motion.button>
                         <Link
-                          href={`/publications/${post.databaseId}`}
+                          href={`/publications/${post.slug}`}
                           className={styles["download-icon"]}
                         >
                           <motion.div
@@ -261,6 +261,8 @@ export async function getStaticProps({ locale }) {
       publikacije(where: { language: $language }, last: 1000) {
         nodes {
           title
+          slug
+          id
           databaseId
           featuredImage {
             node {
