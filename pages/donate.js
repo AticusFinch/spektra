@@ -3,16 +3,20 @@ import Navigation from "./utils/navigation";
 import Footer from "./utils/footer";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 import styles from "./donate.module.css";
 
 import { FaHeart } from "react-icons/fa6";
 
 const Donate = () => {
+  const [isClicked, setIsClicked] = useState(false);
+
   const router = useRouter();
   const { locale } = router;
 
   const handleDonate = () => {
+    setIsClicked(true);
     console.log("Donation successful!");
   };
 
@@ -35,10 +39,20 @@ const Donate = () => {
               {locale === "sr"
                 ? "Pridruži nam se u kreiranju sistema u kom svako ima ravnopravno mjesto"
                 : "Join us in creating a system where everyone is in a place of equality"}
-              <FaHeart className={styles.icon} />
             </h1>
+            <p className={styles["donate-text"]}>
+              {locale === "sr"
+                ? "Donirajte i podržite naš rad u borbi za prava trans i rodno varijantnih osoba"
+                : "Donate and support our work in the fight for the rights of trans and gender variant people"}
+            </p>
             <button onClick={handleDonate} className={styles.button}>
-              {locale === "sr" ? "Doniraj" : "Donate"}
+              {isClicked ? (
+                <FaHeart className={styles.icon} />
+              ) : locale === "sr" ? (
+                "Doniraj"
+              ) : (
+                "Donate"
+              )}
             </button>
           </div>
         </div>
