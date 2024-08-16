@@ -153,6 +153,7 @@
 }
 
 .author {
+  font-family: "Myriad Pro Regular", sans-serif;
   margin-top: 0.7rem;
   font-size: 0.9rem;
   -webkit-line-clamp: 2;
