@@ -148,6 +148,7 @@
 @media (max-width: 480px) {
   .publication {
     padding-top: 5rem;
+    padding-bottom: 1rem;
   }
 
   .publication {
