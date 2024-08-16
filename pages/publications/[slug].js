@@ -23,7 +23,9 @@ const Publication = ({ publication }) => {
   return (
     <div>
       <Head>
-        <title>{`Publication | ${publication.title}`}</title>
+        <title>{`${locale === "sr" ? "Publikacije" : "Publication"} | ${
+          publication.title
+        }`}</title>
         <link rel="icon" href="ico.ico" />
       </Head>
       <Navigation />
@@ -48,7 +50,7 @@ const Publication = ({ publication }) => {
                   );
                 }
               }}
-              className={styles["download-button"]}
+              className={styles.button}
             >
               <RiDownload2Line className={styles["download-icon"]} />
             </button>
@@ -57,7 +59,8 @@ const Publication = ({ publication }) => {
           <div className={styles["publication-content"]}>
             <h1 className={styles.title}>{publication.title}</h1>
             <span className={styles["author"]}>
-              Autor/ka: {publication.publications.publicationAuthor}
+              <FaPen className={styles.icon} />{" "}
+              {publication.publications.publicationAuthor}
             </span>
             <div
               className={styles["publication-text"]}
