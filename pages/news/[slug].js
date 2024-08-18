@@ -6,16 +6,19 @@ import Footer from "../utils/footer";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Container from "../utils/container";
-import styles from "./[id].module.css";
+import styles from "./[slug].module.css";
 import Link from "next/link";
-import { FaPen } from "react-icons/fa";
 
 const Post = ({ post, latestPosts }) => {
   const router = useRouter();
   const { locale } = router;
 
   if (!post) {
-    return <div>Post not found</div>;
+    return (
+      <div>
+        {locale === "sr" ? "Vijest nije pronađena" : "News post not found"}
+      </div>
+    );
   }
 
   const dateObj = post && post.date ? new Date(post.date) : null;
@@ -24,15 +27,26 @@ const Post = ({ post, latestPosts }) => {
     ? `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`
     : "Unknown Date";
 
+  const pageTitle = locale === "sr" ? "Vijesti" : "News";
+
+  const filteredPosts = latestPosts
+    ? latestPosts.filter(
+        (latestPost) =>
+          latestPost && post && latestPost.databaseId !== post.databaseId
+      )
+    : [];
+
   return (
     <div>
       <Head>
-        <title>{`Blog | ${post.title}`}</title>
+        <title>{`${pageTitle} | ${post.title}`}</title>
         <link rel="icon" href="ico.ico" />
       </Head>
       <Navigation />
       <div className={styles["post-head-container"]}>
-        <h1 className={styles["post-head"]}>Blog</h1>
+        <h1 className={styles["post-head"]}>
+          {locale === "sr" ? "Vijesti" : "News"}
+        </h1>
       </div>
       <Container styles={{ backgroundColor: "#efeff0" }}>
         <div className={styles.post}>
@@ -49,21 +63,13 @@ const Post = ({ post, latestPosts }) => {
               />
             </div>
             <span className={styles["post-meta"]}>
-              {post.posts.photoCredits}
+              {post.news.photoCredits}
             </span>
           </div>
           <div
             className={styles["post-text"]}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-          <span className={styles["post-author"]}>
-            <FaPen className={styles["meta-icon"]} />
-            {post.posts.postAuthor
-              ? post.posts.postAuthor
-              : locale === "sr"
-              ? "Nepoznat Autor"
-              : "Unknown Author"}
-          </span>
         </div>
 
         <div className={styles["read-more-section"]}>
@@ -71,10 +77,10 @@ const Post = ({ post, latestPosts }) => {
             {locale === "sr" ? "Pročitaj još:" : "Read More:"}
           </h2>
           <div className={styles["more-container"]}>
-            {latestPosts.map((post) => (
-              <div key={post.id} className={styles.more}>
+            {filteredPosts.map((post) => (
+              <div key={post.databaseId} className={styles.more}>
                 <Link
-                  href={`/blog/${post.databaseId}`}
+                  href={`/news/${post.slug}`}
                   className={styles["more-post"]}
                 >
                   <div className={styles["more-image-container"]}>
@@ -102,12 +108,13 @@ const Post = ({ post, latestPosts }) => {
 
 export async function getServerSideProps({ params, query, locale }) {
   const language = query.lang || "sr";
-  const GET_POST = gql`
-    query GetPost($id: ID!) {
-      post(id: $id, idType: DATABASE_ID) {
+  const GET_NEWS = gql`
+    query GetVijesti($slug: String!) {
+      vijestBy(slug: $slug) {
         databaseId
         title
         date
+        slug
         content
         featuredImage {
           node {
@@ -119,17 +126,16 @@ export async function getServerSideProps({ params, query, locale }) {
             sourceUrl
           }
         }
-        posts {
+        news {
           photoCredits
-          postAuthor
         }
       }
     }
   `;
 
-  const GET_LATEST_POSTS = gql`
-    query GetLatestPosts($notIn: [ID], $language: LanguageCodeFilterEnum!) {
-      posts(
+  const GET_LATEST_NEWS = gql`
+    query GetLatestVijesti($notIn: [ID], $language: LanguageCodeFilterEnum!) {
+      vijesti(
         where: {
           notIn: $notIn
           orderby: { field: DATE, order: DESC }
@@ -158,23 +164,22 @@ export async function getServerSideProps({ params, query, locale }) {
       }
     }
   `;
-
   const { data: postData } = await client.query({
-    query: GET_POST,
-    variables: { id: params.id },
+    query: GET_NEWS,
+    variables: { slug: params.slug },
   });
 
-  const notIn = postData.post ? [postData.post.databaseId] : [];
+  const notIn = postData.vijestBy ? [postData.vijestBy.databaseId] : [];
 
   const { data: latestPostsData } = await client.query({
-    query: GET_LATEST_POSTS,
+    query: GET_LATEST_NEWS,
     variables: { notIn: notIn, language: locale.toUpperCase() },
   });
 
   return {
     props: {
-      post: postData.post,
-      latestPosts: latestPostsData.posts.edges.map((edge) => edge.node),
+      post: postData.vijestBy,
+      latestPosts: latestPostsData.vijesti.edges.map((edge) => edge.node),
     },
   };
 }

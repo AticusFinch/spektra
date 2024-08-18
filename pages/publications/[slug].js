@@ -17,7 +17,14 @@ const Publication = ({ publication }) => {
   const { locale } = router;
 
   if (!publication) {
-    return <div>Publication not found</div>;
+    return (
+      <div>
+        {" "}
+        {locale === "sr"
+          ? "Publikacija nije pronađena"
+          : "Publication not found"}
+      </div>
+    );
   }
 
   return (

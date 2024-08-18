@@ -42,8 +42,8 @@ const Donate = () => {
             </h1>
             <p className={styles["donate-text"]}>
               {locale === "sr"
-                ? "Donirajte i podržite naš rad u borbi za prava trans i rodno varijantnih osoba"
-                : "Donate and support our work in the fight for the rights of trans and gender variant people"}
+                ? "Donirajte i podržite naš rad u borbi za prava trans i rodno varijantnih osoba u Crnoj Gori."
+                : "Donate and support our work in the fight for the rights of trans and gender variant people in Montenegro."}
             </p>
             <button onClick={handleDonate} className={styles.button}>
               {isClicked ? (

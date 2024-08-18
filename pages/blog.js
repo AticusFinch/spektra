@@ -109,7 +109,7 @@ const Blog = (props) => {
               displayedPosts.map((post, databaseId) => (
                 <div key={databaseId} className={styles.post}>
                   <Link
-                    href={`/blog/${post.databaseId}`}
+                    href={`/blog/${post.slug}`}
                     className={styles["post-link"]}
                   >
                     <div className={styles["post-image-container"]}>
@@ -259,7 +259,7 @@ export async function getStaticProps({ locale }) {
     variables: { language: locale.toUpperCase() },
   });
 
-  const posts = response.data?.posts?.nodes || [];
+  const posts = response.data.posts.nodes;
 
   return {
     props: {

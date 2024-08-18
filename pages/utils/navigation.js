@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { motion, useCycle, AnimatePresence, delay } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import Search from "../components/search";
 
-import { HiMagnifyingGlass } from "react-icons/hi2";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 
@@ -238,14 +238,8 @@ const Navigation = () => {
               />
             </Link>
             <div className={styles["nav-search"]}>
-              <button className={styles["search-button"]}>
-                <HiMagnifyingGlass />
-              </button>
-              <input
-                type="text"
-                placeholder={locale === "sr" ? "pretraga" : "search"}
-                className={styles["search-input"]}
-              />
+              {" "}
+              <Search placeholder={locale === "sr" ? "pretraga" : "search"} />
             </div>
           </div>
           <div className={styles["nav-bottom"]}>

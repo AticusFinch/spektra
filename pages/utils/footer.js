@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-
+import Search from "../components/search";
 import { GoDotFill } from "react-icons/go";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { FaFacebookF } from "react-icons/fa";
@@ -30,14 +30,7 @@ const Footer = () => {
             </p>
           </div>
           <div className={styles["footer-top-search"]}>
-            <button className={styles["search-button"]}>
-              <HiMagnifyingGlass />
-            </button>
-            <input
-              type="text"
-              placeholder={locale === "sr" ? "pretraga" : "search"}
-              className={styles["search-input"]}
-            />
+            <Search placeholder={locale === "sr" ? "pretraga" : "search"} />
           </div>
           <div className={styles.signature}>
             Created by Kaizen © {new Date().getFullYear()}

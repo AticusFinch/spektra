@@ -112,7 +112,7 @@ const News = (props) => {
               displayedNews.map((post, databaseId) => (
                 <div key={databaseId} className={styles.post}>
                   <Link
-                    href={`/news/${post.databaseId}`}
+                    href={`/news/${post.slug}`}
                     className={styles["post-link"]}
                   >
                     <div className={styles["post-image-container"]}>
@@ -207,6 +207,7 @@ export async function getStaticProps({ locale }) {
       vijesti(where: { language: $language }, last: 1500) {
         nodes {
           databaseId
+          slug
           title
           date
           content
@@ -239,7 +240,7 @@ export async function getStaticProps({ locale }) {
     variables: { language: locale.toUpperCase() },
   });
 
-  const news = response.data?.vijesti?.nodes || [];
+  const news = response.data.vijesti.nodes;
 
   return {
     props: {
