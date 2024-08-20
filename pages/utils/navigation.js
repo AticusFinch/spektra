@@ -85,7 +85,6 @@ const Navigation = () => {
               className={styles["logo-mobile"]}
             />
           </Link>
-
           <button onClick={toggleMenu} className={styles["menu-button"]}>
             <motion.div animate={animation} transition={{ duration: 0.5 }}>
               {isMenuVisible ? <IoMdClose /> : <RxHamburgerMenu />}
@@ -109,6 +108,36 @@ const Navigation = () => {
                 exit="closedLink"
                 variants={menuVariants}
               >
+                <div className={styles["languages-container"]}>
+                  <ul className={styles.languages}>
+                    <li className={styles["language-container"]}>
+                      <Link
+                        href="/"
+                        locale="sr"
+                        className={
+                          router.locale === "sr"
+                            ? `${styles.language} ${styles.active}`
+                            : styles.language
+                        }
+                      >
+                        MNE
+                      </Link>
+                    </li>
+                    <li className={styles["language-container"]}>
+                      <Link
+                        href="/"
+                        locale="en"
+                        className={
+                          router.locale === "en"
+                            ? `${styles.language} ${styles.active}`
+                            : styles.language
+                        }
+                      >
+                        ENG
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
                 <li className={styles["hamburger-link-container"]}>
                   <Link href="/about" className={styles["hamburger-link"]}>
                     {locale === "sr" ? "O NAMA" : "ABOUT"}
@@ -152,35 +181,11 @@ const Navigation = () => {
                     {locale === "sr" ? "DONIRAJ" : "DONATE"}
                   </Link>
                 </li>
-                <div className={styles["languages-container"]}>
-                  <ul className={styles.languages}>
-                    <li className={styles["language-container"]}>
-                      <Link
-                        href="/"
-                        locale="sr"
-                        className={
-                          router.locale === "sr"
-                            ? `${styles.language} ${styles.active}`
-                            : styles.language
-                        }
-                      >
-                        MNE
-                      </Link>
-                    </li>
-                    <li className={styles["language-container"]}>
-                      <Link
-                        href="/"
-                        locale="en"
-                        className={
-                          router.locale === "en"
-                            ? `${styles.language} ${styles.active}`
-                            : styles.language
-                        }
-                      >
-                        ENG
-                      </Link>
-                    </li>
-                  </ul>
+
+                <div className={styles["mobile-search"]}>
+                  <Search
+                    placeholder={locale === "sr" ? "pretraga" : "search"}
+                  />
                 </div>
               </motion.ul>
             </motion.div>

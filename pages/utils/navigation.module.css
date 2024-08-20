@@ -535,6 +535,14 @@
   .hamburger-link {
     font-size: 0.9rem;
   }
+
+  .mobile-search {
+    margin-top: 3rem;
+  }
+
+  .languages-container {
+    margin-bottom: 3rem;
+  }
 }
 
 @media (max-width: 480px) {

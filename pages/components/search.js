@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import styles from "./Search.module.css"; // Create a CSS module for styling
+import styles from "./search.module.css"; // Create a CSS module for styling
 
 const Search = ({ placeholder }) => {
   const router = useRouter();
