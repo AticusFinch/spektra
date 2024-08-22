@@ -104,10 +104,7 @@ const News = ({ news }) => {
             <Slider {...settings}>
               {news.map((post) => (
                 <div key={post.id} className={styles["slide-container"]}>
-                  <Link
-                    href={`/news/${post.databaseId}`}
-                    className={styles.link}
-                  >
+                  <Link href={`/news/${post.slug}`} className={styles.link}>
                     <div className={styles.slide}>
                       <div className={styles["slide-content-container"]}>
                         {" "}

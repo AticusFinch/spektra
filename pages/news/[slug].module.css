@@ -128,7 +128,6 @@
   text-decoration: none;
   width: 100%;
   color: var(--dark-grey);
-  border-top: solid 2px var(--trans-pink);
 }
 
 .post-author {

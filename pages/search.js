@@ -11,6 +11,7 @@ const SearchResults = () => {
   const { term, locale } = router.query;
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [visibleResults, setVisibleResults] = useState(10);
 
   useEffect(() => {
     if (term && locale) {
@@ -28,6 +29,10 @@ const SearchResults = () => {
     }
   }, [term, locale]);
 
+  const loadMoreResults = () => {
+    setVisibleResults((prevVisibleResults) => prevVisibleResults + 10);
+  };
+
   return (
     <div>
       <Navigation />
@@ -39,22 +44,33 @@ const SearchResults = () => {
           {loading ? (
             <p>{locale === "sr" ? "Učitavanje..." : "Loading..."}</p>
           ) : results.length > 0 ? (
-            <ul>
-              {results.map((result, index) => (
-                <li key={index} className={styles.result}>
-                  <Link href={result.uri} className={styles.link}>
-                    <span className={styles.type}>{result.postType}</span>
-                    <h3 className={styles.head}>{result.title}</h3>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: result.content,
-                      }}
-                      className={styles.text}
-                    ></p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <>
+              <ul>
+                {results.slice(0, visibleResults).map((result, index) => (
+                  <li key={index} className={styles.result}>
+                    <Link href={result.uri} className={styles.link}>
+                      <span className={styles.type}>{result.postType}</span>
+                      <h3 className={styles.head}>{result.title}</h3>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: result.content,
+                        }}
+                        className={styles.text}
+                      ></p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {visibleResults < results.length ? (
+                <button onClick={loadMoreResults} className={styles.load}>
+                  {locale === "sr" ? "Učitaj više" : "Load More"}
+                </button>
+              ) : (
+                <span className={styles.end}>
+                  {locale === "sr" ? "Nema više rezultata" : "No more results"}
+                </span>
+              )}
+            </>
           ) : (
             <p>
               {locale === "sr"

@@ -7,19 +7,16 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Container from "../utils/container";
 import styles from "./[slug].module.css";
-import Link from "next/link";
-
 import { FaPen } from "react-icons/fa";
 import { RiDownload2Line } from "react-icons/ri";
 
-const Publication = ({ publication }) => {
+const Publication = ({ post }) => {
   const router = useRouter();
   const { locale } = router;
 
-  if (!publication) {
+  if (!post) {
     return (
       <div>
-        {" "}
         {locale === "sr"
           ? "Publikacija nije pronađena"
           : "Publication not found"}
@@ -31,7 +28,7 @@ const Publication = ({ publication }) => {
     <div>
       <Head>
         <title>{`${locale === "sr" ? "Publikacije" : "Publication"} | ${
-          publication.title
+          post.title
         }`}</title>
         <link rel="icon" href="ico.ico" />
       </Head>
@@ -40,21 +37,16 @@ const Publication = ({ publication }) => {
         <div className={styles.publication}>
           <div className={styles["image-container"]}>
             <Image
-              src={publication.featuredImage.node.sourceUrl}
-              width={publication.featuredImage.node.mediaDetails.width}
-              height={publication.featuredImage.node.mediaDetails.height}
-              alt={
-                publication.featuredImage.node.altText || "Publication image"
-              }
+              src={post.featuredImage.node.sourceUrl}
+              width={post.featuredImage.node.mediaDetails.width}
+              height={post.featuredImage.node.mediaDetails.height}
+              alt={post.featuredImage.node.altText || "Publication image"}
               className={styles["publication-image"]}
             />
             <button
               onClick={(e) => {
-                if (publication.publications.file.node.link) {
-                  window.open(
-                    publication.publications.file.node.link,
-                    "_blank"
-                  );
+                if (post.publications.file.node.link) {
+                  window.open(post.publications.file.node.link, "_blank");
                 }
               }}
               className={styles.button}
@@ -64,14 +56,14 @@ const Publication = ({ publication }) => {
           </div>
 
           <div className={styles["publication-content"]}>
-            <h1 className={styles.title}>{publication.title}</h1>
+            <h1 className={styles.title}>{post.title}</h1>
             <span className={styles["author"]}>
-              <FaPen className={styles.icon} />{" "}
-              {publication.publications.publicationAuthor}
+              <FaPen className={styles.icon} />
+              {post.publications.publicationAuthor}
             </span>
             <div
               className={styles["publication-text"]}
-              dangerouslySetInnerHTML={{ __html: publication.content }}
+              dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </div>
         </div>
@@ -88,6 +80,7 @@ export async function getServerSideProps({ params, locale }) {
         title
         slug
         content
+        id
         featuredImage {
           node {
             altText
@@ -115,15 +108,9 @@ export async function getServerSideProps({ params, locale }) {
     variables: { slug: params.slug },
   });
 
-  // if (!data.publikacijaBy) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
-
   return {
     props: {
-      publication: data.publikacijaBy || null,
+      post: data.publikacijaBy || null,
     },
   };
 }

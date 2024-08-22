@@ -262,7 +262,6 @@ export async function getStaticProps({ locale }) {
         nodes {
           title
           slug
-          id
           databaseId
           featuredImage {
             node {

@@ -34,7 +34,7 @@ const Publications = ({ publications }) => {
   const { locale } = router;
 
   if (!publications || !Array.isArray(publications)) {
-    return <div>No posts available</div>;
+    return <div>No publication available</div>;
   }
 
   const settings = {
@@ -106,20 +106,18 @@ const Publications = ({ publications }) => {
         <div>
           {publications.length > 0 ? (
             <Slider {...settings}>
-              {publications.map((post) => (
-                <div
-                  key={post.databaseId}
-                  className={styles["publication-container"]}
-                >
+              {publications.map((post, id) => (
+                <div key={id} className={styles["publication-container"]}>
                   <div className={styles["publication-img-container"]}>
-                    <Image
-                      src={post.featuredImage.node.sourceUrl}
-                      alt={post.featuredImage.node.altText || "Post Image"}
-                      width={post.featuredImage.node.mediaDetails.width}
-                      height={post.featuredImage.node.mediaDetails.height}
-                      className={styles["publication-img"]}
-                    ></Image>
-
+                    {post.featuredImage?.node && (
+                      <Image
+                        src={post.featuredImage.node.sourceUrl}
+                        alt={post.featuredImage.node.altText || "Post Image"}
+                        width={post.featuredImage.node.mediaDetails.width}
+                        height={post.featuredImage.node.mediaDetails.height}
+                        className={styles["publication-img"]}
+                      />
+                    )}
                     <div className={styles["publication-content"]}>
                       <div>
                         <p className={styles["publication-head"]}>
@@ -133,7 +131,7 @@ const Publications = ({ publications }) => {
                       <div className={styles.download}>
                         <button
                           onClick={(e) => {
-                            if (post.publications.file.node.link) {
+                            if (post.publications.file?.node?.link) {
                               window.open(
                                 post.publications.file.node.link,
                                 "_blank"
@@ -145,7 +143,7 @@ const Publications = ({ publications }) => {
                           <GrDownload />
                         </button>
                         <Link
-                          href={`/publications/${post.databaseId}`}
+                          href={`/publications/${post.slug}`}
                           className={styles["read-more"]}
                         >
                           <CgEreader />
