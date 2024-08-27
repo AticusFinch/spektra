@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { useState, useEffect, useMemo } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 

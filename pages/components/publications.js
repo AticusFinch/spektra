@@ -13,7 +13,6 @@ import { FaRegSadCry } from "react-icons/fa";
 import { GrDownload } from "react-icons/gr";
 
 import { FaPen } from "react-icons/fa";
-import { CgEreader } from "react-icons/cg";
 
 import styles from "./publications.module.css";
 
