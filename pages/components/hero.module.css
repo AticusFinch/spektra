@@ -216,7 +216,7 @@
   }
 
   .home-container {
-    padding: 11rem 3rem 11rem 2rem;
+    padding: 11rem 2rem 11rem 2rem;
     width: 100%;
     text-align: center;
     display: flex;
@@ -271,7 +271,7 @@
   }
 
   .home-container {
-    padding: 9rem 3rem 9rem 2rem;
+    padding: 9rem 0.5rem 9rem 0.5rem;
   }
 
   .est {
@@ -320,7 +320,7 @@
   }
 
   .home-container {
-    padding: 9rem 3rem 9rem 2rem;
+    padding: 9rem 0rem 9rem 0rem;
   }
 
   .est {
@@ -338,7 +338,6 @@
 
   .sub-head {
     font-size: 2rem;
-    padding-right: 0;
   }
 
   .head {
@@ -350,10 +349,16 @@
   }
 }
 
-@media (max-width: 320px) {
-  /* Your styles for max-width 768px here */
+@media (max-width: 375px) {
+  .sub-head {
+    font-size: 1.8rem;
+  }
+
+  .head {
+    font-size: 3.6rem;
+  }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 320px) {
   /* Your styles for max-width 768px here */
 }
