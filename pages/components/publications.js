@@ -142,12 +142,6 @@ const Publications = ({ publications }) => {
                         >
                           <GrDownload />
                         </button>
-                        <Link
-                          href={`/publications/${post.slug}`}
-                          className={styles["read-more"]}
-                        >
-                          <CgEreader />
-                        </Link>
                       </div>
                     </div>
                   </div>
@@ -157,8 +151,8 @@ const Publications = ({ publications }) => {
           ) : (
             <p className={styles.empty}>
               {locale === "sr"
-                ? "Trenutno nema novih vijesti. "
-                : "Currently there's no news to display. "}
+                ? "Trenutno nema novih publikacija. "
+                : "Currently there's no publikacija to display. "}
               <FaRegSadCry />
             </p>
           )}

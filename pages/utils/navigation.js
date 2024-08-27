@@ -273,12 +273,12 @@ const Navigation = () => {
                 <div className={styles["dropdown-container"]}>
                   <ul className={styles["dropdown"]}>
                     <li>
-                      <Link href="/about_pages/work">
+                      <Link href="/about/work">
                         {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about_pages/mission">
+                      <Link href="/about/mission">
                         {locale === "sr"
                           ? "Koja je naša misija?"
                           : "What is our mission?"}
@@ -286,35 +286,35 @@ const Navigation = () => {
                     </li>
 
                     <li>
-                      <Link href="/about_pages/vision">
+                      <Link href="/about/vision">
                         {locale === "sr"
                           ? "Koja je naša vizija?"
                           : "What is our vision?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about_pages/values">
+                      <Link href="/about/values">
                         {locale === "sr"
                           ? "Koje su naše vrijednosti?"
                           : "What are our values?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about_pages/team">
+                      <Link href="/about/team">
                         {locale === "sr"
                           ? "Ko čini naš tim?"
                           : "Who is part of our team?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about_pages/support">
+                      <Link href="/about/support">
                         {locale === "sr"
                           ? "Ko podržava naš rad?"
                           : "Who supports our work?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about_pages/reports">
+                      <Link href="/about/reports">
                         {locale === "sr" ? "Naši izvještaji" : "Our reports"}
                       </Link>
                     </li>
@@ -328,21 +328,21 @@ const Navigation = () => {
                 <div className={styles["dropdown-container"]}>
                   <ul className={styles["dropdown"]}>
                     <li>
-                      <Link href="/about_pages/work">
+                      <Link href="/programs/community">
                         {locale === "sr"
                           ? "Program za rad sa zajednicom"
                           : "Community work program"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about_pages/mission">
+                      <Link href="/programs/advocacy">
                         {locale === "sr"
                           ? "Program zagovaranja"
                           : "Advocacy program"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about_pages/vision">
+                      <Link href="/programs/feminism">
                         {locale === "sr"
                           ? "Feministički program"
                           : "Feminism program"}

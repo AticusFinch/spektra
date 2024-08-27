@@ -128,13 +128,15 @@ const Publications = (props) => {
                 <div key={id} className={styles.publication}>
                   <div className={styles["post-link"]}>
                     <div className={styles["publication-image-container"]}>
-                      <Image
-                        src={post.featuredImage.node.sourceUrl}
-                        width={post.featuredImage.node.mediaDetails.width}
-                        height={post.featuredImage.node.mediaDetails.height}
-                        alt={post.featuredImage.node.altText || "Post image"}
-                        className={styles["publication-image"]}
-                      />
+                      {post.featuredImage?.node && (
+                        <Image
+                          src={post.featuredImage.node.sourceUrl}
+                          width={post.featuredImage.node.mediaDetails.width}
+                          height={post.featuredImage.node.mediaDetails.height}
+                          alt={post.featuredImage.node.altText || "Post image"}
+                          className={styles["publication-image"]}
+                        />
+                      )}
                     </div>
                     <div className={styles.content}>
                       <div>
@@ -149,7 +151,7 @@ const Publications = (props) => {
                       <div className={styles.more}>
                         <motion.button
                           onClick={(e) => {
-                            if (post.publications.file.node.link) {
+                            if (post.publications.file?.node?.link) {
                               window.open(
                                 post.publications.file.node.link,
                                 "_blank"
@@ -213,8 +215,8 @@ const Publications = (props) => {
             ) : (
               <div className={styles["no-news"]}>
                 {locale === "sr"
-                  ? "Nema Novosti Pod Traženim Izrazom. "
-                  : "No News Under Searched Term. "}
+                  ? "Nema publikacija pod traženim izrazom. "
+                  : "No news under searched term. "}
                 <FaRegSadCry />
               </div>
             )}
