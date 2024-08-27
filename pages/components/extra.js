@@ -116,7 +116,7 @@ const Extra = () => {
         <div
           className={styles["donate-container"]}
           style={{
-            backgroundImage: `url(/images/hero/4.png)`,
+            backgroundImage: `url(/images/hero/04.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
