@@ -111,21 +111,21 @@
   }
 
   .est {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     height: 20%;
   }
 
   .sub-head {
     font-size: 3rem;
-    padding-right: 4.5rem;
+    padding-right: 3.5rem;
   }
 
   .head {
-    font-size: 14rem;
+    font-size: 11rem;
   }
 
   .text {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 20%;
   }
 }
