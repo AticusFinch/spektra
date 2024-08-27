@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Slider from "react-slick";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,14 +52,29 @@ const Hero = () => {
           ))}
         </Slider>
       </div>
-      <div className={styles.gradient}></div>
+      <motion.div
+        className={styles.gradient}
+        initial={{ x: "100%", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+      ></motion.div>
       <div className={styles["home-container"]}>
-        <div className={styles.est}>
+        <motion.div
+          className={styles.est}
+          initial={{ x: "150%" }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.9, duration: 2 }}
+        >
           <span>
             {locale === "sr" ? "osnovana 2017." : "established in 2017"}
           </span>
-        </div>
-        <div className={styles["head-container"]}>
+        </motion.div>
+        <motion.div
+          className={styles["head-container"]}
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.3, duration: 2 }}
+        >
           {" "}
           <p className={styles["sub-head"]}>
             {locale === "sr" ? "Asocijacija" : "Association"}
@@ -66,14 +82,19 @@ const Hero = () => {
           <p className={styles.head}>
             {locale === "sr" ? "Spektra" : "Spectra"}
           </p>
-        </div>
-        <div className={styles["text-container"]}>
+        </motion.div>
+        <motion.div
+          className={styles["text-container"]}
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.5, duration: 2 }}
+        >
           <p className={styles.text}>
             {locale === "sr"
               ? "Nevladina organizacija posvećena feminističkom i anifašističkom smjenjivanju opresivnih sistema građenjem solidarnosti, zagovaranjem promjena i njegovanjem učenja."
               : "A non-governmental organization dedicated to feminist and anti-fascist efforts to dismantle oppressive systems through solidarity, advocating for change, and commitment to continuous learning."}
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
