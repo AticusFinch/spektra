@@ -36,7 +36,8 @@
 }
 
 .info {
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   font-size: 2.5rem;
   letter-spacing: 1px;
 }
@@ -74,12 +75,14 @@
 }
 
 .contact {
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   font-size: 1.5rem;
 }
 
 .email {
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
   -webkit-background-clip: text;
   background-clip: text;
@@ -104,7 +107,6 @@
   }
 
   .contact {
-    font-family: "Myriad Pro Light", sans-serif;
     font-size: 1.2rem;
   }
 }
@@ -168,7 +170,6 @@
   }
 
   .contact {
-    font-family: "Myriad Pro Light", sans-serif;
     font-size: 1rem;
   }
 }

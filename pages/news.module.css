@@ -116,7 +116,8 @@
 }
 
 .title {
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   color: var(--cream-white);
   text-decoration: none;
   font-size: 1.4rem;
@@ -131,7 +132,8 @@
 
 .post-meta {
   font-size: 0.9rem;
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   color: var(--cream-white);
   display: flex;
   align-items: center;
@@ -180,7 +182,8 @@
 }
 
 .category {
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   padding: 0 0.5rem;
   border-left: solid 1px var(--trans-pink);
 
@@ -225,7 +228,8 @@
 
 .no-news {
   font-size: 2rem;
-  font-family: "Myriad Pro Regular", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
   opacity: 0.3;
   height: 50vh;
   display: flex;
@@ -235,7 +239,8 @@
 
 .excerpt {
   margin-top: 1.1rem;
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   color: #efeff0aa;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -510,9 +515,6 @@
   }
 
   .title {
-    font-family: "Myriad Pro Bold", sans-serif;
-    color: var(--cream-white);
-    text-decoration: none;
     font-size: 1.3rem;
     margin-top: 0.4rem;
   }
@@ -611,9 +613,6 @@
   }
 
   .title {
-    font-family: "Myriad Pro Bold", sans-serif;
-    color: var(--cream-white);
-    text-decoration: none;
     font-size: 1rem;
   }
 

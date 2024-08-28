@@ -22,7 +22,8 @@
 
 .donate-head {
   font-size: 4.5rem;
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
   -webkit-background-clip: text;
@@ -34,7 +35,8 @@
 
 .donate-text {
   font-size: 1.5rem;
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   color: var(--cream-white);
   margin-bottom: 1rem;
 }
@@ -46,7 +48,8 @@
     var(--trans-pink)
   );
   width: 10rem;
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   padding: 0.8rem;
   font-size: 1.2rem;
   color: var(--dark-grey);

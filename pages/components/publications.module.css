@@ -130,7 +130,8 @@
 }
 
 .publication-head {
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   font-size: 3rem;
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -419,7 +420,6 @@
     width: 100px;
     height: 20px;
     font-size: 0.7rem;
-    font-family: "owners-regular", sans-serif;
   }
 
   .publication-container {

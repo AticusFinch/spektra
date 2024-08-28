@@ -35,11 +35,13 @@
 
 .report-info p {
   margin-bottom: 2rem;
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
 }
 
 .report-info p:first-of-type {
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
 }
 
 .form {
@@ -49,7 +51,8 @@
   justify-content: space-between;
   width: 48%;
   font-size: 1.1rem;
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   padding: 1rem;
   border: solid 1px var(--cream-white);
 }
@@ -71,7 +74,8 @@
   background-color: transparent;
   flex-grow: 1;
   color: var(--cream-white);
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   font-size: 1.1rem;
   letter-spacing: 1px;
   padding-bottom: 0.1rem;
@@ -100,7 +104,8 @@
     var(--trans-blue),
     var(--trans-pink)
   );
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   padding: 1rem 2rem;
   font-size: 1.4rem;
   color: var(--dark-grey);

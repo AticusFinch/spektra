@@ -22,7 +22,8 @@
 }
 
 .intro {
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   font-size: 1.5rem;
   letter-spacing: 1px;
   text-align: justify;
@@ -87,7 +88,8 @@
 }
 
 .card-head {
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   font-size: 2rem;
   display: inline-block;
   transition: all 0.5s ease-in-out;
@@ -95,7 +97,8 @@
 }
 
 .card-text {
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   line-clamp: 4;

@@ -5,7 +5,8 @@
 }
 
 .headline {
-  font-family: "Myriad Pro Bold", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 700;
   color: var(--cream-white);
   font-size: 6rem;
   margin-bottom: 1rem;
@@ -46,7 +47,8 @@
 }
 
 .text {
-  font-family: "Myriad Pro Light", sans-serif;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   line-clamp: 3;
@@ -74,7 +76,6 @@
 .load {
   background-color: transparent;
   border: 1px solid var(--trans-pink);
-  font-family: "Myriad Pro Regular", sans-serif;
   padding: 1rem 1.3rem;
   font-size: 1.2rem;
   color: var(--trans-pink);

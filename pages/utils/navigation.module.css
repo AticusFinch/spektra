@@ -1,7 +1,7 @@
 .nav-container {
   width: 100%;
   position: fixed;
-  padding: 1.5rem 4rem;
+  padding: 2.5rem 6rem;
   background-color: var(--dark-grey);
   transition: all 1s ease-in-out;
   z-index: 100;
@@ -11,7 +11,7 @@
 }
 
 .nav-container-scrolled {
-  padding: 1.5rem 4rem;
+  padding: 2.5rem 6rem;
   transition: all 1s ease-out;
 }
 
@@ -24,13 +24,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   transition: all 0.7s ease-out;
-  height: 70px;
+  height: 120px;
 }
 
 .nav-top-scrolled {
-  margin-bottom: 0.7rem;
+  margin-bottom: 2rem;
   transition: all 0.7s ease-in;
   height: 20px;
 }
@@ -40,7 +40,7 @@
 }
 
 .languages {
-  width: 40%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,7 +55,7 @@
 
 .language {
   opacity: 0.3;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
 }
 
 .active {
@@ -64,8 +64,8 @@
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   opacity: 1;
   transition: all 0.7s ease-in-out;
 }
@@ -88,8 +88,8 @@
 }
 
 .logo-links {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
 }
 
 .nav-bottom {
@@ -112,7 +112,7 @@
 }
 
 .link-container {
-  height: 40px;
+  height: 60px;
   width: 12%;
   background-color: rgba(0, 0, 0, 0.152);
   position: relative;
@@ -236,7 +236,7 @@
 }
 
 .dropdown li a {
-  font-size: 1rem;
+  font-size: 1.4rem;
   display: none;
   color: #ffffff7f;
   text-decoration: none;
@@ -253,7 +253,7 @@
 
 .link-container:hover .dropdown-container {
   opacity: 1;
-  height: calc(35px * 8);
+  height: calc(50px * 8);
 }
 
 .link-container:nth-of-type(2):hover .dropdown-container {
@@ -265,29 +265,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   width: 100%;
   height: 100%;
 }
 
 .mobile-nav {
   display: none;
-}
-
-.search-results {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.search-results li {
-  margin-bottom: 1rem;
-}
-
-.search-results a {
-  font-weight: bold;
-  color: #0070f3;
-  text-decoration: none;
 }
 
 .search-results a:hover {
@@ -309,7 +293,80 @@
 @media (max-width: 320px) {
 }
 
-@media (max-width: 375px) {
+@media (max-width: 2560px) {
+  .nav-container {
+    padding: 1.5rem 4rem;
+  }
+
+  .nav-container-scrolled {
+    padding: 1.5rem 4rem;
+  }
+
+  .nav-top {
+    margin-bottom: 2rem;
+    height: 70px;
+  }
+
+  .nav-top-scrolled {
+    margin-bottom: 0.7rem;
+    height: 20px;
+  }
+
+  .languages-container {
+    width: 15rem;
+  }
+
+  .languages {
+    width: 40%;
+  }
+
+  .language {
+    opacity: 0.3;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-links {
+    width: 50px;
+    height: 50px;
+  }
+
+  .links-scrolled {
+    width: 96%;
+  }
+
+  .link-container {
+    height: 40px;
+    width: 12%;
+  }
+
+  .dropdown {
+    padding: 0 15px;
+  }
+
+  .dropdown li a {
+    font-size: 1rem;
+  }
+
+  .link-container:hover .dropdown-container {
+    height: calc(35px * 8);
+  }
+
+  .link-container:nth-of-type(2):hover .dropdown-container {
+    height: calc(16px * 8);
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+
+  .search-results li {
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 1920px) {
@@ -340,7 +397,7 @@
   }
 
   .link {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .links-scrolled {
@@ -348,7 +405,7 @@
   }
 
   .dropdown li a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .link-container:nth-of-type(2) .dropdown-container {
@@ -489,6 +546,185 @@
 
   .languages-container {
     margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-container {
+    display: none;
+  }
+
+  .mobile-head-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 2.5rem;
+    background-color: var(--dark-grey);
+  }
+
+  .logo-mobile {
+    width: 70px;
+    height: 70px;
+  }
+
+  .mobile-nav {
+    width: 100%;
+    display: block;
+    position: absolute;
+    height: auto;
+    background-color: var(--dark-grey);
+    z-index: 10;
+    -webkit-box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+  }
+
+  .hamburger-menu-container {
+    -webkit-box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 10px 12px -5px rgba(0, 0, 0, 0.75);
+  }
+
+  .menu-button {
+    background: transparent;
+    border: none;
+    font-size: 2.7rem;
+    color: var(--cream-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hamburger-menu {
+    height: 100vh;
+    font-family: "owners-regular", sans-serif;
+    will-change: transform;
+    transform-origin: top;
+    margin-top: 2rem;
+    margin-left: 3rem;
+  }
+
+  .hamburger-link-container {
+    width: 100%;
+    height: 7rem;
+    letter-spacing: 3px;
+  }
+
+  .hamburger-link {
+    color: var(--cream-white);
+    text-decoration: none;
+  }
+
+  .dropdown-container {
+    display: none;
+  }
+
+  .hamburger-link {
+    font-size: 1.7rem;
+  }
+
+  .mobile-search {
+    margin-top: 3rem;
+  }
+
+  .languages-container {
+    margin-bottom: 3rem;
+  }
+
+  .languages {
+    width: 70%;
+  }
+
+  .languages-container {
+    margin-bottom: 7rem;
+  }
+
+  .language {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-head-container {
+    padding: 1.7rem 2rem;
+  }
+
+  .logo-mobile {
+    width: 50px;
+    height: 50px;
+  }
+
+  .menu-button {
+    font-size: 2rem;
+  }
+
+  .hamburger-link-container {
+    height: 5rem;
+  }
+
+  .hamburger-menu {
+    margin-left: 2rem;
+  }
+
+  .hamburger-link {
+    font-size: 1.2rem;
+  }
+
+  .mobile-search {
+    margin-top: 4rem;
+  }
+
+  .languages {
+    width: 60%;
+  }
+
+  .languages-container {
+    margin-bottom: 4rem;
+  }
+
+  .language {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-head-container {
+    padding: 1.5rem 2rem;
+  }
+
+  .logo-mobile {
+    width: 45px;
+    height: 45px;
+  }
+
+  .menu-button {
+    font-size: 1.7rem;
+  }
+
+  .hamburger-link-container {
+    height: 4rem;
+  }
+
+  .hamburger-link {
+    font-size: 1.1rem;
+  }
+
+  .languages-container {
+    margin-bottom: 4rem;
+  }
+
+  .language {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 601px) {
+  .hamburger-link {
+    font-size: 1rem;
+  }
+
+  .language {
+    font-size: 1grem;
   }
 }
 

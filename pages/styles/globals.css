@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 @font-face {
   font-family: "owners-regular";
   src: url("../../public/fonts/ownerstrialwide-regular-bf64361ef587a10-webfont.woff2")
@@ -26,34 +28,6 @@
       format("woff");
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "Myriad Pro Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../../public/fonts/myriad/MYRIADPRO-REGULAR.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Myriad Pro Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../../public/fonts/myriad/MYRIADPRO-BOLD.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Myriad Pro Semibold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../../public/fonts/myriad/MYRIADPRO-SEMIBOLD.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Myriad Pro Light";
-  font-style: normal;
-  font-weight: normal;
-  src: url("../../public/fonts/myriad/MyriadPro-Light.woff") format("woff");
 }
 
 :root {
@@ -110,7 +84,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: "Myriad Pro Regular", sans-serif;
+  font-family: "roboto", sans-serif;
 }
 
 ul {
@@ -125,4 +99,160 @@ ul {
 /* Change the color of the active dot */
 .slick-dots li.slick-active button:before {
   color: var(--trans-pink) !important; /* Replace with your active color */
+}
+
+/* Mobile Devices */
+/* Small Phones */
+@media (max-width: 320px) and (max-height: 480px) {
+  /* Example Devices: Older iPhones (e.g., iPhone 4), Small Android Phones */
+}
+
+/* Medium Phones */
+@media (max-width: 360px) and (max-height: 640px) {
+  /* Example Devices: Google Pixel 3a, Samsung Galaxy A10 */
+}
+
+@media (max-width: 375px) and (max-height: 667px) {
+  /* Example Devices: iPhone 6/7/8, iPhone SE 2020 */
+}
+
+/* Large Phones */
+@media (max-width: 414px) and (max-height: 736px) {
+  /* Example Devices: iPhone 6/7/8 Plus */
+}
+
+@media (max-width: 412px) and (max-height: 869px) {
+  /* Example Devices: Google Pixel 4 XL, Samsung Galaxy S9+ */
+}
+
+/* Extra Large Phones */
+@media (max-width: 414px) and (max-height: 896px) {
+  /* Example Devices: iPhone X, iPhone 11 Pro Max */
+}
+
+@media (max-width: 428px) and (max-height: 926px) {
+  /* Example Devices: iPhone 12/13 Pro Max */
+}
+
+@media (max-width: 432px) and (max-height: 923px) {
+  /* Example Devices: Samsung Galaxy S20 Ultra */
+}
+
+/* Tablets */
+/* Small Tablets */
+@media (max-width: 600px) and (max-height: 960px) {
+  /* Example Devices: Nexus 7, Samsung Galaxy Tab 7" */
+}
+
+@media (max-width: 601px) and (max-height: 962px) {
+  /* Example Devices: Amazon Fire 7 */
+}
+
+/* Medium Tablets */
+@media (max-width: 768px) and (max-height: 1024px) {
+  /* Example Devices: iPad Mini, iPad 9.7", Samsung Galaxy Tab A 8" */
+}
+
+@media (max-width: 800px) and (max-height: 1280px) {
+  /* Example Devices: Nexus 10, Samsung Galaxy Tab A 10.1" */
+}
+
+/* Large Tablets */
+@media (max-width: 834px) and (max-height: 1112px) {
+  /* Example Devices: iPad Air, iPad Pro 10.5" */
+}
+
+@media (max-width: 1280px) and (max-height: 800px) {
+  /* Example Devices: Samsung Galaxy Tab S6, Lenovo Tab M10 */
+}
+
+/* Extra Large Tablets */
+@media (max-width: 1024px) and (max-height: 1366px) {
+  /* Example Devices: iPad Pro 12.9", Microsoft Surface Pro */
+}
+
+@media (max-width: 1200px) and (max-height: 1920px) {
+  /* Example Devices: Samsung Galaxy Tab S7, Huawei MediaPad M5 */
+}
+
+/* Laptops */
+/* Small Laptops */
+@media (max-width: 1280px) and (max-height: 720px) {
+  /* Example Devices: Low-end Chromebooks, Small Windows Laptops */
+}
+
+@media (max-width: 1366px) and (max-height: 768px) {
+  /* Example Devices: Common Windows Laptops, HP Stream */
+}
+
+/* Medium Laptops */
+@media (max-width: 1440px) and (max-height: 900px) {
+  /* Example Devices: Dell XPS 13, Lenovo ThinkPad X1 Carbon */
+}
+
+/* Large Laptops */
+@media (max-width: 1600px) and (max-height: 900px) {
+  /* Example Devices: High-end Windows Laptops, Some Ultrabooks */
+}
+
+@media (max-width: 1680px) and (max-height: 1050px) {
+  /* Example Devices: Some Gaming Laptops, Dell Latitude */
+}
+
+/* Extra Large Laptops */
+@media (max-width: 1920px) and (max-height: 1080px) {
+  /* Example Devices: Gaming Laptops, High-end Business Laptops */
+}
+
+@media (max-width: 2560px) and (max-height: 1440px) {
+  /* Example Devices: High-end Gaming Laptops, Professional Laptops */
+}
+
+/* Desktops */
+/* Small Desktops */
+@media (max-width: 1280px) and (max-height: 720px) {
+  /* Example Devices: Older or Budget Monitors, Low-End Desktop Displays */
+}
+
+@media (max-width: 1366px) and (max-height: 768px) {
+  /* Example Devices: Standard Budget Monitors, Office Displays */
+}
+
+/* Medium Desktops */
+@media (max-width: 1440px) and (max-height: 900px) {
+  /* Example Devices: Standard Desktop Monitors, Office Displays */
+}
+
+@media (max-width: 1600px) and (max-height: 900px) {
+  /* Example Devices: Mid-range Desktop Monitors, Larger Office Displays */
+}
+
+/* Large Desktops */
+@media (max-width: 1920px) and (max-height: 1080px) {
+  /* Example Devices: Common Monitors, Gaming Displays */
+}
+
+/* Extra Large Desktops */
+@media (max-width: 2560px) and (max-height: 1440px) {
+  /* Example Devices: High-End Monitors, Design Displays */
+}
+
+@media (max-width: 3840px) and (max-height: 2160px) {
+  /* Example Devices: Ultra High-Definition Monitors, Professional Design Displays */
+}
+
+/* TVs and Large Screens */
+/* HD TV */
+@media (max-width: 1920px) and (max-height: 1080px) {
+  /* Example Devices: HD TV */
+}
+
+/* 4K TV */
+@media (max-width: 3840px) and (max-height: 2160px) {
+  /* Example Devices: 4K TV */
+}
+
+/* 8K TV */
+@media (max-width: 7680px) and (max-height: 4320px) {
+  /* Example Devices: 8K TV */
 }
