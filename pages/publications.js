@@ -32,7 +32,7 @@ const Publications = (props) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 820);
+      setIsSmallScreen(window.innerWidth <= 1200);
     };
 
     handleResize(); // Check initial screen size

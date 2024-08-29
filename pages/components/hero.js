@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+
 import Slider from "react-slick";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./hero.module.css";
 
 const Hero = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
   const router = useRouter();
   const { locale } = router;
 
@@ -21,6 +25,19 @@ const Hero = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 1200);
+    };
+
+    handleResize(); // Check initial screen size
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const images = [
     "/images/hero/01.jpg",
@@ -55,8 +72,8 @@ const Hero = () => {
       <motion.div
         className={styles.gradient}
         initial={{ x: "100%", opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
+        animate={!isSmallScreen ? { x: 0, opacity: 1 } : {}}
+        transition={!isSmallScreen ? { duration: 1 } : {}}
       ></motion.div>
       <div className={styles["home-container"]}>
         <motion.div
