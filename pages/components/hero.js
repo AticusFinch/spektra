@@ -78,7 +78,7 @@ const Hero = () => {
       <div className={styles["home-container"]}>
         <motion.div
           className={styles.est}
-          initial={{ x: "150%" }}
+          initial={{ x: "200%" }}
           animate={{ x: 0 }}
           transition={{ delay: 0.9, duration: 2 }}
         >
