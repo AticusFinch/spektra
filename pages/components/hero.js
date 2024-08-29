@@ -28,7 +28,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 1200);
+      setIsSmallScreen(window.innerWidth <= 1024);
     };
 
     handleResize(); // Check initial screen size
@@ -54,7 +54,12 @@ const Hero = () => {
 
   return (
     <div className={styles.home}>
-      <div className={styles["background-wrapper"]}>
+      <motion.div
+        className={styles["background-wrapper"]}
+        initial={!isSmallScreen ? {} : { opacity: 0 }}
+        animate={!isSmallScreen ? {} : { opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
         <Slider {...settings}>
           {images.map((image, index) => (
             <div key={index} className={styles["image-container"]}>
@@ -68,19 +73,19 @@ const Hero = () => {
             </div>
           ))}
         </Slider>
-      </div>
+      </motion.div>
       <motion.div
         className={styles.gradient}
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={!isSmallScreen ? { y: "100%", opacity: 0 } : { opacity: 0 }}
+        animate={!isSmallScreen ? { y: 0, opacity: 1 } : { opacity: 1 }}
         transition={{ duration: 2 }}
       ></motion.div>
       <div className={styles["home-container"]}>
         <motion.div
           className={styles.est}
-          initial={{ x: "200%" }}
-          animate={{ x: 0 }}
-          transition={{ delay: 0.9, duration: 2 }}
+          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
+          animate={!isSmallScreen ? { x: 0 } : {}}
+          transition={!isSmallScreen ? { delay: 0.9, duration: 2 } : {}}
         >
           <span>
             {locale === "sr" ? "osnovana 2017." : "established in 2017"}
@@ -88,9 +93,9 @@ const Hero = () => {
         </motion.div>
         <motion.div
           className={styles["head-container"]}
-          initial={{ x: "120%" }}
-          animate={{ x: 0 }}
-          transition={{ delay: 0.3, duration: 2 }}
+          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
+          animate={!isSmallScreen ? { x: 0 } : {}}
+          transition={!isSmallScreen ? { delay: 1.2, duration: 2 } : {}}
         >
           {" "}
           <p className={styles["sub-head"]}>
@@ -102,9 +107,9 @@ const Hero = () => {
         </motion.div>
         <motion.div
           className={styles["text-container"]}
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          transition={{ delay: 0.5, duration: 2 }}
+          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
+          animate={!isSmallScreen ? { x: 0 } : {}}
+          transition={!isSmallScreen ? { delay: 1.5, duration: 2 } : {}}
         >
           <p className={styles.text}>
             {locale === "sr"
