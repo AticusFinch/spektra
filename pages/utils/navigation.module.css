@@ -790,6 +790,7 @@
 
   .mobile-head-container {
     padding: 0.8rem 1.5rem;
+    padding-top: 1rem;
   }
 
   .hamburger-menu {
@@ -804,5 +805,18 @@
 
   .mobile-search {
     margin-top: 3rem;
+  }
+
+  .languages-container {
+    width: 60%;
+  }
+
+  .language {
+    font-size: 0.5rem;
+  }
+
+  .mobile-head-container {
+    padding: 0.5rem 1.5rem;
+    padding-top: 1rem;
   }
 }
