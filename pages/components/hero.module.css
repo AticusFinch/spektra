@@ -281,10 +281,11 @@
   }
 
   .gradient {
-    width: 70%;
-    left: 15%;
+    width: 100%;
+    left: 0;
     top: 75%;
     height: 25%;
+    background: linear-gradient(to top, var(--trans-pink), rgba(0, 0, 0, 0));
   }
 
   .home-container {
@@ -482,8 +483,6 @@
   .gradient {
     top: 71%;
     height: 29%;
-    width: 80%;
-    left: 10%;
   }
 
   .home-container {

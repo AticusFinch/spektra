@@ -321,7 +321,6 @@
   }
 
   .language {
-    opacity: 0.3;
     font-size: 0.9rem;
   }
 
@@ -724,7 +723,7 @@
   }
 
   .language {
-    font-size: 1grem;
+    font-size: 1rem;
   }
 }
 
@@ -744,6 +743,18 @@
 
   .menu-button {
     font-size: 1.3rem;
+  }
+
+  .language {
+    font-size: 0.6rem;
+  }
+
+  .languages {
+    width: 40%;
+  }
+
+  .languages-container {
+    margin-bottom: 2rem;
   }
 }
 
