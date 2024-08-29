@@ -289,7 +289,7 @@
   }
 
   .home-container {
-    padding: 16rem 2rem 5rem 2rem;
+    padding: 15rem 0rem 5rem 0rem;
     width: 100%;
     text-align: center;
     display: flex;
@@ -299,7 +299,7 @@
   }
 
   .est {
-    font-size: 3rem;
+    font-size: 2.7rem;
     height: 45%;
   }
 
@@ -326,8 +326,8 @@
   }
 
   .text {
-    font-size: 2.7rem;
-    width: 80%;
+    font-size: 2.4rem;
+    width: 85%;
   }
 }
 
@@ -342,11 +342,11 @@
   }
 
   .home-container {
-    padding: 11rem 2rem 5rem 2rem;
+    padding: 10rem 0rem 4rem 0rem;
   }
 
   .est {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     height: 40%;
   }
 
@@ -360,7 +360,7 @@
   }
 
   .text {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 
@@ -375,11 +375,11 @@
   }
 
   .home-container {
-    padding: 10rem 2rem 4rem 2rem;
+    padding: 10rem 0rem 3rem 0rem;
   }
 
   .est {
-    font-size: 2rem;
+    font-size: 1.7rem;
     height: 38%;
   }
 
@@ -393,7 +393,7 @@
   }
 
   .text {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -404,11 +404,10 @@
   }
 
   .home-container {
-    padding: 11rem 2rem 4rem 2rem;
+    padding: 10rem 0rem 4rem 0rem;
   }
 
   .est {
-    font-size: 1.8rem;
     height: 45%;
   }
 
@@ -422,17 +421,17 @@
   }
 
   .text {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 768px) {
   .home-container {
-    padding: 13rem 2rem 2.5rem 2rem;
+    padding: 9rem 0rem 2.5rem 0rem;
   }
 
   .est {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     height: 40%;
   }
 
@@ -457,11 +456,11 @@
   }
 
   .home-container {
-    padding: 15rem 2rem 2.5rem 2rem;
+    padding: 7rem 0rem 2.5rem 0rem;
   }
 
   .est {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     height: 40%;
   }
 
@@ -486,7 +485,7 @@
   }
 
   .home-container {
-    padding: 8rem 2rem 2.5rem 2rem;
+    padding: 8rem 0rem 2.5rem 0rem;
   }
 
   .est {
@@ -510,7 +509,6 @@
 
   .text {
     font-size: 1.3rem;
-    width: 80%;
   }
 }
 
@@ -548,10 +546,6 @@
     height: 28%;
   }
 
-  .home-container {
-    padding: 8rem 2rem 2.2rem 2rem;
-  }
-
   .sub-head {
     font-size: 2rem;
   }
@@ -570,9 +564,9 @@
   }
 }
 
-@media (max-width: 415px) and (max-height: 736px) {
+@media (max-width: 415px) {
   .home-container {
-    padding: 7rem 2rem 2.2rem 2rem;
+    padding: 7rem 0rem 2rem 0rem;
   }
 
   .gradient {
@@ -581,7 +575,7 @@
   }
 
   .est {
-    font-size: 1.2rem;
+    font-size: 1rem;
     height: 40%;
   }
 }
@@ -592,11 +586,16 @@
   }
 
   .sub-head {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .text {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .est {
+    font-size: 0.9rem;
+    height: 40%;
   }
 }
 
@@ -613,7 +612,7 @@
   }
 
   .home-container {
-    padding: 6.5rem 2rem 1.5rem 2rem;
+    padding: 6.5rem 0rem 1.5rem 0rem;
   }
 
   .est {

@@ -76,4 +76,7 @@
 }
 
 @media (max-width: 425px) {
+  .search-button {
+    font-size: 0.8rem;
+  }
 }

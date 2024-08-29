@@ -718,6 +718,9 @@
 }
 
 @media (max-width: 601px) {
+  .mobile-head-container {
+    padding: 1.3rem 2rem;
+  }
   .hamburger-link {
     font-size: 1rem;
   }
@@ -763,6 +766,10 @@
     height: 3rem;
   }
 
+  .mobile-head-container {
+    padding: 1rem 2rem;
+  }
+
   .hamburger-link {
     font-size: 0.7rem;
     outline: none;
@@ -773,5 +780,29 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .hamburger-link {
+    font-size: 0.5rem;
+  }
+
+  .mobile-head-container {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .hamburger-menu {
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hamburger-link-container {
+    height: 2rem;
+  }
+
+  .mobile-search {
+    margin-top: 3rem;
   }
 }
