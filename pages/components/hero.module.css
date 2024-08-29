@@ -1,6 +1,6 @@
 .home {
   position: relative;
-  max-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -333,7 +333,7 @@
 
 @media (max-width: 1024px) {
   .home {
-    height: 100vh;
+    max-height: 100vh;
   }
 
   .gradient {
@@ -366,7 +366,7 @@
 
 @media (max-width: 840px) {
   .home {
-    height: 100vh;
+    height: 90vh;
   }
 
   .gradient {
@@ -380,7 +380,7 @@
 
   .est {
     font-size: 1.7rem;
-    height: 38%;
+    height: 25%;
   }
 
   .sub-head {
@@ -408,7 +408,7 @@
   }
 
   .est {
-    height: 45%;
+    height: 25%;
   }
 
   .head {
@@ -427,12 +427,12 @@
 
 @media (max-width: 768px) {
   .home-container {
-    padding: 9rem 0rem 2.5rem 0rem;
+    padding: 8rem 0rem 2.5rem 0rem;
   }
 
   .est {
     font-size: 1.6rem;
-    height: 40%;
+    height: 20%;
   }
 
   .head {
@@ -461,7 +461,7 @@
 
   .est {
     font-size: 1.5rem;
-    height: 40%;
+    height: 20%;
   }
 
   .head {
@@ -490,7 +490,7 @@
 
   .est {
     font-size: 1.3rem;
-    height: 45%;
+    height: 15%;
   }
 
   .sub-head {
@@ -566,7 +566,7 @@
 
   .est {
     font-size: 1rem;
-    height: 40%;
+    height: 15%;
   }
 }
 
@@ -589,7 +589,7 @@
 
   .est {
     font-size: 0.9rem;
-    height: 40%;
+    height: 15%;
   }
 }
 
@@ -616,7 +616,6 @@
 
   .est {
     font-size: 0.8rem;
-    height: 30%;
   }
 
   .sub-head {
