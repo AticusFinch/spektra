@@ -74,8 +74,8 @@ const Hero = () => {
         initial={
           !isSmallScreen ? { x: "100%", opacity: 0 } : { x: 0, opacity: 1 }
         }
-        animate={!isSmallScreen ? { x: 0, opacity: 1 } : {}}
-        transition={!isSmallScreen ? { duration: 1 } : {}}
+        animate={{ x: 0, opacity: 1 }}
+        transition={!isSmallScreen ? { duration: 1 } : { duration: 0 }}
       ></motion.div>
       <div className={styles["home-container"]}>
         <motion.div
