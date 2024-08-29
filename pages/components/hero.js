@@ -71,11 +71,9 @@ const Hero = () => {
       </div>
       <motion.div
         className={styles.gradient}
-        initial={
-          !isSmallScreen ? { x: "100%", opacity: 0 } : { x: 0, opacity: 1 }
-        }
-        animate={{ x: 0, opacity: 1 }}
-        transition={!isSmallScreen ? { duration: 1 } : { duration: 0 }}
+        initial={{ y: "100%", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 2 }}
       ></motion.div>
       <div className={styles["home-container"]}>
         <motion.div
@@ -90,7 +88,7 @@ const Hero = () => {
         </motion.div>
         <motion.div
           className={styles["head-container"]}
-          initial={{ x: "100%" }}
+          initial={{ x: "120%" }}
           animate={{ x: 0 }}
           transition={{ delay: 0.3, duration: 2 }}
         >
