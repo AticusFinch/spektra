@@ -54,15 +54,16 @@ const Hero = () => {
 
   return (
     <div className={styles.home}>
-      <motion.div
-        className={styles["background-wrapper"]}
-        initial={isSmallScreen ? { opacity: 0 } : {}}
-        animate={isSmallScreen ? { opacity: 1 } : {}}
-        transition={{ duration: 2 }}
-      >
+      <motion.div className={styles["background-wrapper"]}>
         <Slider {...settings}>
           {images.map((image, index) => (
-            <div key={index} className={styles["image-container"]}>
+            <motion.div
+              key={index}
+              className={styles["image-container"]}
+              initial={isSmallScreen ? { opacity: 0 } : {}}
+              animate={isSmallScreen ? { opacity: 1 } : {}}
+              transition={isSmallScreen ? { duration: 2 } : {}}
+            >
               <Image
                 src={image}
                 alt="hero"
@@ -70,20 +71,22 @@ const Hero = () => {
                 height={1080}
                 className={styles.image}
               />
-            </div>
+            </motion.div>
           ))}
         </Slider>
       </motion.div>
       <motion.div
         className={styles.gradient}
-        initial={isSmallScreen ? { opacity: 0 } : { y: "100%", opacity: 0 }}
-        animate={isSmallScreen ? { opacity: 1 } : { y: 0, opacity: 1 }}
+        initial={
+          !isSmallScreen ? { y: "100%", opacity: 0 } : { y: 0, opacity: 0 }
+        }
+        animate={!isSmallScreen ? { y: 0, opacity: 1 } : { opacity: 1 }}
         transition={{ duration: 2 }}
       ></motion.div>
       <div className={styles["home-container"]}>
         <motion.div
           className={styles.est}
-          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
+          initial={!isSmallScreen ? { x: "200%" } : {}}
           animate={!isSmallScreen ? { x: 0 } : {}}
           transition={!isSmallScreen ? { delay: 0.9, duration: 2 } : {}}
         >
@@ -93,11 +96,10 @@ const Hero = () => {
         </motion.div>
         <motion.div
           className={styles["head-container"]}
-          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
+          initial={!isSmallScreen ? { x: "200%" } : {}}
           animate={!isSmallScreen ? { x: 0 } : {}}
           transition={!isSmallScreen ? { delay: 1.2, duration: 2 } : {}}
         >
-          {" "}
           <p className={styles["sub-head"]}>
             {locale === "sr" ? "Asocijacija" : "Association"}
           </p>
@@ -107,7 +109,7 @@ const Hero = () => {
         </motion.div>
         <motion.div
           className={styles["text-container"]}
-          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
+          initial={!isSmallScreen ? { x: "200%" } : {}}
           animate={!isSmallScreen ? { x: 0 } : {}}
           transition={!isSmallScreen ? { delay: 1.5, duration: 2 } : {}}
         >
