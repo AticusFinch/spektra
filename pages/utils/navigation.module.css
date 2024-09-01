@@ -823,6 +823,10 @@
 }
 
 @media (max-width: 1112px) and (orientation: landscape) {
+  .mobile-nav {
+    overflow-y: scroll;
+  }
+
   .mobile-head-container {
     padding: 1rem 2rem;
   }
@@ -869,11 +873,10 @@
 
   .hamburger-menu-container {
     height: 100vh;
-    overflow-y: scroll; /* Enable vertical scrolling */
   }
 
   .hamburger-menu {
-    height: 30%;
+    height: 50%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
