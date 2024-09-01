@@ -337,10 +337,11 @@
   .publication-content {
     height: 40%;
     top: 60%;
+    width: 100%;
+    left: 0;
     padding: 0;
     padding: 0.5rem;
-    background: #191919dc;
-    backdrop-filter: blur(10px);
+    background: var(--dark-grey);
     color: var(--cream-white);
     transform: translateX(0);
     display: flex;
