@@ -56,8 +56,8 @@ const Hero = () => {
     <div className={styles.home}>
       <motion.div
         className={styles["background-wrapper"]}
-        initial={!isSmallScreen ? {} : { opacity: 0 }}
-        animate={!isSmallScreen ? {} : { opacity: 1 }}
+        initial={isSmallScreen ? { opacity: 0 } : {}}
+        animate={isSmallScreen ? { opacity: 1 } : {}}
         transition={{ duration: 2 }}
       >
         <Slider {...settings}>
@@ -76,8 +76,8 @@ const Hero = () => {
       </motion.div>
       <motion.div
         className={styles.gradient}
-        initial={!isSmallScreen ? { y: "100%", opacity: 0 } : { opacity: 0 }}
-        animate={!isSmallScreen ? { y: 0, opacity: 1 } : { opacity: 1 }}
+        initial={isSmallScreen ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+        animate={isSmallScreen ? { opacity: 1 } : { y: 0, opacity: 1 }}
         transition={{ duration: 2 }}
       ></motion.div>
       <div className={styles["home-container"]}>
