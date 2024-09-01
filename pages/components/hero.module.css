@@ -332,10 +332,6 @@
 }
 
 @media (max-width: 1024px) {
-  .home {
-    max-height: 100vh;
-  }
-
   .gradient {
     top: 70%;
     height: 30%;
@@ -366,7 +362,7 @@
 
 @media (max-width: 840px) {
   .home {
-    height: 90vh;
+    height: 65rem;
   }
 
   .gradient {
@@ -398,6 +394,10 @@
 }
 
 @media (max-width: 800px) {
+  .home {
+    height: 75rem;
+  }
+
   .gradient {
     top: 75%;
     height: 25%;
@@ -426,6 +426,10 @@
 }
 
 @media (max-width: 768px) {
+  .home {
+    height: 60rem;
+  }
+
   .home-container {
     padding: 8rem 0rem 2.5rem 0rem;
   }
@@ -450,6 +454,10 @@
 }
 
 @media (max-width: 601px) {
+  .home {
+    height: 57rem;
+  }
+
   .gradient {
     top: 77%;
     height: 23%;
@@ -479,6 +487,10 @@
 }
 
 @media (max-width: 432px) {
+  .home {
+    height: 55rem;
+  }
+
   .gradient {
     top: 71%;
     height: 29%;
@@ -513,6 +525,10 @@
 }
 
 @media (max-width: 428px) {
+  .home {
+    height: 54rem;
+  }
+
   .gradient {
     top: 73%;
     height: 27%;
@@ -537,6 +553,10 @@
 }
 
 @media (max-width: 415px) {
+  .home {
+    height: 44rem;
+  }
+
   .gradient {
     top: 72%;
     height: 28%;
@@ -571,6 +591,10 @@
 }
 
 @media (max-width: 376px) {
+  .home {
+    height: 40rem;
+  }
+
   .home-container {
     padding: 6rem 0rem 1.5rem 0rem;
   }
@@ -594,6 +618,10 @@
 }
 
 @media (max-width: 360px) {
+  .home {
+    height: 37rem;
+  }
+
   .home-container {
     padding: 5.5rem 0rem 1.5rem 0rem;
   }
@@ -605,6 +633,10 @@
 }
 
 @media (max-width: 320px) {
+  .home {
+    height: 32rem;
+  }
+
   .gradient {
     top: 64%;
     height: 36%;
@@ -624,6 +656,32 @@
 
   .head {
     font-size: 3rem;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) and (max-height: 360px) {
+  .home {
+    height: 22rem;
+  }
+
+  .home-container {
+    padding: 7rem 0rem 1.5rem 0rem;
+  }
+
+  .est {
+    font-size: 0.8rem;
+  }
+
+  .sub-head {
+    font-size: 1.3rem;
+  }
+
+  .head {
+    font-size: 5rem;
   }
 
   .text {
