@@ -85,9 +85,13 @@ const Hero = () => {
       <div className={styles["home-container"]}>
         <motion.div
           className={styles.est}
-          initial={!isSmallScreen ? { x: "200%" } : {}}
+          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
           animate={!isSmallScreen ? { x: 0 } : {}}
-          transition={!isSmallScreen ? { delay: 0.9, duration: 2 } : {}}
+          transition={
+            !isSmallScreen
+              ? { delay: 0.9, duration: 2 }
+              : { delay: 0, duration: 0 }
+          }
         >
           <span>
             {locale === "sr" ? "osnovana 2017." : "established in 2017"}
@@ -95,9 +99,13 @@ const Hero = () => {
         </motion.div>
         <motion.div
           className={styles["head-container"]}
-          initial={!isSmallScreen ? { x: "200%" } : {}}
+          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
           animate={!isSmallScreen ? { x: 0 } : {}}
-          transition={!isSmallScreen ? { delay: 1.2, duration: 2 } : {}}
+          transition={
+            !isSmallScreen
+              ? { delay: 1.2, duration: 2 }
+              : { delay: 0, duration: 0 }
+          }
         >
           <p className={styles["sub-head"]}>
             {locale === "sr" ? "Asocijacija" : "Association"}
@@ -108,9 +116,13 @@ const Hero = () => {
         </motion.div>
         <motion.div
           className={styles["text-container"]}
-          initial={!isSmallScreen ? { x: "200%" } : {}}
+          initial={!isSmallScreen ? { x: "200%" } : { x: 0 }}
           animate={!isSmallScreen ? { x: 0 } : {}}
-          transition={!isSmallScreen ? { delay: 1.5, duration: 2 } : {}}
+          transition={
+            !isSmallScreen
+              ? { delay: 1.5, duration: 2 }
+              : { delay: 0, duration: 0 }
+          }
         >
           <p className={styles.text}>
             {locale === "sr"
