@@ -925,7 +925,7 @@
   }
 
   .hamburger-link-container {
-    height: 2rem;
+    height: 1rem;
   }
 
   .hamburger-link {
@@ -955,6 +955,10 @@
     font-size: 0.7rem;
   }
 
+  .hamburger-menu {
+    gap: 1.5rem;
+  }
+
   .language {
     font-size: 0.7rem;
   }
@@ -967,10 +971,6 @@
 
   .languages-container {
     width: 50%;
-  }
-
-  .hamburger-menu {
-    gap: 1.5rem;
   }
 
   .hamburger-link {
