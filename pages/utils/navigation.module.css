@@ -821,3 +821,173 @@
     padding-top: 1rem;
   }
 }
+
+@media (max-width: 1112px) and (orientation: landscape) {
+  .mobile-head-container {
+    padding: 1rem 2rem;
+  }
+
+  .menu-button {
+    font-size: 1.5rem;
+  }
+
+  .hamburger-link-container {
+    height: 3.5rem;
+  }
+
+  .hamburger-link {
+    font-size: 0.9rem;
+  }
+
+  .language {
+    font-size: 0.9rem;
+  }
+
+  .languages-container {
+    margin-bottom: 3rem;
+  }
+
+  .hamburger-menu {
+    margin-top: 1rem;
+    margin-left: 2rem;
+  }
+
+  .logo-mobile {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 962px) and (orientation: landscape) {
+  .mobile-head-container {
+    padding: 1rem 2rem;
+  }
+
+  .menu-button {
+    font-size: 1.5rem;
+  }
+
+  .hamburger-menu-container {
+    height: 100vh;
+    overflow-y: scroll; /* Enable vertical scrolling */
+  }
+
+  .hamburger-menu {
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .hamburger-link-container {
+    height: 2rem;
+  }
+
+  .hamburger-link {
+    font-size: 0.8rem;
+  }
+
+  .mobile-search {
+    margin-top: 0.5rem;
+    column-span: 3;
+    grid-column: 1 / 5;
+    grid-row: 4 / 5;
+  }
+
+  .language {
+    font-size: 0.8rem;
+  }
+
+  .languages-container {
+    width: 20%;
+    margin-bottom: 1rem;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+  }
+
+  .hamburger-menu {
+    margin-top: 1rem;
+  }
+
+  .logo-mobile {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 926px) and (orientation: landscape) {
+  .mobile-head-container {
+    padding: 1rem 2rem;
+  }
+
+  .menu-button {
+    font-size: 1.5rem;
+  }
+
+  .hamburger-link-container {
+    height: 2rem;
+  }
+
+  .hamburger-link {
+    font-size: 0.9rem;
+  }
+
+  .language {
+    font-size: 0.9rem;
+  }
+
+  .hamburger-menu {
+    margin-top: 1rem;
+  }
+
+  .logo-mobile {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 740px) and (orientation: landscape) {
+  .languages-container {
+    width: 30%;
+  }
+
+  .hamburger-link {
+    font-size: 0.7rem;
+  }
+
+  .language {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .mobile-head-container {
+    padding: 0.9rem 2rem;
+  }
+
+  .languages-container {
+    width: 50%;
+  }
+
+  .hamburger-menu {
+    gap: 1.5rem;
+  }
+
+  .hamburger-link {
+    font-size: 0.6rem;
+  }
+
+  .language {
+    font-size: 0.6rem;
+  }
+
+  .menu-button {
+    font-size: 1.2rem;
+  }
+
+  .logo-mobile {
+    width: 30px;
+    height: 30px;
+  }
+}
