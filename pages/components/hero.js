@@ -54,16 +54,15 @@ const Hero = () => {
 
   return (
     <div className={styles.home}>
-      <motion.div className={styles["background-wrapper"]}>
+      <motion.div
+        className={styles["background-wrapper"]}
+        initial={!isSmallScreen ? { opacity: 0 } : { opacity: 1 }}
+        animate={!isSmallScreen ? { opacity: 1 } : {}}
+        transition={!isSmallScreen ? { duration: 2 } : {}}
+      >
         <Slider {...settings}>
           {images.map((image, index) => (
-            <motion.div
-              key={index}
-              className={styles["image-container"]}
-              initial={isSmallScreen ? { opacity: 0 } : {}}
-              animate={isSmallScreen ? { opacity: 1 } : {}}
-              transition={isSmallScreen ? { duration: 2 } : {}}
-            >
+            <div key={index} className={styles["image-container"]}>
               <Image
                 src={image}
                 alt="hero"
@@ -71,7 +70,7 @@ const Hero = () => {
                 height={1080}
                 className={styles.image}
               />
-            </motion.div>
+            </div>
           ))}
         </Slider>
       </motion.div>
