@@ -462,7 +462,7 @@
   .mobile-nav {
     width: 100%;
     display: block;
-    position: absolute;
+    position: fixed;
     height: auto;
     background-color: var(--dark-grey);
     z-index: 10;
