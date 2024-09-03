@@ -271,34 +271,6 @@
 }
 
 @media (max-width: 1024px) {
-  .publication-content {
-    padding: 0.8rem;
-  }
-
-  .publication-head {
-    font-size: 1.9rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .author {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .meta-icon {
-    font-size: 0.9rem;
-  }
-
-  .download-button {
-    font-size: 1.2rem;
-  }
-
-  .read-more {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 820px) {
   .publications-head-container {
     display: flex;
     justify-content: space-between;
@@ -307,17 +279,15 @@
   }
 
   .publications-head {
-    height: 30px;
     font-size: 2.5rem;
     margin-bottom: 0 !important;
+    -webkit-text-fill-color: var(--cream-white);
     padding: 0;
   }
 
   .all-publications {
-    width: 130px;
     height: 25px;
     background-color: var(--dark-grey);
-    border-bottom: solid 1px var(--trans-pink);
     font-size: 0.8rem;
     font-family: "owners-regular", sans-serif;
   }
@@ -335,8 +305,8 @@
   }
 
   .publication-content {
-    height: 40%;
-    top: 60%;
+    height: 37%;
+    top: 63%;
     width: 100%;
     left: 0;
     padding: 0;
@@ -350,7 +320,7 @@
   }
 
   .publication-head {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
@@ -362,14 +332,14 @@
   }
 
   .author {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     color: var(--cream-white);
   }
 
   .meta-icon {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .download {
@@ -404,6 +374,21 @@
 
   .publications {
     margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 835px) {
+  .publication-content {
+    height: 40%;
+    top: 60%;
+  }
+
+  .publication-head {
+    font-size: 1.3rem;
+  }
+
+  .download-button {
+    font-size: 1.5rem;
   }
 }
 

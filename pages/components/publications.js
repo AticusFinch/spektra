@@ -72,6 +72,13 @@ const Publications = ({ publications }) => {
         },
       },
       {
+        breakpoint: 840,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 700,
         settings: {
           slidesToShow: 2,
