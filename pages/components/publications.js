@@ -130,7 +130,7 @@ const Publications = ({ publications }) => {
                           {post.title}
                         </p>
                         <span className={styles["author"]}>
-                          <FaPen className={styles["meta-icon"]} />
+                          {/* <FaPen className={styles["meta-icon"]} /> */}
                           {post.publications.publicationAuthor}
                         </span>
                       </div>

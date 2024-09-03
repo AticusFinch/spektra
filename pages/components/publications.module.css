@@ -144,10 +144,18 @@
 }
 
 .author {
+  font-weight: 300;
   color: var(--dark-grey);
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .meta-icon {
@@ -290,6 +298,7 @@
     background-color: var(--dark-grey);
     font-size: 0.8rem;
     font-family: "owners-regular", sans-serif;
+    text-decoration: underline;
   }
 
   .all-publications:hover:before {
@@ -336,6 +345,13 @@
     display: flex;
     align-items: center;
     color: var(--cream-white);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
   }
 
   .meta-icon {
@@ -449,18 +465,22 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .publications-head {
     font-size: 1.5rem;
     height: 19px;
   }
 
   .publication-head {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .author {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .meta-icon {
+    font-size: 0.9rem;
   }
 
   .all-publications {
@@ -468,18 +488,49 @@
     font-size: 0.6rem;
   }
 
+  .download-button {
+    font-size: 0.9rem;
+  }
+
   .publication {
     height: 280px;
   }
 
   .publication-content {
-    max-height: 35%;
-    top: 65%;
+    height: 40%;
+    top: 60%;
   }
 }
 
-@media (max-width: 460px) {
-  .all-publications {
-    width: 80px;
+@media (max-width: 376px) {
+  .publication-head {
+    font-size: 0.8rem;
+  }
+
+  .author {
+    font-size: 0.7rem;
+  }
+
+  .meta-icon {
+    font-size: 0.8rem;
+    padding-right: 0.2rem;
+  }
+}
+
+@media (max-width: 330px) {
+  .publication-head {
+    font-size: 0.7rem;
+  }
+
+  .author {
+    font-size: 0.6rem;
+  }
+
+  .meta-icon {
+    font-size: 0.7rem;
+  }
+
+  .download-button {
+    font-size: 0.8rem;
   }
 }
