@@ -16,6 +16,10 @@ const Page = ({ page }) => {
     return <div>Loading...</div>;
   }
 
+  if (!page) {
+    return <div>Page not found</div>;
+  }
+
   return (
     <div>
       <Head>

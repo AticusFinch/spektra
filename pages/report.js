@@ -6,49 +6,43 @@ import Footer from "./utils/footer";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
+import { sendMail } from "../lib/api";
+
 import styles from "./report.module.css";
 
-const Report = () => {
+const Report = ({ menuItems }) => {
   const router = useRouter();
   const { locale } = router;
 
-  const [formData, setFormData] = useState({
-    genderIdentity: "",
-    location: "",
-    description: "",
-    supportType: "",
-    contactInfo: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const [genderIdentity, setGenderIdentity] = useState("");
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
+  const [supportType, setSupportType] = useState("");
+  const [contactInfo, setContactInfo] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const emailContent = `
+      Message received from <strong>${genderIdentity}</strong>. 
+      Their email address is <strong>${contactInfo}</strong>. <br />
+      They'd like to know about...
+      ${description}
+    `;
     try {
-      const response = await fetch(
-        "https://lightgreen-emu-646217.hostingersite.com/wp-json/wp/v2/forms/submit",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
+      const data = await sendMail(
+        "New message from website contact form",
+        emailContent
       );
-      if (response.ok) {
-        alert("Form submitted successfully");
+
+      if (data.sent) {
+        // email was sent successfully!
+        console.log("Email sent successfully!");
       } else {
-        alert("Failed to submit the form");
+        // email was sent unsuccessfully!
+        console.log("Failed to send email!");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred while submitting the form");
+      console.error("Error in handleSubmit:", error);
     }
   };
 
@@ -71,43 +65,6 @@ const Report = () => {
             {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
           </h1>
           <div className={styles.content}>
-            <div className={styles["report-info"]}>
-              <p>
-                freestar Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Aenean vel orci non ex mollis dictum eu nec tortor. Fusce
-                cursus posuere sapien, iaculis bibendum ligula sagittis eu.
-                Vestibulum sed cursus ipsum. Pellentesque eu imperdiet lectus.
-                Morbi ac risus aliquet, tristique purus sed, scelerisque massa.
-                Quisque eu consequat mauris. In hac habitasse platea dictumst.
-                Suspendisse feugiat finibus rutrum.
-              </p>
-              <p>
-                Morbi pretium facilisis tempor. Praesent iaculis tincidunt lorem
-                eu sollicitudin. Nulla facilisi. Donec in mi vestibulum sapien
-                vulputate scelerisque. Maecenas egestas quam nisl, vel ultricies
-                magna feugiat ac. Cras ut lorem elementum, commodo nibh at,
-                efficitur lacus. In lectus dolor, convallis quis elit id, ornare
-                condimentum justo. Vivamus rhoncus tincidunt semper.
-                Pellentesque habitant morbi tristique senectus et netus et
-                malesuada fames ac turpis egestas. Nulla odio nisl, lobortis ut
-                diam a, condimentum convallis mi. Duis arcu sapien, faucibus at
-                leo a, pellentesque ullamcorper tortor. Morbi eget enim et nibh
-                lobortis pretium.
-              </p>
-              <p>
-                Morbi pretium facilisis tempor. Praesent iaculis tincidunt lorem
-                eu sollicitudin. Nulla facilisi. Donec in mi vestibulum sapien
-                vulputate scelerisque. Maecenas egestas quam nisl, vel ultricies
-                magna feugiat ac. Cras ut lorem elementum, commodo nibh at,
-                efficitur lacus. In lectus dolor, convallis quis elit id, ornare
-                condimentum justo. Vivamus rhoncus tincidunt semper.
-                Pellentesque habitant morbi tristique senectus et netus et
-                malesuada fames ac turpis egestas. Nulla odio nisl, lobortis ut
-                diam a, condimentum convallis mi. Duis arcu sapien, faucibus at
-                leo a, pellentesque ullamcorper tortor. Morbi eget enim et nibh
-                lobortis pretium.
-              </p>
-            </div>
             <form onSubmit={handleSubmit} className={styles.form}>
               <div className={styles["form-group"]}>
                 <label htmlFor="genderIdentity">
@@ -122,8 +79,8 @@ const Report = () => {
                   placeholder={
                     locale === "sr" ? "npr. ona/njeno" : "e.g. she/her"
                   }
-                  value={formData.genderIdentity}
-                  onChange={handleChange}
+                  value={genderIdentity}
+                  onChange={(e) => setGenderIdentity(e.target.value)}
                   className={styles.input}
                   required
                 />
@@ -141,8 +98,8 @@ const Report = () => {
                   placeholder={
                     locale === "sr" ? "npr. Podgorica" : "e.g. Podgorica"
                   }
-                  value={formData.location}
-                  onChange={handleChange}
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
                   className={styles.input}
                   required
                 />
@@ -156,8 +113,8 @@ const Report = () => {
                 <textarea
                   id="description"
                   name="description"
-                  value={formData.description}
-                  onChange={handleChange}
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                   className={styles.input}
                   placeholder={locale === "sr" ? "opis" : "description"}
                   rows="5"
@@ -173,15 +130,15 @@ const Report = () => {
                 <textarea
                   id="supportType"
                   name="supportType"
-                  value={formData.supportType}
-                  onChange={handleChange}
+                  value={supportType}
+                  onChange={(e) => setSupportType(e.target.value)}
                   className={styles.input}
                   placeholder={
                     locale === "sr"
                       ? "navedi svoje potrebe"
                       : "state your needs"
                   }
-                  rows="5" // Specify the number of lines to display
+                  rows="5"
                   required
                 />
               </div>
@@ -195,8 +152,8 @@ const Report = () => {
                   type="text"
                   id="contactInfo"
                   name="contactInfo"
-                  value={formData.contactInfo}
-                  onChange={handleChange}
+                  value={contactInfo}
+                  onChange={(e) => setContactInfo(e.target.value)}
                   className={styles.input}
                   placeholder={
                     locale === "sr"
@@ -206,7 +163,7 @@ const Report = () => {
                   required
                 />
               </div>
-              <button type="submit" className={styles.button}>
+              <button className={styles.button}>
                 {locale === "sr" ? "POŠALJI" : "SUBMIT"}
               </button>
             </form>
