@@ -57,7 +57,14 @@ const Programs = () => {
               vitae vehicula.
             </p>
             <div className={styles["grid-cards-container"]}>
-              <Link href="/programs_pages/" className={styles["grid-card"]}>
+              <Link
+                href={
+                  locale === "sr"
+                    ? "/program-za-rad-sa-zajednicom"
+                    : "/community-work-program"
+                }
+                className={styles["grid-card"]}
+              >
                 <div className={styles["card-overlay"]}>
                   <IoEnterOutline />
                 </div>
@@ -97,7 +104,12 @@ const Programs = () => {
                   <IoEnterOutline />
                 </div>
               </Link>
-              <Link href="/programs_pages/" className={styles["grid-card"]}>
+              <Link
+                href={
+                  locale === "sr" ? "/program-zagovaranja" : "/advocacy-program"
+                }
+                className={styles["grid-card"]}
+              >
                 <div className={styles["card-overlay"]}>
                   <IoEnterOutline />
                 </div>
@@ -106,7 +118,7 @@ const Programs = () => {
                     src="/images/programs/1.png"
                     width={469}
                     height={313}
-                    alt="Community work program"
+                    alt="Advocacy program"
                     className={styles.image}
                   />
                 </div>
@@ -137,7 +149,14 @@ const Programs = () => {
                   <IoEnterOutline />
                 </div>
               </Link>
-              <Link href="/programs_pages/" className={styles["grid-card"]}>
+              <Link
+                href={
+                  locale === "sr"
+                    ? "/feministicki-program"
+                    : "/feminism-program"
+                }
+                className={styles["grid-card"]}
+              >
                 <div className={styles["card-overlay"]}>
                   <IoEnterOutline />
                 </div>

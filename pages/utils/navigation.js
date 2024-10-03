@@ -273,12 +273,22 @@ const Navigation = () => {
                 <div className={styles["dropdown-container"]}>
                   <ul className={styles["dropdown"]}>
                     <li>
-                      <Link href="/about/work">
+                      <Link
+                        href={
+                          locale === "sr" ? "/cime-se-bavimo" : "/what-we-do"
+                        }
+                      >
                         {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about/mission">
+                      <Link
+                        href={
+                          locale === "sr"
+                            ? "/koja-je-nasa-misija"
+                            : "/what-is-our-mission"
+                        }
+                      >
                         {locale === "sr"
                           ? "Koja je naša misija?"
                           : "What is our mission?"}
@@ -286,35 +296,63 @@ const Navigation = () => {
                     </li>
 
                     <li>
-                      <Link href="/about/vision">
+                      <Link
+                        href={
+                          locale === "sr"
+                            ? "/koja-je-nasa-vizija"
+                            : "/what-is-our-vission"
+                        }
+                      >
                         {locale === "sr"
                           ? "Koja je naša vizija?"
                           : "What is our vision?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about/values">
+                      <Link
+                        href={
+                          locale === "sr"
+                            ? "/koje-su-nase-vrijednosti"
+                            : "/what-are-our-values"
+                        }
+                      >
                         {locale === "sr"
                           ? "Koje su naše vrijednosti?"
                           : "What are our values?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about/team">
+                      <Link
+                        href={
+                          locale === "sr"
+                            ? "/ko-cini-nas-tim"
+                            : "/who-is-part-of-our-team"
+                        }
+                      >
                         {locale === "sr"
                           ? "Ko čini naš tim?"
                           : "Who is part of our team?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about/support">
+                      <Link
+                        href={
+                          locale === "sr"
+                            ? "/ko-podrzava-nas-rad"
+                            : "/who-supports-our-work"
+                        }
+                      >
                         {locale === "sr"
                           ? "Ko podržava naš rad?"
                           : "Who supports our work?"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about/reports">
+                      <Link
+                        href={
+                          locale === "sr" ? "/nasi-izvjestaji" : "/our-reports"
+                        }
+                      >
                         {locale === "sr" ? "Naši izvještaji" : "Our reports"}
                       </Link>
                     </li>
@@ -328,21 +366,39 @@ const Navigation = () => {
                 <div className={styles["dropdown-container"]}>
                   <ul className={styles["dropdown"]}>
                     <li>
-                      <Link href="/programs/community">
+                      <Link
+                        href={
+                          locale === "sr"
+                            ? "/program-za-rad-sa-zajednicom"
+                            : "/community-work-program"
+                        }
+                      >
                         {locale === "sr"
                           ? "Program za rad sa zajednicom"
                           : "Community work program"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/programs/advocacy">
+                      <Link
+                        href={
+                          locale === "sr"
+                            ? "/program-zagovaranja"
+                            : "/advocacy-program"
+                        }
+                      >
                         {locale === "sr"
                           ? "Program zagovaranja"
                           : "Advocacy program"}
                       </Link>
                     </li>
                     <li>
-                      <Link href="/programs/feminism">
+                      <Link
+                        href={
+                          locale === "sr"
+                            ? "/feministicki-program"
+                            : "/feminism-program"
+                        }
+                      >
                         {locale === "sr"
                           ? "Feministički program"
                           : "Feminism program"}

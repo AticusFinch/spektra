@@ -60,7 +60,10 @@ const About = () => {
               vitae vehicula.
             </p>
             <div className={styles["grid-cards-container"]}>
-              <Link href="/about/work" className={styles["grid-card"]}>
+              <Link
+                href={locale === "sr" ? "/cime-se-bavimo" : "/what-we-do"}
+                className={styles["grid-card"]}
+              >
                 <div className={styles.icons}>
                   <PiSuitcaseSimple className={styles.icon} />
                 </div>
@@ -87,7 +90,14 @@ const About = () => {
                   </span>
                 </div>
               </Link>
-              <Link href="/about/mission" className={styles["grid-card"]}>
+              <Link
+                href={
+                  locale === "sr"
+                    ? "/koja-je-nasa-misija"
+                    : "/what-is-our-mission"
+                }
+                className={styles["grid-card"]}
+              >
                 <div className={styles.icons}>
                   <IoSunnyOutline className={styles.icon} />
                 </div>
@@ -116,7 +126,14 @@ const About = () => {
                   </span>
                 </div>
               </Link>
-              <Link href="/about/vision" className={styles["grid-card"]}>
+              <Link
+                href={
+                  locale === "sr"
+                    ? "/koja-je-nasa-vizija"
+                    : "/what-is-our-vission"
+                }
+                className={styles["grid-card"]}
+              >
                 <div className={styles.icons}>
                   <PiShootingStar className={styles.icon} />
                 </div>
@@ -145,7 +162,14 @@ const About = () => {
                   </span>
                 </div>
               </Link>
-              <Link href="/about/values" className={styles["grid-card"]}>
+              <Link
+                href={
+                  locale === "sr"
+                    ? "/koje-su-nase-vrijednosti"
+                    : "/what-are-our-values"
+                }
+                className={styles["grid-card"]}
+              >
                 <div className={styles.icons}>
                   <GoHeart className={styles.icon} />
                 </div>
@@ -174,7 +198,14 @@ const About = () => {
                   </span>
                 </div>
               </Link>
-              <Link href="/about/team" className={styles["grid-card"]}>
+              <Link
+                href={
+                  locale === "sr"
+                    ? "/ko-cini-nas-tim"
+                    : "/who-is-part-of-our-team"
+                }
+                className={styles["grid-card"]}
+              >
                 <div className={styles.icons}>
                   <AiOutlineTeam className={styles.icon} />
                 </div>
@@ -203,7 +234,14 @@ const About = () => {
                   </span>
                 </div>
               </Link>
-              <Link href="/about/support" className={styles["grid-card"]}>
+              <Link
+                href={
+                  locale === "sr"
+                    ? "/ko-podrzava-nas-rad"
+                    : "/who-supports-our-work"
+                }
+                className={styles["grid-card"]}
+              >
                 <div className={styles.icons}>
                   <HiOutlineSupport className={styles.icon} />
                 </div>
@@ -232,7 +270,10 @@ const About = () => {
                   </span>
                 </div>
               </Link>
-              <Link href="/about/reports" className={styles["grid-card"]}>
+              <Link
+                href={locale === "sr" ? "/nasi-izvjestaji" : "/our-reports"}
+                className={styles["grid-card"]}
+              >
                 <div className={styles.icons}>
                   <IoNewspaperOutline className={styles.icon} />
                 </div>
