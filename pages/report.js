@@ -10,7 +10,7 @@ import { sendMail } from "../lib/api";
 
 import styles from "./report.module.css";
 
-const Report = ({ menuItems }) => {
+const Report = () => {
   const router = useRouter();
   const { locale } = router;
 
@@ -23,11 +23,11 @@ const Report = ({ menuItems }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const emailContent = `
-      Message received from <strong>${genderIdentity}</strong>. 
-      Their email address is <strong>${contactInfo}</strong>. <br />
-      They'd like to know about...
-      ${description}
-    `;
+    Message received from <strong>${genderIdentity}</strong>. 
+    Their email address is <strong>${contactInfo}</strong>. <br />
+    They'd like to know about...
+    ${description}
+  `;
     try {
       const data = await sendMail(
         "New message from website contact form",
@@ -39,7 +39,7 @@ const Report = ({ menuItems }) => {
         console.log("Email sent successfully!");
       } else {
         // email was sent unsuccessfully!
-        console.log("Failed to send email!");
+        console.log("Failed to send email!", data);
       }
     } catch (error) {
       console.error("Error in handleSubmit:", error);
@@ -163,7 +163,7 @@ const Report = ({ menuItems }) => {
                   required
                 />
               </div>
-              <button className={styles.button}>
+              <button type="submit" className={styles.button}>
                 {locale === "sr" ? "POŠALJI" : "SUBMIT"}
               </button>
             </form>
