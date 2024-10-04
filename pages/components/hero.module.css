@@ -305,7 +305,7 @@
     font-size: 2.2rem;
     height: 40%;
     color: transparent; /* Makes the text transparent */
-    -webkit-text-stroke: 1px var(--cream-white); /* Adds an outline */
+    -webkit-text-stroke: 0.5px var(--cream-white); /* Adds an outline */
   }
 
   .head-container {
