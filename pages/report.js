@@ -23,12 +23,28 @@ const Report = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const emailContent = `
-    <strong>Rodni identitet/zamjenice:</strong> <br /> ${genderIdentity}. <br /> 
-    <strong>Odakle dolazi:</strong> <br /> ${location}. <br />
-    <strong>Opis problema:</strong> <br /> ${description} <br />
-    <strong>Vrsta potrebne podrške: </strong> <br /> ${contactInfo} <br />
-    <strong>Kontakt:</strong> <br /> ${contactInfo} <br />
-
+     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+      <div style="padding: 10px 0;">
+        <strong>Rodni identitet/zamjenice:</strong> <br />
+        <span style="padding-left: 10px;">${genderIdentity}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Odakle dolazi:</strong> <br />
+        <span style="padding-left: 10px;">${location}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Opis problema:</strong> <br />
+        <span style="padding-left: 10px;">${description}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Vrsta potrebne podrške:</strong> <br />
+        <span style="padding-left: 10px;">${supportType}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Kontakt:</strong> <br />
+        <span style="padding-left: 10px;">${contactInfo}</span>
+      </div>
+    </div>
   `;
     try {
       const data = await sendMail(
