@@ -44,6 +44,11 @@
   font-weight: 700;
 }
 
+.form-container {
+  width: 50%;
+  margin: 0;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -53,7 +58,7 @@
   font-family: "roboto", sans-serif;
   font-weight: 300;
   padding: 1rem;
-  width: 50% !important;
+  width: 100% !important;
   border: solid 1px var(--cream-white);
 }
 
@@ -126,6 +131,29 @@
 
 .button:focus {
   outline: none;
+}
+
+.thanks {
+  padding-left: 2rem;
+  overflow: hidden;
+}
+
+.thanks p {
+  font-size: 5rem;
+  color: var(--trans-blue);
+  font-weight: 700;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 1920px) {
