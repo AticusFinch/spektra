@@ -164,7 +164,7 @@ const Report = () => {
                 />
               </div>
               <button type="submit" className={styles.button}>
-                {locale === "sr" ? "POŠALJI" : "SUBMIT"}
+                {locale === "sr" ? "POŠALJIiiii" : "SUBMIT"}
               </button>
             </form>
           </div>
