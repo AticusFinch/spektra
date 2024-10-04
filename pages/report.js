@@ -23,14 +23,16 @@ const Report = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const emailContent = `
-    Message received from <strong>${genderIdentity}</strong>. 
-    Their email address is <strong>${contactInfo}</strong>. <br />
-    They'd like to know about...
-    ${description}
+    <strong>Rodni identitet/zamjenice:</strong> <br /> ${genderIdentity}. <br /> 
+    <strong>Odakle dolazi:</strong> <br /> ${location}. <br />
+    <strong>Opis problema:</strong> <br /> ${description} <br />
+    <strong>Vrsta potrebne podrške: </strong> <br /> ${contactInfo} <br />
+    <strong>Kontakt:</strong> <br /> ${contactInfo} <br />
+
   `;
     try {
       const data = await sendMail(
-        "New message from website contact form",
+        "Nova poruka sa Website-a: Prijava nasilja",
         emailContent
       );
 
@@ -164,7 +166,7 @@ const Report = () => {
                 />
               </div>
               <button type="submit" className={styles.button}>
-                {locale === "sr" ? "POŠALJIiiii" : "SUBMIT"}
+                {locale === "sr" ? "POŠALJI" : "SUBMIT"}
               </button>
             </form>
           </div>
