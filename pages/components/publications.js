@@ -33,7 +33,13 @@ const Publications = ({ publications }) => {
   const { locale } = router;
 
   if (!publications || !Array.isArray(publications)) {
-    return <div>No publication available</div>;
+    return (
+      <p>
+        {locale === "sr"
+          ? "Publikacije nisu dostupne."
+          : "No publication available."}
+      </p>
+    );
   }
 
   const settings = {

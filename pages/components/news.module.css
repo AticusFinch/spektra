@@ -286,13 +286,14 @@
     height: 25px;
     padding: 0 0.5rem;
     background-color: var(--dark-grey);
-    font-size: 0.8rem;
+    font-size: 1rem;
+    color: var(--trans-pink);
     font-family: "owners-regular", sans-serif;
     text-decoration: underline;
   }
 
   .slide-container {
-    padding: 0 0.2rem;
+    padding: 0 0;
   }
 
   .slide:before {
@@ -361,13 +362,17 @@
   }
 }
 
-@media (max-width: 601px) {
+@media (max-width: 768px) {
   .slide-content-container {
     height: 230px;
   }
 
   .slide-head {
     font-size: 1.3rem;
+  }
+
+  .all-news {
+    font-size: 0.8rem;
   }
 }
 
