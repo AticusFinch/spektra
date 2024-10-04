@@ -77,7 +77,7 @@ const Hero = () => {
       <motion.div
         className={styles.gradient}
         initial={
-          !isSmallScreen ? { y: "100%", opacity: 0 } : { y: "3%", opacity: 1 }
+          !isSmallScreen ? { y: "100%", opacity: 0 } : { y: "4%", opacity: 1 }
         }
         animate={!isSmallScreen ? { y: 0, opacity: 1 } : {}}
         transition={!isSmallScreen ? { duration: 2 } : { duration: 0 }}
