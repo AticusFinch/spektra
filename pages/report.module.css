@@ -262,8 +262,16 @@
     flex-direction: column;
   }
 
-  .form {
+  .report-info {
+    width: 100% !important;
+    font-size: 0.9rem;
+  }
+
+  .form-container {
     width: 100%;
+  }
+
+  .form {
     margin-left: 0;
     margin-top: 2rem;
     font-size: 0.9rem;
