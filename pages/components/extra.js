@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
@@ -11,12 +11,26 @@ const Extra = () => {
   const router = useRouter();
   const { locale } = router;
   const [viewPortEntered, setViewPortEntered] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const onVisibilityChange = (isVisible) => {
     if (isVisible) {
       setViewPortEntered(true);
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 1024);
+    };
+
+    handleResize(); // Check initial screen size
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className={styles["extra-container"]}>
@@ -88,7 +102,7 @@ const Extra = () => {
                 start={viewPortEntered ? 0 : null}
                 end={30}
                 duration={3}
-                className={styles["counter-number-blue"]}
+                className={styles["counter-number-pink"]}
               />
             </VisibilitySensor>
             <span className={styles["counter-text"]}>
@@ -105,7 +119,7 @@ const Extra = () => {
                 start={viewPortEntered ? 0 : null}
                 end={89}
                 duration={3}
-                className={styles["counter-number-pink"]}
+                className={styles["counter-number-blue"]}
               />
             </VisibilitySensor>
             <span className={styles["counter-text"]}>
@@ -125,7 +139,7 @@ const Extra = () => {
             <motion.a
               href="/"
               className={styles["donate-text"]}
-              whileHover={{ scale: 1.2 }}
+              whileHover={!isSmallScreen ? { scale: 1.1 } : { scale: 1 }}
             >
               {locale === "sr" ? "doniraj" : "donate"}
             </motion.a>
