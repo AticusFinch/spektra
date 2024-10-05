@@ -5,8 +5,9 @@ import Container from "./utils/container";
 import Footer from "./utils/footer";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import ReCAPTCHA from "react-google-recaptcha";
 
-import { sendMail } from "../lib/api";
+import { sendMail } from "../lib/email";
 
 import styles from "./report.module.css";
 
@@ -20,9 +21,15 @@ const Report = () => {
   const [supportType, setSupportType] = useState("");
   const [contactInfo, setContactInfo] = useState("");
   const [emailSent, setEmailSent] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!captchaValue) {
+      alert("Please complete the reCAPTCHA");
+      return;
+    }
     const emailContent = `
      <div style="font-family: Arial, sans-serif; line-height: 1.6;">
       <div style="padding: 10px 0;">
@@ -240,6 +247,12 @@ const Report = () => {
                           : "email, phone number..."
                       }
                       required
+                    />
+                  </div>
+                  <div className={styles["form-group"]}>
+                    <ReCAPTCHA
+                      sitekey="6LejulgqAAAAAFpDuBgPNUugk61lIOr2w0Z9JDzP" // Replace with your Site Key
+                      onChange={(value) => setCaptchaValue(value)}
                     />
                   </div>
                   <button type="submit" className={styles.button}>

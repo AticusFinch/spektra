@@ -27,6 +27,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.6.11",
     "eslint": "^8",
     "eslint-config-next": "14.2.3"
   }
