@@ -111,7 +111,7 @@
   }
 
   .container {
-    padding: 4rem 1rem;
+    padding: 4rem 0rem;
   }
 }
 
@@ -129,7 +129,7 @@
 
 @media (max-width: 360px) {
   .container {
-    padding: 4rem 1rem;
+    padding: 4rem 0rem;
   }
 
   .content p {
@@ -143,7 +143,7 @@
   }
 
   .container {
-    padding: 3rem 1rem;
+    padding: 3rem 0rem;
   }
 
   .content p {
