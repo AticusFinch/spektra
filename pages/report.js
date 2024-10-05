@@ -251,7 +251,7 @@ const Report = () => {
                   </div>
                   <div className={styles["form-group"]}>
                     <ReCAPTCHA
-                      sitekey="6LejulgqAAAAAFpDuBgPNUugk61lIOr2w0Z9JDzP" // Replace with your Site Key
+                      sitekey="6LfFvFgqAAAAAA2JlvurKZD6SqTIi2BD0acXM7Kw" // Replace with your Site Key
                       onChange={(value) => setCaptchaValue(value)}
                     />
                   </div>
