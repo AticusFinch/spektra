@@ -21,9 +21,15 @@ const Report = () => {
   const [supportType, setSupportType] = useState("");
   const [contactInfo, setContactInfo] = useState("");
   const [emailSent, setEmailSent] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!captchaValue) {
+      alert("Please complete the reCAPTCHA");
+      return;
+    }
+
     const emailContent = `
      <div style="font-family: Arial, sans-serif; line-height: 1.6;">
       <div style="padding: 10px 0;">
@@ -245,7 +251,8 @@ const Report = () => {
                   </div>
                   <div className={styles["form-group"]}>
                     <ReCAPTCHA
-                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                      sitekey="6LfFvFgqAAAAAA2JlvurKZD6SqTIi2BD0acXM7Kw"
+                      onChange={(value) => setCaptchaValue(value)}
                     />
                   </div>
                   <button type="submit" className={styles.button}>
