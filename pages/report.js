@@ -57,7 +57,8 @@ const Report = () => {
     try {
       const data = await sendMail(
         "Nova poruka sa Website-a: Prijava nasilja",
-        emailContent
+        emailContent,
+        captchaValue
       );
 
       if (data.sent) {
@@ -251,7 +252,7 @@ const Report = () => {
                   </div>
                   <div className={styles["form-group"]}>
                     <ReCAPTCHA
-                      sitekey="6LfFvFgqAAAAAA2JlvurKZD6SqTIi2BD0acXM7Kw"
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                       onChange={(value) => setCaptchaValue(value)}
                     />
                   </div>
