@@ -6,9 +6,10 @@ import Footer from "./utils/footer";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import { sendMail } from "../lib/api";
+import { sendMail } from "../lib/email";
 
 import styles from "./report.module.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Report = () => {
   const router = useRouter();
@@ -240,6 +241,11 @@ const Report = () => {
                           : "email, phone number..."
                       }
                       required
+                    />
+                  </div>
+                  <div className={styles["form-group"]}>
+                    <ReCAPTCHA
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                     />
                   </div>
                   <button type="submit" className={styles.button}>
