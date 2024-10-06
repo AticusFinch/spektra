@@ -211,7 +211,7 @@ const Report = () => {
                   <div className={styles["form-group"]}>
                     <label htmlFor="supportType">
                       {locale === "sr"
-                        ? " Da li nam se obraćaš sa ciljem da te podržimo u procesu prijavljivanja nasilja institucijama ili u cilju dobijanja vršnjačke / profesionala psihološka podršak? Potpuno je u redu ukoliko još uvijek nijesi siguran/a:"
+                        ? " Da li nam se obraćaš sa ciljem da te podržimo u procesu prijavljivanja nasilja institucijama ili u cilju dobijanja vršnjačke / profesionala psihološka podrška? Potpuno je u redu ukoliko još uvijek nijesi siguran/a:"
                         : "Are you contacting us for support in the process of reporting violence to institutions or in order to obtain peer / professional psychological support? It is completely fine if you are still unsure:"}
                     </label>
                     <textarea
