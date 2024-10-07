@@ -104,6 +104,45 @@
   outline: none;
 }
 
+.form-overflow {
+  overflow: hidden;
+}
+
+.reports-head {
+  font-weight: 900;
+  font-size: 3rem;
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.reports {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.report-container {
+  padding: 1rem 0;
+  background-color: #252525;
+  display: inline-block;
+  text-align: center;
+}
+
+.report {
+  text-align: center;
+  text-decoration: none;
+  color: var(--cream-white);
+  transition: color 0.5s ease-in-out;
+}
+
+.report:hover {
+  color: var(--trans-pink);
+}
+
 @media (max-width: 1920px) {
   .title {
     font-size: 5rem;

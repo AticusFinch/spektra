@@ -6,7 +6,7 @@ const nextConfig = {
     localeDetection: false,
   },
   images: {
-    domains: ["lightgreen-emu-646217.hostingersite.com"],
+    domains: ["violet-mosquito-526066.hostingersite.com"],
   },
 };
 

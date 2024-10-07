@@ -8,6 +8,7 @@ import Footer from "./utils/footer";
 import Navigation from "./utils/navigation";
 import Container from "./utils/container";
 import ReCAPTCHA from "react-google-recaptcha";
+import { AnimatePresence, motion } from "framer-motion";
 
 import styles from "./pages.module.css";
 
@@ -37,6 +38,9 @@ const Page = ({ page }) => {
 
   const isWhatWeDoPage =
     page.slug === "what-we-do" || page.slug === "cime-se-bavimo";
+
+  const isReportsPage =
+    page.slug === "our-reports" || page.slug === "nasi-izvjestaji";
 
   return (
     <div>
@@ -72,100 +76,217 @@ const Page = ({ page }) => {
                   <MdClose className={styles["close-icon"]} />
                 </span>
               )}
-              {isFormVisible && (
-                <form className={styles["volunteer-form"]}>
-                  <div className={styles["form-group"]}>
-                    <label>
+              <AnimatePresence>
+                {isFormVisible && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className={styles["form-overflow"]}
+                  >
+                    <motion.div
+                      initial={{ transform: "translateY(-100%)", opacity: 0 }}
+                      animate={{ transform: "translateY(0)", opacity: 1 }}
+                      exit={{ transform: "translateY(-100%)", opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className={styles["form-container"]}
+                    >
+                      <form className={styles["volunteer-form"]}>
+                        <div className={styles["form-group"]}>
+                          <label>
+                            {locale === "sr"
+                              ? "Koje zamjenice koristiš?"
+                              : "What pronouns do you use?"}
+                          </label>
+                          <input
+                            type="text"
+                            id="genderIdentity"
+                            name="genderIdentity"
+                            placeholder={
+                              locale === "sr"
+                                ? "npr. ona/njeno"
+                                : "e.g. she/her"
+                            }
+                            className={styles.input}
+                            required
+                          />
+                        </div>
+                        <div className={styles["form-group"]}>
+                          <label>
+                            {locale === "sr"
+                              ? "Odakle si?"
+                              : "Where are you from?"}
+                          </label>
+                          <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder={
+                              locale === "sr"
+                                ? "npr. Podgorica"
+                                : "e.g. Podgorica"
+                            }
+                            className={styles.input}
+                            required
+                          />
+                        </div>
+                        <div className={styles["form-group"]}>
+                          <label>
+                            {locale === "sr"
+                              ? "Broj telefona:"
+                              : "Phone number:"}
+                          </label>
+                          <input
+                            type="text"
+                            id="phone"
+                            name="phone"
+                            placeholder={
+                              locale === "sr"
+                                ? "npr. 067123456"
+                                : "e.g. 067123456"
+                            }
+                            className={styles.input}
+                            required
+                          />
+                        </div>
+                        <div className={styles["form-group"]}>
+                          <label>
+                            {locale === "sr"
+                              ? "Koje je tvoje iskustvo u radu sa trans osobama:"
+                              : "What is your experience in working with trans persons:"}
+                          </label>
+                          <textarea
+                            id="supportType"
+                            name="supportType"
+                            className={styles.input}
+                            placeholder={
+                              locale === "sr"
+                                ? "navedi svoje iskustvo"
+                                : "state your experience"
+                            }
+                            rows="5"
+                            required
+                          />
+                        </div>
+                        <div className={styles["form-group"]}>
+                          <label htmlFor="contactInfo">
+                            {locale === "sr"
+                              ? "Email adresa:"
+                              : "Email address:"}
+                          </label>
+                          <input
+                            type="email"
+                            id="contactInfo"
+                            name="contactInfo"
+                            className={styles.input}
+                            placeholder={
+                              locale === "sr" ? "email adresa" : "email address"
+                            }
+                            required
+                          />
+                        </div>
+                        <div className={styles["form-group"]}>
+                          <ReCAPTCHA
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                            onChange={(value) => setCaptchaValue(value)}
+                            className={styles.recaptcha}
+                          />
+                        </div>
+                        <button type="submit" className={styles.button}>
+                          {locale === "sr" ? "POŠALJI" : "SUBMIT"}
+                        </button>
+                      </form>{" "}
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
+          {isReportsPage && (
+            <div>
+              <div>
+                <h3 className={styles["reports-head"]}>Godišnji izvještaji</h3>
+                <div className={styles.reports}>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
                       {locale === "sr"
-                        ? "Koje zamjenice koristiš?"
-                        : "What pronouns do you use?"}
-                    </label>
-                    <input
-                      type="text"
-                      id="genderIdentity"
-                      name="genderIdentity"
-                      placeholder={
-                        locale === "sr" ? "npr. ona/njeno" : "e.g. she/her"
-                      }
-                      className={styles.input}
-                      required
-                    />
-                  </div>
-                  <div className={styles["form-group"]}>
-                    <label>
-                      {locale === "sr" ? "Odakle si?" : "Where are you from?"}
-                    </label>
-                    <input
-                      type="text"
-                      id="location"
-                      name="location"
-                      placeholder={
-                        locale === "sr" ? "npr. Podgorica" : "e.g. Podgorica"
-                      }
-                      className={styles.input}
-                      required
-                    />
-                  </div>
-                  <div className={styles["form-group"]}>
-                    <label>
-                      {locale === "sr" ? "Broj telefona:" : "Phone number:"}
-                    </label>
-                    <input
-                      type="text"
-                      id="phone"
-                      name="phone"
-                      placeholder={
-                        locale === "sr" ? "npr. 067123456" : "e.g. 067123456"
-                      }
-                      className={styles.input}
-                      required
-                    />
-                  </div>
-                  <div className={styles["form-group"]}>
-                    <label>
+                        ? "Godišnji izvještaj 2024"
+                        : "Annual Report 2024"}
+                    </a>
+                  </span>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
                       {locale === "sr"
-                        ? "Koje je tvoje iskustvo u radu sa trans osobama:"
-                        : "What is your experience in working with trans persons:"}
-                    </label>
-                    <textarea
-                      id="supportType"
-                      name="supportType"
-                      className={styles.input}
-                      placeholder={
-                        locale === "sr"
-                          ? "navedi svoje iskustvo"
-                          : "state your experience"
-                      }
-                      rows="5"
-                      required
-                    />
-                  </div>
-                  <div className={styles["form-group"]}>
-                    <label htmlFor="contactInfo">
-                      {locale === "sr" ? "Email adresa:" : "Email address:"}
-                    </label>
-                    <input
-                      type="email"
-                      id="contactInfo"
-                      name="contactInfo"
-                      className={styles.input}
-                      placeholder={
-                        locale === "sr" ? "email adresa" : "email address"
-                      }
-                      required
-                    />
-                  </div>
-                  <div className={styles["form-group"]}>
-                    <ReCAPTCHA
-                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                      onChange={(value) => setCaptchaValue(value)}
-                    />
-                  </div>
-                  <button type="submit" className={styles.button}>
-                    {locale === "sr" ? "POŠALJI" : "SUBMIT"}
-                  </button>
-                </form>
-              )}
+                        ? "Godišnji izvještaj 2023"
+                        : "Annual Report 2023"}
+                    </a>
+                  </span>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
+                      {locale === "sr"
+                        ? "Godišnji izvještaj 2022"
+                        : "Annual Report 2022"}
+                    </a>
+                  </span>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
+                      {locale === "sr"
+                        ? "Godišnji izvještaj 2021"
+                        : "Annual Report 2021"}
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <h3 className={styles["reports-head"]}>
+                  Finansijski izvještaji
+                </h3>
+                <div className={styles.reports}>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
+                      {locale === "sr"
+                        ? "Finansijski izvještaj 2024"
+                        : "Financial Report 2024"}
+                    </a>
+                  </span>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
+                      {locale === "sr"
+                        ? "Finansijski izvještaj 2023"
+                        : "Financial Report 2023"}
+                    </a>
+                  </span>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
+                      {locale === "sr"
+                        ? "Finansijski izvještaj 2022"
+                        : "Financial Report 2022"}
+                    </a>
+                  </span>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
+                      {locale === "sr"
+                        ? "Finansijski izvještaj 2021"
+                        : "Financial Report 2021"}
+                    </a>
+                  </span>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
+                      {locale === "sr"
+                        ? "Finansijski izvještaj 2022"
+                        : "Financial Report 2022"}
+                    </a>
+                  </span>
+                  <span className={styles["report-container"]}>
+                    <a href="#" className={styles.report} download>
+                      {locale === "sr"
+                        ? "Finansijski izvještaj 2021"
+                        : "Financial Report 2021"}
+                    </a>
+                  </span>
+                </div>
+              </div>
             </div>
           )}
         </div>
