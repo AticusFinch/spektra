@@ -588,7 +588,10 @@ const Page = ({ page }) => {
                 dangerouslySetInnerHTML={{ __html: page.content }}
               />
               <div>
-                <h3 className={styles["reports-head"]}>Godišnji izvještaji</h3>
+                <h3 className={styles["reports-head"]}>
+                  {" "}
+                  {locale === "sr" ? "Godišnji izvještaj" : "Annual Report"}
+                </h3>
                 <div className={styles.reports}>
                   <span className={styles["report-container"]}>
                     <a href="#" className={styles.report} download>
@@ -622,7 +625,9 @@ const Page = ({ page }) => {
               </div>
               <div>
                 <h3 className={styles["reports-head"]}>
-                  Finansijski izvještaji
+                  {locale === "sr"
+                    ? "Finansijski izvještaj"
+                    : "Financial Report"}
                 </h3>
                 <div className={styles.reports}>
                   <span className={styles["report-container"]}>

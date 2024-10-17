@@ -118,6 +118,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  text-transform: uppercase;
 }
 
 .reports {
@@ -453,6 +454,11 @@
     color: var(--trans-pink);
     background-color: var(--dark-grey);
   }
+
+  .reports {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
 }
 
 @media (max-width: 840px) {
@@ -487,6 +493,10 @@
   .content p {
     font-size: 0.9rem;
   }
+
+  .reports {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 485px) {
@@ -514,6 +524,10 @@
 
   .close {
     margin-top: 1rem;
+  }
+
+  .reports {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
