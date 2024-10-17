@@ -448,6 +448,11 @@
     margin-bottom: 1.5rem;
     font-size: 1rem;
   }
+
+  .work-content button:hover {
+    color: var(--trans-pink);
+    background-color: var(--dark-grey);
+  }
 }
 
 @media (max-width: 840px) {
@@ -490,6 +495,26 @@
     padding-bottom: 2rem;
     width: 100%;
   }
+
+  .work-content {
+    padding-top: 1rem;
+  }
+
+  .work-content p {
+    font-size: 2.5rem;
+  }
+
+  .work-content button {
+    padding: 0.7rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .close {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 432px) {
@@ -512,6 +537,10 @@
   .title {
     font-size: 3rem;
   }
+
+  .work-content p {
+    font-size: 2.3rem;
+  }
 }
 
 @media (max-width: 360px) {
@@ -527,6 +556,10 @@
 
   .content p {
     font-size: 0.8rem;
+  }
+
+  .work-content p {
+    font-size: 2.2rem;
   }
 }
 
