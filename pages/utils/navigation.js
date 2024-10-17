@@ -356,6 +356,11 @@ const Navigation = () => {
                         {locale === "sr" ? "Naši izvještaji" : "Our reports"}
                       </Link>
                     </li>
+                    <li>
+                      <Link href="/contact">
+                        {locale === "sr" ? "Kontakt" : "Contact"}
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </li>

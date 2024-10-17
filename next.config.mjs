@@ -11,5 +11,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
-// "lightgreen-emu-646217.hostingersite.com"

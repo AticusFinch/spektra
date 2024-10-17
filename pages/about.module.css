@@ -37,7 +37,8 @@
 
 .grid-cards-container {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem 2rem;
   margin-top: 5rem;
 }
 
@@ -78,6 +79,10 @@
   padding: 1.5rem 2rem;
 }
 
+.grid-card:nth-of-type(4) .card-head-container {
+  border-right: none;
+}
+
 .grid-card:last-of-type .card-head-container {
   border-right: none;
 }
@@ -102,6 +107,8 @@
   text-overflow: ellipsis;
   white-space: normal;
   padding: 0 2rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 .grid-card:focus {
@@ -130,18 +137,15 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 2.5rem;
-  }
-
-  .grid-card {
-    margin-top: 2.5rem;
-  }
-
-  .grid-card:last-of-type {
-    grid-column: span 2;
+    gap: 3rem 1.5rem;
   }
 
   .card-head {
     font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
   }
 
   .icon {
@@ -150,6 +154,23 @@
 
   .grid-card:nth-child(4) .card-head-container {
     border-right: none;
+  }
+}
+
+@media (max-width: 1680px) {
+  .grid-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2.5rem;
+    gap: 3rem 1.5rem;
+  }
+
+  .grid-card:last-of-type {
+    grid-column: span 2;
+  }
+
+  .grid-card:nth-child(4) .card-head-container {
+    border-right: solid 1px var(--trans-pink);
   }
 }
 
@@ -175,7 +196,7 @@
   }
 
   .grid-cards-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 2rem;
   }
 
@@ -222,7 +243,7 @@
   }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 835px) {
   .about {
     padding-top: 5rem;
   }
@@ -313,12 +334,20 @@
     padding-left: 0;
   }
 
+  .grid-card:nth-child(even) .read-more-container {
+    padding-left: 1rem;
+  }
+
+  .grid-card:last-of-type {
+    grid-column: span 1;
+  }
+
   .read-more-container {
     display: block;
     text-align: right;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-top: 1rem;
     color: var(--trans-blue);
   }
@@ -346,7 +375,7 @@
     margin-top: 1rem;
   }
 
-  .about-head-container {
+  .gri .about-head-container {
     padding-bottom: 1.5rem;
   }
 
@@ -389,13 +418,15 @@
   .card-text {
     padding: 0;
   }
+
+  .grid-card:nth-child(even) .read-more-container {
+    padding-left: 0rem;
+  }
 }
 
 @media (max-width: 430px) {
   .about {
     padding-top: 4rem;
-    padding-bottom: 2rem;
-    width: 100%;
   }
 
   .about-head {

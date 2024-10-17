@@ -72,7 +72,7 @@
   text-align: center;
 }
 
-.no-publications {
+.no-publication {
   font-size: 1rem;
   margin-top: 3rem;
   font-family: "roboto", sans-serif;
@@ -255,6 +255,11 @@
     gap: 20px;
   }
 
+  .empty {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
   .content {
     padding: 0.7rem;
   }
@@ -396,10 +401,6 @@
   }
 
   .empty {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
     height: 15rem;
   }
 
@@ -480,9 +481,6 @@
   }
 
   .empty {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-content: center;
     height: 10rem;
   }
 

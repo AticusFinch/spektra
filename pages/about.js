@@ -14,6 +14,7 @@ import { GoHeart } from "react-icons/go";
 import { AiOutlineTeam } from "react-icons/ai";
 import { HiOutlineSupport } from "react-icons/hi";
 import { IoEnterOutline } from "react-icons/io5";
+import { AiOutlineMessage } from "react-icons/ai";
 
 const About = () => {
   const router = useRouter();
@@ -280,6 +281,33 @@ const About = () => {
                 <div className={styles["card-head-container"]}>
                   <span className={styles["card-head"]}>
                     {locale === "sr" ? "Naši izvještaji" : "Our reports"}
+                  </span>
+                </div>
+                <div className={styles["card-text"]}>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
+                    In hac habitasse platea dictumst. Aliquam iaculis lectus a
+                    leo varius, eget dapibus metus efficitur. Etiam mi neque,
+                    venenatis condimentum rutrum id, imperdiet nec orci. Donec
+                    in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
+                    quis arcu non vestibulum.{" "}
+                  </p>
+                </div>
+                <div className={styles["read-more-container"]}>
+                  <IoEnterOutline />
+                  <span className={styles["read-more"]}>
+                    {locale === "sr" ? "saznaj više" : "read more"}
+                  </span>
+                </div>
+              </Link>
+              <Link href="/contact" className={styles["grid-card"]}>
+                <div className={styles.icons}>
+                  <AiOutlineMessage className={styles.icon} />
+                </div>
+                <div className={styles["card-head-container"]}>
+                  <span className={styles["card-head"]}>
+                    {locale === "sr" ? "Kontakt" : "Contact"}
                   </span>
                 </div>
                 <div className={styles["card-text"]}>

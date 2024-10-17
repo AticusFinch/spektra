@@ -17,7 +17,6 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { FaRegSadCry } from "react-icons/fa";
 import { FiClock } from "react-icons/fi";
-import { FaRegCircleUser } from "react-icons/fa6";
 
 const POSTS_PER_PAGE = 13;
 
