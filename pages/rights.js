@@ -45,7 +45,7 @@ const Rights = () => {
               </button>
               <p className={styles.contact}>
                 {locale === "sr"
-                  ? "Ukoliko ti je neophodna pomoć ili podrška pri pristupanju sopstvenim pravima kontaktiraj nas putem e-maila:"
+                  ? "Ukoliko ti je neophodna pomoć ili podrška pri pristupanju sopstvenim pravima kontaktiraj nas putem emaila:"
                   : "If you need help or support in accessing your rights, contact us via email:"}
                 <span className={styles.email}>
                   info@asocijacijaspektra.org

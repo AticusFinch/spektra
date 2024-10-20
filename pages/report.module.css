@@ -245,15 +245,12 @@
 @media (max-width: 1024px) {
   .report {
     width: 80%;
+    padding-top: 7rem;
   }
 
   .content {
     flex-direction: column;
-  }
-
-  .report-info {
-    width: 100% !important;
-    font-size: 0.9rem;
+    width: 100%;
   }
 
   .form-container {
@@ -267,11 +264,12 @@
   }
 
   .report-head {
-    font-size: 4rem;
+    font-size: 5rem;
+    display: inline;
   }
 
   .report-info {
-    width: 100%;
+    width: 100% !important;
     font-size: 0.9rem;
   }
 
@@ -289,7 +287,7 @@
   }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 840px) {
   .report {
     width: 85%;
     padding-top: 6rem;
@@ -297,6 +295,11 @@
 
   .form {
     margin-top: 1rem;
+  }
+
+  .report-head {
+    font-size: 4.5rem;
+    display: inline;
   }
 }
 
@@ -344,5 +347,15 @@
 @media (max-width: 431px) {
 }
 
-@media (max-width: 400px) {
+@media (max-width: 360px) {
+}
+
+@media (max-width: 320px) {
+  .report {
+    padding-top: 4.5rem;
+  }
+
+  .report-head {
+    font-size: 3rem;
+  }
 }
