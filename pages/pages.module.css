@@ -20,6 +20,7 @@
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.3rem;
+  line-height: 1.5;
 }
 
 .work-content {
@@ -148,15 +149,17 @@
 
 .team {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 3rem;
 }
 
 .team-member {
   display: flex;
   margin-bottom: 1rem;
-  width: 100%;
-  height: 200px;
+  width: 49.6%;
+  height: 250px;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
   background-color: #252525;
@@ -339,7 +342,7 @@
 
 .slider-img-container {
   height: 100%;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .slider-img {
@@ -366,9 +369,36 @@
   left: -25px;
 }
 
-.modal-content img {
-  width: 200px;
-  height: 200px;
+.modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: var(--trans-pink);
+  font-size: 1.3rem;
+}
+
+.modal-img-container {
+  width: 95%;
+  height: 90%;
+  margin: 0 auto;
+}
+
+.modal-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 1920px) {
@@ -385,6 +415,107 @@
   .content p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+  }
+
+  .team {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .team-member {
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 200px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+    background-color: #252525;
+    padding: 1.2rem;
+  }
+
+  .team-member:hover {
+    transform: scale(1.05);
+  }
+
+  .team-member-empty {
+    background-color: var(--trans-pink);
+  }
+
+  .team-member-empty:hover {
+    transform: scale(1);
+  }
+
+  .team-member-info {
+    width: 250px;
+  }
+
+  .team-member-info-odd {
+    text-align: right;
+  }
+
+  .team-image-container {
+    width: 250px;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team-member-content {
+    width: calc(100% - 500px);
+    padding: 0 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .team-bio-even {
+    text-align: right;
+  }
+
+  .team-contact {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .team-contact p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .team-icon {
+    margin-right: 0.5rem;
+  }
+
+  .team-name {
+    font-weight: 900;
+    font-size: 3rem;
+    background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .team-role {
+    margin-top: 0.2rem;
+  }
+
+  .team-bio {
+    font-size: 1.1rem;
+    font-weight: 300;
   }
 }
 
@@ -466,6 +597,48 @@
     padding-top: 6rem;
     padding-bottom: 2rem;
   }
+
+  .program-text {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+  }
+
+  .desc {
+    width: 100%;
+  }
+
+  .program-coordinator {
+    height: auto;
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  .coordinator-img-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .coordinator-text {
+    width: calc(100% - 200px);
+  }
+
+  .program-gallery {
+    height: 220px;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  .slider-container {
+    height: 220px;
+  }
+
+  .slider-img-container {
+    padding: 0 0.25rem;
+  }
 }
 
 @media (max-width: 800px) {
@@ -529,11 +702,21 @@
   .reports {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .program-coordinator {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .coordinator-img-container {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 432px) {
   .title {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
   }
 
   .container {
@@ -549,7 +732,7 @@
 
 @media (max-width: 376px) {
   .title {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 
   .work-content p {
@@ -565,7 +748,7 @@
 
 @media (max-width: 320px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
   }
 
   .content p {

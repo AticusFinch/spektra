@@ -45,7 +45,12 @@ const Publication = ({ post }) => {
             />
             <button
               onClick={(e) => {
-                if (post.publications.file.node.link) {
+                if (
+                  post.publications &&
+                  post.publications.file &&
+                  post.publications.file.node &&
+                  post.publications.file.node.link
+                ) {
                   window.open(post.publications.file.node.link, "_blank");
                 }
               }}

@@ -4,6 +4,15 @@
   margin: 0 auto;
 }
 
+.container p {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
 .head {
   font-family: "owners-bold", sans-serif;
   font-size: 6.5rem;
@@ -71,7 +80,7 @@
   padding: 1rem 2rem;
   font-size: 1.3rem;
   text-transform: uppercase;
-  margin-top: 2rem;
+  margin: 2rem 0;
   background-color: var(--dark-grey);
   transition: background-color ease-in-out 0.5s, color ease-in-out 0.5s;
   cursor: pointer;
@@ -83,12 +92,23 @@
 }
 
 @media (max-width: 1920px) {
+  .container {
+    padding-top: 11rem;
+  }
+
+  .container p {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 1600px) {
   .container {
     padding-top: 10rem;
     width: 90%;
+  }
+
+  .head {
+    font-size: 6rem;
   }
 }
 
@@ -99,33 +119,121 @@
 }
 
 @media (max-width: 1370px) {
+  .container {
+    padding-top: 10rem;
+  }
+
+  .head {
+    font-size: 5.5rem;
+  }
 }
 
 @media (max-width: 1280px) {
+  .container {
+    padding-top: 11rem;
+    width: 90%;
+  }
 }
 
 @media (max-width: 1200px) {
 }
 
 @media (max-width: 1024px) {
+  .container {
+    padding-top: 8rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .form-group input {
+    font-size: 1rem;
+  }
+
+  .form-group:nth-of-type(4) textarea {
+    font-size: 1rem;
+  }
+
+  .contact-form button {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+
+  .contact-form button:hover {
+    background-color: var(--dark-grey);
+    color: var(--trans-pink);
+  }
 }
 
 @media (max-width: 840px) {
+  .container {
+    padding-top: 6rem;
+  }
 }
 
 @media (max-width: 800px) {
+  .container {
+    padding-top: 7rem;
+  }
+
+  .contact-form button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-top: 6rem;
+    width: 95%;
+  }
+
+  .head {
+    font-size: 4.5rem;
+  }
 }
 
 @media (max-width: 601px) {
+  .container p {
+    font-size: 0.9rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+  }
+
+  .form-group:nth-of-type(4) textarea {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 485px) {
+  .container {
+    padding-top: 5rem;
+    width: 100%;
+  }
+
+  .head {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 432px) {
+  .contact-form button {
+    padding: 0.9rem 1.6rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 428px) {
@@ -141,6 +249,34 @@
 }
 
 @media (max-width: 320px) {
+  .container {
+    padding-top: 4rem;
+  }
+
+  .container p {
+    font-size: 0.8rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
+  }
+
+  .form-group input {
+    font-size: 0.8rem;
+  }
+
+  .form-group:nth-of-type(4) textarea {
+    font-size: 0.8rem;
+  }
+
+  .head {
+    font-size: 3rem;
+  }
+
+  .contact-form button {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 320px) and (max-height: 480px) {

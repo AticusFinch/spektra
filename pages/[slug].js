@@ -225,6 +225,20 @@ const Page = ({ page }) => {
     slidesToShow: 3,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 840,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const advocacyGallery = [
@@ -264,6 +278,13 @@ const Page = ({ page }) => {
       transform: "translate(-50%, -50%)",
       backgroundColor: "#191919",
       border: "none",
+      width: "80%",
+      height: "70%",
+      marginTop: "3%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
     },
     overlay: {
       backgroundColor: "#252525c2",
@@ -590,7 +611,7 @@ const Page = ({ page }) => {
               <div>
                 <h3 className={styles["reports-head"]}>
                   {" "}
-                  {locale === "sr" ? "Godišnji izvještaj" : "Annual Report"}
+                  {locale === "sr" ? "Godišnji izvještaji" : "Annual Reports"}
                 </h3>
                 <div className={styles.reports}>
                   <span className={styles["report-container"]}>
@@ -626,8 +647,8 @@ const Page = ({ page }) => {
               <div>
                 <h3 className={styles["reports-head"]}>
                   {locale === "sr"
-                    ? "Finansijski izvještaj"
-                    : "Financial Report"}
+                    ? "Finansijski izvještaji"
+                    : "Financial Reports"}
                 </h3>
                 <div className={styles.reports}>
                   <span className={styles["report-container"]}>
@@ -758,17 +779,19 @@ const Page = ({ page }) => {
               >
                 {selectedImage && (
                   <div className={styles["modal-content"]}>
-                    <Image
-                      src={selectedImage.img}
-                      width={selectedImage.width}
-                      height={selectedImage.height}
-                      alt={selectedImage.alt}
-                    />
+                    <div className={styles["modal-img-container"]}>
+                      <Image
+                        src={selectedImage.img}
+                        width={selectedImage.width}
+                        height={selectedImage.height}
+                        alt={selectedImage.alt}
+                      />
+                    </div>
                     <button
                       onClick={closeModal}
                       className={styles["close-button"]}
                     >
-                      Close
+                      <MdClose />
                     </button>
                   </div>
                 )}
