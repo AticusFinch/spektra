@@ -801,11 +801,13 @@ const Page = ({ page }) => {
           {isAdvocacyPage && (
             <div className={styles.programs}>
               <div className={styles["program-text"]}>
-                <h1 className={styles.title}>{page.title}</h1>
-                <div
-                  className={styles.content}
-                  dangerouslySetInnerHTML={{ __html: page.content }}
-                />
+                <div className={styles.desc}>
+                  <h1 className={styles.title}>{page.title}</h1>
+                  <div
+                    className={styles.content}
+                    dangerouslySetInnerHTML={{ __html: page.content }}
+                  />
+                </div>
                 <div className={styles["program-coordinator"]}>
                   <div className={styles["coordinator-img-container"]}>
                     <Image
@@ -835,8 +837,14 @@ const Page = ({ page }) => {
                       </p>
                     </div>
                     <div className={styles["coordinator-contact"]}>
-                      <p>{teamMembers[2].email}</p>
-                      <p>{teamMembers[2].phone}</p>
+                      <p>
+                        <MdOutlineEmail className={styles["contact-icon"]} />{" "}
+                        {teamMembers[2].email}
+                      </p>
+                      <p>
+                        <MdOutlinePhone className={styles["contact-icon"]} />{" "}
+                        {teamMembers[2].phone}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -844,7 +852,11 @@ const Page = ({ page }) => {
               <div className={styles["program-gallery"]}>
                 <Slider {...settings}>
                   {advocacyGallery.map((image, index) => (
-                    <div key={index} className={styles["slider-container"]}>
+                    <div
+                      key={index}
+                      className={styles["slider-container"]}
+                      onClick={() => openModal(image)}
+                    >
                       <div className={styles["slider-img-container"]}>
                         <Image
                           src={image.img}
@@ -858,16 +870,45 @@ const Page = ({ page }) => {
                   ))}
                 </Slider>
               </div>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Image Modal"
+                className={styles.modal}
+                overlayClassName={styles.overlay}
+                style={customStyles}
+              >
+                {selectedImage && (
+                  <div className={styles["modal-content"]}>
+                    <div className={styles["modal-img-container"]}>
+                      <Image
+                        src={selectedImage.img}
+                        width={selectedImage.width}
+                        height={selectedImage.height}
+                        alt={selectedImage.alt}
+                      />
+                    </div>
+                    <button
+                      onClick={closeModal}
+                      className={styles["close-button"]}
+                    >
+                      <MdClose />
+                    </button>
+                  </div>
+                )}
+              </Modal>
             </div>
           )}
           {isFeminismPage && (
             <div className={styles.programs}>
               <div className={styles["program-text"]}>
-                <h1 className={styles.title}>{page.title}</h1>
-                <div
-                  className={styles.content}
-                  dangerouslySetInnerHTML={{ __html: page.content }}
-                />
+                <div className={styles.desc}>
+                  <h1 className={styles.title}>{page.title}</h1>
+                  <div
+                    className={styles.content}
+                    dangerouslySetInnerHTML={{ __html: page.content }}
+                  />
+                </div>
                 <div className={styles["program-coordinator"]}>
                   <div className={styles["coordinator-img-container"]}>
                     <Image
@@ -881,7 +922,7 @@ const Page = ({ page }) => {
                   <div className={styles["coordinator-text"]}>
                     <div>
                       <h3 className={styles["coordinator-name"]}>
-                        {teamMembers[3].name}
+                        {teamMembers[2].name}
                       </h3>
                       <p className={styles["coordinator-role"]}>
                         {locale === "sr"
@@ -897,8 +938,14 @@ const Page = ({ page }) => {
                       </p>
                     </div>
                     <div className={styles["coordinator-contact"]}>
-                      <p>{teamMembers[3].email}</p>
-                      <p>{teamMembers[3].phone}</p>
+                      <p>
+                        <MdOutlineEmail className={styles["contact-icon"]} />{" "}
+                        {teamMembers[3].email}
+                      </p>
+                      <p>
+                        <MdOutlinePhone className={styles["contact-icon"]} />{" "}
+                        {teamMembers[3].phone}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -906,7 +953,11 @@ const Page = ({ page }) => {
               <div className={styles["program-gallery"]}>
                 <Slider {...settings}>
                   {advocacyGallery.map((image, index) => (
-                    <div key={index} className={styles["slider-container"]}>
+                    <div
+                      key={index}
+                      className={styles["slider-container"]}
+                      onClick={() => openModal(image)}
+                    >
                       <div className={styles["slider-img-container"]}>
                         <Image
                           src={image.img}
@@ -920,6 +971,33 @@ const Page = ({ page }) => {
                   ))}
                 </Slider>
               </div>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Image Modal"
+                className={styles.modal}
+                overlayClassName={styles.overlay}
+                style={customStyles}
+              >
+                {selectedImage && (
+                  <div className={styles["modal-content"]}>
+                    <div className={styles["modal-img-container"]}>
+                      <Image
+                        src={selectedImage.img}
+                        width={selectedImage.width}
+                        height={selectedImage.height}
+                        alt={selectedImage.alt}
+                      />
+                    </div>
+                    <button
+                      onClick={closeModal}
+                      className={styles["close-button"]}
+                    >
+                      <MdClose />
+                    </button>
+                  </div>
+                )}
+              </Modal>
             </div>
           )}
         </div>

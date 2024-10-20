@@ -293,7 +293,7 @@
   }
 
   .slide-container {
-    padding: 0 0;
+    padding: 0 0.2rem;
   }
 
   .slide:before {
