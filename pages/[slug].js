@@ -531,16 +531,6 @@ const Page = ({ page }) => {
                           <p className={styles["team-bio"]}>
                             {locale === "sr" ? member.bioMne : member.bioEng}
                           </p>
-                          {/* <div className={styles["team-contact"]}>
-                            <p>
-                              <MdOutlineEmail className={styles["team-icon"]} />
-                              {member.email}
-                            </p>
-                            <p>
-                              <MdOutlinePhone className={styles["team-icon"]} />
-                              {member.phone}
-                            </p>
-                          </div> */}
                         </div>
                         <div
                           className={`${styles["team-member-info"]} ${styles["team-member-info-odd"]}`}
@@ -549,6 +539,9 @@ const Page = ({ page }) => {
                           <p className={styles["team-role"]}>
                             {locale === "sr" ? member.pozicija : member.role}
                           </p>
+                        </div>
+                        <div className={styles["team-member-mobile-bio"]}>
+                          {locale === "sr" ? member.bioMne : member.bioEng}
                         </div>
                       </>
                     ) : (
@@ -565,16 +558,6 @@ const Page = ({ page }) => {
                           >
                             {locale === "sr" ? member.bioMne : member.bioEng}
                           </p>
-                          {/* <div className={styles["team-contact"]}>
-                            <p>
-                              <MdOutlineEmail className={styles["team-icon"]} />
-                              {member.email}
-                            </p>
-                            <p>
-                              <MdOutlinePhone className={styles["team-icon"]} />
-                              {member.phone}
-                            </p>
-                          </div> */}
                         </div>
                         <div className={styles["team-image-container"]}>
                           <Image
@@ -584,6 +567,9 @@ const Page = ({ page }) => {
                             height={member.height} // Specify the height of the image
                             className={styles["team-image"]}
                           />
+                        </div>
+                        <div className={styles["team-member-mobile-bio"]}>
+                          {locale === "sr" ? member.bioMne : member.bioEng}
                         </div>
                       </>
                     )}

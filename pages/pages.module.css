@@ -200,6 +200,10 @@
   object-fit: cover;
 }
 
+.team-member-mobile-bio {
+  display: none;
+}
+
 .team-member-content {
   width: calc(100% - 500px);
   padding: 0 1.2rem;
@@ -544,6 +548,13 @@
 }
 
 @media (max-width: 1370px) {
+  .team-image-container {
+    width: 200px;
+  }
+
+  .team-member-content {
+    width: calc(100% - 400px);
+  }
 }
 
 @media (max-width: 1280px) {
@@ -561,12 +572,33 @@
   .title {
     font-size: 4.5rem;
   }
+
+  .team-bio {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 }
 
 @media (max-width: 1200px) {
   .container {
     padding-top: 13rem;
     padding-bottom: 3rem;
+  }
+
+  .team-member-info h3 {
+    font-size: 2.6rem;
+  }
+
+  .team-member-info p {
+    font-size: 1.1rem;
+  }
+
+  .team-member-info {
+    width: 200px;
+  }
+
+  .team-bio {
+    font-size: 0.9rem;
   }
 }
 
@@ -589,6 +621,14 @@
   .reports {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
+  }
+
+  .team-member {
+    height: 250px;
+  }
+
+  .team-member:hover {
+    transform: scale(1);
   }
 }
 
@@ -639,6 +679,47 @@
   .slider-img-container {
     padding: 0 0.25rem;
   }
+
+  .team-member-content {
+    display: none;
+  }
+
+  .team-member-info h3 {
+    font-size: 2rem;
+  }
+
+  .team-member-info p {
+    font-size: 0.9rem;
+  }
+
+  .team-member {
+    padding: 0.8rem;
+    height: 300px;
+    display: grid;
+    gap: 0 1rem;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 3fr;
+  }
+
+  .team-member-mobile-bio {
+    display: block;
+    grid-column: 2 / 3;
+    text-align: right;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+
+  .team-image-container {
+    width: 100%;
+    height: 100%;
+    grid-row: 1 / 3; /* Span two rows */
+    grid-column: 1 / 2;
+  }
+
+  .team-member-info {
+    width: 100%;
+    text-align: right;
+  }
 }
 
 @media (max-width: 800px) {
@@ -669,6 +750,14 @@
 
   .reports {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-member-mobile-bio {
+    font-size: 0.85rem;
+  }
+
+  .team-member {
+    height: 350px;
   }
 }
 
@@ -712,6 +801,14 @@
     width: 100%;
     margin-bottom: 1rem;
   }
+
+  .team-member-mobile-bio {
+    font-size: 0.8rem;
+  }
+
+  .team-member {
+    height: 400px;
+  }
 }
 
 @media (max-width: 432px) {
@@ -738,11 +835,19 @@
   .work-content p {
     font-size: 2.3rem;
   }
+
+  .team-member {
+    height: 440px;
+  }
 }
 
 @media (max-width: 360px) {
   .content p {
     font-size: 0.9rem;
+  }
+
+  .team-member {
+    height: 470px;
   }
 }
 
@@ -757,6 +862,10 @@
 
   .work-content p {
     font-size: 2.2rem;
+  }
+
+  .team-member {
+    height: 500px;
   }
 }
 
