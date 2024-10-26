@@ -104,70 +104,80 @@ const Contact = () => {
             Orci varius natoque penatibus et magnis dis parturient montes,
             nascetur ridiculus mus.
           </p>
-          <form onSubmit={handleSubmit} className={styles["contact-form"]}>
-            <div className={styles["form-group"]}>
-              <label htmlFor="name">
-                {locale === "sr" ? "Ime i prezime:" : "Full Name:"}
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div className={styles["form-group"]}>
-              <label htmlFor="pronounces">
+          {emailSent ? (
+            <div className={styles.thanks}>
+              <p>
                 {locale === "sr"
-                  ? "Zamjenice koje koristiš:"
-                  : "Pronounces you use:"}
-              </label>
-              <input
-                type="text"
-                id="gender"
-                name="gender"
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                required
-              />
+                  ? "Hvala što ste nas kontaktirali, javićemo vam se u najkraćem roku!"
+                  : "Thank you for contacting us, we will reach back as soon as possible!"}
+              </p>
             </div>
-            <div className={styles["form-group"]}>
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className={styles["form-group"]}>
-              <label htmlFor="message">
-                {locale === "sr" ? "Poruka:" : "Message:"}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-              ></textarea>
-            </div>
-            <div className={styles["form-group"]}>
-              <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                onChange={(value) => setCaptchaValue(value)}
-                className={styles.recaptcha}
-              />
-            </div>
-            <button type="submit" className={styles.button}>
-              {locale === "sr" ? "POŠALJI" : "SUBMIT"}
-            </button>
-          </form>{" "}
+          ) : (
+            <form onSubmit={handleSubmit} className={styles["contact-form"]}>
+              <div className={styles["form-group"]}>
+                <label htmlFor="name">
+                  {locale === "sr" ? "Ime i prezime:" : "Full Name:"}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className={styles["form-group"]}>
+                <label htmlFor="pronounces">
+                  {locale === "sr"
+                    ? "Zamjenice koje koristiš:"
+                    : "Pronounces you use:"}
+                </label>
+                <input
+                  type="text"
+                  id="gender"
+                  name="gender"
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
+                  required
+                />
+              </div>
+              <div className={styles["form-group"]}>
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className={styles["form-group"]}>
+                <label htmlFor="message">
+                  {locale === "sr" ? "Poruka:" : "Message:"}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                ></textarea>
+              </div>
+              <div className={styles["form-group"]}>
+                <ReCAPTCHA
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                  onChange={(value) => setCaptchaValue(value)}
+                  className={styles.recaptcha}
+                />
+              </div>
+              <button type="submit" className={styles.button}>
+                {locale === "sr" ? "POŠALJI" : "SUBMIT"}
+              </button>
+            </form>
+          )}
         </div>
       </Container>
       <Footer />
