@@ -6,7 +6,7 @@ import Navigation from "./utils/navigation";
 import { useRouter } from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
 
-import { sendMail } from "@/lib/email";
+import { sendMail } from "../lib/email";
 
 import styles from "./contact.module.css";
 
