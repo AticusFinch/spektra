@@ -51,7 +51,7 @@ const Contact = () => {
 
     try {
       const data = await sendMail(
-        "Website poruka: " + name,
+        "Website poruka:",
         emailContent,
         captchaValue
       );

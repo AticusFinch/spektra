@@ -56,7 +56,7 @@ const Report = () => {
   `;
     try {
       const data = await sendMail(
-        "Nova poruka sa Website-a: Prijava nasilja",
+        "Website poruka: Prijava nasilja",
         emailContent,
         captchaValue
       );

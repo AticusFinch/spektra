@@ -13,7 +13,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import Modal from "react-modal";
 
-import { sendMail } from "@/lib/email";
+import { sendMail } from "../lib/email";
 
 Modal.setAppElement("#__next");
 
@@ -85,7 +85,7 @@ const Page = ({ page }) => {
 
     try {
       const data = await sendMail(
-        "Nova poruka sa Website-a: Prijava za volontiranje",
+        "Website poruka: Volontiranje",
         emailContent,
         captchaValue
       );
