@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Container from "./utils/container";
 import Footer from "./utils/footer";
@@ -11,6 +11,61 @@ import styles from "./contact.module.css";
 const Contact = () => {
   const router = useRouter();
   const { locale } = router;
+
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!captchaValue) {
+      alert("Please complete the reCAPTCHA");
+      return;
+    }
+
+    const emailContent = `
+     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+      <div style="padding: 10px 0;">
+        <strong>Ime i prezime</strong> <br />
+        <span style="padding-left: 10px;">${name}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Zamjenice/rodni identitet:</strong> <br />
+        <span style="padding-left: 10px;">${gender}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Email adresa:</strong> <br />
+        <span style="padding-left: 10px;">${email}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Poruka:</strong> <br />
+        <span style="padding-left: 10px;">${message}</span>
+      </div>
+    </div>
+  `;
+
+    try {
+      const data = await sendMail(
+        "Website poruka: " + name,
+        emailContent,
+        captchaValue
+      );
+
+      if (data.sent) {
+        // email was sent successfully!
+        setEmailSent(true);
+        console.log("Email sent successfully!");
+      } else {
+        // email was sent unsuccessfully!
+        console.log("Failed to send email!", data);
+      }
+    } catch (error) {
+      console.error("Error in handleSubmit:", error);
+    }
+  };
 
   const websiteTitle =
     locale === "sr" ? "Asocijacija Spektra" : "Association Spectra";
@@ -49,12 +104,19 @@ const Contact = () => {
             Orci varius natoque penatibus et magnis dis parturient montes,
             nascetur ridiculus mus.
           </p>
-          <form className={styles["contact-form"]}>
+          <form onSubmit={handleSubmit} className={styles["contact-form"]}>
             <div className={styles["form-group"]}>
               <label htmlFor="name">
                 {locale === "sr" ? "Ime i prezime:" : "Full Name:"}
               </label>
-              <input type="text" id="name" name="name" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
             </div>
             <div className={styles["form-group"]}>
               <label htmlFor="pronounces">
@@ -62,11 +124,25 @@ const Contact = () => {
                   ? "Zamjenice koje koristiš:"
                   : "Pronounces you use:"}
               </label>
-              <input type="text" id="name" name="name" required />
+              <input
+                type="text"
+                id="gender"
+                name="gender"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                required
+              />
             </div>
             <div className={styles["form-group"]}>
               <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
             <div className={styles["form-group"]}>
               <label htmlFor="message">
@@ -76,6 +152,8 @@ const Contact = () => {
                 id="message"
                 name="message"
                 rows="5"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 required
               ></textarea>
             </div>

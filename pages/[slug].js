@@ -65,7 +65,7 @@ const Page = ({ page }) => {
         <span style="padding-left: 10px;">${name}</span>
       </div>
       <div style="padding: 10px 0;">
-        <strong>Zamjenice/rodni identitet</strong> <br />
+        <strong>Zamjenice/rodni identitet:</strong> <br />
         <span style="padding-left: 10px;">${gender}</span>
       </div>
       <div style="padding: 10px 0;">
