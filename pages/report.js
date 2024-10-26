@@ -31,24 +31,24 @@ const Report = () => {
     }
 
     const emailContent = `
-     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-      <div style="padding: 10px 0;">
+     <div style="font-family: Roboto, sans-serif; line-height: 1.6; background: #161616; color: #efeff0; padding: 20px;">
+      <div style="padding: 10px;">
         <strong>Rodni identitet/zamjenice:</strong> <br />
         <span style="padding-left: 10px;">${genderIdentity}</span>
       </div>
-      <div style="padding: 10px 0;">
+      <div style="padding: 10px; background: #efeff02a;">
         <strong>Odakle dolazi:</strong> <br />
         <span style="padding-left: 10px;">${location}</span>
       </div>
-      <div style="padding: 10px 0;">
+      <div style="padding: 10px; background: #efeff02a;">
         <strong>Opis problema:</strong> <br />
         <span style="padding-left: 10px;">${description}</span>
       </div>
-      <div style="padding: 10px 0;">
+      <div style="padding: 10px; background: #efeff02a;">
         <strong>Vrsta potrebne podrške:</strong> <br />
         <span style="padding-left: 10px;">${supportType}</span>
       </div>
-      <div style="padding: 10px 0;">
+      <div style="padding: 10px; background: #efeff02a;">
         <strong>Kontakt:</strong> <br />
         <span style="padding-left: 10px;">${contactInfo}</span>
       </div>
