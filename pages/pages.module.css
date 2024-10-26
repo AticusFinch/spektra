@@ -809,6 +809,10 @@
   .team-member {
     height: 400px;
   }
+
+  .reports-head {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 432px) {
@@ -849,9 +853,17 @@
   .team-member {
     height: 470px;
   }
+
+  .reports-head {
+    font-size: 2.3rem;
+  }
 }
 
 @media (max-width: 320px) {
+  .container {
+    padding-top: 3.3rem;
+  }
+
   .title {
     font-size: 2.4rem;
   }
@@ -866,6 +878,10 @@
 
   .team-member {
     height: 500px;
+  }
+
+  .reports-head {
+    font-size: 2.1rem;
   }
 }
 

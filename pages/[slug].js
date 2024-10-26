@@ -13,6 +13,8 @@ import Image from "next/image";
 import Slider from "react-slick";
 import Modal from "react-modal";
 
+import { sendMail } from "@/lib/email";
+
 Modal.setAppElement("#__next");
 
 import styles from "./pages.module.css";
@@ -37,10 +39,69 @@ function shuffleArray(array) {
 const Page = ({ page }) => {
   const router = useRouter();
   const { locale } = router;
-  const [captchaValue, setCaptchaValue] = useState(null);
+
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
+  const [commingFrom, setCommingFrom] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [experience, setExperience] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!captchaValue) {
+      alert("Please complete the reCAPTCHA");
+      return;
+    }
+
+    const emailContent = `
+     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+      <div style="padding: 10px 0;">
+        <strong>Ime i prezime</strong> <br />
+        <span style="padding-left: 10px;">${name}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Zamjenice/rodni identitet</strong> <br />
+        <span style="padding-left: 10px;">${gender}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Odakle dolazi:</strong> <br />
+        <span style="padding-left: 10px;">${commingFrom}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Broj telefona:</strong> <br />
+        <span style="padding-left: 10px;">${phoneNumber}</span>
+      </div>
+      <div style="padding: 10px 0;">
+        <strong>Iskustvo:</strong> <br />
+        <span style="padding-left: 10px;">${experience}</span>
+      </div>
+    </div>
+  `;
+
+    try {
+      const data = await sendMail(
+        "Nova poruka sa Website-a: Prijava za volontiranje",
+        emailContent,
+        captchaValue
+      );
+
+      if (data.sent) {
+        // email was sent successfully!
+        setEmailSent(true);
+        console.log("Email sent successfully!");
+      } else {
+        // email was sent unsuccessfully!
+        console.log("Failed to send email!", data);
+      }
+    } catch (error) {
+      console.error("Error in handleSubmit:", error);
+    }
+  };
 
   const openModal = (image) => {
     setSelectedImage(image);
@@ -342,134 +403,138 @@ const Page = ({ page }) => {
                         transition={{ duration: 0.5, ease: "easeInOut" }}
                         className={styles["form-container"]}
                       >
-                        <form className={styles["volunteer-form"]}>
-                          <div className={styles["form-group"]}>
-                            <label>
+                        {emailSent ? (
+                          <div className={styles.thanks}>
+                            <p>
                               {locale === "sr"
-                                ? "Ime i prezime:"
-                                : "Full name:"}
-                            </label>
-                            <input
-                              type="text"
-                              id="name"
-                              name="name"
-                              placeholder={
-                                locale === "sr"
-                                  ? "npr. Stefan Stefanović"
-                                  : "e.g. Mark Markson"
-                              }
-                              className={styles.input}
-                              required
-                            />
+                                ? "Hvala što ste nas kontaktirali, javićemo vam se u najkraćem roku!"
+                                : "Thank you for contacting us, we will reach back as soon as possible!"}
+                            </p>
                           </div>
-                          <div className={styles["form-group"]}>
-                            <label>
-                              {locale === "sr"
-                                ? "Koje zamjenice koristiš?"
-                                : "What pronouns do you use?"}
-                            </label>
-                            <input
-                              type="text"
-                              id="genderIdentity"
-                              name="genderIdentity"
-                              placeholder={
-                                locale === "sr"
-                                  ? "npr. ona/njeno"
-                                  : "e.g. she/her"
-                              }
-                              className={styles.input}
-                              required
-                            />
-                          </div>
-                          <div className={styles["form-group"]}>
-                            <label>
-                              {locale === "sr"
-                                ? "Odakle si?"
-                                : "Where are you from?"}
-                            </label>
-                            <input
-                              type="text"
-                              id="location"
-                              name="location"
-                              placeholder={
-                                locale === "sr"
-                                  ? "npr. Podgorica"
-                                  : "e.g. Podgorica"
-                              }
-                              className={styles.input}
-                              required
-                            />
-                          </div>
-                          <div className={styles["form-group"]}>
-                            <label>
-                              {locale === "sr"
-                                ? "Broj telefona:"
-                                : "Phone number:"}
-                            </label>
-                            <input
-                              type="text"
-                              id="phone"
-                              name="phone"
-                              placeholder={
-                                locale === "sr"
-                                  ? "npr. 067123456"
-                                  : "e.g. 067123456"
-                              }
-                              className={styles.input}
-                              required
-                            />
-                          </div>
-                          <div className={styles["form-group"]}>
-                            <label>
-                              {locale === "sr"
-                                ? "Koje je tvoje iskustvo u radu sa trans osobama:"
-                                : "What is your experience in working with trans persons:"}
-                            </label>
-                            <textarea
-                              id="supportType"
-                              name="supportType"
-                              className={styles.input}
-                              placeholder={
-                                locale === "sr"
-                                  ? "navedi svoje iskustvo"
-                                  : "state your experience"
-                              }
-                              rows="5"
-                              required
-                            />
-                          </div>
-                          <div className={styles["form-group"]}>
-                            <label htmlFor="contactInfo">
-                              {locale === "sr"
-                                ? "Email adresa:"
-                                : "Email address:"}
-                            </label>
-                            <input
-                              type="email"
-                              id="contactInfo"
-                              name="contactInfo"
-                              className={styles.input}
-                              placeholder={
-                                locale === "sr"
-                                  ? "email adresa"
-                                  : "email address"
-                              }
-                              required
-                            />
-                          </div>
-                          <div className={styles["form-group"]}>
-                            <ReCAPTCHA
-                              sitekey={
-                                process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-                              }
-                              onChange={(value) => setCaptchaValue(value)}
-                              className={styles.recaptcha}
-                            />
-                          </div>
-                          <button type="submit" className={styles.button}>
-                            {locale === "sr" ? "POŠALJI" : "SUBMIT"}
-                          </button>
-                        </form>{" "}
+                        ) : (
+                          <form
+                            onSubmit={handleSubmit}
+                            className={styles["volunteer-form"]}
+                          >
+                            <div className={styles["form-group"]}>
+                              <label>
+                                {locale === "sr"
+                                  ? "Ime i prezime:"
+                                  : "Full name:"}
+                              </label>
+                              <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder={
+                                  locale === "sr"
+                                    ? "npr. Stefan Stefanović"
+                                    : "e.g. Mark Markson"
+                                }
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                className={styles.input}
+                                required
+                              />
+                            </div>
+                            <div className={styles["form-group"]}>
+                              <label>
+                                {locale === "sr"
+                                  ? "Koje zamjenice koristiš?"
+                                  : "What pronouns do you use?"}
+                              </label>
+                              <input
+                                type="text"
+                                id="genderIdentity"
+                                name="genderIdentity"
+                                placeholder={
+                                  locale === "sr"
+                                    ? "npr. ona/njeno"
+                                    : "e.g. she/her"
+                                }
+                                value={gender}
+                                onChange={(e) => setGender(e.target.value)}
+                                className={styles.input}
+                                required
+                              />
+                            </div>
+                            <div className={styles["form-group"]}>
+                              <label>
+                                {locale === "sr"
+                                  ? "Odakle si?"
+                                  : "Where are you from?"}
+                              </label>
+                              <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                placeholder={
+                                  locale === "sr"
+                                    ? "npr. Podgorica"
+                                    : "e.g. Podgorica"
+                                }
+                                value={commingFrom}
+                                onChange={(e) => setCommingFrom(e.target.value)}
+                                className={styles.input}
+                                required
+                              />
+                            </div>
+                            <div className={styles["form-group"]}>
+                              <label>
+                                {locale === "sr"
+                                  ? "Broj telefona:"
+                                  : "Phone number:"}
+                              </label>
+                              <input
+                                type="text"
+                                id="phone"
+                                name="phone"
+                                placeholder={
+                                  locale === "sr"
+                                    ? "npr. 067123456"
+                                    : "e.g. 067123456"
+                                }
+                                value={phoneNumber}
+                                onChange={(e) => setPhoneNumber(e.target.value)}
+                                className={styles.input}
+                                required
+                              />
+                            </div>
+                            <div className={styles["form-group"]}>
+                              <label>
+                                {locale === "sr"
+                                  ? "Koje je tvoje iskustvo u radu sa trans osobama:"
+                                  : "What is your experience in working with trans persons:"}
+                              </label>
+                              <textarea
+                                id="supportType"
+                                name="supportType"
+                                className={styles.input}
+                                placeholder={
+                                  locale === "sr"
+                                    ? "navedi svoje iskustvo"
+                                    : "state your experience"
+                                }
+                                rows="5"
+                                value={experience}
+                                onChange={(e) => setExperience(e.target.value)}
+                                required
+                              />
+                            </div>
+                            <div className={styles["form-group"]}>
+                              <ReCAPTCHA
+                                sitekey={
+                                  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+                                }
+                                onChange={(value) => setCaptchaValue(value)}
+                                className={styles.recaptcha}
+                              />
+                            </div>
+                            <button type="submit" className={styles.button}>
+                              {locale === "sr" ? "POŠALJI" : "SUBMIT"}
+                            </button>
+                          </form>
+                        )}
                       </motion.div>
                     </motion.div>
                   )}

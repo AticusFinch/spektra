@@ -57,9 +57,7 @@
   font-size: 1.1rem;
   font-family: "roboto", sans-serif;
   font-weight: 300;
-  padding: 1rem;
   width: 100% !important;
-  border: solid 1px var(--cream-white);
 }
 
 .form-group {
