@@ -263,6 +263,51 @@ const Page = ({ page }) => {
     },
   ];
 
+  const financialReports = [
+    {
+      name:
+        locale === "sr"
+          ? "Finansijski izvještaj 2023"
+          : "Financial Report 2023",
+      link: "/files/financial-reports/2023.pdf",
+    },
+    {
+      name:
+        locale === "sr"
+          ? "Finansijski izvještaj 2021"
+          : "Financial Report 2021",
+      link: "/files/financial-reports/2021.pdf",
+    },
+    {
+      name:
+        locale === "sr"
+          ? "Finansijski izvještaj 2020"
+          : "Financial Report 2020",
+      link: "/files/financial-reports/2020.pdf",
+    },
+    {
+      name:
+        locale === "sr"
+          ? "Finansijski izvještaj 2019"
+          : "Financial Report 2019",
+      link: "/files/financial-reports/2019.pdf",
+    },
+    {
+      name:
+        locale === "sr"
+          ? "Finansijski izvještaj 2018"
+          : "Financial Report 2018",
+      link: "/files/financial-reports/2018.pdf",
+    },
+    {
+      name:
+        locale === "sr"
+          ? "Finansijski izvještaj 2017"
+          : "Financial Report 2017",
+      link: "/files/financial-reports/2017.pdf",
+    },
+  ];
+
   const shuffledTeamMembers = shuffleArray(teamMembers);
 
   const NextArrow = ({ onClick }) => (
@@ -665,34 +710,13 @@ const Page = ({ page }) => {
                   {locale === "sr" ? "Godišnji izvještaji" : "Annual Reports"}
                 </h3>
                 <div className={styles.reports}>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Godišnji izvještaj 2024"
-                        : "Annual Report 2024"}
-                    </a>
-                  </span>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Godišnji izvještaj 2023"
-                        : "Annual Report 2023"}
-                    </a>
-                  </span>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Godišnji izvještaj 2022"
-                        : "Annual Report 2022"}
-                    </a>
-                  </span>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Godišnji izvještaj 2021"
-                        : "Annual Report 2021"}
-                    </a>
-                  </span>
+                  {financialReports.map((report, index) => (
+                    <span key={index} className={styles["report-container"]}>
+                      <a href={report.link} className={styles.report} download>
+                        {report.name}
+                      </a>
+                    </span>
+                  ))}
                 </div>
               </div>
               <div>

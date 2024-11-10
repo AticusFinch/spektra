@@ -6,7 +6,7 @@ const nextConfig = {
     localeDetection: false,
   },
   images: {
-    domains: ["violet-mosquito-526066.hostingersite.com"],
+    domains: ["https://wp.asocijacijaspektra.org"],
   },
 };
 

@@ -15,7 +15,7 @@ const Rights = () => {
   const { locale } = router;
 
   const link =
-    "https://stackoverflow.com/questions/37909841/css-smooth-button-gradient-color-transition-on-hover";
+    "/files/17_Znaj svoja prava Kratak vodič o pravima za trans inter i rodno varijantne osobe u Crnoj Gori.pdf";
 
   return (
     <div>
