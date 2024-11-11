@@ -6,7 +6,7 @@ const nextConfig = {
     localeDetection: false,
   },
   images: {
-    domains: ["https://wp.asocijacijaspektra.org"],
+    domains: ["wp.asocijacijaspektra.org"],
   },
 };
 
