@@ -15,7 +15,7 @@ const Rights = () => {
   const { locale } = router;
 
   const link =
-    "/files/17_Znaj svoja prava Kratak vodič o pravima za trans inter i rodno varijantne osobe u Crnoj Gori.pdf";
+    "/files/Kratak vodič o pravima za trans inter i rodno varijantne osobe u Crnoj Gori.pdf";
 
   return (
     <div>
@@ -35,14 +35,9 @@ const Rights = () => {
                   ? "Informiši se o svojim pravima! Klikom na dugme ispod možeš preuzeti dokument sa svim neophodnim informacijama."
                   : "Inform yourself about your rights! By clicking the button below you can download a document with all the necessary information."}
               </p>
-              <button
-                onClick={(e) => {
-                  window.open(link, "_blank");
-                }}
-                className={styles.button}
-              >
+              <a href={link} download className={styles.button}>
                 {locale === "sr" ? "PREUZMI DOKUMENT" : "DOWNLOAD DOCUMENT"}
-              </button>
+              </a>
               <p className={styles.contact}>
                 {locale === "sr"
                   ? "Ukoliko ti je neophodna pomoć ili podrška pri pristupanju sopstvenim pravima kontaktiraj nas putem emaila:"

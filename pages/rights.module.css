@@ -49,6 +49,7 @@
     var(--trans-pink)
   );
   font-family: "owners-bold", sans-serif;
+  display: inline-block;
   padding: 1rem 2rem;
   font-size: 1rem;
   color: var(--dark-grey);
@@ -60,6 +61,7 @@
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  text-decoration: none;
 }
 
 .button:hover {

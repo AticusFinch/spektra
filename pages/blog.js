@@ -175,8 +175,8 @@ const Blog = (props) => {
             ) : (
               <div className={styles["no-posts"]}>
                 {locale === "sr"
-                  ? "Nema Članaka Pod Traženim Izrazom. "
-                  : "No Posts Under Searched Term. "}
+                  ? "Nema članaka za prikaz. "
+                  : "No posts to display. "}
                 <FaRegSadCry />
               </div>
             )}

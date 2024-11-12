@@ -332,9 +332,9 @@
     background-size: cover;
   }
 
-  .no-news {
+  .no-posts {
     font-size: 1.5rem;
-    height: 60vh;
+    height: 50vh;
   }
 
   .excerpt {
@@ -405,6 +405,10 @@
 
   .post:first-of-type .content {
     height: 55%;
+  }
+
+  .no-posts {
+    font-size: 1.3rem;
   }
 }
 

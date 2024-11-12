@@ -228,6 +228,18 @@
   opacity: 0.2;
 }
 
+.no-publication {
+  font-size: 2rem;
+  margin-top: 3rem;
+  font-family: "roboto", sans-serif;
+  font-weight: 400;
+  opacity: 0.3;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @keyframes glowing {
   0% {
     background-position: 0 0;
@@ -281,6 +293,11 @@
     margin-right: 0.4rem;
     font-size: 0.9rem;
   }
+
+  .no-publication {
+    font-size: 1.5rem;
+    height: 50vh;
+  }
 }
 
 @media (max-width: 1440px) {
@@ -294,6 +311,10 @@
 
   .search-input {
     font-size: 0.7rem;
+  }
+
+  .no-publication {
+    font-size: 1.3rem;
   }
 }
 
@@ -445,6 +466,10 @@
 
   .no-animation {
     pointer-events: none;
+  }
+
+  .no-publication {
+    font-size: 1rem;
   }
 }
 

@@ -158,8 +158,8 @@ const News = (props) => {
             ) : (
               <div className={styles["no-news"]}>
                 {locale === "sr"
-                  ? "Nema Novosti Pod Traženim Izrazom. "
-                  : "No News Under Searched Term. "}
+                  ? "Nema vijesti za prikaz. "
+                  : "No news to display. "}
                 <FaRegSadCry />
               </div>
             )}

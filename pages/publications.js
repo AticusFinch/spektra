@@ -215,8 +215,8 @@ const Publications = (props) => {
             ) : (
               <div className={styles["no-publication"]}>
                 {locale === "sr"
-                  ? "Nema publikacija pod traženim izrazom. "
-                  : "No news under searched term. "}
+                  ? "Nema publikacija za prikaz. "
+                  : "No publications to display. "}
                 <FaRegSadCry />
               </div>
             )}

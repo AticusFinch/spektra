@@ -129,18 +129,14 @@
   gap: 1rem;
 }
 
-.report-container {
-  padding: 1rem 0;
-  background-color: #252525;
-  display: inline-block;
-  text-align: center;
-}
-
 .report {
   text-align: center;
   text-decoration: none;
   color: var(--cream-white);
   transition: color 0.5s ease-in-out;
+  padding: 1rem 0;
+  background-color: #252525;
+  display: inline-block;
 }
 
 .report:hover {

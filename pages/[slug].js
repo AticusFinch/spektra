@@ -171,7 +171,7 @@ const Page = ({ page }) => {
         "Jovan Džoli Ulićević je aktivista iz Crne Gore. Rođen je 1991. godine u Podgorici. Diplomirao je na Odsjeku za biologiju na Prirodno-matematičkom fakultetu u Podgorici, gdje se specijalizirao za ekologiju. Trenutno je student treće godine Diplomacije i međunarodnih odnosa na Humanističkim studijama Univerziteta Donja Gorica u Podgorici. Teme kojima se aktivno bavi su antifašizam, kvir aktivizam, feminizam i dekolonijalizam. Trenutno radi kao izvršni direktor u organizacijama Spektra i Trans Mreža Balkan.",
       bioEng:
         "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
-      image: "/images/blog1.jpg",
+      image: "/images/team/Jovan.jpg",
       width: "700",
       height: "1050",
       email: "jovanulicevic@asocijacijaspektra.org",
@@ -185,7 +185,7 @@ const Page = ({ page }) => {
         "Aleksa Radonjić je aktivista rođen u Podgorici 2000. godine. Nakon završene Gimnazije upisao je Akademiju likovnih umjetnosti Univerziteta u Ljubljani, i diplomirao na smjeru konzervacije i restauracije umjetničkih djela. Svojim obrazovnim i životnim iskustvima neizbježno uvodi interdisciplinarnost u svaku sferu svog rada. U aktivizmu učestvuje od sedamnaeste godine učešćem u Organizacionom odboru Montenegro prajda, a od tada je i upoznat sa radom Spektre, u kojoj trenutno obavlja funkciju službenika za komunikacije.",
       bioEng:
         "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
-      image: "/images/blog2.jpg",
+      image: "/images/team/Aleksa.jpg",
       width: "800",
       height: "533",
       email: "aleksaradonjic@asocijacijaspektra.org",
@@ -199,7 +199,7 @@ const Page = ({ page }) => {
         "Marija je aktivistkinja iz Podgorice, rođena 1997. godine. Studentkinja je treće godina studija na smjeru psihologija Fakulteta primijenjenih nauka Univerziteta Donja Gorica. Aktivistkinja je za ljudska prava LGBTIQ osoba, feministkinja i jedna od osnivačica Asocijacije Spektra. U Spektri je angažovana na poziciji koordinatorke feminističkog programa, kroz koji realizuje projekte čiji se fokus nalazi na izgradnji kvir kulturne scene, na poljima vidljivosti i promociji feminističkih vrijednosti, kao i intersekcionalne neformalne edukacije.",
       bioEng:
         "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
-      image: "/images/blog3.jpg",
+      image: "/images/team/Marija.jpg",
       width: "700",
       height: "546",
       email: "marijajovanovic@asocijacijaspektra.org",
@@ -213,7 +213,7 @@ const Page = ({ page }) => {
         "Danijela Nikić je aktivistkinja iz Ulcinja, rođena 1998. Diplomirala je socijalnu politiku i socijalni rad, a trenutno je magistrandkinja u oblasti socijalne politike i socijalnog rada na Fakultetu političkih nauka Univerziteta Crne Gore. Danijela je trenutno projektna koordinatorka u Asocijaciji Spektra i nedavno se priključila programu za zagovaranje u javnosti, stičući tako dodatno iskustvo u oblasti javnog zagovaranja.",
       bioEng:
         "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
-      image: "/images/blog4.jpg",
+      image: "/images/team/Danijela.jpg",
       width: "700",
       height: "1050",
       email: "danijelanikic@asocijacijaspektra.org",
@@ -227,7 +227,7 @@ const Page = ({ page }) => {
         "Iskra Đurišić je aktivistkinja rođena je 1999. godine u Podgorici. Završila je srednju Ekonomsko – ugostiteljsku školu u Baru. Aktivizmom se počela baviti 2021. kada je na Tik Toku javno dokumentovala svoju tranziciju. Nastavila je svoj aktivistički angažman zapošljavanjem u Asocijaciji Spektra, gdje je zaposlena kao asistentkinja u programu za rad sa zajednicom. Nedugo zatim, angažovana je i u Trans Mreži Balkan gdje radi kao voditeljica komunikacija.",
       bioEng:
         "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
-      image: "/images/blog5.jpg",
+      image: "/images/team/Iskra.jpg",
       width: "1200",
       height: "799",
       email: "iskradjurisic@asocijacijaspektra.org",
@@ -241,7 +241,7 @@ const Page = ({ page }) => {
         "Milva Milić je grafička dizajnerka rođena u Crnoj Gori, Podgorici, 1998. godine. Završila je srednju školu na smjeru dizajna enterijera, a zatim je kreativni put odveo na Fakultet likovnih umjetnosti na Cetinju, gdje je završila Bachelor studije na modulu grafičke komunikacije. Trenutno je na drugoj godini master studija na Fakultetu likovnih umjetnosti na Cetinju. Završila je program stručnog osposobljavanja u Asocijaciji Spektra a trenutno u istoj radi na poziciji grafičke dizajnerke.",
       bioEng:
         "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
-      image: "/images/blog6.jpg",
+      image: "/images/team/Milva.jpg",
       width: "700",
       height: "987",
       email: "milvamilic@asocijacijaspektra.org",
@@ -255,7 +255,7 @@ const Page = ({ page }) => {
         "Marko Vukčević je aktivista i novinar rođen 2000. godine u Podgorici. Student je treće godine osnovnih studija na Pravnom fakultetu Univerziteta Crne Gore. Dugogodišnji angažman u brojnim organizacijama koje se bave različitim društvenim temama uključujući jačanje lokalne kulturne scene, aktivizam mladih i teme tranzicione pravde, kao i bogato volonterkso iskustvo pri Spektri doveli su do zvaničnog pridruživanja Spektrinom timu na poziciji projektog asistenta.",
       bioEng:
         "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
-      image: "/images/blog1.jpg",
+      image: "/images/team/Marko.jpg",
       width: "700",
       height: "1050",
       email: "markovukcevic@asocijacijaspektra.org",
@@ -305,6 +305,21 @@ const Page = ({ page }) => {
           ? "Finansijski izvještaj 2017"
           : "Financial Report 2017",
       link: "/files/financial-reports/2017.pdf",
+    },
+  ];
+
+  const annualReports = [
+    {
+      name: locale === "sr" ? "Godišnji izvještaj 2023" : "Annual Report 2023",
+      link: "/files/annual-reports/2023.pdf",
+    },
+    {
+      name: locale === "sr" ? "Godišnji izvještaj 2022" : "Annual Report 2022",
+      link: "/files/annual-reports/2022.pdf",
+    },
+    {
+      name: locale === "sr" ? "Godišnji izvještaj 2020" : "Annual Report 2020",
+      link: "/files/annual-reports/2020.pdf",
     },
   ];
 
@@ -706,68 +721,38 @@ const Page = ({ page }) => {
               />
               <div>
                 <h3 className={styles["reports-head"]}>
-                  {" "}
-                  {locale === "sr" ? "Godišnji izvještaji" : "Annual Reports"}
-                </h3>
-                <div className={styles.reports}>
-                  {financialReports.map((report, index) => (
-                    <span key={index} className={styles["report-container"]}>
-                      <a href={report.link} className={styles.report} download>
-                        {report.name}
-                      </a>
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h3 className={styles["reports-head"]}>
                   {locale === "sr"
                     ? "Finansijski izvještaji"
                     : "Financial Reports"}
                 </h3>
                 <div className={styles.reports}>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Finansijski izvještaj 2024"
-                        : "Financial Report 2024"}
+                  {financialReports.map((report, index) => (
+                    <a
+                      key={index}
+                      href={report.link}
+                      className={styles.report}
+                      download
+                    >
+                      {report.name}
                     </a>
-                  </span>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Finansijski izvještaj 2023"
-                        : "Financial Report 2023"}
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className={styles["reports-head"]}>
+                  {locale === "sr" ? "Godišnji izvještaji" : "Annual Reports"}
+                </h3>
+                <div className={styles.reports}>
+                  {annualReports.map((report, index) => (
+                    <a
+                      key={index}
+                      href={report.link}
+                      className={styles.report}
+                      download
+                    >
+                      {report.name}
                     </a>
-                  </span>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Finansijski izvještaj 2022"
-                        : "Financial Report 2022"}
-                    </a>
-                  </span>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Finansijski izvještaj 2021"
-                        : "Financial Report 2021"}
-                    </a>
-                  </span>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Finansijski izvještaj 2022"
-                        : "Financial Report 2022"}
-                    </a>
-                  </span>
-                  <span className={styles["report-container"]}>
-                    <a href="#" className={styles.report} download>
-                      {locale === "sr"
-                        ? "Finansijski izvještaj 2021"
-                        : "Financial Report 2021"}
-                    </a>
-                  </span>
+                  ))}
                 </div>
               </div>
             </div>
