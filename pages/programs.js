@@ -81,7 +81,7 @@ const Programs = () => {
                   <div className={styles["card-head-container"]}>
                     <span className={styles["card-head"]}>
                       {locale === "sr"
-                        ? "Program pružanja servisa psiho-socijalne podrške TIRV zajednici"
+                        ? "Program za rad sa zajednicom"
                         : "Community work program"}
                     </span>
                   </div>

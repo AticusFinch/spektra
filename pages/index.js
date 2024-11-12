@@ -26,8 +26,8 @@ const Home = ({ news, blogs, publications }) => {
       </Head>
       <Navigation />
       <Hero />
-      <News news={news} />
-      <Blog blogs={blogs} />
+      {/* <News news={news} />
+      <Blog blogs={blogs} /> */}
       <Publications publications={publications} />
       <Extra />
       <Footer />
