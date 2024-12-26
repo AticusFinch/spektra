@@ -293,6 +293,16 @@
     background: linear-gradient(to top, var(--dark-grey), rgba(0, 0, 0, 0));
   }
 
+  .image-container {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+
   .home-container {
     padding: 10rem 0rem 4rem 0rem;
     width: 100%;
