@@ -29,7 +29,7 @@ const Home = ({ news, blogs, publications }) => {
       {/* <News news={news} />
       <Blog blogs={blogs} /> */}
       <Publications publications={publications} />
-      <Extra />
+      {/* <Extra /> */}
       <Footer />
     </div>
   );
