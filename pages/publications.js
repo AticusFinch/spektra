@@ -131,8 +131,8 @@ const Publications = (props) => {
                       {post.featuredImage?.node && (
                         <Image
                           src={post.featuredImage.node.sourceUrl}
-                          width={post.featuredImage.node.mediaDetails.width}
-                          height={post.featuredImage.node.mediaDetails.height}
+                          width={350}
+                          height={100}
                           alt={post.featuredImage.node.altText || "Post image"}
                           className={styles["publication-image"]}
                         />
