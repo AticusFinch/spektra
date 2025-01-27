@@ -176,11 +176,11 @@ const Navigation = () => {
                     {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
                   </Link>
                 </li>
-                <li className={styles["hamburger-link-container"]}>
+                {/* <li className={styles["hamburger-link-container"]}>
                   <Link href="/donate" className={styles["hamburger-link"]}>
                     {locale === "sr" ? "DONIRAJ" : "DONATE"}
                   </Link>
-                </li>
+                </li> */}
 
                 <div className={styles["mobile-search"]}>
                   <Search
@@ -437,11 +437,11 @@ const Navigation = () => {
                   {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
                 </Link>
               </li>
-              <li className={styles["link-container"]}>
+              {/* <li className={styles["link-container"]}>
                 <Link href="/donate" className={styles.link}>
                   {locale === "sr" ? "DONIRAJ" : "DONATE"}
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
