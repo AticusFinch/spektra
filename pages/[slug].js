@@ -982,7 +982,9 @@ const Page = ({ page }) => {
                   <div className={styles["coordinator-text"]}>
                     <div>
                       <h3 className={styles["coordinator-name"]}>
-                        {teamMembers[2].name}
+                        {teamMembers[3
+                          
+                        ].name}
                       </h3>
                       <p className={styles["coordinator-role"]}>
                         {locale === "sr"
