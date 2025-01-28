@@ -110,12 +110,21 @@ const News = ({ news }) => {
                         {" "}
                         <div className={styles["slide-img-container"]}>
                           <Image
-                            src={post.featuredImage.node.sourceUrl}
-                            alt={
-                              post.featuredImage.node.altText || "Post Image"
+                            src={
+                              post.featuredImage?.node?.sourceUrl ||
+                              "/path/to/default/image.jpg"
                             }
-                            width={post.featuredImage.node.mediaDetails.width}
-                            height={post.featuredImage.node.mediaDetails.height}
+                            alt={
+                              post.featuredImage?.node?.altText || "Post Image"
+                            }
+                            width={
+                              post.featuredImage?.node?.mediaDetails?.width ||
+                              700
+                            }
+                            height={
+                              post.featuredImage?.node?.mediaDetails?.height ||
+                              400
+                            }
                             className={styles["news-img"]}
                           />
                         </div>
