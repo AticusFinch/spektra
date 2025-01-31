@@ -50,6 +50,13 @@ const Hero = () => {
     "/images/hero/08.jpg",
     "/images/hero/09.jpg",
     "/images/hero/10.jpg",
+    "/images/hero/11.jpg",
+    "/images/hero/12.jpg",
+    "/images/hero/13.jpg",
+    "/images/hero/14.jpg",
+    "/images/hero/15.jpg",
+    "/images/hero/16.jpg",
+    "/images/hero/17.jpg",
   ];
 
   return (

@@ -8,6 +8,23 @@ import Image from "next/image";
 import Container from "../utils/container";
 import styles from "./[slug].module.css";
 import Link from "next/link";
+import Slider from "react-slick";
+
+import { MdArrowBackIosNew } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
+
+// Custom arrow components
+const NextArrow = ({ onClick }) => (
+  <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
+    <MdArrowForwardIos />
+  </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <div className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
+    <MdArrowBackIosNew />
+  </div>
+);
 
 const Post = ({ post, latestPosts }) => {
   const router = useRouter();
@@ -35,6 +52,19 @@ const Post = ({ post, latestPosts }) => {
           latestPost && post && latestPost.databaseId !== post.databaseId
       )
     : [];
+
+  // Slider settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+  };
 
   return (
     <div>
@@ -73,12 +103,46 @@ const Post = ({ post, latestPosts }) => {
             className={styles["post-text"]}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+          {post.news.image && (
+            <div className={styles["post-image-container"]}>
+              <Image
+                src={post.news.image.node.sourceUrl}
+                alt={post.news.image.node.altText || "Post image"}
+                width={post.news.image.node.mediaDetails.width}
+                height={post.news.image.node.mediaDetails.height}
+                className={styles["image"]}
+              />
+            </div>
+          )}
           {post.news.video && (
             <div className={styles["video-container"]}>
-              <video controls>
-                <source src={post.news.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+                width="560"
+                height="315"
+                src={post.news.video}
+                title="Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className={styles["video"]}
+              ></iframe>
+            </div>
+          )}
+          {post.news.gallery && post.news.gallery.nodes.length > 0 && (
+            <div className={styles["gallery-container"]}>
+              <Slider {...settings}>
+                {post.news.gallery.nodes.map((image, index) => (
+                  <div key={index} className={styles["gallery-item"]}>
+                    <Image
+                      src={image.sourceUrl}
+                      alt={image.altText || `Gallery image ${index + 1}`}
+                      width={300}
+                      height={200}
+                      layout="responsive"
+                    />
+                  </div>
+                ))}
+              </Slider>
             </div>
           )}
         </div>
@@ -140,6 +204,26 @@ export async function getServerSideProps({ params, query, locale }) {
         news {
           photoCredits
           video
+          gallery {
+            nodes {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+              altText
+            }
+          }
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+              altText
+            }
+          }
         }
       }
     }

@@ -3,6 +3,8 @@ import { ApolloProvider } from "@apollo/client/react";
 import { client } from "../lib/apollo";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const metadata = {
   title: "Asocijacija Spektra",
