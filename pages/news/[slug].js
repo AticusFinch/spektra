@@ -73,6 +73,14 @@ const Post = ({ post, latestPosts }) => {
             className={styles["post-text"]}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+          {post.news.video && (
+            <div className={styles["video-container"]}>
+              <video controls>
+                <source src={post.news.video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
         </div>
 
         <div className={styles["read-more-section"]}>
@@ -131,6 +139,7 @@ export async function getServerSideProps({ params, query, locale }) {
         }
         news {
           photoCredits
+          video
         }
       }
     }
