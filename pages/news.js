@@ -116,10 +116,17 @@ const News = (props) => {
                   >
                     <div className={styles["post-image-container"]}>
                       <Image
-                        src={post.featuredImage.node.sourceUrl}
-                        width={post.featuredImage.node.mediaDetails.width}
-                        height={post.featuredImage.node.mediaDetails.height}
-                        alt={post.featuredImage.node.altText || "Post image"}
+                        src={
+                          post.featuredImage?.node?.sourceUrl ||
+                          "/path/to/default/image.jpg"
+                        }
+                        width={
+                          post.featuredImage?.node?.mediaDetails?.width || 700
+                        }
+                        height={
+                          post.featuredImage?.node?.mediaDetails?.height || 400
+                        }
+                        alt={post.featuredImage?.node?.altText || "Post image"}
                         className={styles["post-image"]}
                       />
                     </div>
@@ -135,7 +142,7 @@ const News = (props) => {
                         <p
                           className={styles.excerpt}
                           dangerouslySetInnerHTML={{
-                            __html: post.content,
+                            __html: post.excerpt,
                           }}
                         ></p>
                       </div>
@@ -209,6 +216,7 @@ export async function getStaticProps({ locale }) {
           slug
           title
           date
+          excerpt
           content
           categories {
             nodes {

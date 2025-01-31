@@ -3,13 +3,13 @@ import Image from "next/image";
 import Slider from "react-slick";
 import Link from "next/link";
 import Container from "../utils/container";
+import { FaRegSadCry } from "react-icons/fa";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
-import { FaRegSadCry } from "react-icons/fa";
 
 import styles from "./news.module.css";
 
@@ -31,6 +31,10 @@ const News = ({ news }) => {
 
   if (!news || !Array.isArray(news)) {
     return <div>No posts available</div>;
+  }
+
+  if (news.length === 0) {
+    return <div>Loading...</div>;
   }
 
   const settings = {
