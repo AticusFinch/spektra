@@ -9,6 +9,22 @@ import Container from "../utils/container";
 import styles from "./[slug].module.css";
 import Link from "next/link";
 import { FaPen } from "react-icons/fa";
+import Slider from "react-slick";
+
+import { MdArrowBackIosNew } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
+
+const NextArrow = ({ onClick }) => (
+  <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
+    <MdArrowForwardIos />
+  </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <div className={`${styles.arrow} ${styles.prev}`} onClick={onClick}>
+    <MdArrowBackIosNew />
+  </div>
+);
 
 const Post = ({ post, latestPosts }) => {
   const router = useRouter();
@@ -28,6 +44,18 @@ const Post = ({ post, latestPosts }) => {
   const formattedDate = dateObj
     ? `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`
     : "Unknown Date";
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+  };
 
   return (
     <div>
@@ -61,6 +89,48 @@ const Post = ({ post, latestPosts }) => {
             className={styles["post-text"]}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+          {post.posts.image && (
+            <div className={styles["post-image-container"]}>
+              <Image
+                src={post.posts.image.node.sourceUrl}
+                alt={post.posts.image.node.altText || "Post image"}
+                width={post.posts.image.node.mediaDetails.width}
+                height={post.posts.image.node.mediaDetails.height}
+                className={styles["image"]}
+              />
+            </div>
+          )}
+          {post.posts.video && (
+            <div className={styles["video-container"]}>
+              <iframe
+                width="560"
+                height="315"
+                src={post.posts.video}
+                title="Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className={styles["video"]}
+              ></iframe>
+            </div>
+          )}
+          {post.posts.gallery && post.posts.gallery.nodes.length > 0 && (
+            <div className={styles["gallery-container"]}>
+              <Slider {...settings}>
+                {post.posts.gallery.nodes.map((image, index) => (
+                  <div key={index} className={styles["gallery-item"]}>
+                    <Image
+                      src={image.sourceUrl}
+                      alt={image.altText || `Gallery image ${index + 1}`}
+                      width={300}
+                      height={200}
+                      layout="responsive"
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          )}
           <span className={styles["post-author"]}>
             <FaPen className={styles["meta-icon"]} />
             {post.posts.postAuthor
@@ -128,6 +198,27 @@ export async function getServerSideProps({ params, query, locale }) {
         posts {
           photoCredits
           postAuthor
+          video
+          gallery {
+            nodes {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+              altText
+            }
+          }
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+              altText
+            }
+          }
         }
       }
     }

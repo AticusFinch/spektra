@@ -267,6 +267,13 @@ const Page = ({ page }) => {
     {
       name:
         locale === "sr"
+          ? "Finansijski izvještaj 2024"
+          : "Financial Report 2024",
+      link: "/files/financial-reports/2024.pdf",
+    },
+    {
+      name:
+        locale === "sr"
           ? "Finansijski izvještaj 2023"
           : "Financial Report 2023",
       link: "/files/financial-reports/2023.pdf",
@@ -309,6 +316,10 @@ const Page = ({ page }) => {
   ];
 
   const annualReports = [
+    {
+      name: locale === "sr" ? "Godišnji izvještaj 2024" : "Annual Report 2024",
+      link: "/files/annual-reports/2024.pdf",
+    },
     {
       name: locale === "sr" ? "Godišnji izvještaj 2023" : "Annual Report 2023",
       link: "/files/annual-reports/2023.pdf",
@@ -982,9 +993,7 @@ const Page = ({ page }) => {
                   <div className={styles["coordinator-text"]}>
                     <div>
                       <h3 className={styles["coordinator-name"]}>
-                        {teamMembers[3
-                          
-                        ].name}
+                        {teamMembers[3].name}
                       </h3>
                       <p className={styles["coordinator-role"]}>
                         {locale === "sr"

@@ -68,6 +68,7 @@ const About = () => {
                   </span>
                 </div>
               </Link>
+
               <Link
                 href={
                   locale === "sr"

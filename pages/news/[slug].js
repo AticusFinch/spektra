@@ -13,7 +13,6 @@ import Slider from "react-slick";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
 
-// Custom arrow components
 const NextArrow = ({ onClick }) => (
   <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
     <MdArrowForwardIos />
@@ -53,7 +52,6 @@ const Post = ({ post, latestPosts }) => {
       )
     : [];
 
-  // Slider settings
   const settings = {
     dots: true,
     infinite: true,
@@ -274,7 +272,7 @@ export async function getServerSideProps({ params, query, locale }) {
 
   return {
     props: {
-      post: postData.vijestBy,
+      post: postData.vijestBy || null,
       latestPosts: latestPostsData.vijesti.edges.map((edge) => edge.node),
     },
   };
