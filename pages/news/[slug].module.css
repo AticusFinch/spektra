@@ -66,8 +66,6 @@
   margin: 3rem 0;
   color: var(--dark-grey);
   line-height: 1.5;
-  column-count: 2;
-  column-gap: 40px;
   text-align: justify;
   font-size: 1.4rem;
 }
@@ -231,7 +229,7 @@
   }
 
   .post {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
   }
 
@@ -295,7 +293,7 @@
   }
 
   .post {
-    width: 80%;
+    width: 70%;
   }
 
   .title {
