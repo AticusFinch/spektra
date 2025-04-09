@@ -90,7 +90,9 @@ const Report = () => {
       <Container>
         <div className={styles.report}>
           <h1 className={styles["report-head"]}>
-            {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
+            {locale === "sr"
+              ? "Javi nam se ukoliko ti je potrebna bilo koja vrsta podrške!"
+              : "Contact us if you need any kind of support!"}
           </h1>
           <div className={styles.content}>
             <div className={styles["report-info"]}>
