@@ -517,10 +517,6 @@ const Page = ({ page }) => {
           {isReportPage && (
             <div>
               <h1 className={styles.title}>{page.title}</h1>
-              <div
-                className={styles.content}
-                dangerouslySetInnerHTML={{ __html: page.content }}
-              />
               <div>
                 <h3 className={styles["reports-head"]}>
                   {locale === "sr"
