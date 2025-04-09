@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-
 import Slider from "react-slick";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -12,7 +11,6 @@ import styles from "./hero.module.css";
 
 const Hero = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-
   const router = useRouter();
   const { locale } = router;
 
@@ -30,13 +28,9 @@ const Hero = () => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 1024);
     };
-
-    handleResize(); // Check initial screen size
+    handleResize();
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const images = [
@@ -67,14 +61,16 @@ const Hero = () => {
         animate={!isSmallScreen ? { opacity: 1 } : {}}
         transition={!isSmallScreen ? { duration: 2 } : {}}
       >
-        <Slider {...settings}>
+        <Slider {...settings} className={styles.slider}>
           {images.map((image, index) => (
             <div key={index} className={styles["image-container"]}>
               <Image
                 src={image}
                 alt="hero"
-                width={1920}
-                height={1080}
+                fill
+                priority={index === 0}
+                quality={100}
+                sizes="100vw"
                 className={styles.image}
               />
             </div>
