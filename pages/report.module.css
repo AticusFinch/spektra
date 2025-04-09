@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 85%;
+  width: 55%;
   margin: 0 auto;
 }
 
@@ -20,14 +20,7 @@
   padding-bottom: 2rem;
 }
 
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
 .report-info {
-  width: 50% !important;
   letter-spacing: 1px;
   font-size: 1.1rem;
   line-height: 1.5;
@@ -45,8 +38,9 @@
 }
 
 .form-container {
-  width: 50%;
-  margin: 0;
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--trans-pink);
 }
 
 .form {
@@ -146,19 +140,14 @@
 @media (max-width: 1920px) {
   .report {
     padding: 10rem 0 3rem 0;
-    width: 90%;
+    width: 70%;
   }
 
   .report-head {
     font-size: 4.5rem;
     padding-bottom: 2rem;
   }
-
-  .content {
-  }
-
   .report-info {
-    width: 42%;
     letter-spacing: 1px;
     font-size: 0.9rem;
     line-height: 1.3;
@@ -169,7 +158,6 @@
   }
 
   .form {
-    width: 60%;
     font-size: 0.9rem;
     margin-left: 2rem;
   }

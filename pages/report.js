@@ -95,51 +95,21 @@ const Report = () => {
           <div className={styles.content}>
             <div className={styles["report-info"]}>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                pulvinar sit amet ex at mattis. Sed vel tempor velit. Morbi et
-                laoreet lacus. Duis tincidunt lacus sed sapien suscipit, ut
-                laoreet orci efficitur. Nulla quis ultrices odio. Proin sit amet
-                ipsum eu diam facilisis dignissim. Sed diam odio, finibus sit
-                amet odio ac, bibendum sodales lectus. Etiam ullamcorper mi eu
-                faucibus hendrerit.
+                Svjesni/e smo da se nažalost trans i rodno varijantne osobe
+                često suočavaju sa nasiljem i diskriminacijom u različitim
+                aspektima života. Asocijacija Spektra ti može pružit podršku i
+                siguran prostor ukoliko si pogođen/a bilo kojim vidom nasilja.
               </p>
               <p>
-                Nunc tincidunt erat lectus, vel tristique felis rhoncus sed.
-                Morbi lorem enim, pulvinar condimentum massa sed, cursus
-                tincidunt neque. Aenean quis dui enim. Phasellus velit urna,
-                consectetur sit amet convallis at, imperdiet et massa. Sed at
-                dictum sem. Etiam rutrum tristique efficitur. Aliquam tempus
-                laoreet efficitur. Aliquam ac est nunc. Donec sollicitudin
-                tempus suscipit. Ut lectus massa, commodo dictum lobortis id,
-                sodales et tellus. Nunc vel hendrerit nibh.
+                Ako si doživjeo/la bilo koji vid nasilja ili diskriminacije zbog
+                svog rodnog identiteta ili izražavanja, želimo da znaš da ne
+                moraš prolaziti sam/a kroz to iskustvo.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                pulvinar sit amet ex at mattis. Sed vel tempor velit. Morbi et
-                laoreet lacus. Duis tincidunt lacus sed sapien suscipit, ut
-                laoreet orci efficitur. Nulla quis ultrices odio. Proin sit amet
-                ipsum eu diam facilisis dignissim. Sed diam odio, finibus sit
-                amet odio ac, bibendum sodales lectus. Etiam ullamcorper mi eu
-                faucibus hendrerit.
-              </p>
-              <p>
-                Nunc tincidunt erat lectus, vel tristique felis rhoncus sed.
-                Morbi lorem enim, pulvinar condimentum massa sed, cursus
-                tincidunt neque. Aenean quis dui enim. Phasellus velit urna,
-                consectetur sit amet convallis at, imperdiet et massa. Sed at
-                dictum sem. Etiam rutrum tristique efficitur. Aliquam tempus
-                laoreet efficitur. Aliquam ac est nunc. Donec sollicitudin
-                tempus suscipit. Ut lectus massa, commodo dictum lobortis id,
-                sodales et tellus. Nunc vel hendrerit nibh.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                pulvinar sit amet ex at mattis. Sed vel tempor velit. Morbi et
-                laoreet lacus. Duis tincidunt lacus sed sapien suscipit, ut
-                laoreet orci efficitur. Nulla quis ultrices odio. Proin sit amet
-                ipsum eu diam facilisis dignissim. Sed diam odio, finibus sit
-                amet odio ac, bibendum sodales lectus. Etiam ullamcorper mi eu
-                faucibus hendrerit.
+                Naš tim ti može pružiti vršnjačku podršku u sigurnom prostoru,
+                pomoći u procesu formalne prijave slučaja, povezati te sa
+                besplatnom pravnom podrškom, psihološkom pomoći i drugim
+                resursima koji ti mogu biti od koristi.
               </p>
             </div>
             <div className={styles["form-container"]}>

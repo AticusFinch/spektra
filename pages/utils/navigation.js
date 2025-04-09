@@ -281,46 +281,7 @@ const Navigation = () => {
                         {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        href={
-                          locale === "sr"
-                            ? "/koja-je-nasa-misija"
-                            : "/what-is-our-mission"
-                        }
-                      >
-                        {locale === "sr"
-                          ? "Koja je naša misija?"
-                          : "What is our mission?"}
-                      </Link>
-                    </li>
 
-                    <li>
-                      <Link
-                        href={
-                          locale === "sr"
-                            ? "/koja-je-nasa-vizija"
-                            : "/what-is-our-vission"
-                        }
-                      >
-                        {locale === "sr"
-                          ? "Koja je naša vizija?"
-                          : "What is our vision?"}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href={
-                          locale === "sr"
-                            ? "/koje-su-nase-vrijednosti"
-                            : "/what-are-our-values"
-                        }
-                      >
-                        {locale === "sr"
-                          ? "Koje su naše vrijednosti?"
-                          : "What are our values?"}
-                      </Link>
-                    </li>
                     <li>
                       <Link
                         href={
@@ -434,7 +395,7 @@ const Navigation = () => {
               </li>
               <li className={styles["link-container"]}>
                 <Link href="/report" className={styles.link}>
-                  {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
+                  {locale === "sr" ? "PODRŠKA" : "SUPPORT"}
                 </Link>
               </li>
               {/* <li className={styles["link-container"]}>
