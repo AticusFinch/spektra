@@ -137,13 +137,7 @@ const About = () => {
                 </div>
                 <div className={styles["card-text"]}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
-                    In hac habitasse platea dictumst. Aliquam iaculis lectus a
-                    leo varius, eget dapibus metus efficitur. Etiam mi neque,
-                    venenatis condimentum rutrum id, imperdiet nec orci. Donec
-                    in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
-                    quis arcu non vestibulum.{" "}
+                    Ovdje možete pronaći naše finansijske i godišnje izvještaje.
                   </p>
                 </div>
                 <div className={styles["read-more-container"]}>
@@ -164,13 +158,8 @@ const About = () => {
                 </div>
                 <div className={styles["card-text"]}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
-                    In hac habitasse platea dictumst. Aliquam iaculis lectus a
-                    leo varius, eget dapibus metus efficitur. Etiam mi neque,
-                    venenatis condimentum rutrum id, imperdiet nec orci. Donec
-                    in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
-                    quis arcu non vestibulum.{" "}
+                    Imate pitanja, sugestije ili želite da sarađujemo? Slobodno
+                    nam se obratite!
                   </p>
                 </div>
                 <div className={styles["read-more-container"]}>
