@@ -38,10 +38,7 @@ const About = () => {
           </div>
           <div className={styles["about-content"]}>
             <div className={styles["grid-cards-container"]}>
-              <Link
-                href={locale === "sr" ? "/cime-se-bavimo" : "/what-we-do"}
-                className={styles["grid-card"]}
-              >
+              <Link href="/whatWeDo" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <PiSuitcaseSimple className={styles.icon} />
                 </div>
@@ -52,13 +49,9 @@ const About = () => {
                 </div>
                 <div className={styles["card-text"]}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
-                    In hac habitasse platea dictumst. Aliquam iaculis lectus a
-                    leo varius, eget dapibus metus efficitur. Etiam mi neque,
-                    venenatis condimentum rutrum id, imperdiet nec orci. Donec
-                    in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
-                    quis arcu non vestibulum.{" "}
+                    Nevladina organizacija posvećena feminističkom i
+                    anifašističkom smjenjivanju opresivnih sistema građenjem
+                    solidarnosti, zagovaranjem promjena i njegovanjem učenja.
                   </p>
                 </div>
                 <div className={styles["read-more-container"]}>
@@ -88,15 +81,7 @@ const About = () => {
                   </span>
                 </div>
                 <div className={styles["card-text"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
-                    In hac habitasse platea dictumst. Aliquam iaculis lectus a
-                    leo varius, eget dapibus metus efficitur. Etiam mi neque,
-                    venenatis condimentum rutrum id, imperdiet nec orci. Donec
-                    in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
-                    quis arcu non vestibulum.{" "}
-                  </p>
+                  <p>Ovo su članice i članovi našeg tima!</p>
                 </div>
                 <div className={styles["read-more-container"]}>
                   <IoEnterOutline />
@@ -125,13 +110,10 @@ const About = () => {
                 </div>
                 <div className={styles["card-text"]}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
-                    In hac habitasse platea dictumst. Aliquam iaculis lectus a
-                    leo varius, eget dapibus metus efficitur. Etiam mi neque,
-                    venenatis condimentum rutrum id, imperdiet nec orci. Donec
-                    in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
-                    quis arcu non vestibulum.{" "}
+                    Tokom godina djelovanja imali smo priliku da sarađujemo sa
+                    brojnim lokalnim i svjetskim donatorima, te vam sa
+                    zadovoljstvom predstavljamo sve organizacije i institucije
+                    koje su do sada podržale rad Asocijacije Spektra.
                   </p>
                 </div>
                 <div className={styles["read-more-container"]}>

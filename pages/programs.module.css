@@ -31,6 +31,11 @@
   margin-bottom: 1.5rem;
 }
 
+.intro b {
+  color: var(--trans-pink);
+  font-weight: 700;
+}
+
 .intro:last-of-type {
   margin-bottom: 0;
 }
@@ -39,12 +44,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .grid-card {
   position: relative;
-  height: 25rem;
+  height: 30rem;
   overflow: hidden;
   text-decoration: none;
   color: var(--cream-white);

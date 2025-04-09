@@ -431,215 +431,6 @@ const Page = ({ page }) => {
       <Navigation />
       <Container>
         <div className={styles.container}>
-          {isWhatWeDoPage && (
-            <div>
-              <h1 className={styles.title}>{page.title}</h1>
-              <div
-                className={styles.content}
-                dangerouslySetInnerHTML={{ __html: page.content }}
-              ></div>
-              <div className={styles["work-content"]}>
-                <p>
-                  {locale === "sr"
-                    ? "Spreman/na da napraviš razliku?"
-                    : "Ready to make a difference?"}
-                </p>
-                <p>
-                  {locale === "sr"
-                    ? "Prijavi se za volontiranje!"
-                    : "Apply for volunteering!"}
-                </p>
-                {!isFormVisible ? (
-                  <button onClick={toggleFormVisibility}>
-                    {locale === "sr" ? "Prijavi se" : "Apply"}
-                  </button>
-                ) : (
-                  <span className={styles.close} onClick={toggleFormVisibility}>
-                    <MdClose className={styles["close-icon"]} />
-                  </span>
-                )}
-                <AnimatePresence>
-                  {isFormVisible && (
-                    <motion.div
-                      initial={{ height: 0 }}
-                      animate={{ height: "auto" }}
-                      exit={{ height: 0 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                      className={styles["form-overflow"]}
-                    >
-                      <motion.div
-                        initial={{ transform: "translateY(-100%)", opacity: 0 }}
-                        animate={{ transform: "translateY(0)", opacity: 1 }}
-                        exit={{ transform: "translateY(-100%)", opacity: 0 }}
-                        transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className={styles["form-container"]}
-                      >
-                        {emailSent ? (
-                          <div className={styles.thanks}>
-                            <p>
-                              {locale === "sr"
-                                ? "Hvala što ste nas kontaktirali, javićemo vam se u najkraćem roku!"
-                                : "Thank you for contacting us, we will reach back as soon as possible!"}
-                            </p>
-                          </div>
-                        ) : (
-                          <form
-                            onSubmit={handleSubmit}
-                            className={styles["volunteer-form"]}
-                          >
-                            <div className={styles["form-group"]}>
-                              <label>
-                                {locale === "sr"
-                                  ? "Ime i prezime:"
-                                  : "Full name:"}
-                              </label>
-                              <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder={
-                                  locale === "sr"
-                                    ? "npr. Stefan Stefanović"
-                                    : "e.g. Mark Markson"
-                                }
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                className={styles.input}
-                                required
-                              />
-                            </div>
-                            <div className={styles["form-group"]}>
-                              <label>
-                                {locale === "sr"
-                                  ? "Koje zamjenice koristiš?"
-                                  : "What pronouns do you use?"}
-                              </label>
-                              <input
-                                type="text"
-                                id="genderIdentity"
-                                name="genderIdentity"
-                                placeholder={
-                                  locale === "sr"
-                                    ? "npr. ona/njeno"
-                                    : "e.g. she/her"
-                                }
-                                value={gender}
-                                onChange={(e) => setGender(e.target.value)}
-                                className={styles.input}
-                                required
-                              />
-                            </div>
-                            <div className={styles["form-group"]}>
-                              <label>
-                                {locale === "sr"
-                                  ? "Odakle si?"
-                                  : "Where are you from?"}
-                              </label>
-                              <input
-                                type="text"
-                                id="location"
-                                name="location"
-                                placeholder={
-                                  locale === "sr"
-                                    ? "npr. Podgorica"
-                                    : "e.g. Podgorica"
-                                }
-                                value={commingFrom}
-                                onChange={(e) => setCommingFrom(e.target.value)}
-                                className={styles.input}
-                                required
-                              />
-                            </div>
-                            <div className={styles["form-group"]}>
-                              <label>
-                                {locale === "sr"
-                                  ? "Broj telefona:"
-                                  : "Phone number:"}
-                              </label>
-                              <input
-                                type="text"
-                                id="phone"
-                                name="phone"
-                                placeholder={
-                                  locale === "sr"
-                                    ? "npr. 067123456"
-                                    : "e.g. 067123456"
-                                }
-                                value={phoneNumber}
-                                onChange={(e) => setPhoneNumber(e.target.value)}
-                                className={styles.input}
-                                required
-                              />
-                            </div>
-                            <div className={styles["form-group"]}>
-                              <label>
-                                {locale === "sr"
-                                  ? "Koje je tvoje iskustvo u radu sa trans osobama:"
-                                  : "What is your experience in working with trans persons:"}
-                              </label>
-                              <textarea
-                                id="supportType"
-                                name="supportType"
-                                className={styles.input}
-                                placeholder={
-                                  locale === "sr"
-                                    ? "navedi svoje iskustvo"
-                                    : "state your experience"
-                                }
-                                rows="5"
-                                value={experience}
-                                onChange={(e) => setExperience(e.target.value)}
-                                required
-                              />
-                            </div>
-                            <div className={styles["form-group"]}>
-                              <ReCAPTCHA
-                                sitekey={
-                                  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-                                }
-                                onChange={(value) => setCaptchaValue(value)}
-                                className={styles.recaptcha}
-                              />
-                            </div>
-                            <button type="submit" className={styles.button}>
-                              {locale === "sr" ? "POŠALJI" : "SUBMIT"}
-                            </button>
-                          </form>
-                        )}
-                      </motion.div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </div>
-          )}
-          {isMissionPage && (
-            <div>
-              <h1 className={styles.title}>{page.title}</h1>
-              <div
-                className={styles.content}
-                dangerouslySetInnerHTML={{ __html: page.content }}
-              ></div>
-            </div>
-          )}
-          {isVisionPage && (
-            <div>
-              <h1 className={styles.title}>{page.title}</h1>
-              <div
-                className={styles.content}
-                dangerouslySetInnerHTML={{ __html: page.content }}
-              ></div>
-            </div>
-          )}
-          {isValuesPage && (
-            <div>
-              <h1 className={styles.title}>{page.title}</h1>
-              <div
-                className={styles.content}
-                dangerouslySetInnerHTML={{ __html: page.content }}
-              ></div>
-            </div>
-          )}
           {isTeamPage && (
             <div>
               <div>
@@ -811,15 +602,11 @@ const Page = ({ page }) => {
                         <MdOutlineEmail className={styles["contact-icon"]} />{" "}
                         {teamMembers[4].email}
                       </p>
-                      <p>
-                        <MdOutlinePhone className={styles["contact-icon"]} />{" "}
-                        {teamMembers[4].phone}
-                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className={styles["program-gallery"]}>
+              {/* <div className={styles["program-gallery"]}>
                 <Slider {...settings}>
                   {advocacyGallery.map((image, index) => (
                     <div
@@ -866,111 +653,10 @@ const Page = ({ page }) => {
                     </button>
                   </div>
                 )}
-              </Modal>
+              </Modal> */}
             </div>
           )}
           {isAdvocacyPage && (
-            <div className={styles.programs}>
-              <div className={styles["program-text"]}>
-                <div className={styles.desc}>
-                  <h1 className={styles.title}>{page.title}</h1>
-                  <div
-                    className={styles.content}
-                    dangerouslySetInnerHTML={{ __html: page.content }}
-                  />
-                </div>
-                <div className={styles["program-coordinator"]}>
-                  <div className={styles["coordinator-img-container"]}>
-                    <Image
-                      src={teamMembers[2].image}
-                      width={teamMembers[2].width}
-                      height={teamMembers[2].height}
-                      alt={teamMembers[2].name}
-                      className={styles["coordinator-img"]}
-                    />
-                  </div>
-                  <div className={styles["coordinator-text"]}>
-                    <div>
-                      <h3 className={styles["coordinator-name"]}>
-                        {teamMembers[2].name}
-                      </h3>
-                      <p className={styles["coordinator-role"]}>
-                        {locale === "sr"
-                          ? teamMembers[2].pozicija
-                          : teamMembers[2].role}
-                      </p>
-                    </div>
-                    <div>
-                      <p className={styles["coordinator-bio"]}>
-                        {locale === "sr"
-                          ? teamMembers[2].bioProgramMNE
-                          : teamMembers[2].bioProgramENG}
-                      </p>
-                    </div>
-                    <div className={styles["coordinator-contact"]}>
-                      <p>
-                        <MdOutlineEmail className={styles["contact-icon"]} />{" "}
-                        {teamMembers[2].email}
-                      </p>
-                      <p>
-                        <MdOutlinePhone className={styles["contact-icon"]} />{" "}
-                        {teamMembers[2].phone}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles["program-gallery"]}>
-                <Slider {...settings}>
-                  {advocacyGallery.map((image, index) => (
-                    <div
-                      key={index}
-                      className={styles["slider-container"]}
-                      onClick={() => openModal(image)}
-                    >
-                      <div className={styles["slider-img-container"]}>
-                        <Image
-                          src={image.img}
-                          width={image.width}
-                          height={image.height}
-                          alt={image.alt}
-                          className={styles["slider-img"]}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-              <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Image Modal"
-                className={styles.modal}
-                overlayClassName={styles.overlay}
-                style={customStyles}
-              >
-                {selectedImage && (
-                  <div className={styles["modal-content"]}>
-                    <div className={styles["modal-img-container"]}>
-                      <Image
-                        src={selectedImage.img}
-                        width={selectedImage.width}
-                        height={selectedImage.height}
-                        alt={selectedImage.alt}
-                      />
-                    </div>
-                    <button
-                      onClick={closeModal}
-                      className={styles["close-button"]}
-                    >
-                      <MdClose />
-                    </button>
-                  </div>
-                )}
-              </Modal>
-            </div>
-          )}
-          {isFeminismPage && (
             <div className={styles.programs}>
               <div className={styles["program-text"]}>
                 <div className={styles.desc}>
@@ -1013,15 +699,11 @@ const Page = ({ page }) => {
                         <MdOutlineEmail className={styles["contact-icon"]} />{" "}
                         {teamMembers[3].email}
                       </p>
-                      <p>
-                        <MdOutlinePhone className={styles["contact-icon"]} />{" "}
-                        {teamMembers[3].phone}
-                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className={styles["program-gallery"]}>
+              {/* <div className={styles["program-gallery"]}>
                 <Slider {...settings}>
                   {advocacyGallery.map((image, index) => (
                     <div
@@ -1068,7 +750,104 @@ const Page = ({ page }) => {
                     </button>
                   </div>
                 )}
-              </Modal>
+              </Modal> */}
+            </div>
+          )}
+          {isFeminismPage && (
+            <div className={styles.programs}>
+              <div className={styles["program-text"]}>
+                <div className={styles.desc}>
+                  <h1 className={styles.title}>{page.title}</h1>
+                  <div
+                    className={styles.content}
+                    dangerouslySetInnerHTML={{ __html: page.content }}
+                  />
+                </div>
+                <div className={styles["program-coordinator"]}>
+                  <div className={styles["coordinator-img-container"]}>
+                    <Image
+                      src={teamMembers[2].image}
+                      width={teamMembers[2].width}
+                      height={teamMembers[2].height}
+                      alt={teamMembers[2].name}
+                      className={styles["coordinator-img"]}
+                    />
+                  </div>
+                  <div className={styles["coordinator-text"]}>
+                    <div>
+                      <h3 className={styles["coordinator-name"]}>
+                        {teamMembers[2].name}
+                      </h3>
+                      <p className={styles["coordinator-role"]}>
+                        {locale === "sr"
+                          ? teamMembers[2].pozicija
+                          : teamMembers[2].role}
+                      </p>
+                    </div>
+                    <div>
+                      <p className={styles["coordinator-bio"]}>
+                        {locale === "sr"
+                          ? teamMembers[2].bioProgramMNE
+                          : teamMembers[2].bioProgramENG}
+                      </p>
+                    </div>
+                    <div className={styles["coordinator-contact"]}>
+                      <p>
+                        <MdOutlineEmail className={styles["contact-icon"]} />{" "}
+                        {teamMembers[2].email}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* <div className={styles["program-gallery"]}>
+                <Slider {...settings}>
+                  {advocacyGallery.map((image, index) => (
+                    <div
+                      key={index}
+                      className={styles["slider-container"]}
+                      onClick={() => openModal(image)}
+                    >
+                      <div className={styles["slider-img-container"]}>
+                        <Image
+                          src={image.img}
+                          width={image.width}
+                          height={image.height}
+                          alt={image.alt}
+                          className={styles["slider-img"]}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Image Modal"
+                className={styles.modal}
+                overlayClassName={styles.overlay}
+                style={customStyles}
+              >
+                {selectedImage && (
+                  <div className={styles["modal-content"]}>
+                    <div className={styles["modal-img-container"]}>
+                      <Image
+                        src={selectedImage.img}
+                        width={selectedImage.width}
+                        height={selectedImage.height}
+                        alt={selectedImage.alt}
+                      />
+                    </div>
+                    <button
+                      onClick={closeModal}
+                      className={styles["close-button"]}
+                    >
+                      <MdClose />
+                    </button>
+                  </div>
+                )}
+              </Modal> */}
             </div>
           )}
         </div>

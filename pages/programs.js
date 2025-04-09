@@ -34,27 +34,14 @@ const Programs = () => {
           </div>
           <div className={styles["programs-content"]}>
             <p className={styles.intro}>
-              Quisque at efficitur massa, ac aliquam est. Suspendisse sodales
-              sollicitudin maximus. Nunc ut augue ac libero efficitur facilisis
-              ac in nunc. Vestibulum lacus urna, volutpat ut ante id, sodales
-              placerat urna. Fusce gravida, ante quis tempus venenatis, elit
-              diam luctus purus, sed bibendum nisi magna non lectus. Nunc
-              lacinia luctus turpis, a fringilla metus. Suspendisse a tempor
-              nibh. Maecenas eu eros vel augue feugiat feugiat at sit amet odio.
-              Aenean feugiat dapibus luctus.
+              Spektra trenutno djeluje kroz 3 programa:{" "}
+              <b>
+                Program javnog zagovaranja, program za rad sa zajednicom i
+                feministički program.
+              </b>
             </p>
             <p className={styles.intro}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              aliquam tortor ligula, quis luctus nunc eleifend id. In hac
-              habitasse platea dictumst. Aliquam iaculis lectus a leo varius,
-              eget dapibus metus efficitur. Etiam mi neque, venenatis
-              condimentum rutrum id, imperdiet nec orci. Donec in arcu dolor.
-              Pellentesque non nisi nulla. Donec accumsan quis arcu non
-              vestibulum. Nunc velit risus, aliquam nec nibh id, ultrices
-              dignissim sapien. Donec ultrices, nisi et ultricies molestie,
-              augue turpis aliquam lorem, sit amet varius elit arcu id elit.
-              Maecenas viverra lacinia dictum. Vestibulum sagittis sed eros
-              vitae vehicula.
+              Ovdje možeš saznati nešto više o ovim programima.
             </p>
             <div className={styles["grid-cards-container"]}>
               <Link
@@ -87,13 +74,10 @@ const Programs = () => {
                   </div>
                   <div className={styles["card-text"]}>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
-                      In hac habitasse platea dictumst. Aliquam iaculis lectus a
-                      leo varius, eget dapibus metus efficitur. Etiam mi neque,
-                      venenatis condimentum rutrum id, imperdiet nec orci. Donec
-                      in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
-                      quis arcu non vestibulum.{" "}
+                      Program za rad sa zajednicom posvećen je kontinuiranom
+                      pružanju direktne pomoći, vršnjačke i psihosocijalne
+                      podrške članovima/cama TIRV zajednice, te organizaciji
+                      brojnih aktivnosti za zajednicu.
                     </p>
                   </div>
                 </div>
@@ -132,13 +116,11 @@ const Programs = () => {
                   </div>
                   <div className={styles["card-text"]}>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
-                      In hac habitasse platea dictumst. Aliquam iaculis lectus a
-                      leo varius, eget dapibus metus efficitur. Etiam mi neque,
-                      venenatis condimentum rutrum id, imperdiet nec orci. Donec
-                      in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
-                      quis arcu non vestibulum.{" "}
+                      Zagovarački program posvećen je unapređenju pravnog i
+                      društvenog statusa transrodnih, rodno-varijantnih i
+                      interpolnih osoba u Crnoj Gori, sa trenutnim primarnim
+                      fokusom na proces usvajanja Zakona o pravnom prepoznavanju
+                      rodnog identiteta na osnovu samoodređenja.
                     </p>
                   </div>
                 </div>
@@ -179,13 +161,10 @@ const Programs = () => {
                   </div>
                   <div className={styles["card-text"]}>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce aliquam tortor ligula, quis luctus nunc eleifend id.
-                      In hac habitasse platea dictumst. Aliquam iaculis lectus a
-                      leo varius, eget dapibus metus efficitur. Etiam mi neque,
-                      venenatis condimentum rutrum id, imperdiet nec orci. Donec
-                      in arcu dolor. Pellentesque non nisi nulla. Donec accumsan
-                      quis arcu non vestibulum.{" "}
+                      Feministički program posvećen je povećanju prisutnosti
+                      feminističkih praksi i vrijednosti u crnogorskom društvu
+                      primarno kroz organizaciju edukativnih progrmama, te
+                      kulturnih i umjetničkih događaja.
                     </p>
                   </div>
                 </div>
