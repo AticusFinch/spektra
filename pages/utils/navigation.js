@@ -273,11 +273,7 @@ const Navigation = () => {
                 <div className={styles["dropdown-container"]}>
                   <ul className={styles["dropdown"]}>
                     <li>
-                      <Link
-                        href={
-                          locale === "sr" ? "/cime-se-bavimo" : "/what-we-do"
-                        }
-                      >
+                      <Link href="/whatWeDo">
                         {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
                       </Link>
                     </li>

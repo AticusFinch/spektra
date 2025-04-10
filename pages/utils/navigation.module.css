@@ -253,7 +253,7 @@
 
 .link-container:hover .dropdown-container {
   opacity: 1;
-  height: calc(50px * 8);
+  height: calc(30px * 8);
 }
 
 .link-container:nth-of-type(2):hover .dropdown-container {
@@ -413,7 +413,7 @@
 
   .link-container:hover .dropdown-container {
     opacity: 1;
-    height: calc(26px * 8);
+    height: calc(20px * 8);
   }
 
   .link-container:nth-of-type(2):hover .dropdown-container {

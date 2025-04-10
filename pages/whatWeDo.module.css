@@ -1,5 +1,75 @@
 .whatWeDo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 10rem;
+}
+
+.headline {
+  font-family: "owners-bold", sans-serif;
+  font-size: 6.5rem;
+  margin-bottom: 0 !important;
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.text {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-top: 2rem;
+  width: 70%;
+}
+
+.valuesGrid {
+  column-count: 3;
+  column-gap: 1.5rem;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.value {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+  padding: 1.5rem;
+  border: 1px solid var(--trans-pink);
+  transition: all 0.3s ease;
+}
+
+.value span:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--trans-pink);
+}
+
+.value span:last-of-type {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: block;
+}
+
+.value:hover {
+  background: var(--trans-pink);
+  color: var(--dark-grey);
+  transform: scale(1.03);
+}
+
+.value:hover span:first-of-type {
+  color: var(--dark-grey);
+}
+
+@media (max-width: 1200px) {
+  .valuesGrid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .valuesGrid {
+    column-count: 1;
+  }
 }
