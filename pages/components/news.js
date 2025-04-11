@@ -93,7 +93,7 @@ const News = ({ news }) => {
   };
 
   return (
-    <Container>
+    <>
       <div>
         <div className={styles["head-container"]}>
           <p className={styles["news-head"]}>
@@ -151,7 +151,7 @@ const News = ({ news }) => {
           )}
         </div>
       </div>
-    </Container>
+    </>
   );
 };
 

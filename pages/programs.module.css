@@ -1,8 +1,6 @@
 .programs {
   width: 85%;
   margin: 0 auto;
-  padding-top: 15rem;
-  padding-bottom: 5rem;
 }
 
 .programs-head-container {
@@ -178,7 +176,6 @@
 
 @media (max-width: 1920px) {
   .programs {
-    padding-top: 10rem;
     width: 90%;
   }
 
@@ -223,10 +220,6 @@
 }
 
 @media (max-width: 1280px) {
-  .programs {
-    padding-top: 13rem;
-  }
-
   .programs-head {
     font-size: 3.5rem;
   }
@@ -237,10 +230,6 @@
 }
 
 @media (max-width: 1024px) {
-  .programs {
-    padding-top: 7rem;
-  }
-
   .grid-cards-container {
     margin-top: 2rem;
   }
@@ -271,10 +260,6 @@
 }
 
 @media (max-width: 840px) {
-  .programs {
-    padding-top: 6rem;
-  }
-
   .programs-head-container {
     padding-bottom: 3rem;
   }
@@ -370,8 +355,6 @@
 
 @media (max-width: 601px) {
   .programs {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
     width: 100%;
   }
 
@@ -401,8 +384,6 @@
 
 @media (max-width: 485px) {
   .programs {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
     width: 100%;
   }
 
@@ -442,8 +423,6 @@
 
 @media (max-width: 430px) {
   .programs {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
     width: 100%;
   }
 

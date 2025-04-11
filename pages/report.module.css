@@ -1,5 +1,4 @@
 .report {
-  padding: 13rem 0 3rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,7 +138,6 @@
 
 @media (max-width: 1920px) {
   .report {
-    padding: 10rem 0 3rem 0;
     width: 70%;
   }
 
@@ -231,7 +229,6 @@
 @media (max-width: 1024px) {
   .report {
     width: 80%;
-    padding-top: 7rem;
   }
 
   .content {
@@ -276,7 +273,6 @@
 @media (max-width: 840px) {
   .report {
     width: 85%;
-    padding-top: 6rem;
   }
 
   .form {
@@ -292,7 +288,6 @@
 @media (max-width: 485px) {
   .report {
     width: 100%;
-    padding-top: 5rem;
   }
 
   .report-head {
@@ -338,7 +333,6 @@
 
 @media (max-width: 320px) {
   .report {
-    padding-top: 4.5rem;
   }
 
   .report-head {

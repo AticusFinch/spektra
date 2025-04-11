@@ -1,8 +1,5 @@
 .about {
-  width: 85%;
   margin: 0 auto;
-  padding-top: 15rem;
-  padding-bottom: 5rem;
 }
 
 .about-head-container {
@@ -121,8 +118,6 @@
 
 @media (max-width: 1920px) {
   .about {
-    padding-top: 10rem;
-    width: 90%;
   }
 
   .about-head {
@@ -178,10 +173,6 @@
 }
 
 @media (max-width: 1280px) {
-  .about {
-    padding-top: 13rem;
-  }
-
   .about-head {
     font-size: 3.5rem;
   }
@@ -191,10 +182,6 @@
 }
 
 @media (max-width: 1024px) {
-  .about {
-    padding-top: 12rem;
-  }
-
   .grid-cards-container {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 2rem;
@@ -244,10 +231,6 @@
 }
 
 @media (max-width: 835px) {
-  .about {
-    padding-top: 5rem;
-  }
-
   .about-head-container {
     padding-bottom: 3rem;
   }
@@ -359,10 +342,7 @@
 }
 
 @media (max-width: 485px) {
-  .about {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
-    width: 100%;
+  .about-head-container {
   }
 
   .about-head-container {
@@ -425,10 +405,6 @@
 }
 
 @media (max-width: 430px) {
-  .about {
-    padding-top: 4rem;
-  }
-
   .about-head {
     font-size: 2.5rem;
   }

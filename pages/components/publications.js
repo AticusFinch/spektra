@@ -105,7 +105,7 @@ const Publications = ({ publications }) => {
   };
 
   return (
-    <Container>
+    <>
       <div className={styles.publications}>
         <div className={styles["publications-head-container"]}>
           <p className={styles["publications-head"]}>
@@ -170,7 +170,7 @@ const Publications = ({ publications }) => {
           )}
         </div>
       </div>
-    </Container>
+    </>
   );
 };
 

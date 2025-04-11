@@ -172,7 +172,7 @@ const WhatWeDo = () => {
             </p>
           </Fade>
           <div className={styles.valuesGrid}>
-            <Fade cascade damping={0.1} direction="up" triggerOnce>
+            <Fade cascade damping={0.1} direction="up" delay={500} triggerOnce>
               {values.map((value, index) => (
                 <div
                   key={index}

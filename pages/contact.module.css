@@ -1,6 +1,5 @@
 .container {
   width: 85%;
-  padding-top: 13rem;
   margin: 0 auto;
 }
 
@@ -103,7 +102,6 @@
 
 @media (max-width: 1600px) {
   .container {
-    padding-top: 10rem;
     width: 90%;
   }
 
@@ -119,10 +117,6 @@
 }
 
 @media (max-width: 1370px) {
-  .container {
-    padding-top: 10rem;
-  }
-
   .head {
     font-size: 5.5rem;
   }
@@ -130,7 +124,6 @@
 
 @media (max-width: 1280px) {
   .container {
-    padding-top: 11rem;
     width: 90%;
   }
 }
@@ -140,7 +133,6 @@
 
 @media (max-width: 1024px) {
   .container {
-    padding-top: 8rem;
   }
 
   .container p {
@@ -173,13 +165,11 @@
 
 @media (max-width: 840px) {
   .container {
-    padding-top: 6rem;
   }
 }
 
 @media (max-width: 800px) {
   .container {
-    padding-top: 7rem;
   }
 
   .contact-form button {
@@ -190,7 +180,6 @@
 
 @media (max-width: 768px) {
   .container {
-    padding-top: 6rem;
     width: 95%;
   }
 
@@ -219,7 +208,6 @@
 
 @media (max-width: 485px) {
   .container {
-    padding-top: 5rem;
     width: 100%;
   }
 
@@ -249,10 +237,6 @@
 }
 
 @media (max-width: 320px) {
-  .container {
-    padding-top: 4rem;
-  }
-
   .container p {
     font-size: 0.8rem;
   }
