@@ -8,6 +8,7 @@ import styles from "./whatWeDo.module.css";
 import Navigation from "./utils/navigation";
 import Footer from "./utils/footer";
 import Container from "./utils/container";
+import { Fade } from "react-awesome-reveal";
 
 const WhatWeDo = () => {
   const router = useRouter();
@@ -85,7 +86,7 @@ const WhatWeDo = () => {
     {
       title: "Briga",
       description:
-        "Za nas briga podrazumijeva koncept &quot;Svi za jednog jedan za sve&quot;, te brigu o zajednici, o sebi, prema resursima koje imamo, brigu za kolektiv, te brigu o vrijednostima koje predstavljamo. Brigu doživljavamo kao politički pojam, a ne samo kao empatiju, te aktivno radimo na tome da kreiramo sigurne, ali i hrabre prostore u kojima možemo da praktikujemo etiku brige i solidarnosti.",
+        "Za nas briga podrazumijeva koncept 'Svi za jednog jedan za sve', te brigu o zajednici, o sebi, prema resursima koje imamo, brigu za kolektiv, te brigu o vrijednostima koje predstavljamo. Brigu doživljavamo kao politički pojam, a ne samo kao empatiju, te aktivno radimo na tome da kreiramo sigurne, ali i hrabre prostore u kojima možemo da praktikujemo etiku brige i solidarnosti.",
     },
     {
       title: "Osnaživanje",
@@ -151,35 +152,44 @@ const WhatWeDo = () => {
   return (
     <div>
       <Head>
-        <title>What We Do</title>
-        <meta name="description" content="What We Do" />
+        <title>{locale === "sr" ? "Čime se bavimo?" : "What we do?"}</title>
+        <meta
+          name="description"
+          content={locale === "sr" ? "Čime se bavimo?" : "What we do?"}
+        />
       </Head>
       <Navigation />
       <Container>
         <div className={styles.whatWeDo}>
-          <h1 className={styles.headline}>
-            {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
-          </h1>
-          <p className={styles.text}>
-            {locale === "sr"
-              ? "Udruženje Spektra je feministička nevladina organizacija registrovana 2017. godine sa sjedištem u Podgorici, Crna Gora, koja djeluje širom zemlje. Organizacija je vođena od strane transrodnih i rodnovarijantnih osoba sa misijom da promoviše prvenstveno rodnu ravnopravnost sa posebnim fokusom na potrebe i doprinos zajednice trans, inter i rodno varijantnih (TIRV) osoba. Naš rad se zasniva na principima feminizma, antifašizma i intersekcionalnosti."
-              : "Association Spektra is a feminist non-governmental organization registered in 2017 in Podgorica, Montenegro, with a mission to promote primarily gender equality with a special focus on the needs and contributions of the trans, inter and gender variant (TIRV) community. Our work is based on the principles of feminism, anti-fascism and intersectionality."}
-          </p>
+          <Fade cascade damping={0.2} direction="up" triggerOnce>
+            <h1 className={styles.headline}>
+              {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
+            </h1>
+            <p className={styles.text}>
+              {locale === "sr"
+                ? "Udruženje Spektra je feministička nevladina organizacija registrovana 2017. godine sa sjedištem u Podgorici, Crna Gora, koja djeluje širom zemlje. Organizacija je vođena od strane transrodnih i rodnovarijantnih osoba sa misijom da promoviše prvenstveno rodnu ravnopravnost sa posebnim fokusom na potrebe i doprinos zajednice trans, inter i rodno varijantnih (TIRV) osoba. Naš rad se zasniva na principima feminizma, antifašizma i intersekcionalnosti."
+                : "Association Spektra is a feminist non-governmental organization registered in 2017 in Podgorica, Montenegro, with a mission to promote primarily gender equality with a special focus on the needs and contributions of the trans, inter and gender variant (TIRV) community. Our work is based on the principles of feminism, anti-fascism and intersectionality."}
+            </p>
+          </Fade>
           <div className={styles.valuesGrid}>
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className={styles.value}
-                onClick={() => toggleValue(value.title)}
-              >
-                <span>{value.title}</span>
-                <span
-                  className={expandedValues[value.title] ? styles.expanded : ""}
+            <Fade cascade damping={0.1} direction="up" triggerOnce>
+              {values.map((value, index) => (
+                <div
+                  key={index}
+                  className={styles.value}
+                  onClick={() => toggleValue(value.title)}
                 >
-                  {value.description}
-                </span>
-              </div>
-            ))}
+                  <span>{value.title}</span>
+                  <span
+                    className={
+                      expandedValues[value.title] ? styles.expanded : ""
+                    }
+                  >
+                    {value.description}
+                  </span>
+                </div>
+              ))}
+            </Fade>
           </div>
         </div>
       </Container>

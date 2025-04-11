@@ -173,15 +173,9 @@ const Navigation = () => {
                 </li>
                 <li className={styles["hamburger-link-container"]}>
                   <Link href="/report" className={styles["hamburger-link"]}>
-                    {locale === "sr" ? "PRIJAVI NASILJE" : "REPORT VIOLENCE"}
+                    {locale === "sr" ? "PODRŠKA" : "SUPPORT"}
                   </Link>
                 </li>
-                {/* <li className={styles["hamburger-link-container"]}>
-                  <Link href="/donate" className={styles["hamburger-link"]}>
-                    {locale === "sr" ? "DONIRAJ" : "DONATE"}
-                  </Link>
-                </li> */}
-
                 <div className={styles["mobile-search"]}>
                   <Search
                     placeholder={locale === "sr" ? "pretraga" : "search"}
@@ -277,15 +271,8 @@ const Navigation = () => {
                         {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
                       </Link>
                     </li>
-
                     <li>
-                      <Link
-                        href={
-                          locale === "sr"
-                            ? "/ko-cini-nas-tim"
-                            : "/who-is-part-of-our-team"
-                        }
-                      >
+                      <Link href="/ourTeam">
                         {locale === "sr"
                           ? "Ko čini naš tim?"
                           : "Who is part of our team?"}
@@ -394,11 +381,11 @@ const Navigation = () => {
                   {locale === "sr" ? "PODRŠKA" : "SUPPORT"}
                 </Link>
               </li>
-              {/* <li className={styles["link-container"]}>
-                <Link href="/donate" className={styles.link}>
-                  {locale === "sr" ? "DONIRAJ" : "DONATE"}
+              <li className={styles["link-container"]}>
+                <Link href="/merch" className={styles.link}>
+                  MERCH
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>

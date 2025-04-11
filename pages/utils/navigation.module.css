@@ -1,7 +1,7 @@
 .nav-container {
   width: 100%;
   position: fixed;
-  padding: 2.5rem 6rem;
+  padding: 2.5rem 10rem;
   background-color: var(--dark-grey);
   transition: all 1s ease-in-out;
   z-index: 100;
@@ -11,7 +11,7 @@
 }
 
 .nav-container-scrolled {
-  padding: 2.5rem 6rem;
+  padding: 2.5rem 10rem;
   transition: all 1s ease-out;
 }
 
@@ -290,25 +290,22 @@
   }
 }
 
-@media (max-width: 320px) {
-}
-
 @media (max-width: 2560px) {
   .nav-container {
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 8rem;
   }
 
   .nav-container-scrolled {
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 8rem;
   }
 
   .nav-top {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     height: 70px;
   }
 
   .nav-top-scrolled {
-    margin-bottom: 0.7rem;
+    margin-bottom: 2rem;
     height: 20px;
   }
 
@@ -374,7 +371,7 @@
   }
 
   .nav-container {
-    padding: 1rem 4rem;
+    padding: 1rem 8rem;
   }
 
   .nav-top {
@@ -422,6 +419,16 @@
   }
 }
 
+@media (max-width: 1600px) {
+  .nav-container {
+    padding: 1rem 6rem;
+  }
+
+  .nav-container-scrolled {
+    padding: 1rem 6rem;
+  }
+}
+
 @media (max-width: 1440px) {
   .dropdown li a {
     font-size: 0.7rem;
@@ -434,6 +441,14 @@
 }
 
 @media (max-width: 1280px) {
+  .nav-container {
+    padding: 1rem 5rem;
+  }
+
+  .nav-container-scrolled {
+    padding: 1rem 5rem;
+  }
+
   .language {
     font-size: 0.6rem;
   }
@@ -515,7 +530,7 @@
   }
 
   .mobile-head-container {
-    padding: 1.2rem 2rem;
+    padding: 2rem 3rem;
   }
 
   .logo-mobile {
@@ -586,10 +601,6 @@
 }
 
 @media (max-width: 768px) {
-  .mobile-head-container {
-    padding: 1rem 2rem;
-  }
-
   .menu-button {
     font-size: 1.7rem;
   }
@@ -611,17 +622,10 @@
   }
 }
 
-@media (max-width: 601px) {
-  .hamburger-link {
-    font-size: 1rem;
-  }
-
-  .language {
-    font-size: 1rem;
-  }
-}
-
 @media (max-width: 480px) {
+  .mobile-head-container {
+    padding: 1.5rem 2rem;
+  }
   .hamburger-link {
     font-size: 0.8rem;
   }
@@ -655,11 +659,7 @@
 
 @media (max-width: 425px) {
   .hamburger-link-container {
-    height: 3rem;
-  }
-
-  .mobile-head-container {
-    padding: 1rem 2rem;
+    height: 2.5rem;
   }
 
   .hamburger-link {
