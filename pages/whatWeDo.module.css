@@ -21,8 +21,8 @@
 }
 
 .valuesGrid {
-  column-count: 3;
-  column-gap: 1.5rem;
+  column-count: 6;
+  column-gap: 4rem;
   margin-top: 4rem;
   width: 100%;
 }
@@ -32,9 +32,8 @@
   width: 100%;
   margin-bottom: 1.5rem;
   break-inside: avoid;
-  padding: 1.5rem;
-  border: 1px solid var(--trans-pink);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .value span:first-of-type {
@@ -43,23 +42,25 @@
   text-transform: uppercase;
   display: block;
   margin-bottom: 0.5rem;
-  color: var(--trans-pink);
+  color: var(--dark-grey);
+  padding: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background: var(--trans-pink);
+  line-height: 1;
 }
 
 .value span:last-of-type {
   font-size: 0.9rem;
   line-height: 1.5;
   display: block;
+  padding: 1.5rem;
+  padding-top: 0.75rem;
+  will-change: transform;
 }
 
 .value:hover {
-  background: var(--trans-pink);
-  color: var(--dark-grey);
   transform: scale(1.03);
-}
-
-.value:hover span:first-of-type {
-  color: var(--dark-grey);
 }
 
 @media (max-width: 1200px) {
