@@ -105,72 +105,68 @@ const Publications = ({ publications }) => {
   };
 
   return (
-    <>
-      <div className={styles.publications}>
-        <div className={styles["publications-head-container"]}>
-          <p className={styles["publications-head"]}>
-            {locale === "sr" ? "Publikacije" : "Publications"}
-          </p>
-          <Link href={"/publications"} className={styles["all-publications"]}>
-            {locale === "sr" ? "sve publikacije" : "all publications"}
-          </Link>
-        </div>
-        <div>
-          {publications.length > 0 ? (
-            <Slider {...settings}>
-              {publications.map((post, id) => (
-                <div key={id} className={styles["publication-container"]}>
-                  <div className={styles["publication-img-container"]}>
-                    {post.featuredImage?.node && (
-                      <Image
-                        src={post.featuredImage.node.sourceUrl}
-                        alt={post.featuredImage.node.altText || "Post Image"}
-                        width={post.featuredImage.node.mediaDetails.width}
-                        height={post.featuredImage.node.mediaDetails.height}
-                        className={styles["publication-img"]}
-                      />
-                    )}
-                    <div className={styles["publication-content"]}>
-                      <div>
-                        <p className={styles["publication-head"]}>
-                          {post.title}
-                        </p>
-                        <span className={styles["author"]}>
-                          {/* <FaPen className={styles["meta-icon"]} /> */}
-                          {post.publications.publicationAuthor}
-                        </span>
-                      </div>
-                      <div className={styles.download}>
-                        <button
-                          onClick={(e) => {
-                            if (post.publications.file?.node?.link) {
-                              window.open(
-                                post.publications.file.node.link,
-                                "_blank"
-                              );
-                            }
-                          }}
-                          className={styles["download-button"]}
-                        >
-                          <GrDownload />
-                        </button>
-                      </div>
+    <div className={styles.publications}>
+      <div className={styles["publications-head-container"]}>
+        <p className={styles["publications-head"]}>
+          {locale === "sr" ? "Publikacije" : "Publications"}
+        </p>
+        <Link href={"/publications"} className={styles["all-publications"]}>
+          {locale === "sr" ? "sve publikacije" : "all publications"}
+        </Link>
+      </div>
+      <div>
+        {publications.length > 0 ? (
+          <Slider {...settings}>
+            {publications.map((post, id) => (
+              <div key={id} className={styles["publication-container"]}>
+                <div className={styles["publication-img-container"]}>
+                  {post.featuredImage?.node && (
+                    <Image
+                      src={post.featuredImage.node.sourceUrl}
+                      alt={post.featuredImage.node.altText || "Post Image"}
+                      width={post.featuredImage.node.mediaDetails.width}
+                      height={post.featuredImage.node.mediaDetails.height}
+                      className={styles["publication-img"]}
+                    />
+                  )}
+                  <div className={styles["publication-content"]}>
+                    <div>
+                      <p className={styles["publication-head"]}>{post.title}</p>
+                      <span className={styles["author"]}>
+                        {/* <FaPen className={styles["meta-icon"]} /> */}
+                        {post.publications.publicationAuthor}
+                      </span>
+                    </div>
+                    <div className={styles.download}>
+                      <button
+                        onClick={(e) => {
+                          if (post.publications.file?.node?.link) {
+                            window.open(
+                              post.publications.file.node.link,
+                              "_blank"
+                            );
+                          }
+                        }}
+                        className={styles["download-button"]}
+                      >
+                        <GrDownload />
+                      </button>
                     </div>
                   </div>
                 </div>
-              ))}
-            </Slider>
-          ) : (
-            <p className={styles.empty}>
-              {locale === "sr"
-                ? "Trenutno nema novih publikacija. "
-                : "Currently there's no publikacija to display. "}
-              <FaRegSadCry />
-            </p>
-          )}
-        </div>
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <p className={styles.empty}>
+            {locale === "sr"
+              ? "Trenutno nema novih publikacija. "
+              : "Currently there's no publikacija to display. "}
+            <FaRegSadCry />
+          </p>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

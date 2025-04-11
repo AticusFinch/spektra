@@ -93,65 +93,62 @@ const News = ({ news }) => {
   };
 
   return (
-    <>
-      <div>
-        <div className={styles["head-container"]}>
-          <p className={styles["news-head"]}>
-            {locale === "sr" ? "Vijesti" : "News"}
-          </p>
-          <Link href={"/news"} className={styles["all-news"]}>
-            {locale === "sr" ? "sve vijesti" : "all news"}
-          </Link>
-        </div>
-        <div>
-          {news.length > 0 ? (
-            <Slider {...settings}>
-              {news.map((post) => (
-                <div key={post.id} className={styles["slide-container"]}>
-                  <Link href={`/news/${post.slug}`} className={styles.link}>
-                    <div className={styles.slide}>
-                      <div className={styles["slide-content-container"]}>
-                        {" "}
-                        <div className={styles["slide-img-container"]}>
-                          <Image
-                            src={
-                              post.featuredImage?.node?.sourceUrl ||
-                              "/path/to/default/image.jpg"
-                            }
-                            alt={
-                              post.featuredImage?.node?.altText || "Post Image"
-                            }
-                            width={
-                              post.featuredImage?.node?.mediaDetails?.width ||
-                              700
-                            }
-                            height={
-                              post.featuredImage?.node?.mediaDetails?.height ||
-                              400
-                            }
-                            className={styles["news-img"]}
-                          />
-                        </div>
-                        <div className={styles["slide-content"]}>
-                          <p className={styles["slide-head"]}>{post.title}</p>
-                        </div>
+    <div className={styles.news}>
+      <div className={styles["head-container"]}>
+        <p className={styles["news-head"]}>
+          {locale === "sr" ? "Vijesti" : "News"}
+        </p>
+        <Link href={"/news"} className={styles["all-news"]}>
+          {locale === "sr" ? "sve vijesti" : "all news"}
+        </Link>
+      </div>
+      <div className={styles["news-container"]}>
+        {news.length > 0 ? (
+          <Slider {...settings}>
+            {news.map((post) => (
+              <div key={post.id} className={styles["slide-container"]}>
+                <Link href={`/news/${post.slug}`} className={styles.link}>
+                  <div className={styles.slide}>
+                    <div className={styles["slide-content-container"]}>
+                      {" "}
+                      <div className={styles["slide-img-container"]}>
+                        <Image
+                          src={
+                            post.featuredImage?.node?.sourceUrl ||
+                            "/path/to/default/image.jpg"
+                          }
+                          alt={
+                            post.featuredImage?.node?.altText || "Post Image"
+                          }
+                          width={
+                            post.featuredImage?.node?.mediaDetails?.width || 700
+                          }
+                          height={
+                            post.featuredImage?.node?.mediaDetails?.height ||
+                            400
+                          }
+                          className={styles["news-img"]}
+                        />
+                      </div>
+                      <div className={styles["slide-content"]}>
+                        <p className={styles["slide-head"]}>{post.title}</p>
                       </div>
                     </div>
-                  </Link>
-                </div>
-              ))}
-            </Slider>
-          ) : (
-            <p className={styles.empty}>
-              {locale === "sr"
-                ? "Trenutno nema novih vijesti. "
-                : "Currently there's no news to display. "}
-              <FaRegSadCry />
-            </p>
-          )}
-        </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <p className={styles.empty}>
+            {locale === "sr"
+              ? "Trenutno nema novih vijesti. "
+              : "Currently there's no news to display. "}
+            <FaRegSadCry />
+          </p>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
