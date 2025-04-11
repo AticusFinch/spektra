@@ -26,20 +26,19 @@
 }
 
 .all-publications {
-  width: 180px;
-  height: 40px;
+  padding: 1.5rem 4rem;
   background-color: #101010;
   color: var(--cream-white);
   border: none;
   outline: none;
   cursor: pointer;
   font-family: "owners-bold", sans-serif;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   position: relative;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
 }
 
 .all-publications:before {
@@ -68,6 +67,10 @@
   transition: opacity 0.5s ease-in-out;
 }
 
+.all-publications:active:after {
+  background: var(--dark-grey);
+}
+
 .all-publications:hover:before {
   opacity: 1;
 }
@@ -78,7 +81,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: var(--dark-grey);
+  background: transparent;
   left: 0;
   top: 0;
 }
@@ -265,7 +268,7 @@
   }
 
   .all-publications {
-    width: 160px;
+    font-size: 1rem;
   }
 
   .publication {
@@ -316,6 +319,11 @@
   .publication-img-container {
     max-height: 390px;
   }
+
+  .all-publications {
+    font-size: 0.8rem;
+    padding: 1rem 2rem;
+  }
 }
 
 @media (max-width: 1440px) {
@@ -325,6 +333,10 @@
 
   .publication-img-container {
     max-height: 350px;
+  }
+
+  .all-publications {
+    font-size: 0.7rem;
   }
 }
 
@@ -364,16 +376,18 @@
   }
 
   .all-publications {
+    width: auto;
     height: 25px;
+    padding: 0 0.5rem;
     background-color: var(--dark-grey);
     font-size: 1rem;
+    color: var(--trans-pink);
     font-family: "owners-regular", sans-serif;
     text-decoration: underline;
-    color: var(--trans-pink);
   }
 
-  .all-publications:hover:before {
-    opacity: 0;
+  .all-publications:before {
+    background: transparent;
   }
 
   .publication-container {
@@ -496,8 +510,6 @@
   }
 
   .all-publications {
-    width: 100px;
-    height: 20px;
     font-size: 0.7rem;
   }
 
@@ -561,7 +573,6 @@
   }
 
   .all-publications {
-    width: 100px;
     font-size: 0.6rem;
   }
 
@@ -598,11 +609,20 @@
   .publications {
     padding: 6rem 2rem;
   }
+
+  .all-publications {
+    height: 20px;
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 428px) {
   .publications {
     padding: 5rem 1rem;
+  }
+
+  .all-publications {
+    font-size: 0.6rem;
   }
 }
 
