@@ -19,9 +19,10 @@
 .counter-number-blue,
 .counter-number-pink,
 .counter-number-white {
-  font-family: "owners-black", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
   font-size: 4rem;
   color: var(--cream-white);
+  font-weight: 900;
 }
 
 .counter-number-blue {
@@ -42,7 +43,7 @@
 }
 
 .donate-text {
-  font-family: "owners-black", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
   font-size: 4rem;
   background: -webkit-linear-gradient(
     40deg,
@@ -57,6 +58,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   will-change: transform;
+  font-weight: 900;
 }
 
 .donate-overlay {
@@ -159,7 +161,7 @@
   }
 
   .donate-text {
-    font-family: "owners-black", sans-serif;
+    font-family: "Wix Madefor Display Variable", sans-serif;
     font-size: 2.5rem;
   }
 }

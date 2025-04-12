@@ -11,8 +11,9 @@
 
 .news-head {
   text-transform: uppercase;
-  font-family: "owners-black", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
   font-size: 10rem;
+  font-weight: 900;
   background: -webkit-linear-gradient(
     40deg,
     var(--trans-pink),
@@ -33,7 +34,8 @@
   border: none;
   outline: none;
   cursor: pointer;
-  font-family: "owners-bold", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  font-weight: 800;
   font-size: 1.2rem;
   position: relative;
   text-decoration: none;
@@ -386,7 +388,8 @@
     background-color: var(--dark-grey);
     font-size: 1rem;
     color: var(--trans-pink);
-    font-family: "owners-regular", sans-serif;
+    font-family: "Wix Madefor Display Variable", sans-serif;
+    font-weight: 400;
     text-decoration: underline;
   }
 

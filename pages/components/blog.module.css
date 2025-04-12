@@ -6,8 +6,9 @@
 
 .blog-head {
   text-transform: uppercase;
-  font-family: "owners-black", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
   font-size: 7rem;
+  font-weight: 900;
   background: -webkit-linear-gradient(
     40deg,
     var(--trans-pink),
@@ -29,8 +30,9 @@
   border: none;
   outline: none;
   cursor: pointer;
-  font-family: "owners-bold", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
   font-size: 0.8rem;
+  font-weight: 800;
   position: relative;
   text-decoration: none;
   display: flex;
@@ -179,7 +181,7 @@
 }
 
 .author {
-  font-family: "roboto", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
   font-weight: 400;
   margin-top: 0.5rem;
   display: inline-block;
@@ -262,7 +264,7 @@
     background-color: var(--dark-grey);
     color: var(--trans-pink);
     font-size: 1rem;
-    font-family: "owners-regular", sans-serif;
+    font-family: "Wix Madefor Display Variable", sans-serif;
     text-decoration: underline;
   }
 

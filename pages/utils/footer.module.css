@@ -26,7 +26,8 @@
 }
 
 .footer-top-address-street {
-  font-family: "owners-black", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  font-weight: 900;
   margin-bottom: 0.5rem;
 }
 
@@ -43,7 +44,8 @@
 .footer-top-center-head,
 .footer-top-right-head {
   color: var(--cream-white);
-  font-family: "owners-bold", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  font-weight: 800;
   font-size: 1.4rem;
 }
 

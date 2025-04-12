@@ -70,7 +70,8 @@
     var(--trans-blue),
     var(--trans-pink)
   );
-  font-family: "owners-bold", sans-serif;
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  font-weight: 800;
   padding: 0.4rem 0;
   font-size: 1rem;
   color: var(--dark-grey);

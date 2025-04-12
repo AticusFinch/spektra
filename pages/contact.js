@@ -84,28 +84,6 @@ const Contact = () => {
           <h1 className={styles.head}>
             {locale === "sr" ? "Kontakt" : "Contact"}
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            commodo bibendum justo, quis egestas lacus laoreet ut. Suspendisse
-            erat ex, euismod ut ipsum vel, commodo lacinia magna. Etiam pretium,
-            enim et semper mollis, enim nisi euismod diam, eu faucibus velit sem
-            id enim. In finibus, risus eget imperdiet mollis, lacus augue
-            imperdiet metus, nec pulvinar orci nisi nec est. Sed varius mi ut
-            leo ornare, quis fermentum dolor mollis. Cras egestas nulla a nunc
-            feugiat lacinia. Nullam tincidunt egestas ullamcorper. Aliquam id
-            iaculis odio, at molestie tortor. Nullam convallis magna ut mi
-            sodales, at laoreet sem dictum. Suspendisse ultricies erat sed augue
-            vulputate accumsan. Nam felis mauris, convallis vel luctus tempor,
-            tempor non diam. Nunc rhoncus tortor tortor, ut dignissim tellus
-            condimentum et. Nullam quis dolor mattis, mattis ante eu, ultricies
-            nulla. Curabitur ac iaculis quam. Phasellus eu sagittis ligula, id
-            congue enim. Sed et metus imperdiet, imperdiet quam at, ullamcorper
-            justo. Donec et volutpat massa. Ut elit massa, imperdiet sit amet
-            velit in, convallis suscipit lacus. Donec sed dui convallis, blandit
-            augue eu, aliquet erat. Morbi ac aliquet nisl, et blandit metus.
-            Orci varius natoque penatibus et magnis dis parturient montes,
-            nascetur ridiculus mus.
-          </p>
           {emailSent ? (
             <div className={styles.thanks}>
               <p>
