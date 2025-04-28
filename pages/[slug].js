@@ -309,10 +309,7 @@ const Page = ({ page }) => {
   const annualReports = [
     {
       name: locale === "sr" ? "Godišnji izvještaj 2024" : "Annual Report 2024",
-      link:
-        locale === "sr"
-          ? "/files/annual-reports/2024.pdf"
-          : "/files/annual-reports/2024-en.pdf",
+      link: "/files/annual-reports/2024.pdf",
     },
     {
       name: locale === "sr" ? "Godišnji izvještaj 2023" : "Annual Report 2023",
