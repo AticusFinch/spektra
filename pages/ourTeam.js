@@ -148,38 +148,34 @@ const OurTeam = () => {
                         className={styles["team-image"]}
                       />
                     </div>
-                    <div className={styles["team-member-content-container"]}>
-                      <div className={styles["team-member-content"]}>
-                        <p className={styles["team-bio"]}>
-                          {locale === "sr" ? member.bioMne : member.bioEng}
-                        </p>
-                      </div>
-                      <div
-                        className={`${styles["team-member-info"]} ${styles["team-member-info-odd"]}`}
-                      >
-                        <h3 className={styles["team-name"]}>{member.name}</h3>
-                        <p className={styles["team-role"]}>
-                          {locale === "sr" ? member.pozicija : member.role}
-                        </p>
-                      </div>
+                    <div className={styles["team-member-content"]}>
+                      <p className={styles["team-bio"]}>
+                        {locale === "sr" ? member.bioMne : member.bioEng}
+                      </p>
+                    </div>
+                    <div
+                      className={`${styles["team-member-info"]} ${styles["team-member-info-odd"]}`}
+                    >
+                      <h3 className={styles["team-name"]}>{member.name}</h3>
+                      <p className={styles["team-role"]}>
+                        {locale === "sr" ? member.pozicija : member.role}
+                      </p>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className={styles["team-member-content-container"]}>
-                      <div className={styles["team-member-info"]}>
-                        <h3 className={styles["team-name"]}>{member.name}</h3>
-                        <p className={styles["team-role"]}>
-                          {locale === "sr" ? member.pozicija : member.role}
-                        </p>
-                      </div>
-                      <div className={styles["team-member-content"]}>
-                        <p
-                          className={`${styles["team-bio"]} ${styles["team-bio-even"]}`}
-                        >
-                          {locale === "sr" ? member.bioMne : member.bioEng}
-                        </p>
-                      </div>
+                    <div className={styles["team-member-info"]}>
+                      <h3 className={styles["team-name"]}>{member.name}</h3>
+                      <p className={styles["team-role"]}>
+                        {locale === "sr" ? member.pozicija : member.role}
+                      </p>
+                    </div>
+                    <div className={styles["team-member-content"]}>
+                      <p
+                        className={`${styles["team-bio"]} ${styles["team-bio-even"]}`}
+                      >
+                        {locale === "sr" ? member.bioMne : member.bioEng}
+                      </p>
                     </div>
                     <div className={styles["team-image-container"]}>
                       <Image
