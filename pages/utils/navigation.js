@@ -279,13 +279,7 @@ const Navigation = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        href={
-                          locale === "sr"
-                            ? "/ko-podrzava-nas-rad"
-                            : "/who-supports-our-work"
-                        }
-                      >
+                      <Link href="/whoSupportsOurWork">
                         {locale === "sr"
                           ? "Ko podržava naš rad?"
                           : "Who supports our work?"}

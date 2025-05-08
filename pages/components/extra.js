@@ -141,7 +141,7 @@ const Extra = () => {
               className={styles["donate-text"]}
               whileHover={!isSmallScreen ? { scale: 1.1 } : { scale: 1 }}
             >
-              {locale === "sr" ? "doniraj" : "donate"}
+              {locale === "sr" ? "merch" : "merch"}
             </motion.a>
           </div>
         </div>

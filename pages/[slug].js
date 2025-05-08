@@ -423,15 +423,6 @@ const Page = ({ page }) => {
       <Navigation />
       <Container>
         <div className={styles.container}>
-          {isSupportPage && (
-            <div>
-              <h1 className={styles.title}>{page.title}</h1>
-              <div
-                className={styles.content}
-                dangerouslySetInnerHTML={{ __html: page.content }}
-              ></div>
-            </div>
-          )}
           {isReportPage && (
             <div>
               <h1 className={styles.title}>{page.title}</h1>

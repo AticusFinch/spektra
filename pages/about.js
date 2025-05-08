@@ -90,14 +90,7 @@ const About = () => {
                   </span>
                 </div>
               </Link>
-              <Link
-                href={
-                  locale === "sr"
-                    ? "/ko-podrzava-nas-rad"
-                    : "/who-supports-our-work"
-                }
-                className={styles["grid-card"]}
-              >
+              <Link href="/whoSupportsOurWork" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <HiOutlineSupport className={styles.icon} />
                 </div>
