@@ -118,6 +118,10 @@
     gap: 2rem;
     padding-bottom: 2rem;
   }
+
+  .konglomerat:hover {
+    transform: translateY(0px);
+  }
 }
 @media (max-width: 900px) {
   .title {
