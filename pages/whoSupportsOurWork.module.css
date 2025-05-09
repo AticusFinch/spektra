@@ -137,7 +137,7 @@
 
 @media (max-width: 485px) {
   .title {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .konglomerati {
@@ -161,22 +161,23 @@
 }
 
 @media (max-width: 415px) {
+  .title {
+    font-size: 2.8rem;
+  }
 }
 
 @media (max-width: 405px) {
 }
 
 @media (max-width: 395px) {
+  .title {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 376px) {
   .title {
-    font-size: 3rem;
-  }
-
-  .konglomerati {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    font-size: 2.5rem;
   }
 }
 
@@ -185,7 +186,7 @@
 
 @media (max-width: 325px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
