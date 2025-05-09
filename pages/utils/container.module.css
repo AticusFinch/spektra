@@ -1,7 +1,6 @@
 .container {
   padding: 27rem 10rem 10rem 10rem;
   height: auto;
-  background-color: var(--dark-grey);
 }
 
 @media (max-width: 2560px) {
