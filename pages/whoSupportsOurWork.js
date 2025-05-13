@@ -5,6 +5,7 @@ import Head from "next/head";
 import Container from "./utils/container";
 import styles from "./whoSupportsOurWork.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const WhoSupportsOurWork = () => {
   const router = useRouter();
@@ -39,8 +40,13 @@ const WhoSupportsOurWork = () => {
 
   const konglomerat2 = [
     {
+      name: "Konglomerat 11",
+      image: "/images/donors/25.png",
+    },
+    {
       name: "Konglomerat 7",
       image: "/images/donors/21.png",
+      link: "https://smartbalkansproject.org/bs/",
     },
     {
       name: "Konglomerat 8",
@@ -53,10 +59,6 @@ const WhoSupportsOurWork = () => {
     {
       name: "Konglomerat 10",
       image: "/images/donors/24.png",
-    },
-    {
-      name: "Konglomerat 11",
-      image: "/images/donors/25.png",
     },
   ];
 
@@ -233,21 +235,46 @@ const WhoSupportsOurWork = () => {
             </h1>
             <div className={styles.konglomeratiContainer}>
               <div className={styles.konglomerati}>
-                {konglomerat2.map((konglomerat) => (
-                  <div className={styles.konglomerat} key={konglomerat.name}>
-                    <Image
-                      src={konglomerat.image}
-                      alt={konglomerat.name}
-                      width={200}
-                      height={200}
-                      style={{
-                        width: "100%",
-                        height: "auto",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </div>
-                ))}
+                {konglomerat2.map((konglomerat) =>
+                  konglomerat.link ? (
+                    <Link
+                      href={konglomerat.link}
+                      key={konglomerat.name}
+                      target="_blank"
+                    >
+                      <div
+                        className={styles.konglomerat}
+                        key={konglomerat.name}
+                      >
+                        <Image
+                          src={konglomerat.image}
+                          alt={konglomerat.name}
+                          width={200}
+                          height={200}
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            objectFit: "contain",
+                          }}
+                        />
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className={styles.konglomerat} key={konglomerat.name}>
+                      <Image
+                        src={konglomerat.image}
+                        alt={konglomerat.name}
+                        width={200}
+                        height={200}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </div>
+                  )
+                )}
               </div>
 
               <div className={styles.konglomerati}>
