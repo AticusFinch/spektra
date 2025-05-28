@@ -13,13 +13,16 @@
   display: inline-block;
 }
 
+.container {
+  padding-top: 5rem;
+}
+
 .post-meta {
   color: var(--dark-grey);
 }
 
 .post-head-container {
   background-color: var(--dark-grey);
-  padding-top: 15.5rem;
   padding-bottom: 2rem;
   width: 100%;
   display: flex;

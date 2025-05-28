@@ -13,6 +13,10 @@
   display: inline-block;
 }
 
+.container {
+  padding-top: 5rem;
+}
+
 .post-meta {
   color: var(--dark-grey);
 }

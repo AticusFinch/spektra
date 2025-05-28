@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 import Container from "./utils/container";
 import Footer from "./utils/footer";
 import Navigation from "./utils/navigation";
+import { useState, useEffect } from "react";
 
 const teamMembers = [
   {
-    name: "Jovan Džoli Ulićević",
+    name: "Jovan\nDžoli\nUlićević",
     pozicija: "Izvršni direktor",
     role: "Executive Director",
     bioMne:
@@ -15,13 +16,13 @@ const teamMembers = [
     bioEng:
       "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
     image: "/images/team/Jovan.jpg",
-    width: "700",
+    width: "1050",
     height: "1050",
     email: "jovanulicevic@asocijacijaspektra.org",
     phone: "+382 67 123 456",
   },
   {
-    name: "Aleksa Radonjić",
+    name: "Aleksa\nRadonjić",
     pozicija: "Službenik za komunikacije",
     role: "Communication Officer",
     bioMne:
@@ -29,13 +30,13 @@ const teamMembers = [
     bioEng:
       "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
     image: "/images/team/Aleksa.jpg",
-    width: "800",
-    height: "533",
+    width: "1050",
+    height: "1050",
     email: "aleksaradonjic@asocijacijaspektra.org",
     phone: "+382 67 123 456",
   },
   {
-    name: "Marija Jovanović",
+    name: "Marija\nJovanović",
     pozicija: "Programska koordinatorka",
     role: "Program Coordinator",
     bioMne:
@@ -43,13 +44,13 @@ const teamMembers = [
     bioEng:
       "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
     image: "/images/team/Marija.jpg",
-    width: "700",
-    height: "546",
+    width: "1050",
+    height: "1050",
     email: "marijajovanovic@asocijacijaspektra.org",
     phone: "+382 67 123 456",
   },
   {
-    name: "Danijela Nikić",
+    name: "Danijela\nNikić",
     pozicija: "Projektna koordinatorka",
     role: "Project Coordinator",
     bioMne:
@@ -57,13 +58,13 @@ const teamMembers = [
     bioEng:
       "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
     image: "/images/team/Danijela.jpg",
-    width: "700",
+    width: "1050",
     height: "1050",
     email: "danijelanikic@asocijacijaspektra.org",
     phone: "+382 67 123 456",
   },
   {
-    name: "Iskra Đurišić",
+    name: "Iskra\nĐurišić",
     pozicija: "Projektna asistentkinja",
     role: "Project Assistant",
     bioMne:
@@ -71,13 +72,13 @@ const teamMembers = [
     bioEng:
       "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
     image: "/images/team/Iskra.jpg",
-    width: "1200",
-    height: "799",
+    width: "1050",
+    height: "1050",
     email: "iskradjurisic@asocijacijaspektra.org",
     phone: "+382 67 123 456",
   },
   {
-    name: "Milva Milić",
+    name: "Milva\nMilić",
     role: "Graphic Designer",
     pozicija: "Grafička dizajnerka",
     bioMne:
@@ -85,13 +86,13 @@ const teamMembers = [
     bioEng:
       "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
     image: "/images/team/Milva.jpg",
-    width: "700",
-    height: "987",
+    width: "1050",
+    height: "1050",
     email: "milvamilic@asocijacijaspektra.org",
     phone: "+382 67 123 456",
   },
   {
-    name: "Marko Vukčević",
+    name: "Marko\nVukčević",
     pozicija: "Projektni asistent",
     role: "Project Assistant",
     bioMne:
@@ -99,7 +100,35 @@ const teamMembers = [
     bioEng:
       "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
     image: "/images/team/Marko.jpg",
-    width: "700",
+    width: "1050",
+    height: "1050",
+    email: "markovukcevic@asocijacijaspektra.org",
+    phone: "+382 67 123 456",
+  },
+  {
+    name: "Marija\nĐurković",
+    pozicija: "Finansijska menadžerka",
+    role: "Financial Manager",
+    bioMne:
+      "Rođena je 1991. godine u Podgorici. Završila je Ekonomski fakultet u Podgorici, nakon čega je započela rad u finansijama, radeći u nevladinim organizacijama i na različitim projektima koji su uključivali finansijsko upravljanje. Posvećena je unapređenju ljudskih prava, a iskustvo u radu sa organizacijama za ljudska prava omogućilo joj je da širi pozitivne promjene u društvu. Ljubav i sloboda su joj na prvom mjestu. Finansijska je menadžerka u organizaciji Spektra.",
+    bioEng:
+      "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
+    image: "/images/team/Mara.jpg",
+    width: "1050",
+    height: "1050",
+    email: "markovukcevic@asocijacijaspektra.org",
+    phone: "+382 67 123 456",
+  },
+  {
+    name: "Aleksandra\nKraljević",
+    pozicija: "Pripravnica",
+    role: "Intern",
+    bioMne:
+      "Aktivistkinja rođena na Cetinju 2002. godine. Nakon završetka JU Gimnazije, ambiciozno je upisala Fakultet političkih nauka u Podgorici. Stekla je zvanje Bachelor na smjeru Politikologija - Međunarodni odnosi 2024. godine. Aleksandra je trenutno dio programa stručnog osposobljavanja u Asocijaciji Spektra čime doprinosi zajednici i širi svoja znanja.",
+    bioEng:
+      "Integer scelerisque turpis dolor, sed dignissim nibh ornare ac. Phasellus eu accumsan diam. Integer sit amet ipsum et elit elementum consectetur. Morbi nibh enim, lacinia non sapien eget, condimentum mollis odio. Nam lectus sem, placerat at nisl non, molestie hendrerit dolor. In a diam efficitur, scelerisque nibh ac, feugiat sapien. Integer vulputate tortor vitae enim ultrices, quis euismod neque vulputate. Etiam eleifend ornare dolor pharetra convallis. Sed ut mi dictum, pulvinar lectus quis, volutpat nunc. Cras id gravida magna, sed cursus sem. Maecenas feugiat risus ac augue auctor, consectetur auctor risus semper. Praesent sit amet laoreet odio. Vestibulum eget tincidunt lorem. Quisque et lorem eu odio ullamcorper dignissim. Donec nisi mauris, pulvinar ac iaculis sed, cursus nec magna.",
+    image: "/images/team/Aleks.jpg",
+    width: "1050",
     height: "1050",
     email: "markovukcevic@asocijacijaspektra.org",
     phone: "+382 67 123 456",
@@ -107,7 +136,7 @@ const teamMembers = [
 ];
 
 function shuffleArray(array) {
-  const newArray = [...array]; // Create a copy of the array
+  const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
@@ -115,11 +144,14 @@ function shuffleArray(array) {
   return newArray;
 }
 
-const shuffledTeamMembers = shuffleArray(teamMembers);
-
 const OurTeam = () => {
   const router = useRouter();
   const { locale } = router;
+  const [shuffledTeamMembers, setShuffledTeamMembers] = useState(teamMembers);
+
+  useEffect(() => {
+    setShuffledTeamMembers(shuffleArray(teamMembers));
+  }, []);
 
   return (
     <>

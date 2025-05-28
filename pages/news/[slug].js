@@ -76,7 +76,10 @@ const Post = ({ post, latestPosts }) => {
           {locale === "sr" ? "Vijesti" : "News"}
         </h1>
       </div>
-      <Container styles={{ backgroundColor: "#efeff0" }}>
+      <Container
+        styles={{ backgroundColor: "#efeff0" }}
+        className2={styles.container}
+      >
         <div className={styles.post}>
           <h1 className={styles.title}>{post.title}</h1>
           <div>

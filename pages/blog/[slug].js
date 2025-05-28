@@ -67,7 +67,10 @@ const Post = ({ post, latestPosts }) => {
       <div className={styles["post-head-container"]}>
         <h1 className={styles["post-head"]}>Blog</h1>
       </div>
-      <Container styles={{ backgroundColor: "#efeff0" }}>
+      <Container
+        styles={{ backgroundColor: "#efeff0" }}
+        className2={styles.container}
+      >
         <div className={styles.post}>
           <h1 className={styles.title}>{post.title}</h1>
           <div>
