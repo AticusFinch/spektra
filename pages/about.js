@@ -62,14 +62,7 @@ const About = () => {
                 </div>
               </Link>
 
-              <Link
-                href={
-                  locale === "sr"
-                    ? "/ko-cini-nas-tim"
-                    : "/who-is-part-of-our-team"
-                }
-                className={styles["grid-card"]}
-              >
+              <Link href="/ourTeam" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <AiOutlineTeam className={styles.icon} />
                 </div>
