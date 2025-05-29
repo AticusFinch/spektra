@@ -356,6 +356,9 @@
 }
 
 @media (max-width: 460px) {
+  .title {
+    font-size: 4rem;
+  }
 }
 
 @media (max-width: 440px) {
@@ -374,9 +377,6 @@
 }
 
 @media (max-width: 395px) {
-  .title {
-    font-size: 4rem;
-  }
 }
 
 @media (max-width: 376px) {
