@@ -23,9 +23,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
-import { MdClose } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
-import { MdOutlinePhone } from "react-icons/md";
 
 const teamMembers = [
   {
@@ -313,18 +311,68 @@ const Page = ({ page }) => {
         locale === "sr"
           ? "/files/annual-reports/2024.pdf"
           : "/files/annual-reports/2024-en.pdf",
+      image:
+        locale === "sr"
+          ? "/images/report/mne/24-mne.jpg"
+          : "/images/report/eng/24-eng.jpg",
+      width: "300",
+      height: "200",
     },
     {
       name: locale === "sr" ? "Godišnji izvještaj 2023" : "Annual Report 2023",
-      link: "/files/annual-reports/2023.pdf",
+      link:
+        locale === "sr"
+          ? "/files/annual-reports/2023.pdf"
+          : "/files/annual-reports/2023-en.pdf",
+      image:
+        locale === "sr"
+          ? "/images/report/mne/23-mne.jpg"
+          : "/images/report/eng/23-eng.png",
+      width: "300",
+      height: "200",
     },
     {
       name: locale === "sr" ? "Godišnji izvještaj 2022" : "Annual Report 2022",
-      link: "/files/annual-reports/2022.pdf",
+      link:
+        locale === "sr"
+          ? "/files/annual-reports/2022.pdf"
+          : "/files/annual-reports/2022-en.pdf",
+      image:
+        locale === "sr"
+          ? "/images/report/mne/23-mne.jpg"
+          : "/images/report/eng/23-eng.png",
+      width: "300",
+      height: "200",
     },
     {
       name: locale === "sr" ? "Godišnji izvještaj 2020" : "Annual Report 2020",
-      link: "/files/annual-reports/2020.pdf",
+      link:
+        locale === "sr"
+          ? "/files/annual-reports/2020.pdf"
+          : "/files/annual-reports/2020-en.pdf",
+      image:
+        locale === "sr"
+          ? "/images/report/mne/20-mne.jpg"
+          : "/images/report/eng/23-eng.png",
+      width: "300",
+      height: "200",
+    },
+  ];
+
+  const documents = [
+    {
+      name: locale === "sr" ? "Statut" : "Statute",
+      link:
+        locale === "sr"
+          ? "/files/documents/statute/statut.pdf"
+          : "/files/documents/statute/statute.pdf",
+    },
+    {
+      name: locale === "sr" ? "Strateški plan" : "Strategic Plan",
+      link:
+        locale === "sr"
+          ? "/files/documents/plan/plan-mne.pdf"
+          : "/files/documents/plan/plan-eng.pdf",
     },
   ];
 
@@ -418,14 +466,14 @@ const Page = ({ page }) => {
   return (
     <div>
       <Head>
-        <title>{page.title}</title>
+        <title>Naši izvještaji i dokumenti</title>
       </Head>
       <Navigation />
       <Container>
         <div className={styles.container}>
           {isReportPage && (
             <div>
-              <h1 className={styles.title}>{page.title}</h1>
+              <h1 className={styles.title}>Naši izvještaji i dokumenti</h1>
               <div>
                 <h3 className={styles["reports-head"]}>
                   {locale === "sr"
@@ -440,7 +488,7 @@ const Page = ({ page }) => {
                       className={styles.report}
                       download
                     >
-                      {report.name}
+                      <p className={styles["report-name"]}>{report.name}</p>
                     </a>
                   ))}
                 </div>
@@ -457,7 +505,34 @@ const Page = ({ page }) => {
                       className={styles.report}
                       download
                     >
-                      {report.name}
+                      <div className={styles["report-image-container"]}>
+                        <Image
+                          src={report.image}
+                          width={report.width}
+                          height={report.height}
+                          alt={report.alt}
+                          objectFit="cover"
+                          className={styles["report-image"]}
+                        />
+                      </div>
+                      <p className={styles["report-name"]}>{report.name}</p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className={styles["reports-head"]}>
+                  {locale === "sr" ? "Dokumenti" : "Documents"}
+                </h3>
+                <div className={styles.reports}>
+                  {documents.map((document, index) => (
+                    <a
+                      key={index}
+                      href={document.link}
+                      className={styles.report}
+                      download
+                    >
+                      <p className={styles["report-name"]}>{document.name}</p>
                     </a>
                   ))}
                 </div>

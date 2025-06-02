@@ -132,14 +132,31 @@
   text-align: center;
   text-decoration: none;
   color: var(--cream-white);
-  transition: color 0.5s ease-in-out;
-  padding: 1rem 0;
-  background-color: #252525;
+  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
   display: inline-block;
+  height: fit-content;
 }
 
 .report:hover {
   color: var(--trans-pink);
+  transform: scale(1.025);
+}
+
+.report-image-container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.report-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.report-name {
+  background-color: #252525;
+  padding: 1rem 0;
 }
 
 .programs {
@@ -429,9 +446,6 @@
 }
 
 @media (max-width: 1440px) {
-  .container {
-    padding-top: 9.5rem;
-  }
 }
 
 @media (max-width: 1370px) {
@@ -500,6 +514,11 @@
   }
 
   .team-member:hover {
+    transform: scale(1);
+  }
+
+  .report:hover {
+    color: var(--cream-white);
     transform: scale(1);
   }
 }
@@ -623,6 +642,10 @@
     width: 100%;
   }
 
+  .title {
+    font-size: 2.5rem;
+  }
+
   .work-content {
     padding-top: 1rem;
   }
@@ -666,27 +689,23 @@
   }
 
   .reports-head {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 432px) {
-  .title {
-    font-size: 3rem;
-  }
 }
 
 @media (max-width: 428px) {
+  .title {
+    font-size: 2.3rem;
+  }
 }
 
 @media (max-width: 415px) {
 }
 
 @media (max-width: 376px) {
-  .title {
-    font-size: 2.7rem;
-  }
-
   .work-content p {
     font-size: 2.3rem;
   }
@@ -706,13 +725,13 @@
   }
 
   .reports-head {
-    font-size: 2.3rem;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 320px) {
   .title {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .content p {
@@ -728,7 +747,7 @@
   }
 
   .reports-head {
-    font-size: 2.1rem;
+    font-size: 1.3rem;
   }
 }
 

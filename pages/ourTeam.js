@@ -148,10 +148,18 @@ const OurTeam = () => {
   const router = useRouter();
   const { locale } = router;
   const [shuffledTeamMembers, setShuffledTeamMembers] = useState(teamMembers);
+  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
     setShuffledTeamMembers(shuffleArray(teamMembers));
   }, []);
+
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => ({
+      ...prev,
+      [index]: true,
+    }));
+  };
 
   return (
     <>
@@ -177,10 +185,13 @@ const OurTeam = () => {
                         alt="team-member"
                         width={member.width}
                         height={member.height}
-                        className={styles["team-image"]}
+                        className={`${styles["team-image"]} ${
+                          loadedImages[index] ? styles["image-loaded"] : ""
+                        }`}
                         priority={index < 2}
                         loading={index < 2 ? "eager" : "lazy"}
                         quality={90}
+                        onLoad={() => handleImageLoad(index)}
                       />
                     </div>
                     <div className={styles["team-member-content"]}>
@@ -218,10 +229,13 @@ const OurTeam = () => {
                         alt="team-member"
                         width={member.width}
                         height={member.height}
-                        className={styles["team-image"]}
+                        className={`${styles["team-image"]} ${
+                          loadedImages[index] ? styles["image-loaded"] : ""
+                        }`}
                         priority={index < 2}
                         loading={index < 2 ? "eager" : "lazy"}
                         quality={90}
+                        onLoad={() => handleImageLoad(index)}
                       />
                     </div>
                   </>
