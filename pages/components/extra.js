@@ -44,15 +44,15 @@ const Extra = () => {
             >
               <CountUp
                 start={viewPortEntered ? 0 : null}
-                end={50}
+                end={36}
                 duration={3}
                 className={styles["counter-number-blue"]}
               />
             </VisibilitySensor>
             <span className={styles["counter-text"]}>
               {locale === "sr"
-                ? "implementiranih projekata"
-                : "implemented projects"}
+                ? "implementiranih\nprojekata"
+                : "implemented\nprojects"}
             </span>
           </div>
           <div className={styles.counter}>
@@ -63,15 +63,15 @@ const Extra = () => {
             >
               <CountUp
                 start={viewPortEntered ? 0 : null}
-                end={68}
+                end={12}
                 duration={3}
                 className={styles["counter-number-pink"]}
               />
             </VisibilitySensor>
             <span className={styles["counter-text"]}>
               {locale === "sr"
-                ? "izradjenih publikacija"
-                : "published publications"}
+                ? "izdatih\npublikacija"
+                : "published\npublications"}
             </span>
           </div>
           <div className={styles.counter}>
@@ -82,14 +82,14 @@ const Extra = () => {
             >
               <CountUp
                 start={viewPortEntered ? 0 : null}
-                end={6}
+                end={8}
                 duration={3}
                 className={styles["counter-number-white"]}
               />
             </VisibilitySensor>
             <span className={styles["counter-text"]}>
               {" "}
-              {locale === "sr" ? "godina postojanja" : "published publications"}
+              {locale === "sr" ? "godina\npostojanja" : "years of\nexistence"}
             </span>
           </div>
           <div className={styles.counter}>
@@ -100,13 +100,13 @@ const Extra = () => {
             >
               <CountUp
                 start={viewPortEntered ? 0 : null}
-                end={30}
+                end={1041}
                 duration={3}
                 className={styles["counter-number-pink"]}
               />
             </VisibilitySensor>
             <span className={styles["counter-text"]}>
-              {locale === "sr" ? "aktivnih članova" : "active members"}
+              {locale === "sr" ? "pruženih\nservisa" : "provided\nservices"}
             </span>
           </div>
           <div className={styles.counter}>
@@ -117,13 +117,13 @@ const Extra = () => {
             >
               <CountUp
                 start={viewPortEntered ? 0 : null}
-                end={89}
+                end={252}
                 duration={3}
                 className={styles["counter-number-blue"]}
               />
             </VisibilitySensor>
             <span className={styles["counter-text"]}>
-              {locale === "sr" ? "lorem ipsum" : "sit amet"}
+              {locale === "sr" ? "reagovanja" : "public\nstatements"}
             </span>
           </div>
         </div>

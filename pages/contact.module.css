@@ -92,10 +92,6 @@
 }
 
 @media (max-width: 1920px) {
-  .container {
-    padding-top: 11rem;
-  }
-
   .container p {
     font-size: 1.1rem;
   }
@@ -133,9 +129,6 @@
 }
 
 @media (max-width: 1024px) {
-  .container {
-  }
-
   .container p {
     font-size: 1rem;
   }
@@ -165,14 +158,9 @@
 }
 
 @media (max-width: 840px) {
-  .container {
-  }
 }
 
 @media (max-width: 800px) {
-  .container {
-  }
-
   .contact-form button {
     padding: 0.9rem 1.8rem;
     font-size: 1.2rem;

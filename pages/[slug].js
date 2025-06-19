@@ -112,7 +112,7 @@ const teamMembers = [
   },
   {
     name: "Marko Vukčević",
-    pozicija: "Projektni asistent",
+    pozicija: "Projektni koordinator",
     role: "Project Assistant",
     bioMne:
       "Marko Vukčević je aktivista i novinar rođen 2000. godine u Podgorici. Student je treće godine osnovnih studija na Pravnom fakultetu Univerziteta Crne Gore. Dugogodišnji angažman u brojnim organizacijama koje se bave različitim društvenim temama uključujući jačanje lokalne kulturne scene, aktivizam mladih i teme tranzicione pravde, kao i bogato volonterkso iskustvo pri Spektri doveli su do zvaničnog pridruživanja Spektrinom timu na poziciji projektog asistenta.",
@@ -541,47 +541,125 @@ const Page = ({ page }) => {
           )}
           {isCommunityPage && (
             <div className={styles.programs}>
-              <div className={styles["program-text"]}>
-                <div className={styles.desc}>
-                  <h1 className={styles.title}>{page.title}</h1>
-                  <div
-                    className={styles.content}
-                    dangerouslySetInnerHTML={{ __html: page.content }}
-                  />
+              <h1 className={styles.title}>{page.title}</h1>
+              <div className={styles.desc}>
+                <p className={styles.introText}>
+                  S obzirom na izuzetnu važnost pitanja zdravstvene zaštite za
+                  zajednicu TIRV osoba, kroz ovaj program aktivno radimo na
+                  pozitivnim promjenama u ovoj oblasti. Kako u Crnoj Gori ne
+                  postoje posebne usluge za TIRV osobe, socijalne usluge koje
+                  Spektra nudi unutar ovog programa jedine su ove vrste u
+                  zemlji.
+                </p>
+                <div className={styles.programAims}>
+                  <p className={styles.programAimsTitle}>
+                    Ciljevi ovog programa su:{" "}
+                  </p>
+                  <ul className={styles.programAimsList}>
+                    <li>
+                      <p className={styles.programAimsItem}>
+                        jačanje servisa psiho-socijalne pomoći,
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programAimsItem}>
+                        povećavanje pristupa odgovarajućoj, visokokvalitetnoj,
+                        depatologizovanoj zdravstvenoj i socijalnoj zaštiti za
+                        TIRV osobe
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programAimsItem}>
+                        povećanje pristup obrazovanju i tržištu rada i zaštiti
+                        radnih prava.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
-                <div className={styles["program-coordinator"]}>
-                  <div className={styles["coordinator-img-container"]}>
-                    <Image
-                      src={teamMembers[4].image}
-                      width={teamMembers[4].width}
-                      height={teamMembers[4].height}
-                      alt={teamMembers[4].name}
-                      className={styles["coordinator-img"]}
-                    />
-                  </div>
-                  <div className={styles["coordinator-text"]}>
-                    <div>
-                      <h3 className={styles["coordinator-name"]}>
-                        {teamMembers[4].name}
-                      </h3>
-                      <p className={styles["coordinator-role"]}>
-                        {locale === "sr"
-                          ? teamMembers[4].pozicija
-                          : teamMembers[4].role}
+                <div className={styles.programHelp}>
+                  <p className={styles.programHelpTitle}>
+                    Kako ti, kao TIRV osobi, možemo biti od pomoći?
+                  </p>
+                  <p className={styles.programHelpText}>
+                    Jedan od naših ciljeva je i kontinuirano pružanje direktne
+                    pomoći i psihosocijalne podrške članovima/cama TIRV
+                    zajednice. Zato u okviru rada ovog programa organizujemo:
+                  </p>
+                  <ul className={styles.programHelpList}>
+                    <li>
+                      <p className={styles.programHelpItem}>
+                        grupe samopodrške isključivo za TIRV osobe;
                       </p>
+                    </li>
+                    <li>
+                      <p className={styles.programHelpItem}>
+                        individualno vršnjačko savjetovanje;
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programHelpItem}>
+                        psihosocijalnu podršku i pomoć u integraciji u društvo
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programHelpItem}>
+                        pomoć u pristupu psihološkoj pomoći, zdravstvenoj
+                        zaštiti, pri zapošljavanju, azilu i pravnim postupcima;
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programHelpItem}>
+                        pomoć u pristupu psihološkoj pomoći, zdravstvenoj
+                        zaštiti, pri zapošljavanju, azilu i pravnim postupcima;
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programHelpItem}>
+                        djelovanje u ulozi povjerljivog lica u slučajevima
+                        nasilja.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <p className={styles.programInfo}>
+                  Više informacija o tome kako izgleda sprovođenje ovih
+                  aktivnosti dostupno je na našim društvenim mrežama, ili
+                  kontaktiranjem asistentkinje Iskre.
+                </p>
+                <div className={styles["program-coordinators"]}>
+                  <div className={styles["program-coordinator"]}>
+                    <div className={styles["coordinator-img-container"]}>
+                      <Image
+                        src={teamMembers[4].image}
+                        width="250"
+                        height="250"
+                        alt={teamMembers[4].name}
+                        className={styles["coordinator-img"]}
+                        objectFit="cover"
+                        priority
+                      />
                     </div>
-                    <div>
-                      <p className={styles["coordinator-bio"]}>
-                        {locale === "sr"
-                          ? teamMembers[4].bioProgramMNE
-                          : teamMembers[4].bioProgramENG}
-                      </p>
-                    </div>
-                    <div className={styles["coordinator-contact"]}>
-                      <p>
-                        <MdOutlineEmail className={styles["contact-icon"]} />{" "}
-                        {teamMembers[4].email}
-                      </p>
+                    <div className={styles["coordinator-text"]}>
+                      <div>
+                        <h3 className={styles["coordinator-name"]}>
+                          {teamMembers[4].name}
+                        </h3>
+                        <p className={styles["coordinator-role"]}>
+                          {locale === "sr"
+                            ? teamMembers[4].pozicija
+                            : teamMembers[4].role}
+                        </p>
+                      </div>
+                      <div>
+                        <p className={styles["coordinator-bio"]}>
+                          {locale === "sr"
+                            ? teamMembers[4].bioProgramMNE
+                            : teamMembers[4].bioProgramENG}
+                        </p>
+                      </div>
+                      <div className={styles["coordinator-contact"]}>
+                        <p>{teamMembers[4].email}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -590,47 +668,176 @@ const Page = ({ page }) => {
           )}
           {isAdvocacyPage && (
             <div className={styles.programs}>
-              <div className={styles["program-text"]}>
-                <div className={styles.desc}>
-                  <h1 className={styles.title}>{page.title}</h1>
-                  <div
-                    className={styles.content}
-                    dangerouslySetInnerHTML={{ __html: page.content }}
-                  />
+              <h1 className={styles.title}>{page.title}</h1>
+              <div className={styles.descAdvocacy}>
+                <p className={styles.introTextAdvocacy}>
+                  Naš zagovarački program se temelji na principima inkluzije,
+                  ravnopravnosti i poštovanja ljudskih prava, s ciljem građenja
+                  društva u kojem svaka osoba može živjeti slobodno i bez straha
+                  od diskriminacije ili nasilja.
+                </p>
+                <div className={styles.programAimsAdvocacy}>
+                  <p className={styles.programAimsAdvocacyTitle}>
+                    Ciljevi ovog programa su:{" "}
+                  </p>
+                  <ul className={styles.programAimsAdvocacyList}>
+                    <li>
+                      <p className={styles.programAimsAdvocacyItem}>
+                        unapređenje ljudskih prava TIRV zajednice kroz
+                        unapređenje zakonodavnog okvira, nacionalnih strategija
+                        i politika;
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programAimsAdvocacyItem}>
+                        doprinos očuvanju demokratije kroz aktivno djelovanje u
+                        javnom prostoru.
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programAimsAdvocacyItem}>
+                        podizanje svijesti o izazovima sa kojima se suočava
+                        zajednica, kroz medijske kampanje i izdavanje
+                        edukativnih materijala, organizovanjem javnih kampanja i
+                        događaja;
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programAimsAdvocacyItem}>
+                        obuka profesionalaca iz različitih sektora, uključujući
+                        zdravstveni, pravni i obrazovni, kako bi se osigurala
+                        bolja informisanost i senzibilisanost;
+                      </p>
+                    </li>
+                    <li>
+                      <p className={styles.programAimsAdvocacyItem}>
+                        aktivna saradnja sa državnim institucijama, nevladinim
+                        organizacijama i međunarodnim partnerima u cilju što
+                        efektivnijeg postizanja ovih ciljeva.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
-                <div className={styles["program-coordinator"]}>
-                  <div className={styles["coordinator-img-container"]}>
-                    <Image
-                      src={teamMembers[3].image}
-                      width={teamMembers[3].width}
-                      height={teamMembers[3].height}
-                      alt={teamMembers[3].name}
-                      className={styles["coordinator-img"]}
-                    />
+                <div className={styles.programHelpAdvocacy}>
+                  <p className={styles.programHelpAdvocacyTitle}>
+                    Trenutno je rad ovog programa najviše usmjeren kampanji za
+                    pravno prepoznavanje roda tj. zagovaranje za usvajanje
+                    Zakona o pravnom prepoznavanju rodnog identiteta na osnovu
+                    samoodređenja.
+                  </p>
+                </div>
+                <div
+                  className={`${styles["program-coordinators"]} ${styles["program-coordinators-advocacy"]}`}
+                >
+                  <div
+                    className={`${styles["program-coordinator"]} ${styles["program-coordinator-advocacy"]}`}
+                  >
+                    <div className={styles["coordinator-img-container"]}>
+                      <Image
+                        src={teamMembers[0].image}
+                        width="250"
+                        height="250"
+                        alt={teamMembers[0].name}
+                        className={styles["coordinator-img"]}
+                      />
+                    </div>
+                    <div
+                      className={`${styles["coordinator-text"]} ${styles["coordinator-text-advocacy"]}`}
+                    >
+                      <div>
+                        <h3 className={styles["coordinator-name"]}>
+                          {teamMembers[0].name}
+                        </h3>
+                        <p className={styles["coordinator-role"]}>
+                          {locale === "sr"
+                            ? teamMembers[0].pozicija
+                            : teamMembers[0].role}
+                        </p>
+                      </div>
+                      <div>
+                        <p className={styles["coordinator-bio"]}>
+                          {locale === "sr"
+                            ? teamMembers[0].bioProgramMNE
+                            : teamMembers[0].bioProgramENG}
+                        </p>
+                      </div>
+                      <div className={styles["coordinator-contact"]}>
+                        <p>{teamMembers[0].email}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles["coordinator-text"]}>
-                    <div>
-                      <h3 className={styles["coordinator-name"]}>
-                        {teamMembers[3].name}
-                      </h3>
-                      <p className={styles["coordinator-role"]}>
-                        {locale === "sr"
-                          ? teamMembers[3].pozicija
-                          : teamMembers[3].role}
-                      </p>
+                  <div
+                    className={`${styles["program-coordinator"]} ${styles["program-coordinator-advocacy"]}`}
+                  >
+                    <div className={styles["coordinator-img-container"]}>
+                      <Image
+                        src={teamMembers[3].image}
+                        width={teamMembers[3].width}
+                        height={teamMembers[3].height}
+                        alt={teamMembers[3].name}
+                        className={styles["coordinator-img"]}
+                      />
                     </div>
-                    <div>
-                      <p className={styles["coordinator-bio"]}>
-                        {locale === "sr"
-                          ? teamMembers[3].bioProgramMNE
-                          : teamMembers[3].bioProgramENG}
-                      </p>
+                    <div
+                      className={`${styles["coordinator-text"]} ${styles["coordinator-text-advocacy"]}`}
+                    >
+                      <div>
+                        <h3 className={styles["coordinator-name"]}>
+                          {teamMembers[3].name}
+                        </h3>
+                        <p className={styles["coordinator-role"]}>
+                          {locale === "sr"
+                            ? teamMembers[3].pozicija
+                            : teamMembers[3].role}
+                        </p>
+                      </div>
+                      <div>
+                        <p className={styles["coordinator-bio"]}>
+                          {locale === "sr"
+                            ? teamMembers[3].bioProgramMNE
+                            : teamMembers[3].bioProgramENG}
+                        </p>
+                      </div>
+                      <div className={styles["coordinator-contact"]}>
+                        <p>{teamMembers[3].email}</p>
+                      </div>
                     </div>
-                    <div className={styles["coordinator-contact"]}>
-                      <p>
-                        <MdOutlineEmail className={styles["contact-icon"]} />{" "}
-                        {teamMembers[3].email}
-                      </p>
+                  </div>
+                  <div
+                    className={`${styles["program-coordinator"]} ${styles["program-coordinator-advocacy"]}`}
+                  >
+                    <div className={styles["coordinator-img-container"]}>
+                      <Image
+                        src={teamMembers[6].image}
+                        width="250"
+                        height="250"
+                        alt={teamMembers[6].name}
+                        className={styles["coordinator-img"]}
+                      />
+                    </div>
+                    <div
+                      className={`${styles["coordinator-text"]} ${styles["coordinator-text-advocacy"]}`}
+                    >
+                      <div>
+                        <h3 className={styles["coordinator-name"]}>
+                          {teamMembers[6].name}
+                        </h3>
+                        <p className={styles["coordinator-role"]}>
+                          {locale === "sr"
+                            ? teamMembers[6].pozicija
+                            : teamMembers[6].role}
+                        </p>
+                      </div>
+                      <div>
+                        <p className={styles["coordinator-bio"]}>
+                          {locale === "sr"
+                            ? teamMembers[6].bioProgramMNE
+                            : teamMembers[6].bioProgramENG}
+                        </p>
+                      </div>
+                      <div className={styles["coordinator-contact"]}>
+                        <p>{teamMembers[6].email}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -639,47 +846,180 @@ const Page = ({ page }) => {
           )}
           {isFeminismPage && (
             <div className={styles.programs}>
-              <div className={styles["program-text"]}>
-                <div className={styles.desc}>
-                  <h1 className={styles.title}>{page.title}</h1>
-                  <div
-                    className={styles.content}
-                    dangerouslySetInnerHTML={{ __html: page.content }}
-                  />
+              <h1 className={styles.title}>{page.title}</h1>
+              <div className={styles.desc}>
+                <p className={styles.introText}>
+                  Feministički program prepoznaje površno, formalističko, i
+                  heteronormativno tretiranje feminizma i feminističkih principa
+                  u formalnom i neformalnom obrazovanju, što za posljedicu ima
+                  neprestano tretiranje feminizma i rodne ravnopravnosti kao
+                  isključivo ženskog pitanja. Ovo sprečava suštinsku i
+                  zajedničku borbu protiv patrijarhalnog sistema unutar
+                  opresivnog kapitalističkog sistema, i samim tim omogućava
+                  njihov opstanak.{" "}
+                </p>
+                <div
+                  className={`${styles.programAims} ${styles.programAimsFeminism}`}
+                >
+                  <p className={styles.programAimsTitle}>
+                    Ciljevi ovog programa su:{" "}
+                  </p>
+                  <ul className={styles.programAimsList}>
+                    <li>
+                      povećana zastupljenost neformalnog feminističkog
+                      obrazovanja;
+                    </li>
+                    <li>vidljivost feminističkih vrijednosti i principa;</li>
+                    <li>
+                      povećan stepen razumijevanja i vidljivosti TIRV zajednice;
+                    </li>
+                    <li>
+                      jačanje kapaciteta organizacije za aktivno, efikasno i
+                      profesionalno djelovanje;
+                    </li>
+                    <li>njegovanje i jačanje feminističkog savezništva.</li>
+                  </ul>
                 </div>
-                <div className={styles["program-coordinator"]}>
-                  <div className={styles["coordinator-img-container"]}>
-                    <Image
-                      src={teamMembers[2].image}
-                      width={teamMembers[2].width}
-                      height={teamMembers[2].height}
-                      alt={teamMembers[2].name}
-                      className={styles["coordinator-img"]}
-                    />
+                <p className={styles.programInfoFeminism}>
+                  Ovaj program pomno prati aktuelne društvene trendove, i
+                  organizovanjem različitih radionica, festivala, i brojnih
+                  drugih interaktivnih multimedijalnih događaja nudi ideje kako
+                  im pristupiti. U okviru ovog programa koristimo različite
+                  kanale kako bi se ključne feminističke teme sa margine
+                  proširile ka centru, postale opšteprožimajuće i ostvarile svoj
+                  preobražujući potencijal pri kreiranju društva i toga kako u
+                  njemu živimo, radimo, brinemo i volimo. Zato unutar ovog
+                  programa aktivno djeluje i tim za komunikacije.
+                </p>
+                <div className={styles.programKomsTeam}>
+                  <p className={styles.programKomsTeamTitle}>RAD KOMS TIMA</p>
+                  <p className={styles.programKomsTeamText}>
+                    Kroz feministički program i upotrebu kreativnih metoda i
+                    inovativnih pristupa radu kombinujemo feminističko znanje,
+                    umjetnički senzibilitet, i tehnologiju. Stoga nam je važno
+                    da ostanemo što aktivniji i vidljiviji putem brojnih
+                    dostupnih platformi, bilo kroz tradicionalne medije ili
+                    društvene mreže (koje su naročito važne, budući da su ove
+                    teme često izostavljene iz medijskog diskursa, ili se ne
+                    prenose vjerodostojno). Snalaženje kroz prepreke algoritama,
+                    nalaženje zanimljivih načina da feministički sadržaj
+                    prilagodimo tako da se što veći broj ljudi može sa njim
+                    poistovjetiti – to osigurava rad tima za komunikacije unutar
+                    ovog programa.
+                  </p>
+                </div>
+                <div
+                  className={`${styles["program-coordinators"]} ${styles["program-coordinators-feminism"]}`}
+                >
+                  <div
+                    className={`${styles["program-coordinator"]} ${styles["program-coordinator-feminism"]}`}
+                  >
+                    <div className={styles["coordinator-img-container"]}>
+                      <Image
+                        src={teamMembers[2].image}
+                        width={teamMembers[2].width}
+                        height={teamMembers[2].height}
+                        alt={teamMembers[2].name}
+                        className={styles["coordinator-img"]}
+                      />
+                    </div>
+                    <div
+                      className={`${styles["coordinator-text"]} ${styles["coordinator-text-feminism"]}`}
+                    >
+                      <div>
+                        <h3 className={styles["coordinator-name"]}>
+                          {teamMembers[2].name}
+                        </h3>
+                        <p className={styles["coordinator-role"]}>
+                          {locale === "sr"
+                            ? teamMembers[2].pozicija
+                            : teamMembers[2].role}
+                        </p>
+                      </div>
+                      <div>
+                        <p className={styles["coordinator-bio"]}>
+                          {locale === "sr"
+                            ? teamMembers[2].bioProgramMNE
+                            : teamMembers[2].bioProgramENG}
+                        </p>
+                      </div>
+                      <div className={styles["coordinator-contact"]}>
+                        <p>{teamMembers[2].email}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles["coordinator-text"]}>
-                    <div>
-                      <h3 className={styles["coordinator-name"]}>
-                        {teamMembers[2].name}
-                      </h3>
-                      <p className={styles["coordinator-role"]}>
-                        {locale === "sr"
-                          ? teamMembers[2].pozicija
-                          : teamMembers[2].role}
-                      </p>
+                  <div
+                    className={`${styles["program-coordinator"]} ${styles["program-coordinator-feminism"]}`}
+                  >
+                    <div className={styles["coordinator-img-container"]}>
+                      <Image
+                        src={teamMembers[1].image}
+                        width={teamMembers[1].width}
+                        height={teamMembers[1].height}
+                        alt={teamMembers[1].name}
+                        className={styles["coordinator-img"]}
+                      />
                     </div>
-                    <div>
-                      <p className={styles["coordinator-bio"]}>
-                        {locale === "sr"
-                          ? teamMembers[2].bioProgramMNE
-                          : teamMembers[2].bioProgramENG}
-                      </p>
+                    <div
+                      className={`${styles["coordinator-text"]} ${styles["coordinator-text-feminism"]}`}
+                    >
+                      <div>
+                        <h3 className={styles["coordinator-name"]}>
+                          {teamMembers[1].name}
+                        </h3>
+                        <p className={styles["coordinator-role"]}>
+                          {locale === "sr"
+                            ? teamMembers[1].pozicija
+                            : teamMembers[1].role}
+                        </p>
+                      </div>
+                      <div>
+                        <p className={styles["coordinator-bio"]}>
+                          {locale === "sr"
+                            ? teamMembers[1].bioProgramMNE
+                            : teamMembers[1].bioProgramENG}
+                        </p>
+                      </div>
+                      <div className={styles["coordinator-contact"]}>
+                        <p>{teamMembers[1].email}</p>
+                      </div>
                     </div>
-                    <div className={styles["coordinator-contact"]}>
-                      <p>
-                        <MdOutlineEmail className={styles["contact-icon"]} />{" "}
-                        {teamMembers[2].email}
-                      </p>
+                  </div>
+                  <div
+                    className={`${styles["program-coordinator"]} ${styles["program-coordinator-feminism"]}`}
+                  >
+                    <div className={styles["coordinator-img-container"]}>
+                      <Image
+                        src={teamMembers[5].image}
+                        width={teamMembers[5].width}
+                        height={teamMembers[5].height}
+                        alt={teamMembers[5].name}
+                        className={styles["coordinator-img"]}
+                      />
+                    </div>
+                    <div
+                      className={`${styles["coordinator-text"]} ${styles["coordinator-text-feminism"]}`}
+                    >
+                      <div>
+                        <h3 className={styles["coordinator-name"]}>
+                          {teamMembers[5].name}
+                        </h3>
+                        <p className={styles["coordinator-role"]}>
+                          {locale === "sr"
+                            ? teamMembers[5].pozicija
+                            : teamMembers[5].role}
+                        </p>
+                      </div>
+                      <div>
+                        <p className={styles["coordinator-bio"]}>
+                          {locale === "sr"
+                            ? teamMembers[5].bioProgramMNE
+                            : teamMembers[5].bioProgramENG}
+                        </p>
+                      </div>
+                      <div className={styles["coordinator-contact"]}>
+                        <p>{teamMembers[5].email}</p>
+                      </div>
                     </div>
                   </div>
                 </div>

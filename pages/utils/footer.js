@@ -87,13 +87,13 @@ const Footer = () => {
           <span className={styles["footer-top-right-head"]}>KONTAKT</span>
           <div className={styles["footer-top-right-contact-info"]}>
             <p className={styles["footer-top-right-contact-info-phone"]}>
-              +382 67 135 205
+              +382 20 331 437
             </p>
             <p className={styles["footer-top-right-contact-info-working-time"]}>
               {locale === "sr" ? "09h - 16h" : "09am - 04pm"}
             </p>
             <p className={styles["footer-top-right-contact-info-email"]}>
-              asocijacija.spektra@gmail.com
+              info@asocijacijaspektra.org
             </p>
           </div>
         </div>
