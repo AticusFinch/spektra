@@ -286,11 +286,7 @@ const Navigation = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        href={
-                          locale === "sr" ? "/nasi-izvjestaji" : "/our-reports"
-                        }
-                      >
+                      <Link href="/reports">
                         {locale === "sr" ? "Naši izvještaji" : "Our reports"}
                       </Link>
                     </li>
@@ -309,39 +305,21 @@ const Navigation = () => {
                 <div className={styles["dropdown-container"]}>
                   <ul className={styles["dropdown"]}>
                     <li>
-                      <Link
-                        href={
-                          locale === "sr"
-                            ? "/program-za-rad-sa-zajednicom"
-                            : "/community-work-program"
-                        }
-                      >
+                      <Link href="/programs/community">
                         {locale === "sr"
                           ? "Program za rad sa zajednicom"
                           : "Community work program"}
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        href={
-                          locale === "sr"
-                            ? "/program-zagovaranja"
-                            : "/advocacy-program"
-                        }
-                      >
+                      <Link href="/programs/advocacy">
                         {locale === "sr"
                           ? "Program zagovaranja"
                           : "Advocacy program"}
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        href={
-                          locale === "sr"
-                            ? "/feministicki-program"
-                            : "/feminism-program"
-                        }
-                      >
+                      <Link href="/programs/feminism">
                         {locale === "sr"
                           ? "Feministički program"
                           : "Feminism program"}

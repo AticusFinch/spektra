@@ -91,27 +91,25 @@ const Report = () => {
         <div className={styles.report}>
           <h1 className={styles["report-head"]}>
             {locale === "sr"
-              ? "Javi nam se ukoliko ti je potrebna bilo koja vrsta podrške!"
-              : "Contact us if you need any kind of support!"}
+              ? "NISI SAM/A – TU SMO ZA TEBE!"
+              : "YOU ARE NOT ALONE – WE ARE HERE FOR YOU!"}
           </h1>
           <div className={styles.content}>
             <div className={styles["report-info"]}>
               <p>
-                Svjesni/e smo da se nažalost trans i rodno varijantne osobe
-                često suočavaju sa nasiljem i diskriminacijom u različitim
-                aspektima života. Asocijacija Spektra ti može pružit podršku i
-                siguran prostor ukoliko si pogođen/a bilo kojim vidom nasilja.
+                {locale === "sr"
+                  ? "Svjesni/e smo da se nažalost trans i rodno varijantne osobe često suočavaju sa nasiljem i diskriminacijom u različitim aspektima života. Asocijacija Spektra ti može pružiti podršku i siguran prostor ukoliko si pogođen/a bilo kojim vidom nasilja."
+                  : "We are aware that trans and gender variant people often experience violence and discrimination in various aspects of life. Asocijacija Spektra can provide support and a safe space if you have been subjected to any form of violence."}
               </p>
               <p>
-                Ako si doživjeo/la bilo koji vid nasilja ili diskriminacije zbog
-                svog rodnog identiteta ili izražavanja, želimo da znaš da ne
-                moraš prolaziti sam/a kroz to iskustvo.
+                {locale === "sr"
+                  ? "Ako si doživjeo/la nasilje ili diskriminaciju zbog svog rodnog identiteta ili izražavanja, želimo da znaš – ne moraš prolaziti kroz to sam/a."
+                  : "If you have experienced violence or discrimination based on your gender identity or expression, we want you to know – you don't have to go through it alone."}
               </p>
               <p>
-                Naš tim ti može pružiti vršnjačku podršku u sigurnom prostoru,
-                pomoći u procesu formalne prijave slučaja, povezati te sa
-                besplatnom pravnom podrškom, psihološkom pomoći i drugim
-                resursima koji ti mogu biti od koristi.
+                {locale === "sr"
+                  ? "Spektra ti nudi siguran prostor i različite vrste podrške"
+                  : "Spektra offers a safe space and various types of support"}
               </p>
             </div>
             <div className={styles["form-container"]}>
@@ -183,7 +181,7 @@ const Report = () => {
                   <div className={styles["form-group"]}>
                     <label htmlFor="supportType">
                       {locale === "sr"
-                        ? " Da li nam se obraćaš sa ciljem da te podržimo u procesu prijavljivanja nasilja institucijama ili u cilju dobijanja vršnjačke / profesionala psihološka podrška? Potpuno je u redu ukoliko još uvijek nijesi siguran/a:"
+                        ? " Da li nam se obraćaš sa ciljem da te podržimo u procesu prijavljivanja nasilja institucijama ili u cilju dobijanja vršnjačke / profesionalne psihološke podrške? Potpuno je u redu ukoliko još uvijek nijesi siguran/a:"
                         : "Are you contacting us for support in the process of reporting violence to institutions or in order to obtain peer / professional psychological support? It is completely fine if you are still unsure:"}
                     </label>
                     <textarea

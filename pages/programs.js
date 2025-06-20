@@ -34,24 +34,22 @@ const Programs = () => {
           </div>
           <div className={styles["programs-content"]}>
             <p className={styles.intro}>
-              Spektra trenutno djeluje kroz 3 programa:{" "}
+              {locale === "sr"
+                ? "Spektra trenutno djeluje kroz 3 programa:"
+                : "Spektra currently works through 3 programs:"}
               <b>
-                Program javnog zagovaranja, program za rad sa zajednicom i
-                feministički program.
+                {locale === "sr"
+                  ? "Program javnog zagovaranja, program za rad sa zajednicom i feministički program."
+                  : "Advocacy program, community work program and feminism program."}
               </b>
             </p>
             <p className={styles.intro}>
-              Ovdje možeš saznati nešto više o ovim programima.
+              {locale === "sr"
+                ? "Ovdje možeš saznati nešto više o ovim programima."
+                : "Here you can find out more about these programs."}
             </p>
             <div className={styles["grid-cards-container"]}>
-              <Link
-                href={
-                  locale === "sr"
-                    ? "/program-za-rad-sa-zajednicom"
-                    : "/community-work-program"
-                }
-                className={styles["grid-card"]}
-              >
+              <Link href="/programs/community" className={styles["grid-card"]}>
                 <div className={styles["card-overlay"]}>
                   <IoEnterOutline />
                 </div>
@@ -69,7 +67,7 @@ const Programs = () => {
                     <span className={styles["card-head"]}>
                       {locale === "sr"
                         ? "Program za rad sa zajednicom"
-                        : "Community work program"}
+                        : "Community Work Program"}
                     </span>
                   </div>
                   <div className={styles["card-text"]}>
@@ -88,12 +86,7 @@ const Programs = () => {
                   <IoEnterOutline />
                 </div>
               </Link>
-              <Link
-                href={
-                  locale === "sr" ? "/program-zagovaranja" : "/advocacy-program"
-                }
-                className={styles["grid-card"]}
-              >
+              <Link href="/programs/advocacy" className={styles["grid-card"]}>
                 <div className={styles["card-overlay"]}>
                   <IoEnterOutline />
                 </div>
@@ -111,7 +104,7 @@ const Programs = () => {
                     <span className={styles["card-head"]}>
                       {locale === "sr"
                         ? "Program zagovaranja"
-                        : "Advocacy program"}
+                        : "Advocacy Program"}
                     </span>
                   </div>
                   <div className={styles["card-text"]}>
@@ -131,14 +124,7 @@ const Programs = () => {
                   <IoEnterOutline />
                 </div>
               </Link>
-              <Link
-                href={
-                  locale === "sr"
-                    ? "/feministicki-program"
-                    : "/feminism-program"
-                }
-                className={styles["grid-card"]}
-              >
+              <Link href="/programs/feminism" className={styles["grid-card"]}>
                 <div className={styles["card-overlay"]}>
                   <IoEnterOutline />
                 </div>
@@ -156,7 +142,7 @@ const Programs = () => {
                     <span className={styles["card-head"]}>
                       {locale === "sr"
                         ? "Feministički program"
-                        : "Feminism program"}
+                        : "Feminism Program"}
                     </span>
                   </div>
                   <div className={styles["card-text"]}>
