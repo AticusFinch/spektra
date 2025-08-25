@@ -6,7 +6,7 @@ import Navigation from "./utils/navigation";
 import Container from "./utils/container";
 import Image from "next/image";
 
-import styles from "./pages.module.css";
+import styles from "./reports.module.css";
 
 const Page = () => {
   const router = useRouter();

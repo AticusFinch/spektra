@@ -55,7 +55,7 @@ const OurTeam = () => {
                         width="300"
                         height="300"
                         className={styles["team-image"]}
-                        objectFit="cover"
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
                     <div className={styles["team-member-content"]}>
@@ -94,7 +94,7 @@ const OurTeam = () => {
                         width="300"
                         height="300"
                         className={styles["team-image"]}
-                        objectFit="cover"
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
                   </>

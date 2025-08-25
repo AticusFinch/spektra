@@ -1,0 +1,942 @@
+/* Common gradient text styles */
+.gradient-text {
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Title styles */
+.title {
+  font-weight: 900;
+  font-size: 10rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.title {
+  composes: gradient-text;
+}
+
+.program {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.introTextAdvocacy,
+.introTextCommunity,
+.introTextFeminism,
+.programInfoTextFeminism,
+.teamText {
+  font-size: 3rem;
+  line-height: 1.5;
+  margin-bottom: 5rem;
+}
+
+.programAimsAdvocacy,
+.programAimsCommunity,
+.programAimsFeminism {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+
+.programAimsAdvocacyTitle,
+.programAimsTitleCommunity,
+.programAimsTitleFeminism {
+  font-size: 4rem;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  color: var(--dark-grey);
+  text-transform: uppercase;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  margin-bottom: 1rem;
+}
+
+.programAimsAdvocacyList,
+.programAimsListCommunity,
+.programAimsListFeminism {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.programAimsAdvocacyItem,
+.programAimsItemCommunity,
+.programHelpItemCommunity,
+.programAimsItemFeminism {
+  font-size: 2.5rem;
+  line-height: 1.5;
+  margin-bottom: 0rem;
+  padding: 2rem;
+  background-color: #33333373;
+  height: 100%;
+  display: flex;
+  gap: 3rem;
+}
+
+.programAimsAdvocacyItemNumber,
+.programAimsItemNumberCommunity,
+.programHelpItemNumberCommunity,
+.programAimsItemNumberFeminism {
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--trans-pink);
+  line-height: 1;
+}
+
+.programHelpAdvocacy,
+.programHelpCommunity {
+  margin-top: 2rem;
+}
+
+.programHelpAdvocacyTitle,
+.programHelpTitleCommunity {
+  font-size: 3rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.programCoordinatorsContainer {
+  width: 100%;
+  margin: 0 auto;
+  background: #33333373;
+  padding: 3rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.programHelpTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.programHelpTitleCommunity {
+  font-size: 5rem;
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.programHelpTextCommunity {
+  font-size: 3rem;
+  line-height: 1;
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  padding: 2rem;
+  color: var(--dark-grey);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.programHelpListCommunity {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.programHelpItemCommunity {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 0rem;
+  background-color: #33333373;
+}
+
+.teamTitle {
+  font-size: 4rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 700;
+  padding: 2rem;
+  color: var(--dark-grey);
+}
+
+.teamText {
+  margin-bottom: 1rem;
+}
+
+.program-coordinators,
+.programCoordinators {
+  display: flex;
+  gap: 2rem;
+  height: fit-content;
+  width: fit-content;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.programInfoCommunity,
+.programCoordinatorsTitle {
+  font-size: 5rem;
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.program-coordinator,
+.programCoordinator {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.coordinatorImgContainer {
+  max-width: 100%;
+  height: 100%;
+}
+
+.coordinatorImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coordinatorText {
+  padding: 1rem;
+}
+
+.coordinatorName {
+  font-size: 3rem;
+  margin-bottom: 0.2rem;
+}
+
+.coordinatorContact {
+  font-size: 1.8rem;
+  margin-top: 0.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 2560px) {
+  .title {
+    font-size: 8rem;
+  }
+
+  .introTextAdvocacy,
+  .introTextCommunity,
+  .introTextFeminism,
+  .programInfoTextFeminism,
+  .teamText {
+    font-size: 2.5rem;
+  }
+
+  .programAimsAdvocacyTitle,
+  .programAimsTitleCommunity,
+  .programAimsTitleFeminism {
+    font-size: 3rem;
+  }
+
+  .programAimsAdvocacyList,
+  .programAimsListCommunity,
+  .programAimsListFeminism {
+    gap: 1rem;
+  }
+
+  .programAimsAdvocacyItem,
+  .programAimsItemCommunity,
+  .programHelpItemCommunity,
+  .programAimsItemFeminism {
+    font-size: 2rem;
+  }
+
+  .programAimsAdvocacyItemNumber,
+  .programAimsItemNumberCommunity,
+  .programHelpItemNumberCommunity,
+  .programAimsItemNumberFeminism {
+    font-size: 4rem;
+  }
+
+  .programHelpAdvocacyTitle,
+  .programHelpTitleCommunity {
+    font-size: 2.5rem;
+  }
+
+  .programHelpTextCommunity {
+    font-size: 2.5rem;
+  }
+
+  .programHelpListCommunity {
+    gap: 1rem;
+  }
+
+  .programCoordinatorsContainer {
+    padding: 2rem;
+  }
+
+  .programHelpTextContainer {
+    margin-bottom: 2rem;
+  }
+
+  .programHelpItemCommunity {
+    font-size: 2rem;
+  }
+
+  .teamTitle {
+    font-size: 3.5rem;
+  }
+
+  .teamText {
+    margin-bottom: 1rem;
+  }
+
+  .program-coordinators,
+  .programCoordinators {
+    gap: 1rem;
+  }
+
+  .programInfoCommunity,
+  .programCoordinatorsTitle {
+    font-size: 3.5rem;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .coordinatorName {
+    font-size: 2.5rem;
+  }
+
+  .coordinatorContact {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 2240px) {
+  .title {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .introTextAdvocacy,
+  .introTextCommunity,
+  .introTextFeminism,
+  .programInfoTextFeminism,
+  .teamText {
+    font-size: 2rem;
+  }
+
+  .programAimsAdvocacyTitle,
+  .programAimsTitleCommunity,
+  .programAimsTitleFeminism {
+    font-size: 2.5rem;
+  }
+
+  .programAimsAdvocacyList,
+  .programAimsListCommunity,
+  .programAimsListFeminism {
+    gap: 1rem;
+  }
+
+  .programAimsAdvocacyItem,
+  .programAimsItemCommunity,
+  .programHelpItemCommunity,
+  .programAimsItemFeminism {
+    font-size: 1.5rem;
+    gap: 2rem;
+  }
+
+  .programAimsAdvocacyItemNumber,
+  .programAimsItemNumberCommunity,
+  .programHelpItemNumberCommunity,
+  .programAimsItemNumberFeminism {
+    font-size: 4rem;
+  }
+
+  .programHelpAdvocacyTitle,
+  .programHelpTitleCommunity {
+    font-size: 2rem;
+  }
+
+  .programHelpTextCommunity {
+    font-size: 2rem;
+  }
+
+  .programHelpListCommunity {
+    gap: 1rem;
+  }
+
+  .programCoordinatorsContainer {
+    padding: 2rem;
+  }
+
+  .programHelpTextContainer {
+    margin-bottom: 2rem;
+  }
+
+  .programHelpItemCommunity {
+    font-size: 1.5rem;
+  }
+
+  .teamTitle {
+    font-size: 3rem;
+  }
+
+  .teamText {
+    margin-bottom: 1rem;
+  }
+
+  .program-coordinators,
+  .programCoordinators {
+    gap: 1rem;
+  }
+
+  .programInfoCommunity,
+  .programCoordinatorsTitle {
+    font-size: 3rem;
+  }
+
+  .program-coordinator,
+  .programCoordinator {
+    gap: 1rem;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .coordinatorName {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1920px) {
+  .title {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .coordinatorName {
+    font-size: 1.5rem;
+  }
+
+  .coordinatorContact {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1680px) {
+  .program {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .introTextAdvocacy,
+  .introTextCommunity,
+  .introTextFeminism,
+  .programInfoTextFeminism,
+  .teamText {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+  }
+
+  .programAimsAdvocacy,
+  .programAimsCommunity,
+  .programAimsFeminism {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+
+  .programAimsAdvocacyTitle,
+  .programAimsTitleCommunity,
+  .programAimsTitleFeminism {
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+    margin-bottom: 1rem;
+  }
+
+  .programAimsAdvocacyList,
+  .programAimsListCommunity,
+  .programAimsListFeminism {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .programAimsAdvocacyItem,
+  .programAimsItemCommunity,
+  .programHelpItemCommunity,
+  .programAimsItemFeminism {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #33333373;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .programAimsAdvocacyItemNumber,
+  .programAimsItemNumberCommunity,
+  .programHelpItemNumberCommunity,
+  .programAimsItemNumberFeminism {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--trans-pink);
+    line-height: 1;
+  }
+
+  .programHelpAdvocacy,
+  .programHelpCommunity {
+    margin-top: 1rem;
+  }
+
+  .programHelpAdvocacyTitle,
+  .programHelpTitleCommunity {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .programCoordinatorsContainer {
+    width: 100%;
+    margin: 0 auto;
+    background: #33333373;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .programHelpTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .programHelpTitleCommunity {
+    font-size: 3rem;
+    background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .programHelpTextCommunity {
+    font-size: 1.2rem;
+    line-height: 1;
+    background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+    padding: 1rem;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .programHelpListCommunity {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .programHelpItemCommunity {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    background-color: #33333373;
+  }
+
+  .teamTitle {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    padding: 1rem;
+    color: var(--dark-grey);
+  }
+
+  .teamText {
+    margin-bottom: 0.5rem;
+  }
+
+  .program-coordinators,
+  .programCoordinators {
+    display: flex;
+    gap: 0.5rem;
+    height: fit-content;
+    width: fit-content;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .programInfoCommunity,
+  .programCoordinatorsTitle {
+    font-size: 2.8rem;
+    background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .program-coordinator,
+  .programCoordinator {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .coordinatorImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .coordinatorText {
+    padding: 0.5rem;
+  }
+
+  .coordinatorName {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .coordinatorContact {
+    font-size: 0.8rem;
+    margin-top: 0.2em;
+  }
+}
+
+@media (max-width: 1600px) {
+  .programInfoCommunity,
+  .programCoordinatorsTitle {
+    font-size: 2.5rem;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .coordinatorName {
+    font-size: 1.2rem;
+  }
+
+  .coordinatorContact {
+    font-size: 0.7rem;
+    margin-top: 0.2em;
+  }
+}
+
+@media (max-width: 1440px) {
+  .programInfoCommunity,
+  .programCoordinatorsTitle {
+    font-size: 3rem;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1370px) {
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .coordinatorName {
+    font-size: 1rem;
+  }
+
+  .coordinatorContact {
+    font-size: 0.7rem;
+    margin-top: 0.2em;
+  }
+}
+
+@media (max-width: 1280px) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+  .programInfoCommunity,
+  .programCoordinatorsTitle {
+    font-size: 2.5rem;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .coordinatorName {
+    font-size: 0.8rem;
+  }
+
+  .coordinatorContact {
+    font-size: 0.6rem;
+    margin-top: 0.2em;
+  }
+}
+
+@media (max-width: 840px) {
+  .programAimsAdvocacy,
+  .programAimsCommunity,
+  .programAimsFeminism {
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+
+  .programCoordinatorsContainer {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .program-coordinator,
+  .programCoordinator {
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .coordinatorName {
+    font-size: 1rem;
+  }
+
+  .introTextAdvocacy,
+  .introTextCommunity,
+  .introTextFeminism,
+  .programInfoTextFeminism,
+  .teamText {
+    font-size: 1.3rem;
+  }
+
+  .programAimsAdvocacyTitle,
+  .programAimsTitleCommunity,
+  .programAimsTitleFeminism {
+    font-size: 1.5rem;
+  }
+
+  .programAimsAdvocacyList,
+  .programAimsListCommunity,
+  .programAimsListFeminism {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .programHelpListCommunity {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 601px) {
+  .title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 485px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .introTextAdvocacy,
+  .introTextCommunity,
+  .introTextFeminism,
+  .programInfoTextFeminism,
+  .teamText {
+    font-size: 1rem;
+  }
+
+  .programAimsAdvocacyTitle,
+  .programAimsTitleCommunity,
+  .programAimsTitleFeminism {
+    font-size: 1.4rem;
+  }
+
+  .programAimsAdvocacyList,
+  .programAimsListCommunity,
+  .programAimsListFeminism {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .programAimsAdvocacyItem,
+  .programAimsItemCommunity,
+  .programHelpItemCommunity,
+  .programAimsItemFeminism {
+    font-size: 1rem;
+  }
+
+  .programAimsAdvocacy,
+  .programAimsCommunity,
+  .programAimsFeminism {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .programHelpAdvocacyTitle,
+  .programHelpTitleCommunity {
+    font-size: 1.4rem;
+  }
+
+  .programHelpTextCommunity {
+    font-size: 1.1rem;
+  }
+
+  .programHelpListCommunity {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .teamTitle {
+    font-size: 1.4rem;
+  }
+
+  .teamText {
+    font-size: 1.1rem;
+  }
+
+  .programCoordinatorsContainer {
+    gap: 3rem;
+    padding: 0;
+    background: none;
+  }
+
+  .programCoordinators {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .program-coordinator,
+  .programCoordinator {
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .programCoordinatorsTitle {
+    font-size: 1.8rem;
+  }
+
+  .programInfoCommunity {
+    font-size: 1.4rem;
+  }
+
+  .coordinatorImgContainer {
+    max-width: 100%;
+  }
+
+  .coordinatorText {
+    padding: 0;
+  }
+
+  .coordinatorName {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .coordinatorContact {
+    font-size: 0.8rem;
+  }
+
+  .programHelpAdvocacyTitle {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 428px) {
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .programAimsAdvocacyTitle,
+  .programAimsTitleCommunity,
+  .programAimsTitleFeminism {
+    font-size: 1.3rem;
+  }
+
+  .introTextAdvocacy,
+  .introTextCommunity,
+  .introTextFeminism,
+  .programInfoTextFeminism,
+  .teamText {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 386px) {
+  .programAimsAdvocacyTitle,
+  .programAimsTitleCommunity,
+  .programAimsTitleFeminism {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 2rem;
+  }
+}

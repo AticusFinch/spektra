@@ -109,10 +109,7 @@ const About = () => {
                   </span>
                 </div>
               </Link>
-              <Link
-                href={locale === "sr" ? "/nasi-izvjestaji" : "/our-reports"}
-                className={styles["grid-card"]}
-              >
+              <Link href="/reports" className={styles["grid-card"]}>
                 <div className={styles.icons}>
                   <IoNewspaperOutline className={styles.icon} />
                 </div>
