@@ -21,12 +21,19 @@ import { FiClock } from "react-icons/fi";
 const POSTS_PER_PAGE = 13;
 
 const formatDate = (dateString) => {
-  const options = { day: "2-digit", month: "2-digit", year: "numeric" };
-  return new Intl.DateTimeFormat("en-GB", options).format(new Date(dateString));
+  if (!dateString) return "";
+  try {
+    const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+    return new Intl.DateTimeFormat("en-GB", options).format(
+      new Date(dateString)
+    );
+  } catch (error) {
+    return dateString;
+  }
 };
 
-const News = (props) => {
-  const { news } = props;
+const Archive = (props) => {
+  const { archiveNews } = props;
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [totalPages, setTotalPages] = useState(0);
@@ -34,11 +41,28 @@ const News = (props) => {
   const router = useRouter();
   const { locale } = router;
 
-  const websiteTitle =
-    locale === "sr" ? "Asocijacija Spektra" : "Association Spectra";
-  const pageTitle = locale === "sr" ? "Vijesti" : "News";
+  // Use state to prevent hydration mismatch
+  const [mounted, setMounted] = useState(false);
+  const [localizedContent, setLocalizedContent] = useState({
+    websiteTitle: "Association Spectra",
+    pageTitle: "Archive",
+    searchPlaceholder: "search archive",
+    noNewsText: "No news in archive to display. ",
+  });
 
-  const filteredNews = news.filter((post) =>
+  useEffect(() => {
+    setMounted(true);
+    if (locale === "sr") {
+      setLocalizedContent({
+        websiteTitle: "Asocijacija Spektra",
+        pageTitle: "Arhiva",
+        searchPlaceholder: "pretraži arhivu",
+        noNewsText: "Nema vijesti u arhivi za prikaz. ",
+      });
+    }
+  }, [locale]);
+
+  const filteredNews = archiveNews.filter((post) =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -69,17 +93,37 @@ const News = (props) => {
     out: { opacity: 0 },
   };
 
+  // Don't render until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <div>
+        <Head>
+          <title>Archive | Association Spectra</title>
+        </Head>
+        <Navigation />
+        <Container>
+          <div className={styles.news}>
+            <div className={styles["news-head-container"]}>
+              <h1 className={styles["news-head"]}>Archive</h1>
+            </div>
+          </div>
+        </Container>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div>
       <Head>
-        <title>{`${pageTitle} | ${websiteTitle}`}</title>
+        <title>{`${localizedContent.pageTitle} | ${localizedContent.websiteTitle}`}</title>
       </Head>
       <Navigation />
       <Container>
         <div className={styles.news}>
           <div className={styles["news-head-container"]}>
             <h1 className={styles["news-head"]}>
-              {locale === "sr" ? "Vijesti" : "News"}
+              {localizedContent.pageTitle}
             </h1>
             <div className={styles["news-search"]}>
               <button className={styles["search-button"]}>
@@ -87,9 +131,7 @@ const News = (props) => {
               </button>
               <input
                 type="text"
-                placeholder={
-                  locale === "sr" ? "pretraži vijesti" : "search news"
-                }
+                placeholder={localizedContent.searchPlaceholder}
                 className={styles["search-input"]}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -111,24 +153,27 @@ const News = (props) => {
               displayedNews.map((post, databaseId) => (
                 <div key={databaseId} className={styles.post}>
                   <Link
-                    href={`/news/${post.slug}`}
+                    href={`/archive/${post.slug}`}
                     className={styles["post-link"]}
                   >
                     <div className={styles["post-image-container"]}>
-                      <Image
-                        src={
-                          post.featuredImage?.node?.sourceUrl ||
-                          "/path/to/default/image.jpg"
-                        }
-                        width={
-                          post.featuredImage?.node?.mediaDetails?.width || 700
-                        }
-                        height={
-                          post.featuredImage?.node?.mediaDetails?.height || 400
-                        }
-                        alt={post.featuredImage?.node?.altText || "Post image"}
-                        className={styles["post-image"]}
-                      />
+                      {post.featuredImage?.node?.sourceUrl ? (
+                        <Image
+                          src={post.featuredImage.node.sourceUrl}
+                          width={
+                            post.featuredImage.node.mediaDetails?.width || 700
+                          }
+                          height={
+                            post.featuredImage.node.mediaDetails?.height || 400
+                          }
+                          alt={post.featuredImage.node.altText || "Post image"}
+                          className={styles["post-image"]}
+                        />
+                      ) : (
+                        <div className={styles["post-image-placeholder"]}>
+                          <span>No Image</span>
+                        </div>
+                      )}
                     </div>
                     <div className={styles.content}>
                       <div className={styles["post-text"]}>
@@ -142,11 +187,11 @@ const News = (props) => {
                         <p
                           className={styles.excerpt}
                           dangerouslySetInnerHTML={{
-                            __html: post.excerpt,
+                            __html: post.excerpt || "",
                           }}
                         ></p>
                       </div>
-                      <div className={styles["post-footer"]}>
+                      {/* <div className={styles["post-footer"]}>
                         <div className={styles.categories}>
                           {post.categories.nodes.map((category) => (
                             <span
@@ -157,16 +202,14 @@ const News = (props) => {
                             </span>
                           ))}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </Link>
                 </div>
               ))
             ) : (
               <div className={styles["no-news"]}>
-                {locale === "sr"
-                  ? "Nema vijesti za prikaz. "
-                  : "No news to display. "}
+                {localizedContent.noNewsText}
                 <FaRegSadCry />
               </div>
             )}
@@ -208,52 +251,67 @@ const News = (props) => {
 };
 
 export async function getStaticProps({ locale }) {
-  const GET_NEWS = gql`
-    query GetVijesti($language: LanguageCodeFilterEnum!) {
-      vijesti(where: { language: $language }, last: 1500) {
-        nodes {
-          databaseId
-          slug
-          title
-          date
-          excerpt
-          content
-          categories {
-            nodes {
-              name
+  try {
+    // Fetch all news and filter on frontend for more flexibility
+    const GET_ALL_ARCHIVE_NEWS = gql`
+      query GetAllArchivePosts($language: LanguageCodeFilterEnum!) {
+        archivePosts(where: { language: $language }, last: 2000) {
+          nodes {
+            databaseId
+            slug
+            title
+            date
+            excerpt
+            content
+            # categories {
+            #   nodes {
+            #     name
+            #   }
+            # }
+            language {
+              code
+              locale
             }
-          }
-          language {
-            code
-            locale
-          }
-          featuredImage {
-            node {
-              altText
-              mediaDetails {
-                width
-                height
+            featuredImage {
+              node {
+                altText
+                mediaDetails {
+                  width
+                  height
+                }
+                sourceUrl
               }
-              sourceUrl
             }
           }
         }
       }
-    }
-  `;
+    `;
 
-  const response = await client.query({
-    query: GET_NEWS,
-    variables: { language: locale.toUpperCase() },
-  });
+    const response = await client.query({
+      query: GET_ALL_ARCHIVE_NEWS,
+      variables: { language: locale.toUpperCase() },
+    });
 
-  const news = response.data.vijesti.nodes;
+    const allArchiveNews = response.data.archivePosts.nodes || [];
 
-  return {
-    props: {
-      news,
-    },
-  };
+    const archiveNews = allArchiveNews;
+
+    return {
+      props: {
+        archiveNews,
+      },
+      revalidate: 3600,
+    };
+  } catch (error) {
+    console.error("Error fetching archive news:", error);
+
+    return {
+      props: {
+        archiveNews: [],
+      },
+      revalidate: 3600,
+    };
+  }
 }
 
-export default News;
+export default Archive;

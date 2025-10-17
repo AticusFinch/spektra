@@ -332,6 +332,15 @@ const Navigation = () => {
                 <Link href="/news" className={styles.link}>
                   {locale === "sr" ? "VIJESTI" : "NEWS"}
                 </Link>
+                <div className={styles["dropdown-container"]}>
+                  <ul className={styles["dropdown"]}>
+                    <li>
+                      <Link href="/archive">
+                        {locale === "sr" ? "Arhiva" : "Archive"}
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li className={styles["link-container"]}>
                 <Link href="/blog" className={styles.link}>

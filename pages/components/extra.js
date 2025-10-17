@@ -137,7 +137,7 @@ const Extra = () => {
         >
           <div className={styles["donate-overlay"]}>
             <motion.a
-              href="/"
+              href="/merch"
               className={styles["donate-text"]}
               whileHover={!isSmallScreen ? { scale: 1.1 } : { scale: 1 }}
             >

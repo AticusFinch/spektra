@@ -1,0 +1,37 @@
+.merch-title-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.merch-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.merch-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .merch-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .merch-title {
+    font-size: 2rem;
+  }
+
+  .merch-title-container {
+    margin: 30px 0;
+  }
+}

@@ -150,6 +150,10 @@
   background: transparent;
 }
 
+.link-container:nth-of-type(3)::before {
+  background: transparent;
+}
+
 .link-container:active {
   color: rgba(0, 0, 0, 0.152);
 }
@@ -181,16 +185,19 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: auto;
+  min-width: 100%;
   z-index: 1000;
   opacity: 0;
-  height: 0px;
-  transition: height 0.5s ease-in-out, opacity 0.2s ease-in-out;
+  height: 0;
+  transition: all 0.5s ease-in-out;
   border: solid 1px rgb(18, 18, 18);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
+  transform: scaleY(0);
+  transform-origin: top;
 }
 
 .dropdown-container:before {
@@ -206,14 +213,14 @@
     var(--trans-pink)
   );
   position: absolute;
-  top: 100%;
+  bottom: 0;
   background-size: 400%;
-  z-index: 0;
+  z-index: 1;
   width: 100%;
   height: 1px;
-  animation: glowing 20s linear infinite;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  animation: none;
+  display: none;
+  transition: all 0.5s ease-in-out;
 }
 
 .dropdown {
@@ -223,15 +230,18 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 .dropdown li {
   opacity: 0;
   width: 100%;
+  white-space: nowrap;
+  margin: 0.5rem 0;
 }
 
-.link-container:hover li {
+.link-container:hover .dropdown li {
   transition: all 0.5s ease-in 0.3s;
   opacity: 1;
 }
@@ -254,12 +264,26 @@
 
 .link-container:hover .dropdown-container {
   opacity: 1;
-  height: calc(30px * 8);
+  height: auto;
+  max-height: 500px;
+  transform: scaleY(1);
+}
+
+.link-container:hover .dropdown-container:before {
+  display: block;
+  animation: glowing 20s linear infinite;
 }
 
 .link-container:nth-of-type(2):hover .dropdown-container {
   opacity: 1;
-  height: calc(16px * 8);
+  height: auto;
+  max-height: 500px;
+  transform: scaleY(1);
+}
+
+.link-container:nth-of-type(2):hover .dropdown-container:before {
+  display: block;
+  animation: glowing 20s linear infinite;
 }
 
 .link {
@@ -342,7 +366,8 @@
   }
 
   .dropdown {
-    padding: 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
   }
 
   .dropdown li a {
@@ -350,11 +375,25 @@
   }
 
   .link-container:hover .dropdown-container {
-    height: calc(35px * 8);
+    height: auto;
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+
+  .link-container:hover .dropdown-container:before {
+    display: block;
+    animation: glowing 20s linear infinite;
   }
 
   .link-container:nth-of-type(2):hover .dropdown-container {
-    height: calc(16px * 8);
+    height: auto;
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+
+  .link-container:nth-of-type(2):hover .dropdown-container:before {
+    display: block;
+    animation: glowing 20s linear infinite;
   }
 
   .link {
@@ -401,6 +440,10 @@
     width: 95%;
   }
 
+  .dropdown li {
+    margin: 0.4rem 0;
+  }
+
   .dropdown li a {
     font-size: 0.7rem;
   }
@@ -411,12 +454,26 @@
 
   .link-container:hover .dropdown-container {
     opacity: 1;
-    height: calc(20px * 8);
+    height: auto;
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+
+  .link-container:hover .dropdown-container:before {
+    display: block;
+    animation: glowing 20s linear infinite;
   }
 
   .link-container:nth-of-type(2):hover .dropdown-container {
     opacity: 1;
-    height: calc(12px * 8);
+    height: auto;
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+
+  .link-container:nth-of-type(2):hover .dropdown-container:before {
+    opacity: 1;
+    animation: glowing 20s linear infinite;
   }
 }
 
@@ -431,13 +488,24 @@
 }
 
 @media (max-width: 1440px) {
+  .dropdown li {
+    margin: 0.3rem 0;
+  }
+
   .dropdown li a {
     font-size: 0.7rem;
   }
 
   .link-container:nth-of-type(2):hover .dropdown-container {
     opacity: 1;
-    height: calc(11px * 8);
+    height: auto;
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+
+  .link-container:nth-of-type(2):hover .dropdown-container:before {
+    opacity: 1;
+    animation: glowing 20s linear infinite;
   }
 }
 
