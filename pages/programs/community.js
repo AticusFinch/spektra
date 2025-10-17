@@ -177,6 +177,8 @@ const Community = () => {
                     className={styles.coordinatorImg}
                     objectFit="cover"
                     priority
+                    placeholder="blur"
+                    blurDataURL={teamMembers[4].blurDataURL}
                   />
                 </div>
                 <div className={styles.coordinatorText}>

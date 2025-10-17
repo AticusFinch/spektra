@@ -56,6 +56,8 @@ const OurTeam = () => {
                         height="300"
                         className={styles["team-image"]}
                         style={{ objectFit: "cover" }}
+                        placeholder="blur"
+                        blurDataURL={member.blurDataURL}
                       />
                     </div>
                     <div className={styles["team-member-content"]}>
@@ -95,6 +97,8 @@ const OurTeam = () => {
                         height="300"
                         className={styles["team-image"]}
                         style={{ objectFit: "cover" }}
+                        placeholder="blur"
+                        blurDataURL={member.blurDataURL}
                       />
                     </div>
                   </>

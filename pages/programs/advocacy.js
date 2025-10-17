@@ -120,6 +120,8 @@ const Advocacy = () => {
                     className={styles.coordinatorImg}
                     objectFit="cover"
                     priority
+                    placeholder="blur"
+                    blurDataURL={teamMembers[0].blurDataURL}
                   />
                 </div>
                 <div className={styles.coordinatorText}>
@@ -143,6 +145,8 @@ const Advocacy = () => {
                     className={styles.coordinatorImg}
                     objectFit="cover"
                     priority
+                    placeholder="blur"
+                    blurDataURL={teamMembers[3].blurDataURL}
                   />
                 </div>
                 <div className={styles.coordinatorText}>
@@ -166,6 +170,8 @@ const Advocacy = () => {
                     className={styles.coordinatorImg}
                     objectFit="cover"
                     priority
+                    placeholder="blur"
+                    blurDataURL={teamMembers[6].blurDataURL}
                   />
                 </div>
                 <div className={styles.coordinatorText}>

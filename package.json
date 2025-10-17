@@ -23,6 +23,7 @@
     "module": "^1.2.5",
     "next": "14.2.3",
     "next-i18next": "^15.3.1",
+    "plaiceholder": "^3.0.0",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.3.1",
     "react-countup": "^6.5.3",
@@ -33,6 +34,7 @@
     "react-modal": "^3.16.1",
     "react-slick": "^0.30.2",
     "react-visibility-sensor": "^5.1.1",
+    "sharp": "^0.34.4",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

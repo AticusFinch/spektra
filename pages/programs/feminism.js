@@ -131,6 +131,9 @@ const Feminism = () => {
                     alt={teamMembers[2].name}
                     className={styles.coordinatorImg}
                     style={{ objectFit: "cover" }}
+                    priority
+                    placeholder="blur"
+                    blurDataURL={teamMembers[2].blurDataURL}
                   />
                 </div>
                 <div className={styles.coordinatorText}>
@@ -152,6 +155,9 @@ const Feminism = () => {
                     height={teamMembers[1].height}
                     alt={teamMembers[1].name}
                     className={styles.coordinatorImg}
+                    priority
+                    placeholder="blur"
+                    blurDataURL={teamMembers[1].blurDataURL}
                   />
                 </div>
                 <div className={styles.coordinatorText}>
@@ -173,6 +179,9 @@ const Feminism = () => {
                     height={teamMembers[5].height}
                     alt={teamMembers[5].name}
                     className={styles.coordinatorImg}
+                    priority
+                    placeholder="blur"
+                    blurDataURL={teamMembers[5].blurDataURL}
                   />
                 </div>
                 <div className={styles.coordinatorText}>
