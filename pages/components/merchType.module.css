@@ -3,76 +3,109 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin: 10px;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.merch-type:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .merch-type-image {
-  margin-bottom: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .merch-type-image img {
-  border-radius: 8px;
   object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.merch-type-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .merch-type-title {
-  margin-bottom: 15px;
+  margin: 0.5rem 0;
 }
 
-.merch-type-title h2 {
-  margin: 0;
-  color: #333;
-  font-size: 1.5rem;
-  font-weight: 600;
+.merch-type-label {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  letter-spacing: 1px;
 }
 
 .merch-type-description {
-  margin-bottom: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.merch-type-material {
-  margin: 0 0 10px 0;
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.4;
+.merch-type-description p {
+  font-size: 1rem;
 }
 
-.merch-type-size {
+.merch-type-description span {
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.merch-type-material,
+.merch-type-size,
+.merch-type-color,
+.merch-type-text {
   margin: 0;
-  color: #888;
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .merch-type-availability {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+  text-align: left;
 }
 
 .merch-type-availability p {
   margin: 0;
-  color: #666;
-  font-size: 0.85rem;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .merch-type-availability span {
-  background: #007bff;
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.merch-type-availability span.unavailable {
+  color: var(--trans-pink);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .merch-type {
+    padding: 15px;
+  }
+
+  .merch-type-label {
+    font-size: 1rem;
+  }
+
+  .merch-type-description {
+    padding: 12px;
+  }
+
+  .merch-type-description p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 485px) {
+  .merch-type {
+    min-height: 450px;
+  }
+
+  .merch-type-image {
+    height: 220px;
+  }
 }
