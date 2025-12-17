@@ -8,6 +8,8 @@ import MerchType from "./components/merchType";
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
 
+import { FaStarOfLife } from "react-icons/fa6";
+
 const Merch = ({ merchByCollection, sortedCollectionNames }) => {
   const router = useRouter();
   const { locale } = router;
@@ -44,30 +46,37 @@ const Merch = ({ merchByCollection, sortedCollectionNames }) => {
           <ul className={styles["merch-text-list"]}>
             <li className={styles["merch-text-item"]}>
               <p>
-                1. izaberi promo materijal za snimanje (dobijaš ga na poklon)
-                &#x1F496; možeš ga preuzeti u Spektrinoj kancelariji.
+                <FaStarOfLife className={styles["merch-text-icon"]} /> izaberi
+                promo materijal za snimanje (dobijaš ga na poklon) &#x1F496;
+                možeš ga preuzeti u Spektrinoj kancelariji.
               </p>
             </li>
             <li className={styles["merch-text-item"]}>
               <p>
-                2. pošalji nam svoju ideju za instagram reel — kratko opiši kako
-                bi želio_la da izgleda i koju poruku prenosi.
+                <FaStarOfLife className={styles["merch-text-icon"]} /> pošalji
+                nam svoju ideju za instagram reel — kratko opiši kako bi
+                želio_la da izgleda i koju poruku prenosi.
               </p>
             </li>
             <li className={styles["merch-text-item"]}>
               <p>
-                3. ideju odobrimo ili ti damo par smjernica kako je možeš
-                prilagoditi, a da ipak ostane dosljedna tvojoj viziji
+                <FaStarOfLife className={styles["merch-text-icon"]} /> ideju
+                odobrimo ili ti damo par smjernica kako je možeš prilagoditi, a
+                da ipak ostane dosljedna tvojoj viziji
               </p>
             </li>
             <li className={styles["merch-text-item"]}>
-              <p>4. pošalješ nam draft snimka na uvid prije objave.</p>
+              <p>
+                <FaStarOfLife className={styles["merch-text-icon"]} /> pošalješ
+                nam draft snimka na uvid prije objave.
+              </p>
             </li>
             <li className={styles["merch-text-item"]}>
               <p>
-                5. kada video odobrimo, možeš ga objaviti na svom Instagram
-                profilu uz opis koji ti pošaljemo, i pozvati
-                @asocijacija.spektra na collab.*
+                <FaStarOfLife className={styles["merch-text-icon"]} /> kada
+                video odobrimo, možeš ga objaviti na svom Instagram profilu uz
+                opis koji ti pošaljemo, i pozvati @asocijacija.spektra na
+                collab.*
               </p>
               <p>
                 * ova opcija je potpuno dobrovoljna — ako ne želiš da se video

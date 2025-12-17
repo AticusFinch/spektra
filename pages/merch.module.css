@@ -77,6 +77,12 @@
   font-weight: 400;
 }
 
+.merch-text-icon {
+  font-size: clamp(0.6rem, -0.385rem + 4.92vw, 1rem);
+  color: var(--trans-pink);
+  margin-right: 0.25em;
+}
+
 .merch-text-email {
   font-family: "Wix Madefor Display Variable", sans-serif;
   font-size: clamp(0.6rem, -0.385rem + 4.92vw, 1rem);
@@ -105,6 +111,18 @@
 @media (max-width: 1280px) {
   .merch-title {
     font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 450px) {
+  .merch-text-title {
+    font-size: clamp(1.5rem, 0.716rem + 2.79vw, 2.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .merch-text-title {
+    font-size: clamp(1.5rem, 1.108rem + 1.39vw, 2rem);
   }
 }
 

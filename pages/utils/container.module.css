@@ -5,7 +5,7 @@
 
 @media (max-width: 2560px) {
   .container {
-    padding: 18rem 8rem 8rem 8rem;
+    padding: 17rem 8rem 8rem 8rem;
   }
 }
 
@@ -32,7 +32,7 @@
 
 @media (max-width: 1024px) {
   .container {
-    padding: 11rem 3rem 4rem 3rem;
+    padding: 8rem 3rem 4rem 3rem;
   }
 }
 
