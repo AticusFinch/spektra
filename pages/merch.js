@@ -36,7 +36,56 @@ const Merch = ({ merchByCollection, sortedCollectionNames }) => {
         <div className={styles["merch-title-container"]}>
           <h1 className={styles["merch-title"]}>Merch</h1>
         </div>
-
+        <div className={styles["merch-text-container"]}>
+          <h3 className={styles["merch-text-title"]}>
+            Želiš da budeš ambasador_ka samoodređenja?
+          </h3>
+          <h4 className={styles["merch-text-subtitle"]}>Koraci su sljedeći:</h4>
+          <ul className={styles["merch-text-list"]}>
+            <li className={styles["merch-text-item"]}>
+              <p>
+                1. izaberi promo materijal za snimanje (dobijaš ga na poklon)
+                &#x1F496; možeš ga preuzeti u Spektrinoj kancelariji.
+              </p>
+            </li>
+            <li className={styles["merch-text-item"]}>
+              <p>
+                2. pošalji nam svoju ideju za instagram reel — kratko opiši kako
+                bi želio_la da izgleda i koju poruku prenosi.
+              </p>
+            </li>
+            <li className={styles["merch-text-item"]}>
+              <p>
+                3. ideju odobrimo ili ti damo par smjernica kako je možeš
+                prilagoditi, a da ipak ostane dosljedna tvojoj viziji
+              </p>
+            </li>
+            <li className={styles["merch-text-item"]}>
+              <p>4. pošalješ nam draft snimka na uvid prije objave.</p>
+            </li>
+            <li className={styles["merch-text-item"]}>
+              <p>
+                5. kada video odobrimo, možeš ga objaviti na svom Instagram
+                profilu uz opis koji ti pošaljemo, i pozvati
+                @asocijacija.spektra na collab.*
+              </p>
+              <p>
+                * ova opcija je potpuno dobrovoljna — ako ne želiš da se video
+                nalazi na tvom profilu (iz bilo kog razloga), samo nam pošalji
+                snimak i mi ćemo ga objaviti na Spektrinom profilu.
+              </p>
+            </li>
+          </ul>
+          <p className={styles["merch-text-email"]}>
+            Javi nam se ako si zainteresovan_a na mejl:{" "}
+            <a
+              className={styles["merch-text-email-link"]}
+              href="mailto:iskra.djurisic@asocijacijaspektra.org"
+            >
+              iskra.djurisic@asocijacijaspektra.org
+            </a>
+          </p>
+        </div>
         {/* Render merch grouped by collection (sorted by creation order) */}
         {sortedCollectionNames.map((collectionName) => (
           <div key={collectionName} className={styles["collection-section"]}>

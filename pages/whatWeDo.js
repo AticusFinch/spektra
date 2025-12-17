@@ -167,7 +167,7 @@ const WhatWeDo = () => {
             </h1>
             <p className={styles.text}>
               {locale === "sr"
-                ? "Udruženje Spektra je feministička nevladina organizacija registrovana 2017. godine sa sjedištem u Podgorici, Crna Gora, koja djeluje širom zemlje. Organizacija je vođena od strane transrodnih i rodnovarijantnih osoba sa misijom da promoviše prvenstveno rodnu ravnopravnost sa posebnim fokusom na potrebe i doprinos zajednice trans, inter i rodno varijantnih (TIRV) osoba. Naš rad se zasniva na principima feminizma, antifašizma i intersekcionalnosti."
+                ? "Asocijacija Spektra je feministička nevladina organizacija registrovana 2017. godine sa sjedištem u Podgorici, Crna Gora, koja djeluje širom zemlje. Organizacija je vođena od strane transrodnih i rodnovarijantnih osoba sa misijom da promoviše prvenstveno rodnu ravnopravnost sa posebnim fokusom na potrebe i doprinos zajednice trans, inter i rodno varijantnih (TIRV) osoba. Naš rad se zasniva na principima feminizma, antifašizma i intersekcionalnosti."
                 : "Association Spektra is a feminist non-governmental organization registered in 2017 in Podgorica, Montenegro, with a mission to promote primarily gender equality with a special focus on the needs and contributions of the trans, inter and gender variant (TIRV) community. Our work is based on the principles of feminism, anti-fascism and intersectionality."}
             </p>
           </Fade>

@@ -176,6 +176,11 @@ const Navigation = () => {
                     {locale === "sr" ? "PODRŠKA" : "SUPPORT"}
                   </Link>
                 </li>
+                <li className={styles["hamburger-link-container"]}>
+                  <Link href="/merch" className={styles["hamburger-link"]}>
+                    MERCH
+                  </Link>
+                </li>
                 <div className={styles["mobile-search"]}>
                   <Search
                     placeholder={locale === "sr" ? "pretraga" : "search"}

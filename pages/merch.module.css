@@ -38,8 +38,56 @@
 .merch-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
+}
+
+.merch-text-title {
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  font-size: clamp(1.1rem, 0.115rem + 4.92vw, 1.5rem);
+  margin: 0.8em 0;
+  background: linear-gradient(to right, var(--trans-pink), var(--trans-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  width: fit-content;
+}
+
+.merch-text-subtitle {
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  font-size: clamp(0.8rem, -0.185rem + 4.92vw, 1.2rem);
+  margin: 0.8em 0;
+  font-weight: 800;
+  width: fit-content;
+}
+
+.merch-text-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.merch-text-item {
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  font-size: clamp(0.6rem, -0.385rem + 4.92vw, 1rem);
+  font-weight: 400;
+}
+
+.merch-text-email {
+  font-family: "Wix Madefor Display Variable", sans-serif;
+  font-size: clamp(0.6rem, -0.385rem + 4.92vw, 1rem);
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.merch-text-email a {
+  color: var(--trans-pink);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 @media (max-width: 1920px) {

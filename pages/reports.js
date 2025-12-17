@@ -99,8 +99,8 @@ const Page = () => {
           : "/files/annual-reports/2022-en.pdf",
       image:
         locale === "sr"
-          ? "/images/report/mne/23-mne.jpg"
-          : "/images/report/eng/23-eng.png",
+          ? "/images/report/mne/22-mne.png"
+          : "/images/report/eng/22-mne.png",
       width: "300",
       height: "200",
     },
@@ -113,7 +113,7 @@ const Page = () => {
       image:
         locale === "sr"
           ? "/images/report/mne/20-mne.jpg"
-          : "/images/report/eng/23-eng.png",
+          : "/images/report/eng/20-mne.jpg",
       width: "300",
       height: "200",
     },
