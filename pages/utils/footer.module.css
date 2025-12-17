@@ -79,6 +79,11 @@
   margin-top: 8rem;
 }
 
+.footer-top-right-contact-info-email {
+  text-decoration: none;
+  color: var(--cream-white);
+}
+
 .footer-bottom-links {
   display: flex;
   justify-content: space-between;

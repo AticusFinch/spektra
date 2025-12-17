@@ -92,9 +92,12 @@ const Footer = () => {
             <p className={styles["footer-top-right-contact-info-working-time"]}>
               {locale === "sr" ? "09h - 16h" : "09am - 04pm"}
             </p>
-            <p className={styles["footer-top-right-contact-info-email"]}>
+            <Link
+              href="mailto:info@asocijacijaspektra.org"
+              className={styles["footer-top-right-contact-info-email"]}
+            >
               info@asocijacijaspektra.org
-            </p>
+            </Link>
           </div>
         </div>
       </div>

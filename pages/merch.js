@@ -40,53 +40,65 @@ const Merch = ({ merchByCollection, sortedCollectionNames }) => {
         </div>
         <div className={styles["merch-text-container"]}>
           <h3 className={styles["merch-text-title"]}>
-            Želiš da budeš ambasador_ka samoodređenja?
+            {locale === "sr"
+              ? "Želiš da budeš ambasador_ka samoodređenja?"
+              : "Want to be a ambassador of self-determination?"}
           </h3>
-          <h4 className={styles["merch-text-subtitle"]}>Koraci su sljedeći:</h4>
+          <h4 className={styles["merch-text-subtitle"]}>
+            {locale === "sr" ? "Koraci su sljedeći:" : "These are the steps:"}
+          </h4>
           <ul className={styles["merch-text-list"]}>
             <li className={styles["merch-text-item"]}>
               <p>
-                <FaStarOfLife className={styles["merch-text-icon"]} /> izaberi
-                promo materijal za snimanje (dobijaš ga na poklon) &#x1F496;
-                možeš ga preuzeti u Spektrinoj kancelariji.
+                <FaStarOfLife className={styles["merch-text-icon"]} />{" "}
+                {locale === "sr"
+                  ? "izaberi promo materijal za snimanje (dobijaš ga na poklon) &#x1F496; možeš ga preuzeti u Spektrinoj kancelariji."
+                  : "choose a promo material for a video recording (you get it for free) &#x1F496; you can pick it up at the Spektra office."}
               </p>
             </li>
             <li className={styles["merch-text-item"]}>
               <p>
-                <FaStarOfLife className={styles["merch-text-icon"]} /> pošalji
-                nam svoju ideju za instagram reel — kratko opiši kako bi
-                želio_la da izgleda i koju poruku prenosi.
+                <FaStarOfLife className={styles["merch-text-icon"]} />{" "}
+                {locale === "sr"
+                  ? "pošalji nam svoju ideju za instagram reel — kratko opiši kako bi želio_la da izgleda i koju poruku prenosi."
+                  : "send us your idea for an instagram reel — briefly describe how you want it to look and what message it should convey."}
               </p>
             </li>
             <li className={styles["merch-text-item"]}>
               <p>
-                <FaStarOfLife className={styles["merch-text-icon"]} /> ideju
-                odobrimo ili ti damo par smjernica kako je možeš prilagoditi, a
-                da ipak ostane dosljedna tvojoj viziji
+                <FaStarOfLife className={styles["merch-text-icon"]} />{" "}
+                {locale === "sr"
+                  ? "ideju odobrimo ili ti damo par smjernica kako je možeš prilagoditi, a da ipak ostane dosljedna tvojoj viziji"
+                  : "we approve your idea or give you some guidance on how to adapt it, while staying consistent to your vision."}
               </p>
             </li>
             <li className={styles["merch-text-item"]}>
               <p>
-                <FaStarOfLife className={styles["merch-text-icon"]} /> pošalješ
-                nam draft snimka na uvid prije objave.
+                <FaStarOfLife className={styles["merch-text-icon"]} />{" "}
+                {locale === "sr"
+                  ? "pošalješ nam draft snimka na uvid prije objave."
+                  : "send us a draft of the video before you publish it."}
               </p>
             </li>
             <li className={styles["merch-text-item"]}>
               <p>
-                <FaStarOfLife className={styles["merch-text-icon"]} /> kada
-                video odobrimo, možeš ga objaviti na svom Instagram profilu uz
-                opis koji ti pošaljemo, i pozvati @asocijacija.spektra na
-                collab.*
+                <FaStarOfLife className={styles["merch-text-icon"]} />{" "}
+                {locale === "sr"
+                  ? "kada video odobrimo, možeš ga objaviti na svom Instagram profilu uz opis koji ti pošaljemo, i pozvati @asocijacija.spektra na collab."
+                  : "once the video is approved, you can publish it on your Instagram profile with the description we send you, and tag @asocijacija.spektra for a collab."}
               </p>
               <p>
-                * ova opcija je potpuno dobrovoljna — ako ne želiš da se video
-                nalazi na tvom profilu (iz bilo kog razloga), samo nam pošalji
-                snimak i mi ćemo ga objaviti na Spektrinom profilu.
+                {locale === "sr" ? "*" : "*"}{" "}
+                {locale === "sr"
+                  ? "ova opcija je potpuno dobrovoljna — ako ne želiš da se video nalazi na tvom profilu (iz bilo kog razloga), samo nam pošalji snimak i mi ćemo ga objaviti na Spektrinom profilu."
+                  : "this option is not mandatory — if you don't want to publish the video on your profile (for any reason), just send us the video and we will publish it on the Spektra profile."}
               </p>
             </li>
           </ul>
           <p className={styles["merch-text-email"]}>
-            Javi nam se ako si zainteresovan_a na mejl:{" "}
+            {locale === "sr"
+              ? "Javi nam se ako si zainteresovan_a na mejl:"
+              : "Contact us if you are interested on email: "}
             <a
               className={styles["merch-text-email-link"]}
               href="mailto:iskra.djurisic@asocijacijaspektra.org"

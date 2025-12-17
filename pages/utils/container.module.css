@@ -32,25 +32,25 @@
 
 @media (max-width: 1024px) {
   .container {
-    padding: 8rem 3rem 4rem 3rem;
+    padding: 12rem 3rem 4rem 3rem;
   }
 }
 
 @media (max-width: 840px) {
   .container {
-    padding: 14rem 3rem 4rem 3rem;
+    padding: 13rem 3rem 4rem 3rem;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 10rem 3rem 4rem 3rem;
+    padding: 9rem 3rem 4rem 3rem;
   }
 }
 
 @media (max-width: 485px) {
   .container {
-    padding: 8rem 2rem 4rem 2rem;
+    padding: 7rem 2rem 4rem 2rem;
   }
 }
 
