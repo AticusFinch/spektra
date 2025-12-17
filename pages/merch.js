@@ -52,8 +52,8 @@ const Merch = ({ merchByCollection, sortedCollectionNames }) => {
               <p>
                 <FaStarOfLife className={styles["merch-text-icon"]} />{" "}
                 {locale === "sr"
-                  ? "izaberi promo materijal za snimanje (dobijaš ga na poklon) &#x1F496; možeš ga preuzeti u Spektrinoj kancelariji."
-                  : "choose a promo material for a video recording (you get it for free) &#x1F496; you can pick it up at the Spektra office."}
+                  ? "izaberi promo materijal za snimanje (dobijaš ga na poklon) 💖 možeš ga preuzeti u Spektrinoj kancelariji."
+                  : "choose a promo material for a video recording (you get it for free) 💖 you can pick it up at the Spektra office."}
               </p>
             </li>
             <li className={styles["merch-text-item"]}>
