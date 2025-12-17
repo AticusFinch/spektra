@@ -78,9 +78,16 @@ const News = (props) => {
       <Container>
         <div className={styles.news}>
           <div className={styles["news-head-container"]}>
-            <h1 className={styles["news-head"]}>
-              {locale === "sr" ? "Vijesti" : "News"}
-            </h1>
+            <div className={styles["news-head-container-left"]}>
+              <h1 className={styles["news-head"]}>
+                {locale === "sr" ? "Vijesti" : "News"}
+              </h1>
+              <div className={styles["news-archive"]}>
+                <Link href="/archive" className={styles["news-archive-link"]}>
+                  {locale === "sr" ? "Arhiva" : "Archive"}
+                </Link>
+              </div>
+            </div>
             <div className={styles["news-search"]}>
               <button className={styles["search-button"]}>
                 <HiMagnifyingGlass />
