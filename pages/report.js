@@ -56,7 +56,7 @@ const Report = () => {
   `;
     try {
       const data = await sendMail(
-        "Website poruka: Prijava nasilja",
+        "Website poruka: Zahtjev za podršku",
         emailContent,
         captchaValue
       );
@@ -81,9 +81,7 @@ const Report = () => {
     <div>
       <Head>
         <title>
-          {`${websiteTitle} | ${
-            locale === "sr" ? "Prijavi nasilje" : "Report violence"
-          }`}
+          {`${websiteTitle} | ${locale === "sr" ? "Podrška" : "Support"}`}
         </title>
       </Head>
       <Navigation />
