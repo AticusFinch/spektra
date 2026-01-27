@@ -124,8 +124,10 @@ const Publications = ({ publications }) => {
                     <Image
                       src={post.featuredImage.node.sourceUrl}
                       alt={post.featuredImage.node.altText || "Post Image"}
-                      width={post.featuredImage.node.mediaDetails.width}
-                      height={post.featuredImage.node.mediaDetails.height}
+                      width={post.featuredImage.node.mediaDetails?.width || 400}
+                      height={
+                        post.featuredImage.node.mediaDetails?.height || 600
+                      }
                       className={styles["publication-img"]}
                     />
                   )}

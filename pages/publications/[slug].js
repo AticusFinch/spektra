@@ -38,8 +38,8 @@ const Publication = ({ post }) => {
           <div className={styles["image-container"]}>
             <Image
               src={post.featuredImage.node.sourceUrl}
-              width={post.featuredImage.node.mediaDetails.width}
-              height={post.featuredImage.node.mediaDetails.height}
+              width={post.featuredImage.node.mediaDetails?.width || 800}
+              height={post.featuredImage.node.mediaDetails?.height || 1000}
               alt={post.featuredImage.node.altText || "Publication image"}
               className={styles["publication-image"]}
             />

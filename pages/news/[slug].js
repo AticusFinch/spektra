@@ -109,8 +109,8 @@ const Post = ({ post, latestPosts }) => {
               <Image
                 src={post.news.image.node.sourceUrl}
                 alt={post.news.image.node.altText || "Post image"}
-                width={post.news.image.node.mediaDetails.width}
-                height={post.news.image.node.mediaDetails.height}
+                width={post.news.image.node.mediaDetails?.width || 800}
+                height={post.news.image.node.mediaDetails?.height || 600}
                 className={styles["image"]}
               />
             </div>

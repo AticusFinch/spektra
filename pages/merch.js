@@ -138,6 +138,7 @@ const Merch = ({ merchByCollection, sortedCollectionNames }) => {
                   color={merch.merch?.color || ""}
                   text={merch.merch?.text || ""}
                   availableAmount={merch.merch?.amount || 0}
+                  galleryImages={merch.merch?.merchGallery?.nodes || []}
                 />
               ))}
             </div>
@@ -171,6 +172,17 @@ export async function getStaticProps({ locale }) {
             merchType
             merchImage {
               node {
+                id
+                altText
+                sourceUrl
+                mediaDetails {
+                  width
+                  height
+                }
+              }
+            }
+            merchGallery {
+              nodes {
                 id
                 altText
                 sourceUrl
