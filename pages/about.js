@@ -48,10 +48,9 @@ const About = () => {
                   </span>
                 </div>
                 <div className={styles["card-text"]}>
-                  <p>
-                    Nevladina organizacija posvećena feminističkom i
-                    anifašističkom smjenjivanju opresivnih sistema građenjem
-                    solidarnosti, zagovaranjem promjena i njegovanjem učenja.
+                  <p> {locale === "sr"
+                    ? "Nevladina organizacija posvećena feminističkom i anifašističkom smjenjivanju opresivnih sistema građenjem solidarnosti, zagovaranjem promjena i njegovanjem učenja."
+                    : "Non-governmental organization dedicated to the feminist and anti-fascist dismantling of oppressive systems by building solidarity, advocating for change, and nurturing learning."}
                   </p>
                 </div>
                 <div className={styles["read-more-container"]}>
@@ -74,7 +73,10 @@ const About = () => {
                   </span>
                 </div>
                 <div className={styles["card-text"]}>
-                  <p>Ovo su članice i članovi našeg tima!</p>
+                  <p> {locale === "sr"
+                    ? "Ovo su članice i članovi našeg tima!"
+                    : "Here are the members of our team!"}
+                  </p>
                 </div>
                 <div className={styles["read-more-container"]}>
                   <IoEnterOutline />
@@ -95,11 +97,9 @@ const About = () => {
                   </span>
                 </div>
                 <div className={styles["card-text"]}>
-                  <p>
-                    Tokom godina djelovanja imali smo priliku da sarađujemo sa
-                    brojnim lokalnim i svjetskim donatorima, te vam sa
-                    zadovoljstvom predstavljamo sve organizacije i institucije
-                    koje su do sada podržale rad Asocijacije Spektra.
+                  <p> {locale === "sr"
+                    ? "Tokom godina djelovanja imali smo priliku da sarađujemo sa brojnim lokalnim i svjetskim donatorima, te vam sa zadovoljstvom predstavljamo sve organizacije i institucije koje su do sada podržale rad Asocijacije Spektra."
+                    : "Throughout the years of operation, we had the opportunity to collaborate with numerous local and international donors; therefore, we are pleased to present all the organizations and institutions that have supported our work at Asocijacija Spektra."}
                   </p>
                 </div>
                 <div className={styles["read-more-container"]}>
@@ -119,8 +119,9 @@ const About = () => {
                   </span>
                 </div>
                 <div className={styles["card-text"]}>
-                  <p>
-                    Ovdje možete pronaći naše finansijske i godišnje izvještaje.
+                  <p> {locale === "sr"
+                    ? "Ovdje možete pronaći naše finansijske i godišnje izvještaje."
+                    : "Here you can find our financial and annual reports"}
                   </p>
                 </div>
                 <div className={styles["read-more-container"]}>
@@ -140,9 +141,9 @@ const About = () => {
                   </span>
                 </div>
                 <div className={styles["card-text"]}>
-                  <p>
-                    Imate pitanja, sugestije ili želite da sarađujemo? Slobodno
-                    nam se obratite!
+                  <p> {locale === "sr"
+                    ? "Imate pitanja, sugestije ili želite da sarađujemo? Slobodno nam se obratite!"
+                    : "Do you have questions, suggestions, or wish to collaborate? Feel free to reach out!"}
                   </p>
                 </div>
                 <div className={styles["read-more-container"]}>

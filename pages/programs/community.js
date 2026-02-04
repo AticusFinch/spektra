@@ -42,7 +42,7 @@ const Community = () => {
             <p className={styles.introTextCommunity}>
               {locale === "sr"
                 ? "S obzirom na izuzetnu važnost pitanja zdravstvene zaštite za zajednicu TIRV osoba, kroz ovaj program aktivno radimo na pozitivnim promjenama u ovoj oblasti. Kako u Crnoj Gori ne postoje posebne usluge za TIRV osobe, socijalne usluge koje Spektra nudi unutar ovog programa jedine su ove vrste u zemlji."
-                : "Due to the exceptional importance of the issue of health care for the TIRV community, through this program we actively work on positive changes in this area. Since there are no special services for TIRV people in Montenegro, the only services offered by Spectra within this program are of this type in the country."}
+                : "Due to the exceptional importance of the issue of health care for the TIGV community, through this program we actively work on positive changes in this area. Since there are no special services for TIRV people in Montenegro, the only services offered by Spectra within this program are of this type in the country."}
             </p>
             <div className={styles.programAimsCommunity}>
               <p className={styles.programAimsTitleCommunity}>

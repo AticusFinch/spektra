@@ -71,11 +71,9 @@ const Programs = () => {
                     </span>
                   </div>
                   <div className={styles["card-text"]}>
-                    <p>
-                      Program za rad sa zajednicom posvećen je kontinuiranom
-                      pružanju direktne pomoći, vršnjačke i psihosocijalne
-                      podrške članovima/cama TIRV zajednice, te organizaciji
-                      brojnih aktivnosti za zajednicu.
+                    <p> {locale === "sr"
+                      ? "Program za rad sa zajednicom posvećen je kontinuiranom pružanju direktne pomoći, vršnjačke i psihosocijalne podrške članovima/cama TIRV zajednice, te organizaciji brojnih aktivnosti za zajednicu."
+                      : "The Community Work Program is dedicated to the continuous provision of direct assistance, peer and psychosocial support to members of the TIGV community"}
                     </p>
                   </div>
                 </div>
@@ -108,12 +106,9 @@ const Programs = () => {
                     </span>
                   </div>
                   <div className={styles["card-text"]}>
-                    <p>
-                      Zagovarački program posvećen je unapređenju pravnog i
-                      društvenog statusa transrodnih, rodno-varijantnih i
-                      interpolnih osoba u Crnoj Gori, sa trenutnim primarnim
-                      fokusom na proces usvajanja Zakona o pravnom prepoznavanju
-                      rodnog identiteta na osnovu samoodređenja.
+                    <p> {locale === "sr"
+                      ? "Zagovarački program posvećen je unapređenju pravnog i društvenog statusa transrodnih, rodno-varijantnih i interpolnih osoba u Crnoj Gori, sa trenutnim primarnim fokusom na proces usvajanja Zakona o pravnom prepoznavanju rodnog identiteta na osnovu samoodređenja."
+                      : "The Advocacy Program is dedicated to improving the legal and social status of transgender, gender-variant, and intersex people in Montenegro."}
                     </p>
                   </div>
                 </div>
@@ -146,11 +141,9 @@ const Programs = () => {
                     </span>
                   </div>
                   <div className={styles["card-text"]}>
-                    <p>
-                      Feministički program posvećen je povećanju prisutnosti
-                      feminističkih praksi i vrijednosti u crnogorskom društvu
-                      primarno kroz organizaciju edukativnih progrmama, te
-                      kulturnih i umjetničkih događaja.
+                    <p> {locale === "sr"
+                      ? "Feministički program posvećen je povećanju prisutnosti feminističkih praksi i vrijednosti u crnogorskom društvu primarno kroz organizaciju edukativnih progrmama, te kulturnih i umjetničkih događaja."
+                      : "The Feminism Program is dedicated to increasing the presence of feminist practices and values in Montenegrin society, primarily through the organization of educational programs"}
                     </p>
                   </div>
                 </div>
