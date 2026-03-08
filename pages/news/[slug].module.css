@@ -358,13 +358,16 @@
 }
 
 @media (max-width: 820px) {
+  .container {
+    padding-top: 3rem;
+  }
   .more:hover {
     transform: scale(1);
   }
 
   .post-head-container {
-    padding-top: 5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 12rem;
+    padding-bottom: 2rem;
   }
 
   .post {
@@ -438,9 +441,21 @@
   }
 }
 
+@media (max-width: 768px) {
+  .post-head-container {
+    padding-top: 9rem;
+    padding-bottom: 2rem;
+  }
+}
+
 @media (max-width: 485px) {
   .post-head {
     font-size: 3.5rem;
+  }
+
+  .post-head-container {
+    padding-top: 7rem;
+    padding-bottom: 2rem;
   }
 
   .title {
@@ -534,5 +549,11 @@
 
   .more-title {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .post-head-container {
+    padding-top: 6rem;
   }
 }
