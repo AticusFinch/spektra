@@ -16,6 +16,13 @@ const Page = () => {
     {
       name:
         locale === "sr"
+          ? "Finansijski izvještaj 2025"
+          : "Financial Report 2025",
+      link: "/files/financial-reports/2025.pdf",
+    },
+    {
+      name:
+        locale === "sr"
           ? "Finansijski izvještaj 2024"
           : "Financial Report 2024",
       link: "/files/financial-reports/2024.pdf",
