@@ -256,6 +256,26 @@
   margin-bottom: 0.4rem;
 }
 
+.news-archive {
+  background-color: #222222;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin-top: 0.7rem;
+  transition: ease-in-out 0.3s background-color;
+}
+
+.news-archive:hover {
+  background-color: #333333;
+}
+
+.news-archive-link {
+  text-decoration: none;
+  color: var(--cream-white);
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 1920px) {
   .news {
     width: 95%;
