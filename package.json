@@ -18,6 +18,7 @@
     "framer-motion": "^11.11.9",
     "graphql": "^16.9.0",
     "html-react-parser": "^5.2.2",
+    "hyphen": "^1.14.1",
     "hyphenation.en-us": "^0.2.1",
     "i18next": "^23.16.2",
     "module": "^1.2.5",

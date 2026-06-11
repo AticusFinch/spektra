@@ -44,7 +44,7 @@ const Extra = () => {
             >
               <CountUp
                 start={viewPortEntered ? 0 : null}
-                end={36}
+                end={50}
                 duration={3}
                 className={styles["counter-number-blue"]}
               />
@@ -63,7 +63,7 @@ const Extra = () => {
             >
               <CountUp
                 start={viewPortEntered ? 0 : null}
-                end={20}
+                end={28}
                 duration={3}
                 className={styles["counter-number-pink"]}
               />

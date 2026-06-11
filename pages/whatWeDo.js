@@ -9,6 +9,7 @@ import Navigation from "./utils/navigation";
 import Footer from "./utils/footer";
 import Container from "./utils/container";
 import { Fade } from "react-awesome-reveal";
+import { hyphenateText } from "../lib/hyphenateText";
 
 const WhatWeDo = () => {
   const router = useRouter();
@@ -221,7 +222,7 @@ const WhatWeDo = () => {
       </Head>
       <Navigation />
       <Container>
-        <div className={styles.whatWeDo}>
+        <div className={styles.whatWeDo} lang={locale === "sr" ? "sr" : "en"}>
           <Fade cascade damping={0.2} direction="up" triggerOnce>
             <h1 className={styles.headline}>
               {locale === "sr" ? "Čime se bavimo?" : "What we do?"}
@@ -240,13 +241,15 @@ const WhatWeDo = () => {
                   className={styles.value}
                   onClick={() => toggleValue(value.title)}
                 >
-                  <span>{value.title}</span>
+                  <span>
+                    {hyphenateText(value.title, locale).toUpperCase()}
+                  </span>
                   <span
                     className={
                       expandedValues[value.title] ? styles.expanded : ""
                     }
                   >
-                    {value.description}
+                    {hyphenateText(value.description, locale)}
                   </span>
                 </div>
               ))}
